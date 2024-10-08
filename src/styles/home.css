@@ -1,0 +1,154 @@
+.Main {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #000;
+  pointer-events: none;
+}
+
+.blan_div {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20vh;
+  /* background-color: red; */
+}
+.blan_div2 {
+  height: 180vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20vh;
+}
+.ScrollDown_btm {
+  position: fixed;
+  bottom: 2rem;
+  opacity: 1;
+  visibility: visible;
+}
+.ScrollUp_btm {
+  position: fixed;
+  bottom: 2rem;
+  opacity: 0;
+  visibility: visible;
+}
+.Gallery_wrapper {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  /* height: 100%; */
+}
+.gallery_cntr {
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+  /* height: 100vh; */
+  /* background-color: red; */
+  /* position: absolute; */
+  z-index: -10;
+  pointer-events: none;
+  /* opacity: 0; */
+  /* transform: translateY(50%); */
+  /* overflow-x: hidden; */
+}
+.gallery_text-cntr {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  position: relative;
+  z-index: 4;
+  /* background-color: #a10f0f; */
+}
+.gallery_title_text {
+  text-transform: uppercase;
+  font-size: 14vw;
+  text-align: center;
+  width: 83.333333%;
+}
+.gallery_title_maintext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  pointer-events: auto;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+}
+.gallery_image_bottom_sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  height: 40vh;
+  /* background-color: green; */
+}
+.gallery_image_bottom_inner {
+  width: 83.333333%;
+  aspect-ratio: 4/5;
+  display: flex;
+  pointer-events: auto;
+}
+.gallery_image_bottom_inner .w-full.h-full {
+  width: 100%;
+  height: 100%;
+}
+.Fixed_image_cntr {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  position: fixed;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.fixed_image_clip_cntr {
+  width: 83.333333%;
+  aspect-ratio: 9/16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  clip-path: inset(100% 0px 0%);
+  /* clip-path: inset(0% 0px 100%); we want to do that on scroll */
+}
+[data-start="hidden"] {
+  visibility: hidden;
+}
+.fixed_image_clip_cntr img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  max-width: 100%;
+  /* transform: scale(1.0724); */
+  filter: brightness(1);
+  visibility: visible;
+}
+@media only screen and (min-width: 768px) {
+  .gallery_text-cntr,
+  .Fixed_image_cntr {
+    height: 100vh;
+  }
+  .fixed_image_clip_cntr {
+    aspect-ratio: 4 / 5;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .gallery_image_bottom_inner {
+    width: 33.333333%;
+  }
+  .fixed_image_clip_cntr {
+    width: 41.666667%;
+  }
+}
