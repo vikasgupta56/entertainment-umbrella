@@ -83,7 +83,10 @@ const Services = () => {
                 opacity: 1,
               }}
             >
-              <span className="bold-sans">Benefits</span>
+              <span className="bold-sans">
+                <strong>Our Services</strong> <br />
+                <h6>Mr. and Mrs. Events</h6>
+              </span>
             </div>
           </h2>
         </div>
@@ -129,12 +132,11 @@ const Services = () => {
           <div className="xxlarge-6 xxlarge-offset-9 small-16 small-offset-0">
             <div className="text-wrapper">
               <div className="inner">
-                <h3>Workation</h3>
+                <h3>Conceptualization of Events</h3>
                 <p>
-                  Once a year, we cover all expenses for our team to spend a
-                  week together in a nice location connecting in different ways:
-                  working, sharing ideas, and having fun together. A healthy mix
-                  of work and vacation.
+                  We dream big so that you grow. Our team creates different
+                  fashions of event themes and concepts tailored to what you
+                  have in mind for the perfect execution.
                 </p>
               </div>
             </div>
@@ -144,12 +146,11 @@ const Services = () => {
           <div className="xxlarge-6 xxlarge-offset-9 small-16 small-offset-0">
             <div className="text-wrapper">
               <div className="inner">
-                <h3>Time Off</h3>
+                <h3>Event Management</h3>
                 <p>
-                  Sometimes you just need to take a few days off. We don’t
-                  dif­fer­en­ti­ate between sick days, floating holidays and
-                  paid time off. If you need the time, take it. We measure
-                  results, not hours in front of the screen.
+                  We organize the logistics behind every event. From planning to
+                  execution, we pay attention to every minute detail to ensure
+                  that your event is smooth and flawless.
                 </p>
               </div>
             </div>
@@ -159,12 +160,10 @@ const Services = () => {
           <div className="xxlarge-6 xxlarge-offset-9 small-16 small-offset-0">
             <div className="text-wrapper">
               <div className="inner">
-                <h3>Education</h3>
+                <h3>Production Services</h3>
                 <p>
-                  There is a LOT of great content on the internet to learn for
-                  free. We share with you everything we have. But sometimes
-                  there are some special books, magazines or courses. We cover
-                  these.
+                  We bring the WOW Factore with high-quality
+                  production—high-tech lighting, sound, and stage design.
                 </p>
               </div>
             </div>
@@ -174,11 +173,10 @@ const Services = () => {
           <div className="xxlarge-6 xxlarge-offset-9 small-16 small-offset-0">
             <div className="text-wrapper">
               <div className="inner">
-                <h3>Flexible Schedule</h3>
+                <h3>Guest Management</h3>
                 <p>
-                  We all have different routines. Some people prefer to meditate
-                  or work out in the morning. Others prefer to sleep. If it
-                  works for you and everyone involved, all good.
+                  Treatment for VIPs to All. We handle guest lists, VIPs, and
+                  general admissions very meticulously.
                 </p>
               </div>
             </div>
@@ -188,16 +186,30 @@ const Services = () => {
           <div className="xxlarge-6 xxlarge-offset-9 small-16 small-offset-0">
             <div className="text-wrapper">
               <div className="inner">
-                <h3>Continuous Development</h3>
+                <h3>Entertainment Curation</h3>
                 <p>
-                  We can only grow if our people grow too. It is in our best
-                  interest to surround ourselves with ambitious people that we
-                  can help develop.
+                  From headlining DJs to live bands and performers, we put
+                  together the perfect lineup of entertainment that keeps your
+                  guests abuzz.
                 </p>
               </div>
             </div>
           </div>
         </div>
+        {/* <div className="row expanded align-middle">
+          <div className="xxlarge-6 xxlarge-offset-9 small-16 small-offset-0">
+            <div className="text-wrapper">
+              <div className="inner">
+                <h3>Types of Events</h3>
+                <p>
+                  No event is big or small for us, be it a music concert, bar
+                  night, brand activation, corporate events, a wedding, or
+                  private parties. We have create experiences that leave a mark.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> */}
       </div>
       {/**/}
     </section>

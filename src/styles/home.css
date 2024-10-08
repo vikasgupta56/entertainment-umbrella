@@ -192,9 +192,10 @@ a {
 .h-large {
   color: #fff;
   /* font-family: bw-light; */
-  font-size: calc(2.375rem + 6vw);
+  /* font-size: calc(2.375rem + 6vw); */
+  font-size: 3.5vw;
   /* letter-spacing: -0.04em; */
-  line-height: 0.9em;
+  line-height: 1.2;
 }
 h2.h-large {
   margin-top: 11.7647058824vw;
@@ -342,10 +343,11 @@ img {
 }
 @media only screen and (min-width: 1200px) {
   .h-large {
-    font-size: 6.875rem;
+    font-size: 2.875rem;
   }
   .benefits-wrapper .text-wrapper h3 {
-    font-size: 4.25rem;
+    /* font-size: 4.25rem; */
+    font-size: 3vw;
   }
   .benefits-wrapper .text-wrapper p {
     font-size: 1.5rem;
