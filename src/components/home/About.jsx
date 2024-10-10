@@ -2,7 +2,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import React, { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
-const Para = () => {
+const About = () => {
   useEffect(() => {
     if (window.innerWidth > 540) {
       const magnets = document.querySelectorAll(".magnetic");
@@ -63,23 +63,25 @@ const Para = () => {
     <section className="intro" data-scroll-section="">
       <div className="intro__container magneticWrapper">
         <div className="itext">
-          <h1>Para</h1>
+          <h1>ABOUT US</h1>
           <h3 className="fhl o_italic">
             <span className="itext__line">
-              halo media is the middle east’s premier digital
+              Welcome to Mr. and Mrs. Films... and Sometimes Events!
             </span>
             <span className="itext__line">
-              media company, consisting of
+              A powerhouse where the art of
               <span className="itext__thumb">
                 <img
                   src="https://halomedia.com/wp-content/uploads/2022/07/text-thumb.png"
                   alt=""
                 />
               </span>
-              <a href="https://halomedia.com/studio/">halo studio</a>
+              <a href="https://halomedia.com/studio/"> storytelling meets</a>
             </span>
             <span className="itext__line">
-              <a href="https://halomedia.com/collective/">halo collective</a>
+              <a href="https://halomedia.com/collective/">
+                the magic of live experiences.
+              </a>
               <span className="itext__thumb">
                 <img
                   src="https://halomedia.com/wp-content/uploads/2022/07/text-thumb2.png"
@@ -87,20 +89,23 @@ const Para = () => {
                 />
               </span>
               &amp;
-              <a href="https://halomedia.com/savoir-flair/">savoir flair.</a>
+              <a href="https://halomedia.com/savoir-flair/">Born from</a>
               our work
             </span>
             <span className="itext__line">
-              with luxury &amp; lifestyle brands has earned us
+              our love of creativity, &amp; we are a film production house
             </span>
             <span className="itext__line">
-              a reputation for highly relevant and sought-
+              committed to finding a fresh angle every time we tell a story.
             </span>
             <span className="itext__line">
-              after content, as well as world-class events,
+              But our penchant for crafting long-lingering moments didn't
             </span>
             <span className="itext__line">
-              videos, photoshoots &amp; marketing opportunities
+              stop right there. Today, we take pride in ourselves as an event-
+            </span>
+            <span>
+              creating, unforgettable-experience-building company too.
             </span>
           </h3>
         </div>
@@ -120,4 +125,4 @@ const Para = () => {
   );
 };
 
-export default Para;
+export default About;

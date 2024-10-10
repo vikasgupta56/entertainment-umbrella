@@ -1,12 +1,12 @@
 import React from "react";
 import Gallery from "./Gallery";
 import Services from "./Services";
-import Para from "./Para";
+import About from "./About";
 
 const Hero = () => {
   return (
     <>
-      <Para />
+      <About />
       <Services />
       <Gallery />
     </>
