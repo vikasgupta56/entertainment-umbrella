@@ -1,8 +1,34 @@
+@font-face {
+  font-family: HelveticaBold;
+  src: url(/fonts/vertopal.com_HelveticaNeueLTStd-Bd.0d3e2395.ttf);
+}
+@font-face {
+  font-family: HelveticaLight;
+  src: url(/fonts/Helvetica_Light.ttf);
+}
+@font-face {
+  font-family: Helvetica_Neue_Thin;
+  src: url(/fonts/Helvetica_Neue_Thin.ttf);
+}
+@font-face {
+  font-family: SilkSerif_ExtraLight;
+  src: url(/fonts/SilkSerif_ExtraLight.ttf);
+}
+:root {
+  --primary-fontB: "HelveticaBold";
+  --primary-fontL: "HelveticaLight";
+  --primary-fontTh: "Helvetica_Neue_Thin";
+  --secondary-fontS: "SilkSerif_ExtraLight";
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Monument, sans-serif;
+  /* font-family: Monument, sans-serif; */
 }
 
 html,
@@ -11,7 +37,7 @@ body {
   height: 100%;
 }
 body {
-  background-color: #222;
+  background-color: #000;
   color: #fff;
   font-family: telegraf-light;
   font-size: 1rem;

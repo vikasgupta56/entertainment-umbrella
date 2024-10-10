@@ -70,8 +70,8 @@ const Services = () => {
 
   return (
     <section>
-      <div className="row expanded title" data-v-f2426fb2="">
-        <div className="xxlarge-7 xxlarge-offset-1 columns" data-v-f2426fb2="">
+      <div className="row expanded title">
+        <div className="xxlarge-7 xxlarge-offset-1 columns">
           <h2 className="h-large enter">
             <div
               className="block"
