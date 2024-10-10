@@ -147,7 +147,7 @@ const Gallery = () => {
     <>
       <div className="Main"></div>
       <figure data-track="nav" className="blan_div">
-        <p className="ScrollDown_btm">SCROLL Down</p>
+        <p className="ScrollDown_btm">SCROLL DOWN</p>
       </figure>
       <section className="Gallery_wrapper">
         <figure data-trackcolor className="gallery_cntr">

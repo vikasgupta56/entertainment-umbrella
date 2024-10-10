@@ -69,7 +69,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section>
+    <section className="Services_wrapper">
       <div className="row expanded title">
         <div className="xxlarge-7 xxlarge-offset-1 columns">
           <h2 className="h-large enter">

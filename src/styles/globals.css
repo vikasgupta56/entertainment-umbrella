@@ -37,7 +37,7 @@ body {
   height: 100%;
 }
 body {
-  background-color: #000;
+  /* background-color: #000; */
   color: #fff;
   font-family: telegraf-light;
   font-size: 1rem;
