@@ -79,9 +79,7 @@ const About = () => {
               <a href="https://halomedia.com/studio/"> storytelling meets</a>
             </span>
             <span className="itext__line">
-              <a href="https://halomedia.com/collective/">
-                the magic of live experiences.
-              </a>
+              <a href="https://halomedia.com/collective/">the magic of live</a>
               <span className="itext__thumb">
                 <img
                   src="https://halomedia.com/wp-content/uploads/2022/07/text-thumb2.png"
@@ -89,7 +87,10 @@ const About = () => {
                 />
               </span>
               &amp;
-              <a href="https://halomedia.com/savoir-flair/">Born from</a>
+              <a href="https://halomedia.com/savoir-flair/">
+                {" "}
+                experiences. Born from
+              </a>
               our work
             </span>
             <span className="itext__line">
