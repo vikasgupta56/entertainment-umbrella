@@ -1,6 +1,9 @@
+.Gallery_Mainwrapper {
+  position: relative;
+}
 .Main {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   background-color: #000;
   pointer-events: none;
@@ -12,7 +15,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 20vh;
+  /* padding-bottom: 20vh; */
   background-color: #000;
 }
 .blan_div2 {
@@ -20,7 +23,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 20vh;
+  /* padding-bottom: 20vh; */
   background-color: #000;
 }
 .ScrollDown_btm {
@@ -443,7 +446,7 @@ img {
 }
 .intro .itext {
   position: relative;
-  z-index: 3;
+  z-index: 12;
   mix-blend-mode: exclusion;
 }
 .itext h1 {
@@ -513,7 +516,7 @@ img {
   border-radius: 50%;
   overflow: hidden;
   margin: -20px auto 0 auto;
-  z-index: 2;
+  z-index: 11;
 }
 .intro__video--wrapper {
   position: absolute;

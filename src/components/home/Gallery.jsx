@@ -144,7 +144,7 @@ const Gallery = () => {
     });
   });
   return (
-    <>
+    <section className="Gallery_Mainwrapper">
       <div className="Main"></div>
       <figure data-track="nav" className="blan_div">
         <p className="ScrollDown_btm">SCROLL DOWN</p>
@@ -404,7 +404,7 @@ const Gallery = () => {
       <figure data-track="nav2" className="blan_div2">
         <p className="ScrollUp_btm">SCROLL UP</p>
       </figure>
-    </>
+    </section>
   );
 };
 
