@@ -4,6 +4,32 @@ import React, { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   useEffect(() => {
+    function initoTalic() {
+      const items = document.querySelectorAll(".o_italic");
+      const oldlinks = document.querySelectorAll(".o_italic a");
+      const oldimg = document.querySelectorAll(".o_italic img");
+
+      items.forEach((item, index) => {
+        item.innerHTML = item.innerHTML.replace(/\o/g, "<i>O</i>");
+      });
+      items.forEach((item, index) => {
+        item.innerHTML = item.innerHTML.replace(/\O/g, "<i>O</i>");
+      });
+
+      // Reset all links and image src
+      setTimeout(() => {
+        const newlinks = document.querySelectorAll(".o_italic a");
+        newlinks.forEach((link, index) => {
+          link.href = oldlinks[index].href;
+        });
+        const newimg = document.querySelectorAll(".o_italic img");
+        newimg.forEach((img, index) => {
+          img.src = oldimg[index].src;
+        });
+      }, 500);
+    }
+    // initoTalic();
+
     if (window.innerWidth > 540) {
       const magnets = document.querySelectorAll(".magnetic");
 
