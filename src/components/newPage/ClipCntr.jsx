@@ -29,7 +29,7 @@ const ClipCntr = () => {
             },
             "a"
           )
-          .to(".img.hero-inner", { scale: 0.8 }, "b");
+          .to(".hero_img.hero-inner", { scale: 0.8 }, "b");
       }
     };
 
