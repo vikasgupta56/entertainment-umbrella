@@ -1,8 +1,8 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import SplitText from "gsap/dist/SplitText";
+// import SplitText from "gsap/dist/SplitText";
 import React, { useEffect, useState } from "react";
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 const Histoy = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -46,34 +46,34 @@ const Histoy = () => {
     };
   }, [isLoaded]);
 
-  useEffect(() => {
-    const paragraphs = document.querySelectorAll(".Cpb_para");
+  // useEffect(() => {
+  //   const paragraphs = document.querySelectorAll(".Cpb_para");
 
-    paragraphs.forEach((paragraph) => {
-      const text = new SplitText(paragraph, {
-        type: "lines,words,chars",
-      });
-      const chars = text.chars;
+  //   paragraphs.forEach((paragraph) => {
+  //     const text = new SplitText(paragraph, {
+  //       type: "lines,words,chars",
+  //     });
+  //     const chars = text.chars;
 
-      // Create a ScrollTrigger for each paragraph
-      gsap.to(chars, {
-        scrollTrigger: {
-          trigger: paragraph, // Trigger the animation for each individual paragraph
-          start: "top 80%", // Adjust as needed
-          end: "bottom 60%", // Adjust as needed
-          markers: true,
-          scrub: true,
-        },
-        duration: 1.5,
-        stagger: 0.1, // Adjust stagger as needed
-        ease: "linear",
-        color: "#fff",
-      });
-    });
+  //     // Create a ScrollTrigger for each paragraph
+  //     gsap.to(chars, {
+  //       scrollTrigger: {
+  //         trigger: paragraph, // Trigger the animation for each individual paragraph
+  //         start: "top 80%", // Adjust as needed
+  //         end: "bottom 60%", // Adjust as needed
+  //         markers: true,
+  //         scrub: true,
+  //       },
+  //       duration: 1.5,
+  //       stagger: 0.1, // Adjust stagger as needed
+  //       ease: "linear",
+  //       color: "#fff",
+  //     });
+  //   });
 
-    // Optional: Refresh triggers if necessary
-    ScrollTrigger.refresh();
-  }, []);
+  //   // Optional: Refresh triggers if necessary
+  //   ScrollTrigger.refresh();
+  // }, []);
   return (
     <>
       <section className="section_black">
