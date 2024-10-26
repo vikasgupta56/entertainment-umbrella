@@ -93,7 +93,6 @@ const Artist = () => {
       },
     });
 
-    // var artistsection = document.querySelector("#artistsection").offsetHeight;
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#artistsection",
@@ -208,7 +207,6 @@ const Artist = () => {
         },
         "b"
       )
-
       .to(
         "#textthree .letterspan",
         {

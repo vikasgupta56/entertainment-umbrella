@@ -60,9 +60,9 @@ const Histoy = () => {
         scrollTrigger: {
           trigger: paragraph, // Trigger the animation for each individual paragraph
           start: "top 80%", // Adjust as needed
-          end: "bottom 50%", // Adjust as needed
-          // markers: true,
-          scrub: 0.5,
+          end: "bottom 60%", // Adjust as needed
+          markers: true,
+          scrub: true,
         },
         duration: 1.5,
         stagger: 0.1, // Adjust stagger as needed
@@ -258,7 +258,6 @@ const Histoy = () => {
         {/* </div> */}
         {/* </div> */}
       </section>
-      {/* <div className="sec-2"></div> */}
     </>
   );
 };

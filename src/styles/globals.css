@@ -1,18 +1,22 @@
 @font-face {
   font-family: HelveticaBold;
   src: url(/fonts/vertopal.com_HelveticaNeueLTStd-Bd.0d3e2395.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: HelveticaLight;
   src: url(/fonts/Helvetica_Light.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: Helvetica_Neue_Thin;
   src: url(/fonts/Helvetica_Neue_Thin.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: SilkSerif_ExtraLight;
   src: url(/fonts/SilkSerif_ExtraLight.ttf);
+  font-display: swap;
 }
 :root {
   --primary-fontB: "HelveticaBold";

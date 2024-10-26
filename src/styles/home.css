@@ -201,10 +201,7 @@ a {
 .xxlarge-offset-1 {
   margin-left: 6.25%;
 }
-.xxlarge-7 {
-  /* flex: 0 0 43.75%; */
-  /* max-width: 43.75%; */
-}
+
 .h-large {
   color: #fff;
   font-family: var(--primary-fontL);
