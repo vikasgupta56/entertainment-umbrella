@@ -385,7 +385,7 @@ const Navbar = () => {
       </div>
       <div className="mobilenavbar">
         <div className="mobilenavbar__logo">
-          <h5>
+          <h5 style={{ color: isHome2 ? "black" : "white" }}>
             <a href="">
               Entertainment <br />
               Umbrella
@@ -393,29 +393,37 @@ const Navbar = () => {
           </h5>
         </div>
         <button className="mobilenavbar__togglebtn">
-          <span>menu</span>
+          <span style={{ color: isHome2 ? "black" : "white" }}>menu</span>
         </button>
         <div className="mobilenavbar__content">
           <button className="mobilenavbar__content--close">Close</button>
           <ul className="mobilenavbar__content--menu fhl">
             <li className="mobilenavbar__content--menu--item">
-              <a href="" className="nav_link o_italic" data-title="halo media">
-                halo media
-              </a>
+              <Link
+                href={"/"}
+                className="nav_link o_italic"
+                data-title="halo media"
+              >
+                Home
+              </Link>
             </li>
             <li className="mobilenavbar__content--menu--item">
-              <a
-                href=""
+              <Link
+                href={"/newPage"}
                 className="nav_link o_italic"
                 data-title="savoir flair"
               >
-                savoir flair
-              </a>
+                Home2
+              </Link>
             </li>
             <li className="mobilenavbar__content--menu--item">
-              <a href="" className="nav_link o_italic" data-title="halo studio">
-                halo studio
-              </a>
+              <Link
+                href=""
+                className="nav_link o_italic"
+                data-title="halo studio"
+              >
+                Home3
+              </Link>
             </li>
             <li className="mobilenavbar__content--menu--item">
               <a
@@ -434,7 +442,9 @@ const Navbar = () => {
                 <a href="">01 234 56789</a>
               </p>
               <p>
-                <a href="maillto:hello@media.com">hello@media.com</a>
+                <a href="maillto:entertainment@media.com">
+                  entertainment@media.com
+                </a>
               </p>
             </div>
             <div className="mobilenavbar__content--footer--col">

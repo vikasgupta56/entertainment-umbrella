@@ -117,7 +117,7 @@
 .mobilenavbar__logo h5::first-letter {
   -webkit-initial-letter: 2;
   initial-letter: 2;
-  color: #ffffff;
+  /* color: #ffffff; */
   font-weight: bold;
   margin-right: 0.2em;
 }
