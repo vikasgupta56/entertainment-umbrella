@@ -2,6 +2,7 @@ import React from "react";
 import Gallery from "./Gallery";
 import Services from "./Services";
 import About from "./About";
+import Sfimpact from "./Sfimpact";
 
 const Hero = () => {
   return (
@@ -9,6 +10,7 @@ const Hero = () => {
       <About />
       <Services />
       <Gallery />
+      <Sfimpact />
     </>
   );
 };

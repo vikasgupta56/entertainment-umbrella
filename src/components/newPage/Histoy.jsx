@@ -82,7 +82,7 @@ const Histoy = () => {
         {/* <div className="content grid sticky"> */}
         <div id="w-node-1" className="h2-wrapper">
           <div className="h-wrapper">
-            <h1 className="h2 cbh2">history</h1>
+            <h1 className="h2 cbh2">About</h1>
           </div>
         </div>
         <div className="image_cntr image_1_cntr">
@@ -98,7 +98,7 @@ const Histoy = () => {
         <div className="image_cntr image_2_cntr">
           <div id="w-node-3" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/photo_01.jpg"
+              src="https://artworks.joe8lee.com/images/photo_02.jpg"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -109,7 +109,7 @@ const Histoy = () => {
         <div className="image_cntr image_3_cntr">
           <div id="w-node-4" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/photo_01.jpg"
+              src="https://artworks.joe8lee.com/images/photo_03.jpg"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -133,7 +133,7 @@ const Histoy = () => {
         <div className="image_cntr image_4_cntr">
           <div id="w-node-6" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/photo_01.jpg"
+              src="https://artworks.joe8lee.com/images/photo_04.jpg"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -143,7 +143,7 @@ const Histoy = () => {
         <div className="image_cntr image_5_cntr">
           <div id="w-node-7" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/photo_01.jpg"
+              src="https://artworks.joe8lee.com/images/img_137.webp"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -153,7 +153,7 @@ const Histoy = () => {
         <div className="image_cntr image_6_cntr">
           <div id="w-node-8" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/photo_01.jpg"
+              src="https://artworks.joe8lee.com/images/img_135.webp"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -162,7 +162,7 @@ const Histoy = () => {
         </div>
         <div id="w-node-9" className="grid-img wrapper is--hidden-in-mobile">
           <img
-            src="https://artworks.joe8lee.com/images/photo_01.jpg"
+            src="https://artworks.joe8lee.com/images/img_99.webp"
             loading="lazy"
             alt=""
             className="grid-cell-img gsap"

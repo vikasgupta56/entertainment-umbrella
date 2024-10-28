@@ -1397,7 +1397,7 @@ const Artist = () => {
         <div className="">
           <div className="h2-wrapper">
             <div className="h-wrapper align-top">
-              <h1 className="artistsheading">artists</h1>
+              <h1 className="artistsheading">Our Services</h1>
               <h1 className="h2 star">*</h1>
               <div className="border-bottom"></div>
             </div>

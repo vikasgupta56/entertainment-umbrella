@@ -1,3 +1,4 @@
+import Footer from "@/common/Footer";
 import Navbar from "@/common/Navbar";
 import SmoothScrolling from "@/components/home/SmoothScrolling";
 import "@/styles/globals.css";
@@ -9,6 +10,7 @@ export default function App({ Component, pageProps }) {
     <SmoothScrolling>
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </SmoothScrolling>
   );
 }

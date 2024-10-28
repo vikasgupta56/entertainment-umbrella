@@ -46,53 +46,53 @@ const Gallery = () => {
       ".fixed_image_clip_cntr img"
     );
     // Create ScrollTrigger for blanDiv scrollDown
-    scrollTrigger.create({
-      trigger: blanDiv,
-      start: "top top",
-      end: "bottom 80%",
-      markers: false,
-      scrub: true,
-      onEnter: () => {
-        // Set opacity to 0
-        gsap.to(".ScrollDown_btm", {
-          opacity: 0,
-          // visibility: "hidden", // Optionally hide the element
-          duration: 0.3, // Duration of the animation
-        });
-      },
-      onLeaveBack: () => {
-        // Reset opacity to 1 and visibility to visible when scrolling back up
-        gsap.to(".ScrollDown_btm", {
-          opacity: 1,
-          // visibility: "visible", // Reset visibility
-          duration: 0.3,
-        });
-      },
-    });
+    // scrollTrigger.create({
+    //   trigger: blanDiv,
+    //   start: "top top",
+    //   end: "bottom 80%",
+    //   markers: false,
+    //   scrub: true,
+    //   onEnter: () => {
+    //     // Set opacity to 0
+    //     gsap.to(".ScrollDown_btm", {
+    //       opacity: 0,
+    //       // visibility: "hidden", // Optionally hide the element
+    //       duration: 0.3, // Duration of the animation
+    //     });
+    //   },
+    //   onLeaveBack: () => {
+    //     // Reset opacity to 1 and visibility to visible when scrolling back up
+    //     gsap.to(".ScrollDown_btm", {
+    //       opacity: 1,
+    //       // visibility: "visible", // Reset visibility
+    //       duration: 0.3,
+    //     });
+    //   },
+    // });
     // Create ScrollTrigger for blanDiv scrollUp
-    scrollTrigger.create({
-      trigger: blanDiv2,
-      start: "top top",
-      end: "bottom 80%",
-      markers: false,
-      scrub: true,
-      onEnter: () => {
-        // Set opacity to 0
-        gsap.to(".ScrollUp_btm", {
-          opacity: 1,
-          // visibility: "hidden", // Optionally hide the element
-          duration: 0.3,
-        });
-      },
-      onLeaveBack: () => {
-        // Reset opacity to 1 and visibility to visible when scrolling back up
-        gsap.to(".ScrollUp_btm", {
-          opacity: 0,
-          // visibility: "visible", // Reset visibility
-          duration: 0.3, // Duration of the animation
-        });
-      },
-    });
+    // scrollTrigger.create({
+    //   trigger: blanDiv2,
+    //   start: "top top",
+    //   end: "bottom 80%",
+    //   markers: false,
+    //   scrub: true,
+    //   onEnter: () => {
+    //     // Set opacity to 0
+    //     gsap.to(".ScrollUp_btm", {
+    //       opacity: 1,
+    //       // visibility: "hidden", // Optionally hide the element
+    //       duration: 0.3,
+    //     });
+    //   },
+    //   onLeaveBack: () => {
+    //     // Reset opacity to 1 and visibility to visible when scrolling back up
+    //     gsap.to(".ScrollUp_btm", {
+    //       opacity: 0,
+    //       // visibility: "visible", // Reset visibility
+    //       duration: 0.3, // Duration of the animation
+    //     });
+    //   },
+    // });
 
     // animtion for scrll down text
     triggerCntr.forEach((textCntr, index) => {
@@ -146,9 +146,9 @@ const Gallery = () => {
   return (
     <section className="Gallery_Mainwrapper">
       <div className="Main"></div>
-      <figure data-track="nav" className="blan_div">
+      {/* <figure data-track="nav" className="blan_div">
         <p className="ScrollDown_btm">SCROLL DOWN</p>
-      </figure>
+      </figure> */}
       <section className="Gallery_wrapper">
         <figure data-trackcolor className="gallery_cntr">
           {/* <!-- Title Section 14.4 --> */}
@@ -401,9 +401,9 @@ const Gallery = () => {
           </div>
         </figure>
       </section>
-      <figure data-track="nav2" className="blan_div2">
+      {/* <figure data-track="nav2" className="blan_div2">
         <p className="ScrollUp_btm">SCROLL UP</p>
-      </figure>
+      </figure> */}
     </section>
   );
 };
