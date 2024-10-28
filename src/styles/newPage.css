@@ -1326,6 +1326,9 @@
   #w-node-_1cae41b8-9168-5f5b-112a-d8b08896bad0-c7f4dd6b {
     grid-area: 5 / 3 / 7 / 4;
   }
+  .h2 {
+    font-size: 18vw;
+  }
 }
 html.w-mod-touch * {
   background-attachment: scroll !important;
