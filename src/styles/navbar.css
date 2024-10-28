@@ -31,11 +31,16 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-weight: 900;
-  color: #ffffff;
   transform: translateY(100%);
-  opacity: 0.5;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
+/* .nav_link {
+  color: #ffffff;
+}
+.nav_link.active {
+  color: #000;
+} */
 .navbar--menu--item a.curr {
   opacity: 1;
 }
@@ -65,9 +70,9 @@
 }
 .navbar.hover_in ul li a:not(.active),
 .navbar.anim_ongoing ul li a:not(.active) {
-  opacity: 0.5;
+  opacity: 1;
   filter: blur(1.5px);
-  color: #000;
+  color: #ffffff;
   transition: color 0.3s linear;
 }
 .navbar.hover_in ul li a.active,

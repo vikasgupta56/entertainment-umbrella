@@ -1,5 +1,7 @@
 import gsap from "gsap";
 import CustomEase from "gsap/dist/CustomEase";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 gsap.registerPlugin(CustomEase);
 const Navbar = () => {
@@ -319,34 +321,48 @@ const Navbar = () => {
     updateActiveMenu();
     introNav();
   }, []);
+  const router = useRouter();
+  const isHome2 = router.pathname === "/newPage";
   return (
     <>
       <div className="navbar">
         <ul className="navbar--menu fhl">
           <li className="navbar--menu--item">
-            <a href="" className="nav_link">
-              <span className="btn-text link" data-title="halo media">
-                halo media
+            <Link href={"/"} className="nav_link">
+              <span
+                className="btn-text link"
+                data-title="halo media"
+                style={{ color: isHome2 ? "black" : "white" }}
+              >
+                Home
               </span>
               <span className="nav_text">
                 The Middle East’s Premier Digital Media Company
               </span>
-            </a>
+            </Link>
           </li>
           <li className="navbar--menu--item">
-            <a href="" className="nav_link">
-              <span className="btn-text link" data-title="savoir flair">
-                savoir flair
+            <Link href={"/newPage"} className="nav_link">
+              <span
+                className="btn-text link"
+                data-title="savoir flair"
+                style={{ color: isHome2 ? "black" : "white" }}
+              >
+                Home2
               </span>
               <span className="nav_text">
                 The Middle East’s First Online Magazine
               </span>
-            </a>
+            </Link>
           </li>
           <li className="navbar--menu--item">
             <a href="" className="nav_link">
-              <span className="btn-text link" data-title="halo studio">
-                halo studio
+              <span
+                className="btn-text link"
+                data-title="halo studio"
+                style={{ color: isHome2 ? "black" : "white" }}
+              >
+                Home3
               </span>
               <span className="nav_text">
                 {" "}
@@ -354,7 +370,7 @@ const Navbar = () => {
               </span>
             </a>
           </li>
-          <li className="navbar--menu--item">
+          {/* <li className="navbar--menu--item">
             <a href="" className="nav_link">
               <span className="btn-text link" data-title="halo collective">
                 halo collective
@@ -364,7 +380,7 @@ const Navbar = () => {
                 Pioneering Influencer Marketing{" "}
               </span>
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="mobilenavbar">
