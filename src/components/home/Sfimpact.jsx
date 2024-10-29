@@ -18,10 +18,10 @@ const Sfimpact = () => {
         });
       }
     }
-    // resizeTicker();
+    resizeTicker();
     // function initTickerTape() {
     window.tickerTapeArr = document.getElementsByClassName("ticker__row");
-    resizeTicker();
+    // resizeTicker();
     window.addEventListener("resize", resizeTicker);
     tickerSpeed = initialTickerSpeed;
     // window.addEventListener("scroll", (e) => {
