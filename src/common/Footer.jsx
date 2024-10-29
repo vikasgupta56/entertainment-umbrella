@@ -22,19 +22,10 @@ const Footer = () => {
     };
   }, []);
   return (
-    <footer className="footer" data-scroll-section="">
-      <div
-        className="footer__wrapper"
-        data-scroll=""
-        data-scroll-speed={-2}
-        data-scroll-id="footer"
-      >
-        <div className="footer__top" data-scroll="">
-          <div
-            className="footer__top--left"
-            data-scroll=""
-            data-scroll-id="form_wrapper"
-          >
+    <footer className="footer">
+      <div className="footer__wrapper">
+        <div className="footer__top">
+          <div className="footer__top--left" data-scroll-id="form_wrapper">
             <div
               role="form"
               className="wpcf7"

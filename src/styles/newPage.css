@@ -684,7 +684,108 @@
   position: relative;
   z-index: 9;
 }
-.list-item {
+.item {
+  border-bottom: 1px solid rgba(17, 19, 227, 0.5);
+}
+.para-btn-cntr {
+  display: flex;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.para_title_head {
+  flex: 1 1 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 1.875rem;
+  line-height: 0.87;
+}
+.g-item-list-para-cntr {
+  position: relative;
+  overflow: hidden;
+  will-change: height;
+  height: 0px;
+}
+.g-item-content {
+  position: relative;
+  overflow: hidden;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.g-item-content-inside {
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+  font-family: var(--primary-fontB);
+  font-size: 0.875rem;
+  line-height: 1.2;
+  font-size: 1.125rem;
+  max-width: 56.25rem;
+}
+.g-item-content a {
+  text-decoration: underline;
+}
+
+a,
+button {
+  cursor: url(https://absolut-nft.com/static/cursor-pointer.fb0c5b8c.svg),
+    pointer;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.plus-minus {
+  position: relative;
+  display: inline-block;
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background-color: currentColor;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+.plus-minus:after,
+.plus-minus:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 1px;
+  background: #fff;
+  content: "";
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.plus-minus:before {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.plus-minus.open:before {
+  -webkit-transform: translate(-50%, -50%) rotate(-180deg);
+  transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+@media (min-width: 48rem) {
+  .plus-minus {
+    width: 4.0625rem;
+    height: 4.0625rem;
+  }
+  .plus-minus:after,
+  .plus-minus:before {
+    width: 40%;
+    height: 2px;
+  }
+  .g-item-content-inside {
+    padding-right: 6rem;
+  }
+}
+/* .list-item {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid black;
@@ -714,7 +815,7 @@
   transform: translateX(-50%) rotate(-25deg);
   opacity: 0;
   z-index: 2;
-}
+} */
 
 @media screen and (max-width: 991px) {
   #aboutsection {
@@ -1168,9 +1269,8 @@
 .sectionlinks {
   z-index: 20;
   background-color: #fff;
-  padding-left: 1.88em;
-  padding-right: 1.88em;
   position: relative;
+  padding: 3em 1.88em;
 }
 /* .content.grid.artist-links {
   grid-template-rows: minmax(12.03em, 1fr) minmax(12.03em, 1fr) minmax(

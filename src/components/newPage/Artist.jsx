@@ -1,8 +1,74 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const Artist = () => {
+  useEffect(() => {
+    const paraHeaders = document.querySelectorAll(".para-btn-cntr");
+
+    const toggleVisibility = (event) => {
+      const button = event.currentTarget; // Get the clicked button
+      const hiddenParaCntr = button
+        .closest(".item")
+        .querySelector(".g-item-list-para-cntr"); // Find the corresponding content
+      const plusMinus = button.querySelector(".plus-minus"); // Select the specific plus-minus for the clicked button
+
+      // Toggle the open class on the button
+      const isOpen = button.classList.toggle("open");
+
+      if (isOpen) {
+        // Add open class to the specific plus-minus
+        plusMinus.classList.add("open");
+        plusMinus.classList.remove("active"); // Ensure active is removed
+
+        // Optionally close other items
+        paraHeaders.forEach((otherButton) => {
+          if (otherButton !== button) {
+            otherButton.classList.remove("open");
+            otherButton.querySelector(".plus-minus").classList.remove("open");
+            otherButton.querySelector(".plus-minus").classList.add("active"); // Add active to remove content
+            const otherContent = otherButton
+              .closest(".item")
+              .querySelector(".g-item-list-para-cntr");
+            gsap.to(otherContent, {
+              height: 0,
+              duration: 0.5,
+              ease: "expo.inout",
+            });
+          }
+        });
+
+        // Animate the clicked content
+        gsap.to(hiddenParaCntr, {
+          height: "auto",
+          duration: 0.5,
+          ease: "expo.inout",
+        });
+      } else {
+        // Remove open class from the specific plus-minus
+        plusMinus.classList.remove("open");
+        plusMinus.classList.add("active"); // Add active to remove content
+        gsap.to(hiddenParaCntr, {
+          height: 0,
+          duration: 0.5,
+          ease: "expo.inout",
+        });
+      }
+    };
+
+    // Attach event listeners to each button
+    paraHeaders.forEach((button) => {
+      button.addEventListener("click", toggleVisibility);
+    });
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      paraHeaders.forEach((button) => {
+        button.removeEventListener("click", toggleVisibility);
+      });
+    };
+  }, []);
+
   useEffect(() => {
     // gsap.to("#aboutimages .grid-cell-img", {
     //   scale: 1,
@@ -24,29 +90,31 @@ const Artist = () => {
     //     scrub: 0.5,
     //   },
     // });
-    document.querySelectorAll(".list-item").forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        gsap.to(item.querySelector("img"), { opacity: 1, duration: 0.5 });
-      });
-      item.addEventListener("mouseleave", () => {
-        gsap.to(item.querySelector("img"), {
-          opacity: 0,
-          duration: 0.5,
-        });
-      });
-      item.addEventListener("mousemove", (event) => {
-        const img = item.querySelector("img");
-        const rect = item.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-        gsap.to(img, {
-          x: x - rect.width / 2,
-          y: y - rect.height / 2,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      });
-    });
+
+    //   artist image hover animation
+    // document.querySelectorAll(".list-item").forEach((item) => {
+    //   item.addEventListener("mouseenter", () => {
+    //     gsap.to(item.querySelector("img"), { opacity: 1, duration: 0.5 });
+    //   });
+    //   item.addEventListener("mouseleave", () => {
+    //     gsap.to(item.querySelector("img"), {
+    //       opacity: 0,
+    //       duration: 0.5,
+    //     });
+    //   });
+    //   item.addEventListener("mousemove", (event) => {
+    //     const img = item.querySelector("img");
+    //     const rect = item.getBoundingClientRect();
+    //     const x = event.clientX - rect.left;
+    //     const y = event.clientY - rect.top;
+    //     gsap.to(img, {
+    //       x: x - rect.width / 2,
+    //       y: y - rect.height / 2,
+    //       duration: 0.3,
+    //       ease: "power2.out",
+    //     });
+    //   });
+    // });
 
     //   new gsap code
     var artisttex = document.querySelectorAll(".h2.a-name");
@@ -1463,45 +1531,101 @@ const Artist = () => {
                 </h4>
               </div>
               <div className="g-item-list">
-                <div className="list-item one">
-                  <p className="paragraph list">Photography</p>
-                  <p className="paragraph italic list">(1)</p>
-                  <img
-                    src="https://artworks.joe8lee.com/images/img_15.webp"
-                    loading="eager"
-                    alt=""
-                    className="img is--absolute"
-                  />
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head">Photography</h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        // tag="span"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="list-item two">
-                  <p className="paragraph list">Sculpture &amp; Paintings</p>
-                  <p className="paragraph italic list">(2)</p>
-                  <img
-                    src="https://artworks.joe8lee.com/images/img_75.webp"
-                    loading="eager"
-                    alt=""
-                    className="img is--absolute"
-                  />
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head">Sculpture & Paintings</h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        // tag="span"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="list-item three">
-                  <p className="paragraph list">Black &amp; White</p>
-                  <p className="paragraph italic list">(3)</p>
-                  <img
-                    src="https://artworks.joe8lee.com/images/img_157.webp"
-                    loading="eager"
-                    alt=""
-                    className="img is--absolute"
-                  />
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head">Black & White</h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        // tag="span"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="list-item four">
-                  <p className="paragraph list">Installation Art</p>
-                  <p className="paragraph italic list">(4)</p>
-                  <img
-                    src="https://artworks.joe8lee.com/images/img_200.webp"
-                    loading="eager"
-                    alt=""
-                    className="img is--absolute"
-                  />
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head">Installation Art</h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        // tag="span"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2076,288 +2200,6 @@ const Artist = () => {
           </div>
         </div>
       </section>
-      {/* <section className="section three">
-        <div className="content grid artists">
-          <div className="h2-wrapper">
-            <div className="h-wrapper align-top">
-              <h1 className="artistsheading">artists</h1>
-              <h1 className="h2 star">*</h1>
-              <div className="border-bottom" />
-            </div>
-            <div className="description-wrapper">
-              <div className="description-item is--hidden-in-mobile">
-                <p className="description italic">contemporary</p>
-              </div>
-              <div className="description-item">
-                <p className="description italic">conceptual</p>
-              </div>
-              <div className="description-item">
-                <p className="description italic">performance</p>
-              </div>
-              <div className="description-item last">
-                <p className="description italic cbp">(2023)</p>
-              </div>
-            </div>
-          </div>
-          <div id="aboutsection">
-            <div id="aboutimages">
-              <div id="aboutimagesw-node-1" className="grid-img wrapper">
-                <img
-                  src="https://artworks.joe8lee.com/images/img_09.webp"
-                  loading="lazy"
-                  alt=""
-                  className="grid-cell-img gsap"
-                />
-              </div>
-              <div
-                id="w-node-dcef4b0a-0b81-f79b-7540-6e77ee6ccca1-c7f4dd6b"
-                className="grid-img wrapper"
-              >
-                <img
-                  src="https://artworks.joe8lee.com/images/img_156.webp"
-                  loading="lazy"
-                  alt=""
-                  className="grid-cell-img gsap"
-                />
-              </div>
-              <div
-                id="w-node-_2aa2d919-6be5-9a10-06b9-0433c83f6446-c7f4dd6b"
-                className="grid-img wrapper is--visible-in-mobile visible-in-tablet"
-              >
-                <img
-                  src="https://artworks.joe8lee.com/images/photo_03.jpg"
-                  loading="lazy"
-                  alt=""
-                  className="grid-cell-img gsap"
-                />
-              </div>
-            </div>
-            <div className="about-a-section">
-              <div className="text-inner-container bottom_margin">
-                <h4 className="gallerypera">
-                  The gallery is build upon tremendous works of art. As you
-                  explore, you’ll gain a much deeper understanding of the
-                  history behind some of the most iconic and acknowledged art
-                  pieces
-                </h4>
-              </div>
-              <div className="g-item-list">
-                <div className="list-item one">
-                  <p className="paragraph list">Photography</p>
-                  <p className="paragraph italic list">(1)</p>
-                  <img
-                    src="https://artworks.joe8lee.com/images/img_15.webp"
-                    loading="eager"
-                    alt=""
-                    className="img is--absolute"
-                  />
-                </div>
-                <div className="list-item two">
-                  <p className="paragraph list">Sculpture &amp; Paintings</p>
-                  <p className="paragraph italic list">(2)</p>
-                  <img
-                    src="https://artworks.joe8lee.com/images/img_75.webp"
-                    loading="eager"
-                    alt=""
-                    className="img is--absolute"
-                  />
-                </div>
-                <div className="list-item three">
-                  <p className="paragraph list">Black &amp; White</p>
-                  <p className="paragraph italic list">(3)</p>
-                  <img
-                    src="https://artworks.joe8lee.com/images/img_157.webp"
-                    loading="eager"
-                    alt=""
-                    className="img is--absolute"
-                  />
-                </div>
-                <div className="list-item four">
-                  <p className="paragraph list">Installation Art</p>
-                  <p className="paragraph italic list">(4)</p>
-                  <img
-                    src="https://artworks.joe8lee.com/images/img_200.webp"
-                    loading="eager"
-                    alt=""
-                    className="img is--absolute"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="sectionlink">
-        <div className="content2 grid artist-links">
-          <div
-            id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896bab3-c7f4dd6b"
-            className="grid-img wrapper"
-          >
-            <img
-              src="https://artworks.joe8lee.com/images/photo_02.jpg"
-              loading="lazy"
-              alt=""
-              className="grid-cell-img gsap"
-            />
-          </div>
-          <div
-            id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896bab5-c7f4dd6b"
-            className="grid-img wrapper"
-          >
-            <img
-              src="https://artworks.joe8lee.com/images/photo_05.jpg"
-              loading="lazy"
-              alt=""
-              className="grid-cell-img gsap"
-            />
-          </div>
-          <div
-            id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896bab7-c7f4dd6b"
-            className="grid-img wrapper"
-          >
-            <img
-              src="https://artworks.joe8lee.com/images/photo_03.jpg"
-              loading="lazy"
-              alt=""
-              className="grid-cell-img gsap"
-            />
-          </div>
-          <div
-            id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896bab9-c7f4dd6b"
-            className="grid-img wrapper"
-          >
-            <img
-              src="https://artworks.joe8lee.com/images/photo_01.jpg"
-              loading="lazy"
-              alt=""
-              className="grid-cell-img gsap"
-            />
-          </div>
-          <div
-            id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896babb-c7f4dd6b"
-            className="grid-cell"
-          >
-            <div className="artist-links">
-              <p className="description italic">Hiroji Kubota</p>
-              <p className="description italic">Yutaka Sone</p>
-              <p className="description italic">Izumi Kato</p>
-              <p className="description italic">Yuichi Hibi</p>
-              <p className="description italic">Ken Domon</p>
-              <p className="description italic">Eikoh Hosoe</p>
-              <p className="description italic">Chiharu Shiota</p>
-              <p className="description italic">Chim↑Pom</p>
-              <p className="description italic">Ishiuchi Miyako</p>
-            </div>
-          </div>
-          <div
-            id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896bad0-c7f4dd6b"
-            className="grid-cell"
-          >
-            <div className="artist-links align-right">
-              <a href="#" className="link w-inline-block">
-                <div className="link_text-container">
-                  <p className="description italic">link</p>
-                </div>
-                <img
-                  src="https://artworks.joe8lee.com/images/arrow.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <link rel="prefetch" href="#" />
-              <a href="#" className="link w-inline-block">
-                <div className="link_text-container">
-                  <p className="description italic">link</p>
-                </div>
-                <img
-                  src="https://artworks.joe8lee.com/images/arrow.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <link rel="prefetch" href="#" />
-              <a href="#" className="link w-inline-block">
-                <div className="link_text-container">
-                  <p className="description italic">link</p>
-                </div>
-                <img
-                  src="https://artworks.joe8lee.com/images/arrow.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <link rel="prefetch" href="#" />
-              <a href="#" className="link w-inline-block">
-                <div className="link_text-container">
-                  <p className="description italic">link</p>
-                </div>
-                <img
-                  src="https://artworks.joe8lee.com/images/arrow.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <link rel="prefetch" href="#" />
-              <a href="#" className="link w-inline-block">
-                <div className="link_text-container">
-                  <p className="description italic">link</p>
-                </div>
-                <img
-                  src="https://artworks.joe8lee.com/images/arrow.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <link rel="prefetch" href="#" />
-              <a href="#" className="link w-inline-block">
-                <div className="link_text-container">
-                  <p className="description italic">link</p>
-                </div>
-                <img
-                  src="https://artworks.joe8lee.com/images/arrow.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <link rel="prefetch" href="#" />
-              <a href="#" className="link w-inline-block">
-                <div className="link_text-container">
-                  <p className="description italic">link</p>
-                </div>
-                <img
-                  src="https://artworks.joe8lee.com/images/arrow.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <link rel="prefetch" href="#" />
-              <a href="#" className="link w-inline-block">
-                <div className="link_text-container">
-                  <p className="description italic">link</p>
-                </div>
-                <img
-                  src="https://artworks.joe8lee.com/images/arrow.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <link rel="prefetch" href="#" />
-              <a href="#" className="link w-inline-block">
-                <div className="link_text-container">
-                  <p className="description italic">link</p>
-                </div>
-                <img
-                  src="https://artworks.joe8lee.com/images/arrow.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <link rel="prefetch" href="#" />
-            </div>
-          </div>
-        </div>
-      </section> */}
     </>
   );
 };

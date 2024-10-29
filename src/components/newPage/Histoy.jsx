@@ -16,11 +16,45 @@ const Histoy = () => {
 
     loadContent();
   }, []);
+  // useEffect(() => {
+  //   // function gsapImgAnimation() {
+  //   let imgStag = 0.3;
+  //   let imgDur = 1.2;
 
+  //   //grid-img scale animation
+  //   //gsap.registerPlugin(ScrollTrigger);
+
+  //   //gsap.defaults({ ease: "power1.inOut" });
+  //   const targets = gsap.utils.toArray(".grid-cell-img.gsap");
+  //   if (targets.length === 0) return; // Exit if no targets found
+
+  //   ScrollTrigger.batch(".grid-cell-img.gsap", {
+  //     start: "top 90%",
+  //     end: "center 110%",
+  //     preventOverlaps: true,
+  //     fastScrollEnd: true,
+  //     // markers: true,
+  //     onEnter: (batch) =>
+  //       gsap.to(batch, {
+  //         scale: 1,
+  //         stagger: { each: imgStag },
+  //         duration: imgDur,
+  //       }),
+  //     onLeaveBack: (batch) =>
+  //       gsap.to(batch, {
+  //         scale: 1.3,
+  //         stagger: { each: imgStag },
+  //         duration: imgDur,
+  //       }),
+  //     scrub: true,
+  //     // markers: true
+  //   });
+  //   // }
+  // }, []);
   useEffect(() => {
     if (!isLoaded) return; // Wait for content to load
 
-    const targets = gsap.utils.toArray(".gsap");
+    const targets = gsap.utils.toArray(".grid-cell-img.gsap");
 
     if (targets.length === 0) return; // Exit if no targets found
 

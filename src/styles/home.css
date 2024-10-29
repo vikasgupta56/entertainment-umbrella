@@ -562,7 +562,7 @@ img {
 .sfimpact {
   position: relative;
   padding-top: 30vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 @media screen and (max-width: 840px) {

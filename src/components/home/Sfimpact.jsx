@@ -25,10 +25,7 @@ const Sfimpact = () => {
     // resizeTicker();
     window.addEventListener("resize", resizeTicker);
     tickerSpeed = initialTickerSpeed;
-    // window.addEventListener("scroll", (e) => {
-    //   tickerSpeed = initialTickerSpeed + e * 2;
-    //     console.log(e);
-    // });
+
     for (let i = 0; i < tickerTapeArr.length; i++) {
       let tickerBlock = tickerTapeArr[i].children[0];
       //See how many spans are needed to fill the tape. Add 1
@@ -128,8 +125,6 @@ const Sfimpact = () => {
       <div className="sfimpact__banner">
         <div
           className="sfimpact__banner--img mobilePrallax"
-          data-scroll=""
-          data-scroll-speed={-2}
           data-scroll-direction="vertical"
         >
           <img
