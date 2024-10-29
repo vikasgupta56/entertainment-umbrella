@@ -1,7 +1,7 @@
 import gsap from "gsap";
-import ScrollSmoother from "gsap/dist/ScrollSmoother";
+// import ScrollSmoother from "gsap/dist/ScrollSmoother";
 import React, { useEffect } from "react";
-gsap.registerPlugin(ScrollSmoother);
+// gsap.registerPlugin(ScrollSmoother);
 const Footer = () => {
   useEffect(() => {
     let footer = document.getElementsByClassName("footer")[0];
