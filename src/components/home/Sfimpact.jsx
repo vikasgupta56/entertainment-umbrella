@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const Sfimpact = () => {
   useEffect(() => {
+    const tickerTapeArr = document.querySelectorAll(".ticker__row");
     let tickerSpeed;
     let tickerInterval;
     const initialTickerSpeed = 4;
@@ -20,7 +21,7 @@ const Sfimpact = () => {
     }
     resizeTicker();
     // function initTickerTape() {
-    window.tickerTapeArr = document.getElementsByClassName("ticker__row");
+    // window.tickerTapeArr = document.getElementsByClassName("ticker__row");
     // resizeTicker();
     window.addEventListener("resize", resizeTicker);
     tickerSpeed = initialTickerSpeed;

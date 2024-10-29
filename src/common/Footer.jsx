@@ -47,7 +47,7 @@ const Footer = () => {
                 <ul />
               </div>
               <form
-                action="/collective/#wpcf7-f197-o1"
+                action="/"
                 method="post"
                 className="wpcf7-form init footer__top--left--form form"
                 noValidate="novalidate"
