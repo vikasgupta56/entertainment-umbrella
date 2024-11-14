@@ -33,7 +33,7 @@ const ClipCntr = () => {
       }
     };
 
-    animate();
+    // animate();
 
     const handleResize = () => {
       // You may want to clear previous animations here if necessary

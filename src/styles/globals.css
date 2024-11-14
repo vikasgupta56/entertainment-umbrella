@@ -26,6 +26,8 @@
   --app-height: 100%;
   --trasX: 0;
   --trasY: 0;
+  --animated-link-width: 100%;
+  --animated-link-opacity: 1;
 }
 button {
   background: transparent;

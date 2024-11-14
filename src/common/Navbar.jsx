@@ -329,11 +329,7 @@ const Navbar = () => {
         <ul className="navbar--menu fhl">
           <li className="navbar--menu--item">
             <Link href={"/"} className="nav_link">
-              <span
-                className="btn-text link"
-                data-title="halo media"
-                style={{ color: isHome2 ? "black" : "white" }}
-              >
+              <span className="btn-text link" data-title="halo media">
                 Home
               </span>
               <span className="nav_text">
@@ -343,11 +339,7 @@ const Navbar = () => {
           </li>
           <li className="navbar--menu--item">
             <Link href={"/newPage"} className="nav_link">
-              <span
-                className="btn-text link"
-                data-title="savoir flair"
-                style={{ color: isHome2 ? "black" : "white" }}
-              >
+              <span className="btn-text link" data-title="savoir flair">
                 Home2
               </span>
               <span className="nav_text">
@@ -357,11 +349,7 @@ const Navbar = () => {
           </li>
           <li className="navbar--menu--item">
             <a href="" className="nav_link">
-              <span
-                className="btn-text link"
-                data-title="halo studio"
-                style={{ color: isHome2 ? "black" : "white" }}
-              >
+              <span className="btn-text link" data-title="halo studio">
                 Home3
               </span>
               <span className="nav_text">
@@ -385,7 +373,7 @@ const Navbar = () => {
       </div>
       <div className="mobilenavbar">
         <div className="mobilenavbar__logo">
-          <h5 style={{ color: isHome2 ? "black" : "white" }}>
+          <h5>
             <a href="">
               Entertainment <br />
               Umbrella
@@ -393,7 +381,7 @@ const Navbar = () => {
           </h5>
         </div>
         <button className="mobilenavbar__togglebtn">
-          <span style={{ color: isHome2 ? "black" : "white" }}>menu</span>
+          <span>menu</span>
         </button>
         <div className="mobilenavbar__content">
           <button className="mobilenavbar__content--close">Close</button>
