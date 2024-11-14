@@ -69,7 +69,7 @@
   text-align: center;
   /* letter-spacing: 0.02em; */
   overflow-wrap: break-word;
-  font-size: 18vw;
+  font-size: 16vw;
   line-height: 0.8;
   overflow: visible;
 }
@@ -730,8 +730,7 @@
 
 a,
 button {
-  cursor: url(https://absolut-nft.com/static/cursor-pointer.fb0c5b8c.svg),
-    pointer;
+  cursor: pointer;
 }
 .flex-shrink-0 {
   flex-shrink: 0;

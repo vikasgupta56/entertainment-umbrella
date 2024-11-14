@@ -1,21 +1,24 @@
-import { ReactLenis } from "@studio-freight/react-lenis";
+import React, { useEffect } from "react";
 
-function SmoothScrolling({ children }) {
-  return (
-    <ReactLenis
-      root
-      options={{
-        lerp: 0.1,
-        // duration: 1.5,
-        smoothTouch: true,
-        smoothWheel: true,
+const SmoothScrolling = ({ children }) => {
+  useEffect(() => {
+    let scroll;
+    import("locomotive-scroll").then((locomotiveModule) => {
+      scroll = new locomotiveModule.default({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: 2,
+        smoothMobile: false,
+        resetNativeScroll: true,
+      });
+    });
 
-        // syncTouchLerp: 5,
-      }}
-    >
-      {children}
-    </ReactLenis>
-  );
-}
+    // `useEffect`'s cleanup phase
+    return () => {
+      if (scroll) scroll.destroy();
+    };
+  }, []);
+
+  return <div>{children}</div>;
+};
 
 export default SmoothScrolling;

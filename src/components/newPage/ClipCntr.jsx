@@ -1,20 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Histoy from "./Histoy";
 import Artist from "./Artist";
 gsap.registerPlugin(ScrollTrigger);
 const ClipCntr = () => {
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+  const [isBrowser, setIsBrowser] = useState(false);
+
+  useLayoutEffect(() => {
+    // This ensures ScrollTrigger runs after DOM is fully loaded (client-side)
+    setIsBrowser(true);
+  }, []);
+
   useEffect(() => {
+    if (!isBrowser) return; // Skip if not in browser (e.g., SSR)
+
     const animate = () => {
       if (window.innerWidth >= 1024) {
+        // GSAP timeline setup
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: ".clip-container",
             start: "-0.1% top",
             end: "bottom bottom",
             scrub: true,
-            // markers: true,
+            // markers: true, // Uncomment for debugging
           },
         });
 
@@ -33,19 +44,29 @@ const ClipCntr = () => {
       }
     };
 
-    // animate();
+    animate();
 
+    // Resize handling
     const handleResize = () => {
-      // You may want to clear previous animations here if necessary
-      animate();
+      const newIsLargeScreen = window.innerWidth >= 1024;
+      if (newIsLargeScreen !== isLargeScreen) {
+        setIsLargeScreen(newIsLargeScreen);
+      }
     };
 
     window.addEventListener("resize", handleResize);
 
+    // Ensure ScrollTrigger recalculates on resize
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+    });
+
+    // Clean up event listeners
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("load", () => ScrollTrigger.refresh());
     };
-  }, []);
+  }, [isBrowser, isLargeScreen]);
 
   return (
     <div className="clip-container">
@@ -60,18 +81,19 @@ const ClipCntr = () => {
             >
               <h1 className="h1 hero left">
                 <span className="animeword">
-                  <span className="letter">a</span>
                   <span className="letter">r</span>
-                  <span className="letter">t</span>
-                  <span className="letter">w</span>
+                  <span className="letter">a</span>
+                  <span className="letter">g</span>
+                  <span className="letter">e</span>
                 </span>
               </h1>
               <h1 className="h1 hero right">
                 <span className="animeword">
-                  <span className="letter">o</span>
-                  <span className="letter">r</span>
-                  <span className="letter">k</span>
-                  <span className="letter">s</span>
+                  <span className="letter">m</span>
+                  <span className="letter">e</span>
+                  <span className="letter">d</span>
+                  <span className="letter">i</span>
+                  <span className="letter">a</span>
                 </span>
               </h1>
             </a>

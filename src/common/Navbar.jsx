@@ -5,132 +5,230 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 gsap.registerPlugin(CustomEase);
 const Navbar = () => {
+  const initIntroAnim = () => {
+    if (document.querySelectorAll(".heroBanner").length > 0) {
+      const body = document.querySelector("body");
+      const logo = document.querySelector(".haloLogo__img");
+      const hero = document.querySelector(".heroBanner");
+      const herocon = document.querySelector(".heroBanner__container");
+      const heroTextOne = document.querySelector(".h-text-1");
+      const heroTextTwo = document.querySelector(".h-text-2");
+      const heroImgOne = document.querySelector(".h-img-1");
+      const heroImgTwo = document.querySelector(".h-img-2");
+      const semiheading1 = document.querySelector(".semiheading1");
+      const semiheading2 = document.querySelector(".semiheading2");
+
+      body.classList.add("is-loaded");
+      hero.classList.add("loaded");
+
+      const introTl = gsap.timeline();
+
+      CustomEase.create("easeTitle", ".075, .82, .165, 1");
+
+      if (document.querySelectorAll(".homehero").length > 0) {
+        introTl.to(".heroBanner__container", {
+          opacity: 1,
+          duration: 2,
+          ease: "Power3.none",
+        });
+        introTl.to(
+          heroTextOne,
+          {
+            y: 0,
+            duration: 1.2,
+            ease: "Expo.easeOut",
+          },
+          ">-2"
+        );
+        introTl.to(
+          heroTextTwo,
+          {
+            y: 0,
+            duration: 1.2,
+            ease: "Expo.easeOut",
+          },
+          ">-.8"
+        );
+        introTl.to(
+          logo,
+          {
+            y: 0,
+            duration: 1.5,
+            ease: "Power3.easeInOut",
+          },
+          ">-1.7"
+        );
+        introTl.to(
+          heroImgTwo,
+          {
+            scale: 1.1,
+            duration: 2.8,
+            ease: "Power3.easeInOut",
+          },
+          ">-1.8"
+        );
+        introTl.to(
+          heroImgOne,
+          {
+            scale: 1.1,
+            duration: 2.8,
+            ease: "Power3.easeInOut",
+          },
+          ">-2.9"
+        );
+        introTl.to(
+          semiheading1,
+          {
+            y: 0,
+            duration: 0.55,
+            ease: "easeTitle",
+          },
+          ">-1.2"
+        );
+        introTl.to(
+          semiheading2,
+          {
+            y: 0,
+            duration: 0.55,
+            ease: "easeTitle",
+          },
+          ">-.46"
+        );
+      } else {
+        introTl.to(".heroBanner__container", {
+          opacity: 1,
+          duration: 2,
+          ease: "Power3.none",
+        });
+      }
+    }
+  };
   useEffect(() => {
     //** Navugation handler **/
-    function navHandler() {
-      if (window.innerWidth > 768) {
-        const navbar = document.querySelector(".navbar");
+    // function navHandler() {
+    //   if (window.innerWidth > 768) {
+    //     const navbar = document.querySelector(".navbar");
 
-        const navItems = document.querySelectorAll(
-          ".nav_link:not(.brandsInfo__textBlock--btn)"
-        );
+    //     const navItems = document.querySelectorAll(
+    //       ".nav_link:not(.brandsInfo__textBlock--btn)"
+    //     );
 
-        const navText = document.querySelectorAll(".nav_text");
+    //     const navText = document.querySelectorAll(".nav_text");
 
-        var timeout;
-        const navtl = gsap.timeline();
+    //     var timeout;
+    //     const navtl = gsap.timeline();
 
-        CustomEase.create("easeNavbar", ".075, .82, .165, 1");
+    //     CustomEase.create("easeNavbar", ".075, .82, .165, 1");
 
-        navItems.forEach((btn, index) => {
-          btn.addEventListener("mouseenter", () => {
-            if (timeout != null) {
-              clearTimeout(timeout);
-            }
+    //     navItems.forEach((btn, index) => {
+    //       btn.addEventListener("mouseenter", () => {
+    //         if (timeout != null) {
+    //           clearTimeout(timeout);
+    //         }
 
-            timeout = setTimeout(() => {
-              // Use navbar directly instead of getElementsByClassName
-              if (
-                !navbar.classList.contains("anim_going") &&
-                !navbar.classList.contains("refresh")
-              ) {
-                navbar.classList.add("hover_in");
+    //         timeout = setTimeout(() => {
+    //           // Use navbar directly instead of getElementsByClassName
+    //           if (
+    //             !navbar.classList.contains("anim_going") &&
+    //             !navbar.classList.contains("refresh")
+    //           ) {
+    //             navbar.classList.add("hover_in");
 
-                navtl.to(".heroBanner__container", {
-                  y: 90,
-                  scaleX: 0.97,
-                  borderRadius: "+20px",
-                  duration: 1.2,
-                  ease: "Expo.easeInOut",
-                });
+    //             navtl.to(".heroBanner__container", {
+    //               y: 90,
+    //               scaleX: 0.97,
+    //               borderRadius: "+20px",
+    //               duration: 1.2,
+    //               ease: "Expo.easeInOut",
+    //             });
 
-                if (!navbar.classList.contains("refresh")) {
-                  navtl.to(
-                    navText[index],
-                    {
-                      y: 0,
-                      autoAlpha: 1,
-                      duration: 0.5,
-                      ease: "Expo.easeInOut",
-                    },
-                    ">-.6"
-                  );
-                }
+    //             if (!navbar.classList.contains("refresh")) {
+    //               navtl.to(
+    //                 navText[index],
+    //                 {
+    //                   y: 0,
+    //                   autoAlpha: 1,
+    //                   duration: 0.5,
+    //                   ease: "Expo.easeInOut",
+    //                 },
+    //                 ">-.6"
+    //               );
+    //             }
 
-                setTimeout(() => {
-                  navbar.classList.add("anim_going");
-                }, 300);
-              } else {
-                navtl.to(navText[index], {
-                  y: 0,
-                  autoAlpha: 1,
-                  duration: 0.5,
-                  ease: "Expo.easeInOut",
-                });
-              }
+    //             setTimeout(() => {
+    //               navbar.classList.add("anim_going");
+    //             }, 300);
+    //           } else {
+    //             navtl.to(navText[index], {
+    //               y: 0,
+    //               autoAlpha: 1,
+    //               duration: 0.5,
+    //               ease: "Expo.easeInOut",
+    //             });
+    //           }
 
-              if (!navbar.classList.contains("refresh")) {
-                btn.classList.add("active");
-              }
-            }, 300);
-          });
+    //           if (!navbar.classList.contains("refresh")) {
+    //             btn.classList.add("active");
+    //           }
+    //         }, 300);
+    //       });
 
-          btn.addEventListener("mouseleave", function () {
-            if (timeout != null) {
-              clearTimeout(timeout);
+    //       btn.addEventListener("mouseleave", function () {
+    //         if (timeout != null) {
+    //           clearTimeout(timeout);
 
-              timeout = null;
-            }
-            // herocon.classList.remove('nav_open')
-            btn.classList.remove("active");
-            navtl.to(navText[index], {
-              y: 10,
-              autoAlpha: 0,
-              duration: 0.5,
-              ease: "Expo.easeInOut",
-            });
+    //           timeout = null;
+    //         }
+    //         // herocon.classList.remove('nav_open')
+    //         btn.classList.remove("active");
+    //         navtl.to(navText[index], {
+    //           y: 10,
+    //           autoAlpha: 0,
+    //           duration: 0.5,
+    //           ease: "Expo.easeInOut",
+    //         });
 
-            // navText[index].classList.remove('show')
-          });
-          btn.addEventListener("click", function () {
-            navbar.classList.add("refresh");
-            btn.classList.remove("active");
-            navbar.classList.remove("hover_in");
+    //         // navText[index].classList.remove('show')
+    //       });
+    //       btn.addEventListener("click", function () {
+    //         navbar.classList.add("refresh");
+    //         btn.classList.remove("active");
+    //         navbar.classList.remove("hover_in");
 
-            navtl.to(navText[index], {
-              y: 10,
-              autoAlpha: 0,
-              duration: 0.3,
-            });
-          });
-        });
-        navbar.addEventListener("mouseleave", function () {
-          navbar.classList.remove("anim_going");
-          navbar.classList.remove("hover_in");
-          navtl.to(".heroBanner__container", {
-            y: 0,
-            scale: 1,
-            borderRadius: "0",
-            duration: 1.2,
-            ease: "Expo.easeInOut",
-          });
-        });
-        // lenis.on("scroll", (args) => {
-        // Ensure args.delta.y exists
-        // if (args.delta && args.delta.y > 50) {
-        //     gsap.to(".navbar", {
-        //       autoAlpha: 0,
-        //       duration: 0.3, // Optional: add a duration for smoothness
-        //     });
-        //   } else {
-        // gsap.to(".navbar", {
-        //   autoAlpha: 1,
-        //   duration: 0.3, // Optional: add a duration for smoothness
-        // });
-      }
+    //         navtl.to(navText[index], {
+    //           y: 10,
+    //           autoAlpha: 0,
+    //           duration: 0.3,
+    //         });
+    //       });
+    //     });
+    //     navbar.addEventListener("mouseleave", function () {
+    //       navbar.classList.remove("anim_going");
+    //       navbar.classList.remove("hover_in");
+    //       navtl.to(".heroBanner__container", {
+    //         y: 0,
+    //         scale: 1,
+    //         borderRadius: "0",
+    //         duration: 1.2,
+    //         ease: "Expo.easeInOut",
+    //       });
+    //     });
+    //     // lenis.on("scroll", (args) => {
+    //     // Ensure args.delta.y exists
+    //     // if (args.delta && args.delta.y > 50) {
+    //     //     gsap.to(".navbar", {
+    //     //       autoAlpha: 0,
+    //     //       duration: 0.3, // Optional: add a duration for smoothness
+    //     //     });
+    //     //   } else {
+    //     // gsap.to(".navbar", {
+    //     //   autoAlpha: 1,
+    //     //   duration: 0.3, // Optional: add a duration for smoothness
+    //     // });
+    //   }
 
-      // });
-    }
+    //   // });
+    // }
 
     //** Mobile Navugation handler **/
     function mobileNavHandler() {
@@ -218,144 +316,47 @@ const Navbar = () => {
       }
     }
     //**  Intro animations **/
-    function initIntroAnim() {
-      if (document.querySelectorAll(".heroBanner").length > 0) {
-        const body = document.querySelector("body");
-        const logo = document.querySelector(".haloLogo__img");
-        const hero = document.querySelector(".heroBanner");
-        const herocon = document.querySelector(".heroBanner__container");
-        const heroTextOne = document.querySelector(".h-text-1");
-        const heroTextTwo = document.querySelector(".h-text-2");
-        const heroImgOne = document.querySelector(".h-img-1");
-        const heroImgTwo = document.querySelector(".h-img-2");
-        const semiheading1 = document.querySelector(".semiheading1");
-        const semiheading2 = document.querySelector(".semiheading2");
-
-        body.classList.add("is-loaded");
-        hero.classList.add("loaded");
-
-        const introTl = gsap.timeline();
-
-        CustomEase.create("easeTitle", ".075, .82, .165, 1");
-
-        if (document.querySelectorAll(".homehero").length > 0) {
-          introTl.to(".heroBanner__container", {
-            opacity: 1,
-            duration: 2,
-            ease: "Power3.none",
-          });
-          introTl.to(
-            heroTextOne,
-            {
-              y: 0,
-              duration: 1.2,
-              ease: "Expo.easeOut",
-            },
-            ">-2"
-          );
-          introTl.to(
-            heroTextTwo,
-            {
-              y: 0,
-              duration: 1.2,
-              ease: "Expo.easeOut",
-            },
-            ">-.8"
-          );
-          introTl.to(
-            logo,
-            {
-              y: 0,
-              duration: 1.5,
-              ease: "Power3.easeInOut",
-            },
-            ">-1.7"
-          );
-          introTl.to(
-            heroImgTwo,
-            {
-              scale: 1.1,
-              duration: 2.8,
-              ease: "Power3.easeInOut",
-            },
-            ">-1.8"
-          );
-          introTl.to(
-            heroImgOne,
-            {
-              scale: 1.1,
-              duration: 2.8,
-              ease: "Power3.easeInOut",
-            },
-            ">-2.9"
-          );
-          introTl.to(
-            semiheading1,
-            {
-              y: 0,
-              duration: 0.55,
-              ease: "easeTitle",
-            },
-            ">-1.2"
-          );
-          introTl.to(
-            semiheading2,
-            {
-              y: 0,
-              duration: 0.55,
-              ease: "easeTitle",
-            },
-            ">-.46"
-          );
-        } else {
-          introTl.to(".heroBanner__container", {
-            opacity: 1,
-            duration: 2,
-            ease: "Power3.none",
-          });
-        }
-      }
-    }
-    initIntroAnim();
+    window.addEventListener("load", initIntroAnim);
+    // initIntroAnim();
     mobileNavHandler();
     updateActiveMenu();
     introNav();
   }, []);
-  const router = useRouter();
-  const isHome2 = router.pathname === "/newPage";
+  // const router = useRouter();
+  // const isHome2 = router.pathname === "/newPage";
   return (
     <>
       <div className="navbar">
         <ul className="navbar--menu fhl">
           <li className="navbar--menu--item">
-            <Link href={"/"} className="nav_link">
+            <a href="/" className="nav_link">
               <span className="btn-text link" data-title="halo media">
-                Home
+                Mr. & Mrs
               </span>
-              <span className="nav_text">
+              {/* <span className="nav_text">
                 The Middle East’s Premier Digital Media Company
-              </span>
-            </Link>
+              </span> */}
+            </a>
           </li>
           <li className="navbar--menu--item">
-            <Link href={"/newPage"} className="nav_link">
+            <a href={"/newPage"} className="nav_link">
               <span className="btn-text link" data-title="savoir flair">
-                Home2
+                ⁠Rage Media
               </span>
-              <span className="nav_text">
+              {/* <span className="nav_text">
                 The Middle East’s First Online Magazine
-              </span>
-            </Link>
+              </span> */}
+            </a>
           </li>
           <li className="navbar--menu--item">
             <a href="" className="nav_link">
               <span className="btn-text link" data-title="halo studio">
-                Home3
+                Dhamaka
               </span>
-              <span className="nav_text">
+              {/* <span className="nav_text">
                 {" "}
                 Next-Gen White-Label Production{" "}
-              </span>
+              </span> */}
             </a>
           </li>
           {/* <li className="navbar--menu--item">
@@ -392,7 +393,7 @@ const Navbar = () => {
                 className="nav_link o_italic"
                 data-title="halo media"
               >
-                Home
+                Mr. & Mrs
               </Link>
             </li>
             <li className="mobilenavbar__content--menu--item">
@@ -401,7 +402,7 @@ const Navbar = () => {
                 className="nav_link o_italic"
                 data-title="savoir flair"
               >
-                Home2
+                ⁠Rage Media
               </Link>
             </li>
             <li className="mobilenavbar__content--menu--item">
@@ -410,10 +411,10 @@ const Navbar = () => {
                 className="nav_link o_italic"
                 data-title="halo studio"
               >
-                Home3
+                Dhamaka
               </Link>
             </li>
-            <li className="mobilenavbar__content--menu--item">
+            {/* <li className="mobilenavbar__content--menu--item">
               <a
                 href=""
                 className="nav_link o_italic"
@@ -421,7 +422,7 @@ const Navbar = () => {
               >
                 halo collective
               </a>
-            </li>
+            </li> */}
           </ul>
           <div className="mobilenavbar__content--footer">
             <div className="mobilenavbar__content--footer--col">
