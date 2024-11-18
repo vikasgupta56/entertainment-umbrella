@@ -1,8 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitText from "gsap/dist/SplitText";
 import React, { useEffect } from "react";
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const Dhamaka_Hero = () => {
   useEffect(() => {
     const vfSec = document.querySelectorAll(".vf-section");
@@ -21,6 +22,86 @@ const Dhamaka_Hero = () => {
         ease: "none",
       });
     });
+    // var e = function () {
+    const To = new SplitText(".js-t", {
+      type: "lines, words, chars",
+      linesClass: "ln-t",
+      charsClass: "ch-t",
+    });
+    const Co = new SplitText(
+      document.querySelector(".js-c", {
+        type: "lines",
+      })
+    );
+    gsap.set(To.chars, { y: "115%" });
+    gsap.set(Co.lines, { opacity: 0, y: 40 });
+
+    const Po = document.querySelectorAll(".vsl-wrapper .vsl-item");
+    gsap.set(Po, { opacity: 0, y: 200 });
+
+    ScrollTrigger.create({
+      trigger: document.querySelector(".hero-section"),
+      start: "top 10",
+      end: "bottom 80%",
+      scrub: !0,
+      invalidateOnRefresh: !0,
+      //   markers: true,
+      onUpdate: function (t) {
+        //   var e = (1 - t.progress) * window.ldrLogo.totalFrames;
+        //   window.ldrLogo.goToAndStop(e, !0);
+      },
+    }),
+      gsap
+        .timeline({
+          onComplete: function () {
+            return Co.revert();
+          },
+        })
+        .to(To.chars, {
+          y: "4%",
+          duration: 1.24,
+          stagger: 0.01,
+          ease: "expo.out",
+          force3D: !0,
+        })
+        .to(
+          Co.lines,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.24,
+            stagger: 0.032,
+            ease: "expo.out",
+          },
+          0.4
+        )
+        .to(
+          Po,
+          {
+            opacity: 1,
+            y: 0,
+            ease: "expo.out",
+            duration: 2,
+            stagger: 0.16,
+          },
+          0
+        );
+    var e = gsap.timeline({
+      scrollTrigger: {
+        trigger: document.querySelector(".hero-section"),
+        start: "top top",
+        end: "bottom top",
+        scrub: !0,
+        fastScrollEnd: !0,
+        invalidateOnRefresh: !0,
+      },
+    });
+    Po.forEach(function (t, r) {
+      var i = 1 === r ? -48 : -32;
+      e.to(t, { ease: "none", yPercent: i }, 0);
+    });
+    // };
+    // e();
   }, []);
   useGSAP(() => {
     //vosection

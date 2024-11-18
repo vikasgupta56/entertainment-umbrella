@@ -29,6 +29,22 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
+
+.ln-t {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.ch-t {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+}
+
 .Dhamaka_hero-section .c-wrapper h1 {
   margin-bottom: clamp(2.5rem, 4.233vw, 8rem);
   letter-spacing: -0.02em;
@@ -40,6 +56,7 @@
   font-weight: 500;
   font-style: normal;
 }
+
 .Dhamaka_hero-section .c-wrapper p {
   font-size: clamp(1rem, 0.926vw, 0.926vw);
   line-height: 1.6;
@@ -49,20 +66,7 @@
   padding-left: clamp(1rem, 1.058vw, 1.058vw);
   padding-right: clamp(1rem, 1.058vw, 1.058vw);
 }
-@media (max-width: 48rem) {
-  .Dhamaka_hero-section .vsl-wrapper .vsl-item:nth-child(3) {
-    height: 30vw;
-    width: 25vw;
-    top: 7.937vw;
-    left: 0.75rem;
-  }
-  .Dhamaka_hero-section .c-wrapper p {
-    font-size: clamp(0.7rem, 0.926vw, 0.926vw);
-    padding-left: calc(3 * clamp(1rem, 1.058vw, 1.058vw));
-    padding-right: calc(3 * clamp(1rem, 1.058vw, 1.058vw));
-    margin-bottom: calc(0 * clamp(1rem, 1.058vw, 1.058vw));
-  }
-}
+
 .Dhamaka_hero-section .vsl-wrapper {
   position: absolute;
   height: 100%;
@@ -102,6 +106,20 @@
   width: 18.849vw;
   top: clamp(38.5rem, 50.524vw, 61.524vw);
   left: 9.259vw;
+}
+@media (max-width: 48rem) {
+  .Dhamaka_hero-section .vsl-wrapper .vsl-item:nth-child(3) {
+    height: 30vw;
+    width: 25vw;
+    top: 7.937vw;
+    left: 0.75rem;
+  }
+  .Dhamaka_hero-section .c-wrapper p {
+    font-size: clamp(0.7rem, 0.926vw, 0.926vw);
+    padding-left: calc(3 * clamp(1rem, 1.058vw, 1.058vw));
+    padding-right: calc(3 * clamp(1rem, 1.058vw, 1.058vw));
+    margin-bottom: calc(0 * clamp(1rem, 1.058vw, 1.058vw));
+  }
 }
 .vf-section {
   position: relative;
@@ -483,19 +501,11 @@
   width: 100%;
   bottom: 0;
   left: 0;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   background-color: var(--secondary-color);
-  -webkit-transform: scaleX(0);
-  -ms-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: right;
-  -ms-transform-origin: right;
-  transform-origin: right;
-  -webkit-transition: -webkit-transform 1.2s cubic-bezier(0.86, 0, 0.07, 1);
-  transition: -webkit-transform 1.2s cubic-bezier(0.86, 0, 0.07, 1);
-  transition: transform 1.2s cubic-bezier(0.86, 0, 0.07, 1);
-  transition: transform 1.2s cubic-bezier(0.86, 0, 0.07, 1),
-    -webkit-transform 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+  transform: scaleX(0); /* Start with the underline hidden */
+  transform-origin: left; /* Set the transform origin to the left */
+  transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .a-underline.is-rvrsd:after {
   -webkit-transform: scaleX(1);
@@ -504,6 +514,9 @@
   -webkit-transform-origin: left;
   -ms-transform-origin: left;
   transform-origin: left;
+}
+.a-underline.is-rvrsd:after:hover {
+  transform: scaleX(0); /* Scale it back to zero on hover */
 }
 .a-underline.is-ngtv:after {
   background-color: var(--primary-color);

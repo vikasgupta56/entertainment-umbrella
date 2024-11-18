@@ -388,31 +388,31 @@ const Navbar = () => {
           <button className="mobilenavbar__content--close">Close</button>
           <ul className="mobilenavbar__content--menu fhl">
             <li className="mobilenavbar__content--menu--item">
-              <Link
+              <a
                 href={"/"}
                 className="nav_link o_italic"
                 data-title="halo media"
               >
                 Mr. & Mrs
-              </Link>
+              </a>
             </li>
             <li className="mobilenavbar__content--menu--item">
-              <Link
+              <a
                 href={"/newPage"}
                 className="nav_link o_italic"
                 data-title="savoir flair"
               >
                 ⁠Rage Media
-              </Link>
+              </a>
             </li>
             <li className="mobilenavbar__content--menu--item">
-              <Link
+              <a
                 href="/dhamaka"
                 className="nav_link o_italic"
                 data-title="halo studio"
               >
                 Dhamaka
-              </Link>
+              </a>
             </li>
             {/* <li className="mobilenavbar__content--menu--item">
               <a
