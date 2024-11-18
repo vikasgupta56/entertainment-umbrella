@@ -17,6 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script> */}
         {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.min.js"></script> */}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.0/lottie.min.js"></script>
       </Head>
       {/* <Navbar /> */}
       <main>

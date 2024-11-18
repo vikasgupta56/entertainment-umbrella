@@ -169,6 +169,7 @@ const HomeHero = () => {
       updateTime(); // Initialize immediately
       setInterval(updateTime, 1000); // Update every second
     };
+
     if (
       (DESKTOP_BREAKPOINT.matches && handleDescriptorCycle(),
       handleTimeDisplay(),
@@ -417,7 +418,7 @@ const HomeHero = () => {
               className="sprite"
               loading="lazy"
               alt="A Letter"
-              src="/assets/images/pic/sprites/A-1.avif"
+              // src="/assets/images/pic/sprites/A-1.avif"
             />
           </div>
           <div className="sprite-container">

@@ -116,7 +116,7 @@ const Histoy = () => {
         {/* <div className="content grid sticky"> */}
         <div id="w-node-1" className="h2-wrapper">
           <div className="h-wrapper">
-            <h1 className="h2 cbh2">About</h1>
+            <h1 className="h-wrapper_h2 cbh2">About</h1>
           </div>
         </div>
         <div className="image_cntr image_1_cntr">

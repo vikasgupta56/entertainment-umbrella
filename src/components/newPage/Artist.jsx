@@ -117,7 +117,7 @@ const Artist = () => {
     // });
 
     //   new gsap code
-    var artisttex = document.querySelectorAll(".h2.a-name");
+    var artisttex = document.querySelectorAll(".h-wrapper_h2.a-name");
     var allLetters = [];
     artisttex.forEach((name) => {
       var clutter = "";
@@ -130,16 +130,32 @@ const Artist = () => {
       //   allLetters.push(...name.querySelectorAll(".letterspan"));
     });
     let showImg = document.querySelectorAll("#artistsection .artist-grid-img");
-    let textNum = document.querySelectorAll(".h2.a-name span");
-    let kubotaSpan = document.querySelectorAll(".h2.a-name.kubota span");
-    let yutakaSpan = document.querySelectorAll(".h2.a-name.yutaka span");
-    let izumiSpan = document.querySelectorAll(".h2.a-name.izumi span");
-    let yuichiSpan = document.querySelectorAll(".h2.a-name.yuichi span");
-    let kenSpan = document.querySelectorAll(".h2.a-name.ken span");
-    let eikohSpan = document.querySelectorAll(".h2.a-name.eikoh span");
-    let chiharuSpan = document.querySelectorAll(".h2.a-name.chiharu span");
-    let chimpomSpan = document.querySelectorAll(".h2.a-name.chimpom span");
-    let ishiuchiSpan = document.querySelectorAll(".h2.a-name.ishiuchi span");
+    let textNum = document.querySelectorAll(".h-wrapper_h2.a-name span");
+    let kubotaSpan = document.querySelectorAll(
+      ".h-wrapper_h2.a-name.kubota span"
+    );
+    let yutakaSpan = document.querySelectorAll(
+      ".h-wrapper_h2.a-name.yutaka span"
+    );
+    let izumiSpan = document.querySelectorAll(
+      ".h-wrapper_h2.a-name.izumi span"
+    );
+    let yuichiSpan = document.querySelectorAll(
+      ".h-wrapper_h2.a-name.yuichi span"
+    );
+    let kenSpan = document.querySelectorAll(".h-wrapper_h2.a-name.ken span");
+    let eikohSpan = document.querySelectorAll(
+      ".h-wrapper_h2.a-name.eikoh span"
+    );
+    let chiharuSpan = document.querySelectorAll(
+      ".h-wrapper_h2.a-name.chiharu span"
+    );
+    let chimpomSpan = document.querySelectorAll(
+      ".h-wrapper_h2.a-name.chimpom span"
+    );
+    let ishiuchiSpan = document.querySelectorAll(
+      ".h-wrapper_h2.a-name.ishiuchi span"
+    );
 
     if (window.matchMedia("(min-width: 1200px)").matches) {
       gsap.set(textNum, { opacity: 0, yPercent: 100 });
@@ -1640,8 +1656,8 @@ const Artist = () => {
               className="h-wrapper centered kubota w-inline-block"
               style={{ pointerEvents: "none" }}
             >
-              <h1 className="h2 a-name kubota">hiroji</h1>
-              <h1 className="h2 a-name kubota">
+              <h1 className="h-wrapper_h2 a-name kubota">hiroji</h1>
+              <h1 className="h-wrapper_h2 a-name kubota">
                 {/* <span className="art-letter">k</span> */}
                 {/* <span className="art-letter t-letter">t</span> */}
                 kubota
@@ -1655,11 +1671,11 @@ const Artist = () => {
               href="yutaka-sone"
               className="h-wrapper centered yutaka w-inline-block"
             >
-              <h1 className="h2 a-name yutaka">
+              <h1 className="h-wrapper_h2 a-name yutaka">
                 <span className="art-letter t-letter">T</span>
                 yutaka
               </h1>
-              <h1 className="h2 a-name yutaka">sone</h1>
+              <h1 className="h-wrapper_h2 a-name yutaka">sone</h1>
               <p className="paragraph view-artist_button red is--visible-in-mobile">
                 view artist
               </p>
@@ -1669,8 +1685,8 @@ const Artist = () => {
               href="izumi-kato"
               className="h-wrapper centered izumi w-inline-block"
             >
-              <h1 className="h2 a-name izumi">izumi</h1>
-              <h1 className="h2 a-name izumi">
+              <h1 className="h-wrapper_h2 a-name izumi">izumi</h1>
+              <h1 className="h-wrapper_h2 a-name izumi">
                 {/* <span className="art-letter a-letter">a</span> */}
                 kato
               </h1>
@@ -1683,8 +1699,8 @@ const Artist = () => {
               href="yuichi-hibi"
               className="h-wrapper centered yuichi w-inline-block"
             >
-              <h1 className="h2 a-name yuichi">yuichi</h1>
-              <h1 className="h2 a-name yuichi">hibi</h1>
+              <h1 className="h-wrapper_h2 a-name yuichi">yuichi</h1>
+              <h1 className="h-wrapper_h2 a-name yuichi">hibi</h1>
               <p className="paragraph view-artist_button red is--visible-in-mobile">
                 view artist
               </p>
@@ -1694,8 +1710,8 @@ const Artist = () => {
               href="ken-domon"
               className="h-wrapper centered ken w-inline-block"
             >
-              <h1 className="h2 a-name ken">ken</h1>
-              <h1 className="h2 a-name ken">domom</h1>
+              <h1 className="h-wrapper_h2 a-name ken">ken</h1>
+              <h1 className="h-wrapper_h2 a-name ken">domom</h1>
               <p className="paragraph view-artist_button red is--visible-in-mobile">
                 view artist
               </p>
@@ -1705,8 +1721,8 @@ const Artist = () => {
               href="eikoh-hosoe"
               className="h-wrapper centered eikoh w-inline-block"
             >
-              <h1 className="h2 a-name eikoh">eikoh</h1>
-              <h1 className="h2 a-name eikoh">hosoe</h1>
+              <h1 className="h-wrapper_h2 a-name eikoh">eikoh</h1>
+              <h1 className="h-wrapper_h2 a-name eikoh">hosoe</h1>
               <p className="paragraph view-artist_button red is--visible-in-mobile">
                 view artist
               </p>
@@ -1716,8 +1732,8 @@ const Artist = () => {
               href="chiharu-shiota"
               className="h-wrapper centered chiharu w-inline-block"
             >
-              <h1 className="h2 a-name pad-left chiharu">chiharu</h1>
-              <h1 className="h2 a-name chiharu">
+              <h1 className="h-wrapper_h2 a-name pad-left chiharu">chiharu</h1>
+              <h1 className="h-wrapper_h2 a-name chiharu">
                 shiota
                 {/* <span className="art-letter t-letter">t</span> */}
               </h1>
@@ -1730,7 +1746,7 @@ const Artist = () => {
               href="chim-pom"
               className="h-wrapper centered chimpom w-inline-block"
             >
-              <h1 className="h2 a-name chimpom">
+              <h1 className="h-wrapper_h2 a-name chimpom">
                 chim↑pom
                 {/* <span className="art-letter">C</span>
                 <span className="art-letter">h</span>
@@ -1750,8 +1766,8 @@ const Artist = () => {
               href="ishiuchi-miyako"
               className="h-wrapper centered ishiuchi w-inline-block"
             >
-              <h1 className="h2 a-name ishiuchi">ishiuchi</h1>
-              <h1 className="h2 a-name ishiuchi">
+              <h1 className="h-wrapper_h2 a-name ishiuchi">ishiuchi</h1>
+              <h1 className="h-wrapper_h2 a-name ishiuchi">
                 {/* <span className="art-letter y-letter">y</span> */}
                 miyko
               </h1>

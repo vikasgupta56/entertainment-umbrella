@@ -349,7 +349,7 @@ const Navbar = () => {
             </a>
           </li>
           <li className="navbar--menu--item">
-            <a href="" className="nav_link">
+            <a href="/dhamaka" className="nav_link">
               <span className="btn-text link" data-title="halo studio">
                 Dhamaka
               </span>
@@ -407,7 +407,7 @@ const Navbar = () => {
             </li>
             <li className="mobilenavbar__content--menu--item">
               <Link
-                href=""
+                href="/dhamaka"
                 className="nav_link o_italic"
                 data-title="halo studio"
               >
