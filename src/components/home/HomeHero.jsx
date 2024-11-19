@@ -249,12 +249,14 @@ const HomeHero = () => {
       <div className="heading-wrapper">
         <h2 className="hero-heading">
           <span className="not-hoverable">
+            {/* We fuse and to craft unforgettable moments, always pushing the
+            boundaries of */}
             We live our best lives excelling at{" "}
           </span>
-          <span className="heading-link">design and branding,</span>
+          <span className="heading-link"> Film Production</span>
           <br />
-          <span className="heading-link">advertising,</span>
-          <span className="heading-link">web development</span>
+          <span className="heading-link">Event Creation, </span>
+          <span className="heading-link"> Creative Storytelling.</span>
           <span className="not-hoverable"> and everything we touch</span>
           <div className="hero-mask">
             <div className="hero-mask-part" />
@@ -273,7 +275,7 @@ const HomeHero = () => {
               MON 04:21:30
             </div>
             <div className="welcome" id="local-place">
-              TBILISI, GEORGIA
+              MUMBAI, INDIA
             </div>
           </div>
           <div className="divider" />

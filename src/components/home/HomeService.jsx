@@ -238,15 +238,15 @@ const HomeService = () => {
           <div className="sec-wrap__inner">
             <div className="sec-wrap_text_grid-wrap">
               <div className="sec-wrap_text_cntr">
-                <h1 className="sec_wrap_heading">Services</h1>
+                <h1 className="sec_wrap_heading">Our Services</h1>
                 <p className="sec_wrap_para">
-                  Als inhabergeführte Agentur konzentrieren wir uns seit acht
-                  Jahren darauf grossartige digitale Produkte zu schaffen.
+                  As an owner-managed agency, we have been concentrating on
+                  creating great digital products for eight years.
                   <br />
                   <br />
-                  Gezielt gehen wir auf Bedürfnisse der Zielgruppen ein und
-                  hinterfragen Bestehendes. Uns vertrauen schweizweit Startups,
-                  KMU's, Stiftungen und Konzerne.
+                  We specifically address the needs of our target groups and
+                  question existing solutions. Startups, SMEs, foundations and
+                  corporations across Switzerland trust us.
                 </p>
               </div>
             </div>
@@ -285,7 +285,7 @@ const HomeService = () => {
             </div>
           </div>
           <div className="sec-wrap__inner horizon-slider-wrap--trigger">
-            <h2 className="sec_wrap_heading">Unsere Arbeitsweise</h2>
+            <h2 className="sec_wrap_heading">Our way of working</h2>
           </div>
           <div className="sec-wrap__inner horizon-slider-wrap horizon-slider-wrap--desktop">
             <div className="panel">
@@ -376,71 +376,78 @@ const HomeService = () => {
                   style={{ opacity: "0.6778" }}
                 >
                   <tspan x={0} y={0} className="jp2 jp4">
-                    Verstehen
+                    Film and Photo Production
                   </tspan>
                   <tspan x={0} y="41.6" className="jp2 jp5 jp6">
-                    Wir setzen uns intensiv mit den
+                    Lights, camera, action! From conception to the final cut,
                   </tspan>
                   <tspan x={0} y="62.4" className="jp2 jp5 jp6">
-                    Menschen auseinander, für die wir
+                    we handle everything in filmmaking and photoshoots.
                   </tspan>
                   <tspan x={0} y="83.2" className="jp2 jp5 jp6">
-                    arbeiten. Durch Zuhören und{" "}
+                    From corporate videos, music videos, and digital content,
                   </tspan>
                   <tspan x={0} y={104} className="jp2 jp5 jp6">
-                    Beobachten lernen wir, was wirklich
+                    our team exclusively creates impressive visuals
                   </tspan>
                   <tspan x={0} y={125} className="jp2 jp5 jp6">
-                    benötigt wird.
+                    We will tell your brand's story with imagination
+                  </tspan>
+                  <tspan x={0} y={145} className="jp2 jp5 jp6">
+                    and attention to detail.
                   </tspan>
                 </text>
                 <text
-                  transform="matrix(1 0 0 1 744.5525 327.1489)"
+                  transform="matrix(1 0 0 1 850.5525 327.1489)"
                   style={{ opacity: "0.2" }}
                 >
                   <tspan x={0} y={0} className="jp2 jp4">
-                    Ideenfindung &amp;
+                    Creative Development
+                    {/* &amp; */}
                   </tspan>
-                  <tspan x={0} y="45.1" className="jp2 jp4">
-                    Konzept
+                  <tspan x={0} y="45.1" className="jp2 jp5 jp6">
+                    Great stories begin with great ideas
                   </tspan>
-                  <tspan x={0} y="86.6" className="jp2 jp5 jp6">
-                    Im Gespräch oder Workshop
+                  <tspan x={0} y="65.6" className="jp2 jp5 jp6">
+                    We work hand in hand with our
                   </tspan>
-                  <tspan x={0} y="107.4" className="jp2 jp5 jp6">
-                    finalisieren wir gemeinsam das
+                  <tspan x={0} y="85.4" className="jp2 jp5 jp6">
+                    clients to develop scripts
                   </tspan>
                   <tspan x={0} y="128.2" className="jp2 jp5 jp6">
-                    Konzept und erstellen eine
+                    storyboards, and ideas that successfully
                   </tspan>
                   <tspan x={0} y={149} className="jp2 jp5 jp6">
-                    realistische Roadmap deines{" "}
+                    hit the mark every time.
                   </tspan>
-                  <tspan x={0} y={170} className="jp2 jp5 jp6">
+                  {/* <tspan x={0} y={170} className="jp2 jp5 jp6">
                     Projektes
-                  </tspan>
+                  </tspan> */}
                 </text>
                 <text
                   transform="matrix(1 0 0 1 1413.1023 443.2568)"
                   style={{ opacity: "0.2" }}
                 >
                   <tspan x={0} y={0} className="jp2 jp4">
-                    Design
+                    Celebrity Endorsements:
                   </tspan>
                   <tspan x={0} y="41.6" className="jp2 jp5 jp6">
-                    Mit Leidenschaft formen wir
+                    Power your movie or campaign with star power.
                   </tspan>
                   <tspan x={0} y="62.4" className="jp2 jp5 jp6">
-                    Prototypen und Entwürfe, die nicht nur
+                    We have rightly partnered with high-profile
                   </tspan>
                   <tspan x={0} y="83.2" className="jp2 jp5 jp6">
-                    funktionieren, sondern begeistern.
+                    celebrities like Alia Bhatt,Ranbir Kapoor,
                   </tspan>
                   <tspan x={0} y={104} className="jp2 jp5 jp6">
-                    Unser Designprozess ist kreativ,
+                    and SRK and MANY MANY more to increase the
                   </tspan>
                   <tspan x={0} y={125} className="jp2 jp5 jp6">
-                    dynamisch und immer am Puls der Zeit.
+                    reach of your film Our network performs the
+                  </tspan>
+                  <tspan x={0} y={146} className="jp2 jp5 jp6">
+                    right fit to make an impact on your work.
                   </tspan>
                 </text>
                 <text
@@ -448,22 +455,22 @@ const HomeService = () => {
                   style={{ opacity: "0.2" }}
                 >
                   <tspan x={0} y={0} className="jp2 jp4">
-                    Realisation
+                    Casting
                   </tspan>
                   <tspan x={0} y="41.6" className="jp2 jp5 jp6">
-                    In kurzen Arbeitsphasen, den
+                    Finding the right people to bring
                   </tspan>
                   <tspan x={0} y="62.4" className="jp2 jp5 jp6">
-                    sogenannten Sprints, entwicklen wir das
+                    your vision to life is everything.
                   </tspan>
                   <tspan x={0} y="83.2" className="jp2 jp5 jp6">
-                    Produkt Stück für Stück. Dabei bleiben
+                    We take pride in our casting services,
                   </tspan>
                   <tspan x={0} y={104} className="jp2 jp5 jp6">
-                    wir flexibel, um Änderungen einfach
+                    making sure your film or campaign has
                   </tspan>
                   <tspan x={0} y={125} className="jp2 jp5 jp6">
-                    einarbeiten zu können.
+                    the perfect talent to make it shine.
                   </tspan>
                 </text>
                 <text
@@ -471,19 +478,19 @@ const HomeService = () => {
                   style={{ opacity: "0.2" }}
                 >
                   <tspan x={0} y={0} className="jp2 jp4">
-                    Testing
+                    Post-Production
                   </tspan>
                   <tspan x={0} y="41.6" className="jp2 jp5 jp6">
-                    Wir prüfen, was wir entwickelt haben, und
+                    That's where the magic happens—editing,
                   </tspan>
                   <tspan x={0} y="62.4" className="jp2 jp5 jp6">
-                    und zwar immer wieder. So finden und
+                    sound design, visual effects, and color
                   </tspan>
                   <tspan x={0} y="83.2" className="jp2 jp5 jp6">
-                    beheben wir Schwachstellen frühzeitig und
+                    grading. We ensure every project looks
                   </tspan>
                   <tspan x={0} y={104} className="jp2 jp5 jp6">
-                    stellen sicher, dass alles gut funktioniert.
+                    and sounds great.
                   </tspan>
                 </text>
                 <text
