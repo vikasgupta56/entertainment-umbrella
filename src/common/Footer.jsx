@@ -248,17 +248,19 @@ const Footer = () => {
           <div className="footer__bottom--text">
             <div className="footer__bottom--text--left">
               <h3 className="fht">
-                The Middle East's Premier Digital Media Company
+                Welcome to Mr. and Mrs. Films... and Sometimes Events!
               </h3>
             </div>
             <div className="footer__bottom--text--right">
               <div className="footer__bottom--text--block fht">
                 <h6>CONTACT US</h6>
                 <p>
-                  <a href="callto:04 366 3399">04 366 3399</a>
+                  <a href="callto:04 366 3399">01 234 56789</a>
                 </p>
                 <p>
-                  <a href="maillto:hello@halomedia.com">hello@halomedia.com</a>
+                  <a href="maillto:hello@halomedia.com">
+                    entertainment@umbrella.com
+                  </a>
                 </p>
               </div>
               <div className="footer__bottom--text--block fht">
@@ -266,9 +268,9 @@ const Footer = () => {
                 <p>
                   Suite 2703-2704 JBC2,
                   <br />
-                  Cluster V, JLT, Dubai,
+                  Cluster V, JLT, India,
                   <br />
-                  United Arab Emirates
+                  India
                 </p>
               </div>
             </div>
@@ -284,7 +286,7 @@ const Footer = () => {
         </div>
         <p className="copytext">
           <span>
-            <span className="copy fht"> © 2023 halo media </span>
+            <span className="copy fht"> © 2024 entertainment umbrella </span>
             <span className="by fht">
               by <a href="https://mallardandclaret.com/">m&amp;c</a>
             </span>

@@ -104,7 +104,7 @@
 .Dhamaka_hero-section .vsl-wrapper .vsl-item:nth-child(3) {
   height: 23.81vw;
   width: 18.849vw;
-  top: clamp(38.5rem, 50.524vw, 61.524vw);
+  top: clamp(38.5rem, 35.524vw, 61.524vw);
   left: 9.259vw;
 }
 @media (max-width: 48rem) {
