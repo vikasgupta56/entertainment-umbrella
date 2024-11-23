@@ -6,6 +6,7 @@ import "@/styles/home.css";
 import "@/styles/navbar.css";
 import "@/styles/newPage.css";
 import "@/styles/dhamaka.css";
+import "@/styles/productdetails.css";
 export default function App({ Component, pageProps }) {
   return (
     <SmoothScrolling>
