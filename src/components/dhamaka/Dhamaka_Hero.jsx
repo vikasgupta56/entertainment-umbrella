@@ -5,23 +5,36 @@ import SplitText from "gsap/dist/SplitText";
 import React, { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 const Dhamaka_Hero = () => {
-  useGSAP(() => {
+  useEffect(() => {
+    // Select all .vf-section elements
     const vfSec = document.querySelectorAll(".vf-section");
-    vfSec.forEach((t) => {
-      var e = t.querySelector(".media-background");
-      gsap.to(e, {
-        scrollTrigger: {
-          trigger: t,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-          invalidateOnRefresh: true,
-          // markers: true,
-        },
-        yPercent: 32,
-        ease: "none",
-      });
+
+    vfSec.forEach((t, index) => {
+      const mediaBackground = t.querySelector(".media-background");
+
+      // Check if .media-background exists in this .vf-section
+      if (mediaBackground) {
+        gsap.to(mediaBackground, {
+          scrollTrigger: {
+            trigger: t,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+            invalidateOnRefresh: true,
+            markers: false, // Set to `true` for debugging purposes
+          },
+          yPercent: 32,
+          ease: "none",
+        });
+      }
     });
+
+    // Cleanup the ScrollTrigger instance on component unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+  useGSAP(() => {
     // var e = function () {
     const To = new SplitText(".js-t", {
       type: "lines, words, chars",

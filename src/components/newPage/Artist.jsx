@@ -1652,23 +1652,19 @@ const Artist = () => {
         <div className="artist-wrapper">
           <div className="artist-name gsap-scroll num1">
             <a
-              href="hiroji-kubota"
+              href="/newPage/product"
               className="h-wrapper centered kubota w-inline-block"
               style={{ pointerEvents: "none" }}
             >
               <h1 className="h-wrapper_h2 a-name kubota">hiroji</h1>
-              <h1 className="h-wrapper_h2 a-name kubota">
-                {/* <span className="art-letter">k</span> */}
-                {/* <span className="art-letter t-letter">t</span> */}
-                kubota
-              </h1>
+              <h1 className="h-wrapper_h2 a-name kubota">kubota</h1>
               <p className="paragraph view-artist_button red is--visible-in-mobile">
                 view artist
               </p>
             </a>
             {/* <link rel="prefetch" href="hiroji-kubota" /> */}
             <a
-              href="yutaka-sone"
+              href="/newPage/product"
               className="h-wrapper centered yutaka w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name yutaka">
@@ -1682,7 +1678,7 @@ const Artist = () => {
             </a>
             {/* <link rel="prefetch" href="/yutaka-sone" /> */}
             <a
-              href="izumi-kato"
+              href="/newPage/product"
               className="h-wrapper centered izumi w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name izumi">izumi</h1>
@@ -1696,7 +1692,7 @@ const Artist = () => {
             </a>
             {/* <link rel="prefetch" href="/izumi-kato" /> */}
             <a
-              href="yuichi-hibi"
+              href="/newPage/product"
               className="h-wrapper centered yuichi w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name yuichi">yuichi</h1>
@@ -1707,7 +1703,7 @@ const Artist = () => {
             </a>
             {/* <link rel="prefetch" href="/yuichi-hibi" /> */}
             <a
-              href="ken-domon"
+              href="/newPage/product"
               className="h-wrapper centered ken w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name ken">ken</h1>
@@ -1718,7 +1714,7 @@ const Artist = () => {
             </a>
             {/* <link rel="prefetch" href="/ken-domon" /> */}
             <a
-              href="eikoh-hosoe"
+              href="/newPage/product"
               className="h-wrapper centered eikoh w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name eikoh">eikoh</h1>
@@ -1729,7 +1725,7 @@ const Artist = () => {
             </a>
             {/* <link rel="prefetch" href="/eikoh-hosoe" /> */}
             <a
-              href="chiharu-shiota"
+              href="/newPage/product"
               className="h-wrapper centered chiharu w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name pad-left chiharu">chiharu</h1>
@@ -1743,7 +1739,7 @@ const Artist = () => {
             </a>
             {/* <link rel="prefetch" href="/chiharu-shiota" /> */}
             <a
-              href="chim-pom"
+              href="/newPage/product"
               className="h-wrapper centered chimpom w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name chimpom">
@@ -1763,7 +1759,7 @@ const Artist = () => {
             </a>
             {/* <link rel="prefetch" href="/chim-pom" /> */}
             <a
-              href="ishiuchi-miyako"
+              href="/newPage/product"
               className="h-wrapper centered ishiuchi w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name ishiuchi">ishiuchi</h1>

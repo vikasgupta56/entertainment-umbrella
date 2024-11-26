@@ -75,7 +75,6 @@ const ClipCntr = () => {
           <div className="hero-content">
             <a
               href="#"
-              data-w-id="59271182-f875-d4dc-3a94-3de05c5eb035"
               className="h1-wrapper w-inline-block"
               // style={{ pointerEvents: "auto" }}
             >
