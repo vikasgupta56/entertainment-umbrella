@@ -501,29 +501,23 @@ const product = () => {
               class="grid-cell-img gsap"
             />
           </div>
-          <div
-            id="trigger2"
-            class="hidden-cell w-node-_3750a21b-fa60-3a6d-f10b-325a9c007748-9c007748"
-          >
+          <div id="trigger2" class="hidden-cellhidden-cell _p">
             <div id="play_button-two" class="play_button-two"></div>
           </div>
         </div>
       </section>
       <section class="next-artist_section">
-        <div class="content grid _6-rows">
-          <div
-            id="w-node-_0be5e7ef-8262-2731-1877-4c80192cb72b-df82a457"
-            class="next-artist-name-container"
-          >
+        <div class="content_grid _6-rows">
+          <div id="artist-text-1_p" class="next-artist-name-container">
             <div class="next-artist">
               <p class="paragraph">next artist</p>
             </div>
             <a
-              id="w-node-_0be5e7ef-8262-2731-1877-4c80192cb72f-df82a457"
+              //   id="artist-text-1_p"
               href="chim-pom"
               class="h-wrapper centered yutaka is--relative next-artist_a-name w-inline-block"
             >
-              <h1 class="h2 a-name chimpom">
+              <h1 class="h-wrapper_h2 _p a-name chimpom">
                 <span class="art-letter">C</span>
                 <span class="art-letter">h</span>
                 <span class="art-letter">i</span>
@@ -540,56 +534,41 @@ const product = () => {
             </a>
             <link rel="prefetch" href="chim-pom" />
           </div>
-          <div
-            id="w-node-_0be5e7ef-8262-2731-1877-4c80192cb746-df82a457"
-            class="grid-img_p wrapper"
-          >
+          <div id="artist-img-1_p" class="grid-img_p wrapper">
             <img
-              src="images/img_235.webp"
+              src="https://artworks.joe8lee.com/images/img_235.webp"
               loading="lazy"
               alt=""
               class="grid-cell-img gsap"
             />
           </div>
-          <div
-            id="w-node-_0be5e7ef-8262-2731-1877-4c80192cb748-df82a457"
-            class="grid-img_p wrapper"
-          >
+          <div id="artist-img-2_p" class="grid-img_p wrapper">
             <img
-              src="images/img_247.webp"
+              src="https://artworks.joe8lee.com/images/img_247.webp"
               loading="lazy"
               alt=""
               class="grid-cell-img gsap"
             />
           </div>
-          <div
-            id="w-node-_0be5e7ef-8262-2731-1877-4c80192cb74a-df82a457"
-            class="grid-img_p wrapper"
-          >
+          <div id="artist-img-3_p" class="grid-img_p wrapper">
             <img
-              src="images/img_241.webp"
+              src="https://artworks.joe8lee.com/images/img_241.webp"
               loading="lazy"
               alt=""
               class="grid-cell-img gsap"
             />
           </div>
-          <div
-            id="w-node-_0be5e7ef-8262-2731-1877-4c80192cb74c-df82a457"
-            class="grid-img_p wrapper"
-          >
+          <div id="artist-img-4_p" class="grid-img_p wrapper">
             <img
-              src="images/img_251.webp"
+              src="https://artworks.joe8lee.com/images/img_251.webp"
               loading="lazy"
               alt=""
               class="grid-cell-img gsap"
             />
           </div>
-          <div
-            id="w-node-_0be5e7ef-8262-2731-1877-4c80192cb74e-df82a457"
-            class="grid-img_p wrapper"
-          >
+          <div id="artist-img-5_p" class="grid-img_p wrapper">
             <img
-              src="images/img_250.webp"
+              src="https://artworks.joe8lee.com/images/img_250.webp"
               loading="lazy"
               alt=""
               class="grid-cell-img gsap"
