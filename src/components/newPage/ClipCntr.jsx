@@ -107,11 +107,11 @@ const ClipCntr = () => {
             <a href="#history" className="hero-link w-inline-block" />
           </div>
           <div className="explore_button-container is--visible-in-mobile">
-            <p className="paragraph is--centered">
+            <p className="paragraph _hero is--centered">
               The gallery of photography and fine arts
             </p>
             <a href="#history" className="explore-button w-inline-block">
-              <p className="paragraph red">explore</p>
+              <p className="paragraph _hero red">explore</p>
               <div className="explore-arrow">
                 <img
                   src="images/arrow_1.svg"
