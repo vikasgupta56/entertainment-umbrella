@@ -1624,7 +1624,19 @@ html.w-mod-touch * {
   color: #fff;
   display: inline-block;
 }
-
+.line {
+  position: relative;
+}
+.line-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  opacity: 0.58;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
 /* section2 */
 .section-2_p {
   padding-left: 1.88em;
@@ -2262,13 +2274,15 @@ html.w-mod-touch * {
   /* section4 */
 
   #artist-text-1_p {
-    grid-column-end: 5;
+    grid-column-end: 6;
   }
 
   #artist-img-3_p {
     grid-column: 4 / 5;
   }
-
+  .h-wrapper_h2._p {
+    font-size: 16em;
+  }
   /* section4 */
 }
 @media screen and (max-width: 479px) {
