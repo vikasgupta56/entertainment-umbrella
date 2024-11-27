@@ -214,7 +214,7 @@
   }
 
   .paragraph {
-    font-size: 1em;
+    font-size: 2.08em;
   }
   .explore-button {
     -webkit-box-align: center;
@@ -243,7 +243,7 @@
     right: 0;
   }
   .paragraph {
-    font-size: 4vw;
+    font-size: 4.38em;
   }
   .explore-button {
     /* padding-top: 3.75em; */
@@ -1453,6 +1453,10 @@ html.w-mod-touch * {
 }
 
 /*product details page range media */
+.art-g-body {
+  position: relative;
+  font-size: 1vw;
+}
 .section.padding-top {
   z-index: 20;
   background-color: #fff;
@@ -1893,7 +1897,7 @@ html.w-mod-touch * {
     grid-area: 8 / 1 / 11 / 5;
   }
   .h4_p {
-    font-size: 1.4em;
+    font-size: 2.6em;
     line-height: 1.4;
   }
   .invisible--indent {
@@ -2092,7 +2096,7 @@ html.w-mod-touch * {
     min-height: 120px;
   }
   .h-wrapper_h2._p {
-    font-size: 18vw;
+    font-size: 18.23em;
   }
   #artist-img-1_p {
     grid-column: 3 / 4;
@@ -2331,7 +2335,7 @@ html.w-mod-touch * {
     grid-column-end: 4;
   }
   .h4_p {
-    font-size: 1.25em;
+    font-size: 6.25em;
     line-height: 1.25;
   }
   .invisible--indent {

@@ -37,7 +37,7 @@ const product = () => {
     gsapImgAnimation();
   });
   return (
-    <>
+    <div className="art-g-body">
       <section className="section padding-top">
         <div className="content_grid _7-rows tablet_10-rows mobile_12-rows">
           <div className="artist_name-wrapper" id="artist-name-1">
@@ -576,7 +576,7 @@ const product = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
