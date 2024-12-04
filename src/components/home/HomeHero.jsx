@@ -464,11 +464,11 @@ const HomeHero = () => {
           // typeof="video/mp4"
         >
           <source
-            src="https://radiance.family/video/branding-portfolio.webm"
+            src="../../../assets/images/Mr&Mrs/videos/Belvedere.mp4"
             type="video/webm"
           />
           <source
-            src="https://radiance.family/video/branding-portfolio.webm"
+            src="../../../assets/images/Mr&Mrs/videos/Belvedere.mp4"
             type="video/mp4"
           />
         </video>
@@ -482,11 +482,11 @@ const HomeHero = () => {
           controlsList="nodownload"
         >
           <source
-            src="https://radiance.family/video/ads-portfolio.webm"
+            src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark10.mp4"
             type="video/webm"
           />
           <source
-            src="https://radiance.family/video/ads-portfolio.webm"
+            src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark10.mp4"
             type="video/mp4"
           />
         </video>
@@ -500,11 +500,11 @@ const HomeHero = () => {
           controlsList="nodownload"
         >
           <source
-            src="https://radiance.family/video/web-portfolio.webm"
+            src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark11.mp4"
             type="video/webm"
           />
           <source
-            src="https://radiance.family/video/web-portfolio.webm"
+            src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark11.mp4"
             type="video/mp4"
           />
         </video>
