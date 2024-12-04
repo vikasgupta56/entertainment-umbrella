@@ -454,7 +454,7 @@ img {
   width: max-content;
   margin: 5rem auto;
   z-index: 3;
-  color: #ffffff;
+  color: #d42223;
   line-height: 2.8vw;
   font-family: var(--primary-fontB);
 }
@@ -1056,6 +1056,7 @@ img {
   position: relative;
   cursor: pointer;
   border-radius: 0.5rem;
+  color: #d42223;
 }
 
 .hero-heading span {
@@ -1151,10 +1152,17 @@ img {
   max-height: 100%;
   /* transition: all 0.3s linear; */
 }
-
-.letter-container svg {
-  max-height: 100%;
+.letter-container:nth-child(3) {
+  color: #d42223;
 }
+.letter-container h1 {
+  font-size: 16vw;
+  line-height: 1;
+  font-family: var(--primary-fontB);
+}
+/* .letter-container svg {
+  max-height: 100%;
+} */
 
 #local-time {
   text-transform: uppercase;
@@ -1254,7 +1262,7 @@ img {
   line-height: 0.95em;
   margin: 0.35em 0;
   letter-spacing: -0.01em;
-  color: #fff;
+  color: #d42223;
   -ms-hyphens: none;
   hyphens: none;
   -webkit-hyphens: none;
@@ -1264,7 +1272,7 @@ img {
 .sec_wrap_para {
   font-family: var(--primary-fontL);
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1.1em;
   color: #fff;
   text-decoration: none;
@@ -1359,7 +1367,7 @@ text {
 }
 .jp4 {
   font-size: 38px;
-  /* fill: #ffffff; */
+  fill: #d42223;
 }
 .jp6 {
   font-size: 18px;

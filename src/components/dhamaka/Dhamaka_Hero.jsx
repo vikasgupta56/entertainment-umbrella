@@ -114,14 +114,16 @@ const Dhamaka_Hero = () => {
       e.to(t, { ease: "none", yPercent: i }, 0);
     });
     //vosection
-    var vosection = document.querySelector(".vo-section"),
+    var vosection = document.querySelector(".vo-section");
+    var iHeadings = document.querySelectorAll(".i-wrapper-heading"),
       i = vosection.querySelectorAll(".o-item"),
-      n = Math.max(80, (window.innerWidth / 100) * 5.291),
+      n = Math.max(80, (window.innerWidth / 100) * 6.5),
       s = i[i.length - 1].offsetHeight,
       a = (i.length - 1) * n + s;
 
     i.forEach((t, e) => {
       var i = e * n;
+
       ScrollTrigger.create({
         trigger: t,
         start: "top-=".concat(i, "px top"),
@@ -132,6 +134,24 @@ const Dhamaka_Hero = () => {
         pin: true,
         pinSpacing: false, // Pin spacing is not needed since we’re not pinning
         invalidateOnRefresh: true,
+        onEnter: () => {
+          // Hide the corresponding heading when the o-item enters
+          if (iHeadings[e]) {
+            gsap.to(iHeadings[e], {
+              display: "none",
+              ease: "linear",
+            });
+          }
+        },
+        onLeaveBack: () => {
+          // Show the corresponding heading again when the o-item leaves
+          if (iHeadings[e]) {
+            gsap.to(iHeadings[e], {
+              display: "",
+              ease: "linear",
+            });
+          }
+        },
       });
     });
     //   vh-section
@@ -244,7 +264,7 @@ const Dhamaka_Hero = () => {
         <div className="vsl-wrapper z-up">
           <div className="vsl-item vsl-lt" data-scroll data-scroll-speed=".05">
             <div className="media-background lazy-container">
-              <picture>
+              {/* <picture>
                 <source
                   data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/Marquises4-AnneeEECKEMAN-copie.webp"
                   type="image/webp"
@@ -260,13 +280,20 @@ const Dhamaka_Hero = () => {
                   height={1590}
                   aspect=""
                 />
-              </picture>
+              </picture> */}
+              <video
+                src="../../../assets/videos/Dhamaka-video 2.mp4"
+                loop
+                autoPlay
+                playsInline
+                muted
+              ></video>
               <div className="placeholder" />
             </div>
           </div>
           <div className="vsl-item vsl-rc" data-scroll data-scroll-speed="0.3">
             <div className="media-background lazy-container">
-              <picture>
+              {/* <picture>
                 <source
                   data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/R2-VILLA-DA-23-copie.webp"
                   type="image/webp"
@@ -282,13 +309,20 @@ const Dhamaka_Hero = () => {
                   height={1181}
                   aspect=""
                 />
-              </picture>
+              </picture> */}
+              <video
+                src="../../../assets/videos/Dhamaka-video 3.mp4"
+                loop
+                autoPlay
+                playsInline
+                muted
+              ></video>
               <div className="placeholder" />
             </div>
           </div>
           <div className="vsl-item vsl-lb" data-scroll data-scroll-speed="0.3">
             <div className="media-background lazy-container">
-              <picture>
+              {/* <picture>
                 <source
                   data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/B5FB6963-89D7-4B83-8FF9-4409628D6D15.webp"
                   type="image/webp"
@@ -304,7 +338,14 @@ const Dhamaka_Hero = () => {
                   height={640}
                   aspect=""
                 />
-              </picture>
+              </picture> */}
+              <video
+                src="../../../assets/videos/Dhamaka-video 4.mp4"
+                loop
+                autoPlay
+                playsInline
+                muted
+              ></video>
               <div className="placeholder" />
             </div>
           </div>
@@ -334,7 +375,7 @@ const Dhamaka_Hero = () => {
               //   data-scroll
               //   data-scroll-speed="-0.2"
             >
-              <picture>
+              {/* <picture>
                 <source
                   data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/kees-kortmulder-LzDtQIWBgoU-unsplash.webp"
                   type="image/webp"
@@ -347,7 +388,14 @@ const Dhamaka_Hero = () => {
                   height={987}
                   aspect=""
                 />
-              </picture>
+              </picture> */}
+              <video
+                src="../../../assets/videos/Dhamaka-Video (1).mp4"
+                loop
+                autoPlay
+                playsInline
+                muted
+              ></video>
               <div className="placeholder" />
             </div>
           </div>
@@ -1411,7 +1459,7 @@ const Dhamaka_Hero = () => {
               //   data-scroll
               //   data-scroll-speed="-0.2"
             >
-              <picture>
+              {/* <picture>
                 <source
                   data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/olivia-chaber-J0bc-3dgmcI-unsplash.webp"
                   type="image/webp"
@@ -1424,7 +1472,14 @@ const Dhamaka_Hero = () => {
                   height={987}
                   aspect=""
                 />
-              </picture>
+              </picture> */}
+              <video
+                src="../../../assets/videos/Dhamaka-video 5.mp4"
+                loop
+                autoPlay
+                playsInline
+                muted
+              ></video>
               <div className="placeholder" />
             </div>
           </div>

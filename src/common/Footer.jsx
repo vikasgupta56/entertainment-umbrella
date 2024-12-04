@@ -248,29 +248,29 @@ const Footer = () => {
           <div className="footer__bottom--text">
             <div className="footer__bottom--text--left">
               <h3 className="fht">
-                Welcome to Mr. and Mrs. Films... and Sometimes Events!
+                Are you ready to watch your idea come into being? Whether it be
+                through film, an event, or social movement, we will make it
+                happen.
               </h3>
             </div>
             <div className="footer__bottom--text--right">
               <div className="footer__bottom--text--block fht">
                 <h6>CONTACT US</h6>
                 <p>
-                  <a href="callto:04 366 3399">01 234 56789</a>
+                  <a href="callto:+91-7506037555">+91-7506037555</a>
                 </p>
                 <p>
                   <a href="maillto:hello@halomedia.com">
-                    entertainment@umbrella.com
+                    chahat@mrandmrsfilms.com
                   </a>
                 </p>
               </div>
               <div className="footer__bottom--text--block fht">
                 <h6>VISIT US</h6>
                 <p>
-                  Suite 2703-2704 JBC2,
+                  Abhinay Bungalow, Juhu
                   <br />
-                  Cluster V, JLT, India,
-                  <br />
-                  India
+                  Mumbai, India
                 </p>
               </div>
             </div>

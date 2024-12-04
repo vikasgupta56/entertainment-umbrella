@@ -250,7 +250,7 @@ const HomeService = () => {
                 </p>
               </div>
             </div>
-            <div className="service_cat-wrap">
+            {/* <div className="service_cat-wrap">
               <div className="service_cat_box">
                 <h3 className="sec_wrap_para_p fweight--regular fcolor--grey sec_wrap_heading">
                   Strategie
@@ -282,11 +282,11 @@ const HomeService = () => {
                   <li className="sec_wrap_para">Wartung &amp; Betreuung</li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
-          <div className="sec-wrap__inner horizon-slider-wrap--trigger">
+          {/* <div className="sec-wrap__inner horizon-slider-wrap--trigger">
             <h2 className="sec_wrap_heading">Our way of working</h2>
-          </div>
+          </div> */}
           <div className="sec-wrap__inner horizon-slider-wrap horizon-slider-wrap--desktop">
             <div className="panel">
               <svg
@@ -494,50 +494,84 @@ const HomeService = () => {
                   </tspan>
                 </text>
                 <text
-                  transform="matrix(1 0 0 1 2849.9114 703.7327)"
+                  transform="matrix(1 0 0 1 2849.9114 503.7327)"
                   //   style={{ opacity: "0.2" }}
                 >
-                  <tspan x={0} y={0} className="jp2 jp4">
-                    Launch
+                  <tspan x={0} y={0} className="jp2 jp4 jp6">
+                    ( Mr. and Mrs. Events )
                   </tspan>
-                  <tspan x={0} y="41.6" className="jp2 jp5 jp6">
-                    Grund zum Feiern!
+                  <tspan x={0} y="35" className="jp2 jp4">
+                    Conceptualization of Events:
                   </tspan>
-                  <tspan x={0} y="62.4" className="jp2 jp5 jp6">
-                    Das fertige Produkt geht an den Start.
+                  <tspan x={0} y="65.6" className="jp2 jp5 jp6">
+                    We dream big so that you grow.
                   </tspan>
-                  <tspan x={0} y="83.2" className="jp2 jp5 jp6">
-                    Wir sorgen dafür, dass dabei alles
+                  <tspan x={0} y="85.4" className="jp2 jp5 jp6">
+                    Our team creates different fashions of
                   </tspan>
-                  <tspan x={0} y={104} className="jp2 jp5 jp6">
-                    reibungslos abläuft.
+                  <tspan x={0} y="105.2" className="jp2 jp5 jp6">
+                    event themes and concepts tailored to what
+                  </tspan>
+                  <tspan x={0} y={125} className="jp2 jp5 jp6">
+                    you have in mind for the perfect execution.
                   </tspan>
                 </text>
                 <text
-                  transform="matrix(1 0 0 1 2296.9211 1015.5708)"
+                  transform="matrix(1 0 0 1 2849.9114 815.5708)"
                   style={{ opacity: "0.2" }}
                 >
-                  <tspan x={0} y={0} className="jp2 jp4">
-                    Betreuung
-                    <tspan x={0} y="86.6" className="jp2 jp5 jp6">
-                      Eine langfristige Begleitung deiner Marke
-                    </tspan>
-                    <tspan x={0} y="107.4" className="jp2 jp5 jp6">
-                      und deiner Projekte ist unser
-                    </tspan>
-                    <tspan x={0} y="128.2" className="jp2 jp5 jp6">
-                      Versprechen und dein Gewinn.
-                    </tspan>
-                    <tspan x={0} y={149} className="jp2 jp5 jp6">
-                      Stetige Weiterentwicklung, Verbesserung
-                    </tspan>
-                    <tspan x={0} y={170} className="jp2 jp5 jp6">
-                      und Analyse ist für den Erfolg jedes{" "}
-                    </tspan>
-                    <tspan x={0} y={190} className="jp2 jp5 jp6">
-                      Projektes essenziell.
-                    </tspan>
+                  <tspan x={0} y={0} className="jp2 jp4 jp6">
+                    ( Mr. and Mrs. Events )
                   </tspan>
+                  <tspan x={0} y="40" className="jp2 jp4">
+                    Event Management:
+                  </tspan>
+                  <tspan x={0} y="75.6" className="jp2 jp5 jp6">
+                    We organize the logistics behind every event.
+                  </tspan>
+                  <tspan x={0} y="96.4" className="jp2 jp5 jp6">
+                    From planning to execution, we pay attention to
+                  </tspan>
+                  <tspan x={0} y="117.2" className="jp2 jp5 jp6">
+                    Versprechen und dein Gewinn.
+                  </tspan>
+                  <tspan x={0} y={149} className="jp2 jp5 jp6">
+                    every minute detail to ensure that
+                  </tspan>
+                  <tspan x={0} y={170} className="jp2 jp5 jp6">
+                    your event is smooth and flawless.
+                  </tspan>
+                  {/* <tspan x={0} y={190} className="jp2 jp5 jp6">
+                    Projektes essenziell.
+                  </tspan> */}
+                  {/* </tspan> */}
+                </text>
+                <text
+                  transform="matrix(1 0 0 1 2150.9211 1150.5708)"
+                  style={{ opacity: "0.2" }}
+                >
+                  <tspan x={0} y={0} className="jp2 jp4 jp6">
+                    ( Mr. and Mrs. Events )
+                  </tspan>
+                  <tspan x={0} y="40" className="jp2 jp4">
+                    Production Services:
+                  </tspan>
+                  <tspan x={0} y="75.6" className="jp2 jp5 jp6">
+                    We bring the WOW Factore with high-quality
+                  </tspan>
+                  <tspan x={0} y="96.4" className="jp2 jp5 jp6">
+                    production—high-tech lighting,
+                  </tspan>
+                  <tspan x={0} y="117.2" className="jp2 jp5 jp6">
+                    sound, and stage design
+                  </tspan>
+                  {/* <tspan x={0} y={149} className="jp2 jp5 jp6">
+                    every minute detail to ensure that
+                  </tspan>
+                  <tspan x={0} y={170} className="jp2 jp5 jp6">
+                    your event is smooth and flawless.
+                  </tspan> */}
+                  {/* </tspan> */}
                 </text>
               </svg>
             </div>

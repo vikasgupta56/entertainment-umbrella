@@ -1540,17 +1540,20 @@ const Artist = () => {
             <div className="about-a-section">
               <div className="text-inner-container bottom_margin">
                 <h4 className="gallerypera">
-                  The gallery is build upon tremendous works of art. As you
-                  explore, you’ll gain a much deeper understanding of the
-                  history behind some of the most iconic and acknowledged art
-                  pieces
+                  At Rage Media, we offer all services in-house, covering every
+                  aspect of your brand needs. Our multi-brand structure allows
+                  us to seamlessly integrate strategies, ensuring a cohesive and
+                  tailored approach for each client. From creative shoots and
+                  influencer marketing to celebrity management, we have the
+                  expertise and resources to execute campaigns. Here are all the
+                  services we can provide-
                 </h4>
               </div>
               <div className="g-item-list">
                 <div className="item">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Photography</h3>
+                      <h3 className="para_title_head">Celebrity Management</h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1574,7 +1577,7 @@ const Artist = () => {
                 <div className="item">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Sculpture & Paintings</h3>
+                      <h3 className="para_title_head">Digital Marketing</h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1598,7 +1601,9 @@ const Artist = () => {
                 <div className="item">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Black & White</h3>
+                      <h3 className="para_title_head">
+                        Social Media Marketing{" "}
+                      </h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1622,7 +1627,55 @@ const Artist = () => {
                 <div className="item">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Installation Art</h3>
+                      <h3 className="para_title_head">Branding</h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        // tag="span"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head">Content Writing</h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        // tag="span"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head">Designing</h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"

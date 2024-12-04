@@ -141,17 +141,14 @@ const Sfimpact = () => {
       </div>
       <div className="sfimpact__text sfimpact--full__text">
         <h5 className="o_italic">
-          With a laser focus on insights, we harness our rich history of
-          storytelling and digital expertise to help our clients unlock uncommon
-          growth despite an overcrowded and noisy digital world.
+          Under the belt of Mr. and Mrs. Films, Samaj Scope is our
+          heart-of-the-matter initiative pioneering in social good. We partner
+          with NGOs and support social causes to create effective change through
+          the power of the media.
         </h5>
         <p className="fht">
-          Utilizing a data-driven yet human-centered approach, Halo Collective
-          is the hybrid solution that uses more than just AI to manage
-          campaigns. We use our proprietary tools, deep insider knowledge, and
-          long-standing relationships to meticulously curate our influencer
-          roster as well as create stories that matter — and deliver measurable
-          results.
+          We create awareness drives, community-based events, and partnerships
+          not only to reach out with messages but to amplify them.
         </p>
         <a
           href="https://www.instagram.com/wearehalocollective/"
@@ -165,7 +162,7 @@ const Sfimpact = () => {
           <div className="ticker__row" data-reverse="false">
             <div className="ticker__row__block">
               <h4>
-                Brand Strategies
+                Celebrity Management
                 <span>
                   <img
                     src="https://halomedia.com/wp-content/uploads/2022/07/Group-38.svg"
@@ -174,7 +171,7 @@ const Sfimpact = () => {
                 </span>
               </h4>
               <h4>
-                Influencer Insights
+                Digital Marketing
                 <span>
                   <img
                     className="ticker__rot"
@@ -184,11 +181,21 @@ const Sfimpact = () => {
                 </span>
               </h4>
               <h4>
-                Campaign Management
+                Social Media Marketing
                 <span>
                   <img
                     className="ticker__rot--semi"
                     src="https://halomedia.com/wp-content/uploads/2022/07/smile-1.svg"
+                    alt=""
+                  />
+                </span>
+              </h4>
+              <h4>
+                Brand Shoots
+                <span>
+                  <img
+                    className="ticker__rot"
+                    src="https://halomedia.com/wp-content/uploads/2022/07/star-black.fe4462b0-6.svg"
                     alt=""
                   />
                 </span>
@@ -198,7 +205,7 @@ const Sfimpact = () => {
           <div className="ticker__row" data-reverse="true">
             <div className="ticker__row__block">
               <h4>
-                Content Production
+                Branding
                 <span>
                   <img
                     src="https://halomedia.com/wp-content/uploads/2022/07/smile-1.svg"
@@ -208,7 +215,7 @@ const Sfimpact = () => {
                 </span>
               </h4>
               <h4>
-                Talent Casting
+                Content Writing
                 <span>
                   <img
                     className="ticker__rot"
@@ -218,10 +225,20 @@ const Sfimpact = () => {
                 </span>
               </h4>
               <h4>
-                Campaign Tracking
+                Designing
                 <span>
                   <img
                     src="https://halomedia.com/wp-content/uploads/2022/07/Group-38.svg"
+                    alt=""
+                  />
+                </span>
+              </h4>
+              <h4>
+                Launch Events
+                <span>
+                  <img
+                    className="ticker__rot"
+                    src="https://halomedia.com/wp-content/uploads/2022/07/star-black.fe4462b0-6.svg"
                     alt=""
                   />
                 </span>
@@ -231,7 +248,7 @@ const Sfimpact = () => {
           <div className="ticker__row" data-reverse="false">
             <div className="ticker__row__block">
               <h4>
-                Curated Experiences
+                Animation Videos
                 <span>
                   <img
                     className="ticker__rot"
@@ -241,7 +258,7 @@ const Sfimpact = () => {
                 </span>
               </h4>
               <h4>
-                Budget Planning
+                Performance Marketing
                 <span>
                   <img
                     src="https://halomedia.com/wp-content/uploads/2022/07/smile-1.svg"
@@ -251,10 +268,20 @@ const Sfimpact = () => {
                 </span>
               </h4>
               <h4>
-                Insights + Measurement
+                Website Development
                 <span>
                   <img
                     src="https://halomedia.com/wp-content/uploads/2022/07/Group-38.svg"
+                    alt=""
+                  />
+                </span>
+              </h4>
+              <h4>
+                Influencer Marketing
+                <span>
+                  <img
+                    src="https://halomedia.com/wp-content/uploads/2022/07/smile-1.svg"
+                    className="ticker__rot--semi"
                     alt=""
                   />
                 </span>

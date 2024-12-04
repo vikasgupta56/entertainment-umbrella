@@ -1,21 +1,22 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 // import SplitText from "gsap/dist/SplitText";
 import React, { useEffect, useState } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const Histoy = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    // Simulate content loading (replace this with your actual data fetching logic)
-    const loadContent = () => {
-      setTimeout(() => {
-        setIsLoaded(true);
-      }, 1000); // Simulate a 1 second loading time
-    };
+  // useEffect(() => {
+  //   // Simulate content loading (replace this with your actual data fetching logic)
+  //   const loadContent = () => {
+  //     setTimeout(() => {
+  //       setIsLoaded(true);
+  //     }, 1000); // Simulate a 1 second loading time
+  //   };
 
-    loadContent();
-  }, []);
+  //   loadContent();
+  // }, []);
   // useEffect(() => {
   //   // function gsapImgAnimation() {
   //   let imgStag = 0.3;
@@ -51,34 +52,70 @@ const Histoy = () => {
   //   });
   //   // }
   // }, []);
-  useEffect(() => {
-    if (!isLoaded) return; // Wait for content to load
+  useGSAP(() => {
+    function gsapImgAnimation() {
+      let imgStag = 0.3;
+      let imgDur = 1.2;
 
-    const targets = gsap.utils.toArray(".grid-cell-img.gsap");
+      //grid-img scale animation
+      //gsap.registerPlugin(ScrollTrigger);
 
-    if (targets.length === 0) return; // Exit if no targets found
+      gsap.defaults({ ease: "power1.inOut" });
+      ScrollTrigger.batch(".grid-cell-img.gsap", {
+        start: "top 90%",
+        end: "center 110%",
+        preventOverlaps: true,
+        fastScrollEnd: true,
 
-    const animations = targets.map((target) =>
-      gsap.to(target, {
-        duration: 1.5,
-        scale: 1,
-        ease: "linear",
-        scrollTrigger: {
-          trigger: target,
-          start: "top 80%",
-          end: "bottom 50%",
-          scrub: true,
-          // markers: true,
+        onEnter: (batch) => {
+          console.log("Entering:", batch);
+          gsap.to(batch, {
+            scale: 1,
+            stagger: { each: imgStag },
+            duration: imgDur,
+          });
         },
-      })
-    );
+        onLeaveBack: (batch) => {
+          console.log("Leaving:", batch);
+          gsap.to(batch, {
+            scale: 1.3,
+            stagger: { each: imgStag },
+            duration: imgDur,
+          });
+        },
+        // scrub: true
+        // markers: true,
+      });
+    }
+    gsapImgAnimation();
 
-    ScrollTrigger.refresh(); // Refresh triggers
+    // if (!isLoaded) return; // Wait for content to load
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, [isLoaded]);
+    // const targets = gsap.utils.toArray(".grid-cell-img.gsap");
+
+    // if (targets.length === 0) return; // Exit if no targets found
+
+    // const animations = targets.map((target) =>
+    //   gsap.to(target, {
+    //     duration: 1.5,
+    //     scale: 1,
+    //     ease: "linear",
+    //     scrollTrigger: {
+    //       trigger: target,
+    //       start: "top 80%",
+    //       end: "bottom 50%",
+    //       scrub: true,
+    //       // markers: true,
+    //     },
+    //   })
+    // );
+
+    // ScrollTrigger.refresh(); // Refresh triggers
+
+    // return () => {
+    //   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    // };
+  });
 
   // useEffect(() => {
   //   const paragraphs = document.querySelectorAll(".Cpb_para");
@@ -122,7 +159,7 @@ const Histoy = () => {
         <div className="image_cntr image_1_cntr">
           <div id="w-node-2" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/photo_01.jpg"
+              src="https://artworks.joe8lee.com/images/img_191.webp"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -132,7 +169,7 @@ const Histoy = () => {
         <div className="image_cntr image_2_cntr">
           <div id="w-node-3" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/photo_02.jpg"
+              src="https://artworks.joe8lee.com/images/img_208.webp"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -143,7 +180,7 @@ const Histoy = () => {
         <div className="image_cntr image_3_cntr">
           <div id="w-node-4" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/photo_03.jpg"
+              src="https://artworks.joe8lee.com/images/img_224.webp"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -157,17 +194,22 @@ const Histoy = () => {
             </p>
           </div> */}
           <p className="paragraph cbp has--indent Cpb_para">
-            The history of photography &amp; fine arts is full of beautiful
-            masterpieces. Expressions have been captured and shared throughout
-            the history. Each and every work of art encapsulates a unique moment
-            frozen in time, offering a&nbsp;glimpse into the lives, emotions,
-            and struggles of those who came before us.
+            At Rage Media, we’ve had the &amp; privilege of working with over 30
+            brands—ranging from <br /> individual entrepreneurs to large
+            corporations. But no matter your size, one thing remains <br />{" "}
+            constant: for us, it’s all about finding the right fit.
+            {/* The history of photography &amp;
+            fine arts is full of beautiful masterpieces. Expressions have been
+            captured and shared throughout the history. Each and every work of
+            art encapsulates a unique moment frozen in time, offering
+            a&nbsp;glimpse into the lives, emotions, and struggles of those who
+            came before us. */}
           </p>
         </div>
         <div className="image_cntr image_4_cntr">
           <div id="w-node-6" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/photo_04.jpg"
+              src="https://artworks.joe8lee.com/images/img_226.webp"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -177,7 +219,7 @@ const Histoy = () => {
         <div className="image_cntr image_5_cntr">
           <div id="w-node-7" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/img_137.webp"
+              src="https://artworks.joe8lee.com/images/img_206.webp"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -187,7 +229,7 @@ const Histoy = () => {
         <div className="image_cntr image_6_cntr">
           <div id="w-node-8" className="grid-img wrapper">
             <img
-              src="https://artworks.joe8lee.com/images/img_135.webp"
+              src="https://artworks.joe8lee.com/images/img_195.webp"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -196,7 +238,7 @@ const Histoy = () => {
         </div>
         <div id="w-node-9" className="grid-img wrapper is--hidden-in-mobile">
           <img
-            src="https://artworks.joe8lee.com/images/img_99.webp"
+            src="https://artworks.joe8lee.com/images/img_227.webp"
             loading="lazy"
             alt=""
             className="grid-cell-img gsap"

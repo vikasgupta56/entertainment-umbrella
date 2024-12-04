@@ -81,6 +81,7 @@ const HomeHero = () => {
                       marginTop: -6,
                       marginBottom: -6,
                       backgroundColor: c[t],
+                      color: "#fff",
                     },
                     "<"
                   );
@@ -115,6 +116,7 @@ const HomeHero = () => {
                         marginTop: 0,
                         marginBottom: 0,
                         backgroundColor: "transparent",
+                        color: "#d42223",
                       },
                       "<"
                     ),
@@ -184,8 +186,8 @@ const HomeHero = () => {
         (t[3].children[0].src = "/assets/images/pic/sprites/I.avif"),
         (t[4].children[0].src = "/assets/images/pic/sprites/AA.avif"),
         (t[5].children[0].src = "/assets/images/pic/sprites/N.avif"),
-        (t[6].children[0].src = "/assets/images/pic/sprites/C.avif"),
-        (t[7].children[0].src = "/assets/images/pic/sprites/E.avif"),
+        // (t[6].children[0].src = "/assets/images/pic/sprites/C.avif"),
+        // (t[7].children[0].src = "/assets/images/pic/sprites/E.avif"),
         gsap.set(t, { autoAlpha: 0, scale: 1.3 }),
         e.forEach((e, o) => {
           let a = e.getBoundingClientRect(),
@@ -255,7 +257,7 @@ const HomeHero = () => {
           </span>
           <span className="heading-link"> Film Production</span>
           <br />
-          <span className="heading-link">Event Creation, </span>
+          <span className="heading-link">Event Creation, &nbsp;</span>
           <span className="heading-link"> Creative Storytelling.</span>
           <span className="not-hoverable"> and everything we touch</span>
           <div className="hero-mask">
@@ -297,7 +299,8 @@ const HomeHero = () => {
         </div>
         <div className="letters-wrapper">
           <div id="letter-r" className="letter-container">
-            <svg
+            <h1>M</h1>
+            {/* <svg
               width="14.9375em"
               height="16.6875em"
               viewBox="0 0 239 267"
@@ -308,10 +311,11 @@ const HomeHero = () => {
                 d="M0 266.058V0H134.976C193.73 0 230.65 28.1942 230.65 78.229C230.65 121.513 203.258 147.325 155.223 149.707V152.884C176.66 159.635 187.379 172.739 197.303 192.197L238.59 266.058H189.761L149.268 194.58C136.564 171.548 126.242 160.826 95.2773 160.826H42.8748V266.058H0ZM42.8748 128.264H137.755C175.072 128.264 187.776 115.557 187.776 83.3913C187.776 52.0203 175.072 38.5188 137.755 38.5188H42.8748V128.264Z"
                 fill="currentColor"
               />
-            </svg>
+            </svg> */}
           </div>
           <div id="letter-a" className="letter-container">
-            <svg
+            <h1>R.&nbsp;</h1>
+            {/* <svg
               width="18.4375em"
               height="16.6875em"
               viewBox="0 0 295 267"
@@ -322,10 +326,10 @@ const HomeHero = () => {
                 d="M244.545 266.058L215.168 196.962H78.2068L48.8296 266.058H0L116.318 0H177.851L294.169 266.058H244.545ZM94.8803 158.443H198.891L162.765 73.8609L148.474 39.7101H145.298L131.006 73.8609L94.8803 158.443Z"
                 fill="currentColor"
               />
-            </svg>
+            </svg> */}
           </div>
           <div id="letter-d" className="letter-container">
-            <svg
+            {/* <svg
               width="15.875em"
               height="16.6875em"
               viewBox="0 0 254 267"
@@ -336,10 +340,11 @@ const HomeHero = () => {
                 d="M118.7 0C201.273 0 253.279 50.829 253.279 133.029C253.279 215.229 201.273 266.058 118.7 266.058H0V0H118.7ZM118.7 227.539C182.615 227.539 207.625 201.33 207.625 133.029C207.625 64.7275 182.615 38.5188 118.7 38.5188H42.8748V227.539H118.7Z"
                 fill="currentColor"
               />
-            </svg>
+            </svg> */}
+            <h1>&</h1>
           </div>
           <div id="letter-i" className="letter-container">
-            <svg
+            {/* <svg
               width="2.6875em"
               height="16.6875em"
               viewBox="0 0 43 267"
@@ -347,10 +352,11 @@ const HomeHero = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path d="M0 266.058V0H42.8748V266.058H0Z" fill="currentColor" />
-            </svg>
+            </svg> */}
+            <h1>&nbsp;M</h1>
           </div>
           <div id="letter-a-s" className="letter-container">
-            <svg
+            {/* <svg
               width="18.4375em"
               height="16.6875em"
               viewBox="0 0 295 267"
@@ -361,10 +367,11 @@ const HomeHero = () => {
                 d="M244.545 266.058L215.168 196.962H78.2068L48.8296 266.058H0L116.318 0H177.851L294.169 266.058H244.545ZM94.8803 158.443H198.891L162.765 73.8609L148.474 39.7101H145.298L131.006 73.8609L94.8803 158.443Z"
                 fill="currentColor"
               />
-            </svg>
+            </svg> */}
+            <h1>R</h1>
           </div>
           <div id="letter-n" className="letter-container">
-            <svg
+            {/* <svg
               width="15.0625em"
               height="16.6875em"
               viewBox="0 0 241 267"
@@ -375,9 +382,10 @@ const HomeHero = () => {
                 d="M0 266.058V0H46.0508L194.922 199.742H197.7V0H240.575V266.058H194.525L45.6537 69.4928H42.8749V266.058H0Z"
                 fill="currentColor"
               />
-            </svg>
+            </svg> */}
+            <h1>S.</h1>
           </div>
-          <div id="letter-c" className="letter-container">
+          {/* <div id="letter-c" className="letter-container">
             <svg
               width="16.5em"
               height="16.6875em"
@@ -404,7 +412,7 @@ const HomeHero = () => {
                 fill="currentColor"
               />
             </svg>
-          </div>
+          </div> */}
         </div>
         <div className="sprite-wrapper">
           <div className="sprite-container">

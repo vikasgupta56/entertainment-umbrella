@@ -186,6 +186,7 @@ main .heroBanner__container {
 
 .footer .form__inputblock--heading {
   margin-top: 30px;
+  color: rgb(212, 34, 35);
 }
 .footer .form__inputblock--heading h2 {
   font-weight: 300;
@@ -490,7 +491,7 @@ main .heroBanner__container {
 }
 .footer__bottom--text--left h3 {
   font-weight: 300;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 25px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -620,7 +621,7 @@ main .heroBanner__container {
 .haloLogo__img {
   width: 100%;
   height: 100%;
-  background-image: url(https://halomedia.com/wp-content/themes/halo/assets/images/Halo-Media-Logo.png);
+  /* background-image: url(https://halomedia.com/wp-content/themes/halo/assets/images/Halo-Media-Logo.png); */
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
