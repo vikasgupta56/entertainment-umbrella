@@ -117,7 +117,7 @@ const Dhamaka_Hero = () => {
     var vosection = document.querySelector(".vo-section");
     var iHeadings = document.querySelectorAll(".i-wrapper-heading"),
       i = vosection.querySelectorAll(".o-item"),
-      n = Math.max(80, (window.innerWidth / 100) * 6.5),
+      n = Math.max(80, (window.innerWidth / 100) * 8.5),
       s = i[i.length - 1].offsetHeight,
       a = (i.length - 1) * n + s;
 
@@ -139,7 +139,9 @@ const Dhamaka_Hero = () => {
           if (iHeadings[e]) {
             gsap.to(iHeadings[e], {
               display: "none",
+              opacity: 0,
               ease: "linear",
+              duration: 0.5,
             });
           }
         },
@@ -148,7 +150,8 @@ const Dhamaka_Hero = () => {
           if (iHeadings[e]) {
             gsap.to(iHeadings[e], {
               display: "",
-              ease: "linear",
+              opacity: 1,
+              // ease: "linear",
             });
           }
         },
@@ -456,10 +459,8 @@ const Dhamaka_Hero = () => {
                       and products
                     </h3>
                     <p className="i-wrapper-para">
-                      We support our clients in designing experiences, services
-                      and attentions that are differentiating and rooted in
-                      their territory to give everyone a different way of
-                      traveling.
+                      We seek strategic partnerships to strengthen our clients'
+                      position in the market.
                     </p>
                   </div>
                 </div>
@@ -490,18 +491,6 @@ const Dhamaka_Hero = () => {
                     <p className="i-wrapper-para">
                       We manage online communication, from content creation to
                       media buying.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="o-item">
-                <div className="o-item_inner">
-                  <span className="o-item_inner_num">07</span>
-                  <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">Partnerships</h3>
-                    <p className="i-wrapper-para">
-                      We seek strategic partnerships to strengthen our clients'
-                      position in the market.
                     </p>
                   </div>
                 </div>

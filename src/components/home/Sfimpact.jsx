@@ -140,6 +140,7 @@ const Sfimpact = () => {
         </div>
       </div>
       <div className="sfimpact__text sfimpact--full__text">
+        <h1>Entertainment with a Cause</h1>
         <h5 className="o_italic">
           Under the belt of Mr. and Mrs. Films, Samaj Scope is our
           heart-of-the-matter initiative pioneering in social good. We partner

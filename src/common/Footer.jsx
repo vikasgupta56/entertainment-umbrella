@@ -1,6 +1,7 @@
 import gsap from "gsap";
 // import ScrollSmoother from "gsap/dist/ScrollSmoother";
 import React, { useEffect } from "react";
+import { FaArrowUpLong } from "react-icons/fa6";
 // gsap.registerPlugin(ScrollSmoother);
 const Footer = () => {
   useEffect(() => {
@@ -273,9 +274,14 @@ const Footer = () => {
                   Mumbai, India
                 </p>
               </div>
-            </div>
-            <div className="haloLogo">
-              <div className="haloLogo__img" />
+              <div className="haloLogo">
+                {/* <div className="haloLogo__img" /> */}
+                <h3>
+                  {" "}
+                  <FaArrowUpLong />
+                  Back to Top
+                </h3>
+              </div>
             </div>
           </div>
         </div>
@@ -288,7 +294,7 @@ const Footer = () => {
           <span>
             <span className="copy fht"> © 2024 entertainment umbrella </span>
             <span className="by fht">
-              by <a href="https://mallardandclaret.com/">m&amp;c</a>
+              Developed by <a href="https://zerrorstudio.com"> ZerroStudio</a>
             </span>
           </span>
           <span className="fht">

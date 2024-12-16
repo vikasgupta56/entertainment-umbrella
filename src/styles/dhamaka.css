@@ -322,6 +322,7 @@
   line-height: 1.04;
   text-transform: uppercase;
   font-family: var(--secondary-fontS);
+  /* transition: all 1s cubic-bezier(0.19, 1, 0.22, 1); */
 }
 .i-wrapper-para {
   font-size: 0.926vw;

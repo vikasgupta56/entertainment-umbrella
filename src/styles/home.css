@@ -1152,9 +1152,9 @@ img {
   max-height: 100%;
   /* transition: all 0.3s linear; */
 }
-.letter-container:nth-child(3) {
+/* .letter-container:nth-child(3) {
   color: #d42223;
-}
+} */
 .letter-container h1 {
   font-size: 16vw;
   line-height: 1;
