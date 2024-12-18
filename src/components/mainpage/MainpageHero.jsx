@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 
-const Mainpage = () => {
+const MainpageHero = () => {
   useEffect(() => {
     // Declare variables
     let lFollowX = 0,
@@ -175,4 +175,4 @@ const Mainpage = () => {
   );
 };
 
-export default Mainpage;
+export default MainpageHero;

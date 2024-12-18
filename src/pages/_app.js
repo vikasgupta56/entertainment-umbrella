@@ -8,7 +8,7 @@ import "@/styles/newPage.css";
 import "@/styles/dhamaka.css";
 import "@/styles/productdetails.css";
 import { usePathname } from "next/navigation";
-import Mainpage from "@/components/mainpage/Mainpage";
+import MainpageHero from "@/components/mainpage/MainpageHero";
 export default function App({ Component, pageProps }) {
   const pathname = usePathname();
   return (
@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
       <>
         {pathname === "/" ? (
           <>
-            <Mainpage />
+            <MainpageHero />
           </>
         ) : (
           <>
