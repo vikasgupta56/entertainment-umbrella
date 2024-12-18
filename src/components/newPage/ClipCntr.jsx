@@ -3,6 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Histoy from "./Histoy";
 import Artist from "./Artist";
+import Artist_tour from "./Artist_tour";
 gsap.registerPlugin(ScrollTrigger);
 const ClipCntr = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -126,6 +127,7 @@ const ClipCntr = () => {
       </section>
       <Histoy />
       <Artist />
+      <Artist_tour />
     </div>
   );
 };

@@ -2592,3 +2592,149 @@ html.w-mod-touch * {
   /* section4 */
 }
 /*product details page range media */
+
+/* Artist_tour */
+.Artist_tour {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+}
+.Artist_tour_inner {
+  width: 66.6%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  padding-top: 3vw;
+  padding-bottom: 0.5vw;
+  padding: 1rem 0.5vw;
+}
+.Artist_tour_left_textCntr {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--primary-fontB);
+}
+.Artist_tour_text-wrap {
+  height: 9vw;
+  overflow: hidden;
+}
+.Artist_tour_text-wrap h1 {
+  font-size: 9vw;
+  line-height: 1;
+  transform: translateY(100%);
+}
+.learn_more_text_cntr {
+  width: 50%;
+  display: flex;
+  margin-top: 4vw;
+  margin-left: 0.5vw;
+  justify-content: space-between;
+  border-top-width: 0.1vw;
+  padding-top: 0.3vw;
+  padding-bottom: 0.3vw;
+  border-color: rgb(0, 0, 0);
+  opacity: 0;
+  cursor: pointer;
+}
+.learn_more_text {
+  text-transform: capitalize;
+}
+.learn_more_arrow {
+  width: 1.3vw;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+}
+.learn_more_arrow svg {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  position: absolute;
+  left: 0;
+}
+.learn_more_arrow svg:nth-child(1) {
+  transform: translateX(-100%);
+}
+.learn_more_text_cntr:hover .learn_more_arrow svg:nth-child(1) {
+  transform: translateX(0);
+}
+.learn_more_text_cntr:hover .learn_more_arrow svg:nth-child(2) {
+  transform: translateX(100%);
+}
+.Artist_tour_btm_text {
+  padding-left: 0.5vw;
+  opacity: 0;
+}
+.Artist_tour-middleCntr {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-top: 1vw;
+  font-family: var(--primary-fontB);
+  opacity: 0;
+}
+.Number_paginationCntr {
+  height: 1vw;
+  display: flex;
+  overflow: hidden;
+  font-size: 1vw;
+  line-height: 1;
+}
+.featured_cntr_artist_tour {
+  display: flex;
+  gap: 2.5vw;
+  font-size: 1vw;
+  line-height: 1;
+}
+.year_artist_tour {
+  line-height: 1;
+}
+
+.t-1 {
+  opacity: 1;
+}
+
+.t-2,
+.t-3,
+.t-4,
+.t-5,
+.t-6 {
+  opacity: 0.4;
+}
+.Artist_tour_imageCntr {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.Artist_tour_left_imageCntr {
+  background-position: center;
+  background-size: cover;
+  background-color: red;
+  overflow: hidden;
+  width: calc(100% / 3);
+  z-index: 20;
+  position: relative;
+  transform: translateY(100%);
+}
+.Artist_tour_left_imageCntr img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.tour_image {
+  position: absolute;
+  /* top: 100%; */
+}
+/* .tour_image.im-1 {
+  position: absolute;
+} */
+/* Artist_tour */
