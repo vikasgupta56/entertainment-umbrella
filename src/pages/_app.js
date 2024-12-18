@@ -7,12 +7,26 @@ import "@/styles/navbar.css";
 import "@/styles/newPage.css";
 import "@/styles/dhamaka.css";
 import "@/styles/productdetails.css";
+import { usePathname } from "next/navigation";
+import Mainpage from "@/components/mainpage/Mainpage";
 export default function App({ Component, pageProps }) {
+  const pathname = usePathname();
   return (
     <SmoothScrolling>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <>
+        {pathname === "/" ? (
+          <>
+            <Mainpage />
+          </>
+        ) : (
+          <>
+            {" "}
+            <Navbar />
+            <Component {...pageProps} />
+            <Footer />
+          </>
+        )}
+      </>
     </SmoothScrolling>
   );
 }

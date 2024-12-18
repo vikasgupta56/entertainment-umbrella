@@ -2661,7 +2661,7 @@ html.w-mod-touch * {
   transform: translateX(0);
 }
 .learn_more_text_cntr:hover .learn_more_arrow svg:nth-child(2) {
-  transform: translateX(100%);
+  transform: translateX(200%);
 }
 .Artist_tour_btm_text {
   padding-left: 0.5vw;

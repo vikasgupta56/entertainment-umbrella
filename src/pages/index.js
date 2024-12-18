@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Hero from "@/components/home/Hero";
+import Mainpage from "@/components/mainpage/mainpage";
 // import Navbar from "@/common/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,9 +22,10 @@ export default function Home() {
       </Head>
       {/* <Navbar /> */}
       <main>
-        <div className="heroBanner__container dropper" id="dropper">
+        {/* <div className="heroBanner__container dropper" id="dropper">
           <Hero />
-        </div>
+        </div> */}
+        {/* <Mainpage /> */}
       </main>
     </>
   );
