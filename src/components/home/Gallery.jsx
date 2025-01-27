@@ -1,8 +1,8 @@
-// import a from "next/a";
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import scrollTrigger from "gsap/dist/ScrollTrigger";
+import Link from "next/link";
 gsap.registerPlugin(useGSAP, scrollTrigger);
 const Gallery = () => {
   useEffect(() => {
@@ -154,20 +154,20 @@ const Gallery = () => {
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
             <h2 className="gallery_title_text">
-              <a href={"/product"} className="gallery_title_maintext">
-                Givenchy
-              </a>
+              <Link href={"/product"} className="gallery_title_maintext">
+                Rungta Steel
+              </Link>
             </h2>
           </div>
           <div className="">
             {/* Image section */}
             <div data-track className="gallery_image_bottom_sec">
               <figure className="gallery_image_bottom_inner">
-                <a
+                <Link
                   aria-label="Givenchy"
                   href="/product"
                   className="w-full h-full"
-                ></a>
+                ></Link>
               </figure>
             </div>
             {/* Fixed Image Section */}
@@ -190,20 +190,20 @@ const Gallery = () => {
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
             <h2 className="gallery_title_text">
-              <a href={""} className="gallery_title_maintext">
-                Replay
-              </a>
+              <Link href={""} className="gallery_title_maintext">
+                Lux Cozi
+              </Link>
             </h2>
           </div>
           <div className="">
             {/* Image section */}
             <div data-track className="gallery_image_bottom_sec">
               <figure className="gallery_image_bottom_inner">
-                <a
+                <Link
                   aria-label="Replay"
                   href="replay "
                   className="w-full h-full"
-                ></a>
+                ></Link>
               </figure>
             </div>
             {/* Fixed Image Section */}
@@ -226,20 +226,20 @@ const Gallery = () => {
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
             <h2 className="gallery_title_text">
-              <a href={""} className="gallery_title_maintext">
-                Equinox
-              </a>
+              <Link href={""} className="gallery_title_maintext">
+                D'YAVOL
+              </Link>
             </h2>
           </div>
           <div className="">
             {/* Image section */}
             <div data-track className="gallery_image_bottom_sec">
               <figure className="gallery_image_bottom_inner">
-                <a
+                <Link
                   aria-label=" Equinox "
                   href=" equinox "
                   className="w-full h-full"
-                ></a>
+                ></Link>
               </figure>
             </div>
             {/* Fixed Image Section */}
@@ -262,20 +262,20 @@ const Gallery = () => {
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
             <h2 className="gallery_title_text">
-              <a href={""} className="gallery_title_maintext">
-                Sophie
-              </a>
+              <Link href={""} className="gallery_title_maintext">
+                Ruskit
+              </Link>
             </h2>
           </div>
           <div className="">
             {/* Image section */}
             <div data-track className="gallery_image_bottom_sec">
               <figure className="gallery_image_bottom_inner">
-                <a
+                <Link
                   aria-label="Sophie"
                   href="sophie"
                   className="w-full h-full"
-                ></a>
+                ></Link>
               </figure>
             </div>
             {/* Fixed Image Section */}
@@ -298,20 +298,20 @@ const Gallery = () => {
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
             <h2 className="gallery_title_text">
-              <a href={""} className="gallery_title_maintext">
-                Harley
-              </a>
+              <Link href={""} className="gallery_title_maintext">
+                Just Herbs
+              </Link>
             </h2>
           </div>
           <div className="">
             {/* Image section */}
             <div data-track className="gallery_image_bottom_sec">
               <figure className="gallery_image_bottom_inner">
-                <a
+                <Link
                   aria-label="Harley"
                   href="harley"
                   className="w-full h-full"
-                ></a>
+                ></Link>
               </figure>
             </div>
             {/* Fixed Image Section */}
@@ -334,20 +334,20 @@ const Gallery = () => {
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
             <h2 className="gallery_title_text">
-              <a href={""} className="gallery_title_maintext">
-                Renew
-              </a>
+              <Link href={""} className="gallery_title_maintext">
+                Setu
+              </Link>
             </h2>
           </div>
           <div className="">
             {/* Image section */}
             <div data-track className="gallery_image_bottom_sec">
               <figure className="gallery_image_bottom_inner">
-                <a
+                <Link
                   aria-label="Renew"
                   href="renew"
                   className="w-full h-full"
-                ></a>
+                ></Link>
               </figure>
             </div>
             {/* Fixed Image Section */}
@@ -370,20 +370,20 @@ const Gallery = () => {
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
             <h2 className="gallery_title_text">
-              <a href={""} className="gallery_title_maintext">
-                Originals
-              </a>
+              <Link href={""} className="gallery_title_maintext">
+                Nimaya Project
+              </Link>
             </h2>
           </div>
           <div className="">
             {/* Image section */}
             <div data-track className="gallery_image_bottom_sec">
               <figure className="gallery_image_bottom_inner">
-                <a
-                  aria-label="Originals"
-                  href="originals"
+                <Link
+                  aria-label="Nimaya Project"
+                  href="Nimaya Project"
                   className="w-full h-full"
-                ></a>
+                ></Link>
               </figure>
             </div>
             {/* Fixed Image Section */}

@@ -24,157 +24,176 @@ const HomeHero = () => {
     const DESKTOP_BREAKPOINT = window.matchMedia("(min-width: 768px)");
 
     const DESCRIPTOR_NAMES = [
-      "DESIGN STUDIO",
-      "DEVELOPMENT TEAM",
-      "DESIGN CREW",
-      "PRODUCT SQUAD",
-      "COMMUNICATION AGENCY",
+      "FLIMS",
+      "EVENTS",
+      // "DESIGN CREW",
+      // "PRODUCT SQUAD",
+      // "COMMUNICATION AGENCY",
     ];
+    const DESCRIPTOR_NAMES2 = [
+      "EVENTS",
+      "FLIMS",
 
-    if (DESKTOP_BREAKPOINT.matches) {
-      const e = document.querySelector(".hero-heading"),
-        t = document.querySelector(".background-video-wrapper"),
-        o = Array.from(t.querySelectorAll("video")),
-        a = e.querySelectorAll(".heading-link"),
-        n = e.querySelectorAll(".not-hoverable"),
-        r = document.querySelector(".bottom-links-wrapper"),
-        i = Array.from(a);
-      let s = !1,
-        l = !1,
-        c = ["#0D99FE", "#FFD73B", "#F15F1B"];
-      o[0].load(),
-        o[1].load(),
-        o[2].load(),
-        a.forEach((e, t) => {
-          let d = i.indexOf(a[t]),
-            u = i.filter((e, t) => t != d),
-            p = o.filter((e, o) => o != t);
-          e.addEventListener("mouseenter", () => {
-            setTimeout(() => {
-              if (s && !l) {
-                let a = gsap.timeline({
-                  defaults: { ease: "circ.inOut", duration: 0.5 },
-                  onStart: () => {
-                    o[t].play(), (l = !0);
-                  },
-                  onComplete: () => {
-                    l = !1;
-                  },
-                });
-                a.set(p, { autoAlpha: 0 }),
-                  a.to(o[t], { autoAlpha: 1, scale: 1 }, "<"),
-                  a.to(n, { autoAlpha: 0 }, "<"),
-                  a.to(".letter-container", { autoAlpha: 0 }, "<"),
-                  a.to(r, { autoAlpha: 0 }, "<"),
-                  a.to(u, { autoAlpha: 0 }, "<"),
-                  a.to(
-                    e,
-                    {
-                      "--animated-link-width": 0,
-                      "--animated-link-opacity": 0,
-                      paddingLeft: 12,
-                      paddingRight: 12,
-                      paddingTop: 6,
-                      paddingBottom: 6,
-                      marginLeft: -12,
-                      marginRight: -12,
-                      marginTop: -6,
-                      marginBottom: -6,
-                      backgroundColor: c[t],
-                      color: "#fff",
-                    },
-                    "<"
-                  );
-              }
-            }, 300);
-          }),
-            e.addEventListener("mouseleave", () => {
-              let a = setInterval(() => {
-                if (!s && !l) {
-                  let i = gsap.timeline({
-                    defaults: { ease: "circ.inOut", duration: 0.5 },
-                    onStart: () => {
-                      o[t].pause();
-                    },
-                  });
-                  i.to(o[t], { autoAlpha: 0, scale: 1.15 }, "<"),
-                    i.to(n, { autoAlpha: 1 }, "<"),
-                    i.to(".letter-container", { autoAlpha: 1 }, "<"),
-                    i.to(r, { autoAlpha: 1 }, "<"),
-                    i.to(u, { autoAlpha: 1 }, "<"),
-                    i.to(
-                      e,
-                      {
-                        "--animated-link-width": 100,
-                        "--animated-link-opacity": 1,
-                        paddingLeft: 0,
-                        paddingRight: 0,
-                        paddingTop: 0,
-                        paddingBottom: 0,
-                        marginLeft: 0,
-                        marginRight: 0,
-                        marginTop: 0,
-                        marginBottom: 0,
-                        backgroundColor: "transparent",
-                        color: "#d42223",
-                      },
-                      "<"
-                    ),
-                    clearInterval(a);
-                }
-              }, 200);
-            }),
-            e.addEventListener("mousemove", () => {
-              s = !0;
-            }),
-            e.addEventListener("mouseout", () => {
-              s = !1;
-            });
-        });
-    }
+      // "DESIGN CREW",
+      // "PRODUCT SQUAD",
+      // "COMMUNICATION AGENCY",
+    ];
+    // if (DESKTOP_BREAKPOINT.matches) {
+    //   const e = document.querySelector(".hero-heading"),
+    //     // t = document.querySelector(".background-video-wrapper"),
+    //     o = Array.from(t.querySelectorAll("video")),
+    //     a = e.querySelectorAll(".heading-link"),
+    //     n = e.querySelectorAll(".not-hoverable"),
+    //     r = document.querySelector(".bottom-links-wrapper"),
+    //     i = Array.from(a);
+    //   let s = !1,
+    //     l = !1,
+    //     c = ["#0D99FE", "#FFD73B", "#F15F1B"];
+    //   o[0].load(),
+    //     o[1].load(),
+    //     o[2].load(),
+    //     a.forEach((e, t) => {
+    //       let d = i.indexOf(a[t]),
+    //         u = i.filter((e, t) => t != d),
+    //         p = o.filter((e, o) => o != t);
+    //       e.addEventListener("mouseenter", () => {
+    //         setTimeout(() => {
+    //           if (s && !l) {
+    //             let a = gsap.timeline({
+    //               defaults: { ease: "circ.inOut", duration: 0.5 },
+    //               onStart: () => {
+    //                 o[t].play(), (l = !0);
+    //               },
+    //               onComplete: () => {
+    //                 l = !1;
+    //               },
+    //             });
+    //             a.set(p, { autoAlpha: 0 }),
+    //               a.to(o[t], { autoAlpha: 1, scale: 1 }, "<"),
+    //               a.to(n, { autoAlpha: 0 }, "<"),
+    //               a.to(".letter-container", { autoAlpha: 0 }, "<"),
+    //               // a.to(r, { autoAlpha: 0 }, "<"),
+    //               // a.to(u, { autoAlpha: 0 }, "<"),
+    //               a.to(
+    //                 e,
+    //                 {
+    //                   // "--animated-link-width": 0,
+    //                   // "--animated-link-opacity": 0,
+    //                   // paddingLeft: 12,
+    //                   // paddingRight: 12,
+    //                   // paddingTop: 6,
+    //                   // paddingBottom: 6,
+    //                   // marginLeft: -12,
+    //                   // marginRight: -12,
+    //                   // marginTop: -6,
+    //                   // marginBottom: -6,
+    //                   // backgroundColor: c[t],
+    //                   // color: "#fff",
+    //                 },
+    //                 "<"
+    //               );
+    //           }
+    //         }, 300);
+    //       }),
+    //         e.addEventListener("mouseleave", () => {
+    //           let a = setInterval(() => {
+    //             if (!s && !l) {
+    //               let i = gsap.timeline({
+    //                 defaults: { ease: "circ.inOut", duration: 0.5 },
+    //                 onStart: () => {
+    //                   o[t].pause();
+    //                 },
+    //               });
+    //               i.to(o[t], { autoAlpha: 0, scale: 1.15 }, "<"),
+    //                 i.to(n, { autoAlpha: 1 }, "<"),
+    //                 i.to(".letter-container", { autoAlpha: 1 }, "<"),
+    //                 i.to(r, { autoAlpha: 1 }, "<"),
+    //                 i.to(u, { autoAlpha: 1 }, "<"),
+    //                 i.to(
+    //                   e,
+    //                   {
+    //                     "--animated-link-width": 100,
+    //                     "--animated-link-opacity": 1,
+    //                     paddingLeft: 0,
+    //                     paddingRight: 0,
+    //                     paddingTop: 0,
+    //                     paddingBottom: 0,
+    //                     marginLeft: 0,
+    //                     marginRight: 0,
+    //                     marginTop: 0,
+    //                     marginBottom: 0,
+    //                     backgroundColor: "transparent",
+    //                     color: "#d42223",
+    //                   },
+    //                   "<"
+    //                 ),
+    //                 clearInterval(a);
+    //             }
+    //           }, 200);
+    //         }),
+    //         e.addEventListener("mousemove", () => {
+    //           s = !0;
+    //         }),
+    //         e.addEventListener("mouseout", () => {
+    //           s = !1;
+    //         });
+    //     });
+    // }
+
     const handleDescriptorCycle = () => {
       let t = -1;
       gsap.to(".descriptor > *", {
         text: () => {
           t += 1;
-          if (t > 4) t = 0;
+          if (t > 1) t = 0;
           return DESCRIPTOR_NAMES[t];
         },
-        duration: 0.7,
+        duration: 1,
+        repeatDelay: 1,
+        repeat: -1,
+        repeatRefresh: true,
+      });
+      gsap.to(".descriptor:nth-child(2) > *", {
+        text: () => {
+          t += 1;
+          if (t > 1) t = 0;
+          return DESCRIPTOR_NAMES2[t];
+        },
+        duration: 1,
         repeatDelay: 1,
         repeat: -1,
         repeatRefresh: true,
       });
     };
 
-    const handleTimeDisplay = () => {
-      const o = document.getElementById("local-time");
-      const timeFormat = {
-        weekday: "short",
-        hour: "numeric",
-        minute: "2-digit",
-        second: "2-digit",
-      };
+    // const handleTimeDisplay = () => {
+    //   const o = document.getElementById("local-time");
+    //   const timeFormat = {
+    //     weekday: "short",
+    //     hour: "numeric",
+    //     minute: "2-digit",
+    //     second: "2-digit",
+    //   };
 
-      const updateTime = () => {
-        // Get the current time in UTC
-        const now = new Date();
+    //   const updateTime = () => {
+    //     // Get the current time in UTC
+    //     const now = new Date();
 
-        // Convert UTC to IST (UTC +5:30)
-        // const utcOffset = 5 * 60 + 30; // 5 hours and 30 minutes in minutes
-        const localTime = new Date(now.getTime()); // Adjust time by the offset
+    //     // Convert UTC to IST (UTC +5:30)
+    //     // const utcOffset = 5 * 60 + 30; // 5 hours and 30 minutes in minutes
+    //     const localTime = new Date(now.getTime()); // Adjust time by the offset
 
-        // Format the time using toLocaleString
-        o.innerHTML = localTime.toLocaleString("en-IN", timeFormat);
-      };
+    //     // Format the time using toLocaleString
+    //     o.innerHTML = localTime.toLocaleString("en-IN", timeFormat);
+    //   };
 
-      updateTime(); // Initialize immediately
-      setInterval(updateTime, 1000); // Update every second
-    };
+    //   updateTime(); // Initialize immediately
+    //   setInterval(updateTime, 1000); // Update every second
+    // };
 
     if (
       (DESKTOP_BREAKPOINT.matches && handleDescriptorCycle(),
-      handleTimeDisplay(),
+      // handleTimeDisplay(),
       DESKTOP_BREAKPOINT.matches)
     ) {
       const e = Array.from(document.querySelectorAll(".letter-container")),
@@ -251,15 +270,27 @@ const HomeHero = () => {
       <div className="heading-wrapper">
         <h2 className="hero-heading">
           <span className="not-hoverable">
-            {/* We fuse and to craft unforgettable moments, always pushing the
-            boundaries of */}
-            We live our best lives excelling at{" "}
-          </span>
-          <span className="heading-link"> Film Production</span>
+            {" "}
+            Mr. and Mrs.
+            <span className="descriptor">
+              {" "}
+              <span className="welcome">Films</span>
+            </span>
+            ... and Sometimes{" "}
+            <span className="descriptor">
+              {" "}
+              <span className="welcome">Events</span>
+            </span>{" "}
+          </span>{" "}
           <br />
-          <span className="heading-link">Event Creation, &nbsp;</span>
+          <span className="not-hoverable not-hoverable2">
+            {" "}
+            We don’t say no to anything &nbsp;entertainment.
+          </span>
+          <br />
+          {/* <span className="heading-link">Event Creation, &nbsp;</span>
           <span className="heading-link"> Creative Storytelling.</span>
-          <span className="not-hoverable"> and everything we touch</span>
+          <span className="not-hoverable"> and everything we touch</span> */}
           <div className="hero-mask">
             <div className="hero-mask-part" />
             <div className="hero-mask-part" />
@@ -271,7 +302,7 @@ const HomeHero = () => {
         </h2>
       </div>
       <div className="bottom-wrapper">
-        <div className="bottom-links-wrapper">
+        {/* <div className="bottom-links-wrapper">
           <div>
             <div className="welcome" id="local-time">
               MON 04:21:30
@@ -296,7 +327,7 @@ const HomeHero = () => {
               <span>DPROFILE</span>
             </a>
           </div>
-        </div>
+        </div> */}
         <div className="letters-wrapper">
           <div id="letter-r" className="letter-container">
             <h1>M</h1>
@@ -451,7 +482,7 @@ const HomeHero = () => {
           </div>
         </div>
       </div>
-      <div className="background-video-wrapper">
+      {/* <div className="background-video-wrapper">
         <video
           id="background-video-1"
           preload="none"
@@ -508,7 +539,7 @@ const HomeHero = () => {
             type="video/mp4"
           />
         </video>
-      </div>
+      </div> */}
       <div className="mobile-letters-lottie-container" />
     </section>
   );

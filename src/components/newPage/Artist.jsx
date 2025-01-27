@@ -1482,10 +1482,18 @@ const Artist = () => {
           <div className="h2-wrapper">
             <div className="h-wrapper align-top">
               <h1 className="artistsheading">Our Services</h1>
-              <h1 className="h2 star">*</h1>
+              {/* <h1 className="h2 star">*</h1> */}
+              <div className="text-inner-container bottom_margin">
+                <h4 className="gallerypera">
+                  At Rage Media, we offer all services in-house, covering every
+                  aspect of your brand needs. Our multi-brand structure allows
+                  us to seamlessly integrate strategies, ensuring a cohesive and
+                  tailored approach for each client.
+                </h4>
+              </div>
               <div className="border-bottom"></div>
             </div>
-            <div className="description-wrapper">
+            {/* <div className="description-wrapper">
               <div className="description-item is--hidden-in-mobile">
                 <p className="description italic">contemporary</p>
               </div>
@@ -1498,7 +1506,7 @@ const Artist = () => {
               <div className="description-item last">
                 <p className="description italic cbp">(2023)</p>
               </div>
-            </div>
+            </div> */}
           </div>
           <div id="aboutsection">
             <div id="aboutimages">
@@ -1538,17 +1546,14 @@ const Artist = () => {
             </div>
 
             <div className="about-a-section">
-              <div className="text-inner-container bottom_margin">
+              {/* <div className="text-inner-container bottom_margin">
                 <h4 className="gallerypera">
                   At Rage Media, we offer all services in-house, covering every
                   aspect of your brand needs. Our multi-brand structure allows
                   us to seamlessly integrate strategies, ensuring a cohesive and
-                  tailored approach for each client. From creative shoots and
-                  influencer marketing to celebrity management, we have the
-                  expertise and resources to execute campaigns. Here are all the
-                  services we can provide-
+                  tailored approach for each client.
                 </h4>
-              </div>
+              </div> */}
               <div className="g-item-list">
                 <div className="item">
                   <header className="">
@@ -1601,9 +1606,7 @@ const Artist = () => {
                 <div className="item">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">
-                        Social Media Marketing{" "}
-                      </h3>
+                      <h3 className="para_title_head">Website Development</h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1627,7 +1630,7 @@ const Artist = () => {
                 <div className="item">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Branding</h3>
+                      <h3 className="para_title_head">Brand Shoots</h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1651,7 +1654,7 @@ const Artist = () => {
                 <div className="item">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Content Writing</h3>
+                      <h3 className="para_title_head">Launch Events</h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1675,7 +1678,31 @@ const Artist = () => {
                 <div className="item">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Designing</h3>
+                      <h3 className="para_title_head">Influencer Marketing</h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        // tag="span"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>{" "}
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head">Public Relations (PR)</h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"

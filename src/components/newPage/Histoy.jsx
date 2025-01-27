@@ -147,193 +147,25 @@ const Histoy = () => {
   // }, []);
   return (
     <>
-      <section className="section_black">
-        {/* <div id="w-node" className="content-sticky-wrap"> */}
-        {/* <div className="sticky"> */}
-        {/* <div className="content grid sticky"> */}
-        <div id="w-node-1" className="h2-wrapper">
-          <div className="h-wrapper">
-            <h1 className="h-wrapper_h2 cbh2">About</h1>
-          </div>
-        </div>
-        <div className="image_cntr image_1_cntr">
-          <div id="w-node-2" className="grid-img wrapper">
-            <img
-              src="../../../assets/images/RangeMedia/Purple rain .jpg"
-              loading="lazy"
-              alt=""
-              className="grid-cell-img gsap"
-            />
-          </div>
-        </div>
-        <div className="image_cntr image_2_cntr">
-          <div id="w-node-3" className="grid-img wrapper">
-            <img
-              src="../../../assets/images/RangeMedia/Purple rain 1.jpg"
-              loading="lazy"
-              alt=""
-              className="grid-cell-img gsap"
-            />
-          </div>
-        </div>
-
-        <div className="image_cntr image_3_cntr">
-          <div id="w-node-4" className="grid-img wrapper">
-            <img
-              src="../../../assets/images/RangeMedia/Purple rain 2.jpg"
-              loading="lazy"
-              alt=""
-              className="grid-cell-img gsap"
-            />
-          </div>
-        </div>
-        <div id="w-node-5" className="p-container">
-          {/* <div className="indent-154">
-            <p className="paragraph cbp">
-              The history of photography &amp; fine arts is full of beautiful
-            </p>
-          </div> */}
-          <p className="paragraph cbp has--indent Cpb_para">
-            At Rage Media, we’ve had the &amp; privilege of working with over 30
-            brands—ranging from <br /> individual entrepreneurs to large
-            corporations. But no matter your size, one thing remains <br />{" "}
-            constant: for us, it’s all about finding the right fit.
-            {/* The history of photography &amp;
-            fine arts is full of beautiful masterpieces. Expressions have been
-            captured and shared throughout the history. Each and every work of
-            art encapsulates a unique moment frozen in time, offering
-            a&nbsp;glimpse into the lives, emotions, and struggles of those who
-            came before us. */}
+      <div className="TwoColumnText_root">
+        {/* <div className="TwoColumnText_left TwoColumnText_col">
+          <h2 className="AnimatedTextLines_root text-heading-md AnimatedTextLines_mask AnimatedTextLines_animate">
+            Why partner with Rage Entertainment?
+            About
+          </h2>
+        </div> */}
+        <div className="TwoColumnText_right TwoColumnText_col">
+          <p className="AnimatedTextLines_root text-heading-sm AnimatedTextLines_line-height AnimatedTextLines_animate">
+            At Rage Media, we’ve had the privilege of working with over 30
+            brands—ranging from individual entrepreneurs to large corporations.
+            But no matter your size, one thing remains constant: for us, it’s
+            all about finding the right fit.
           </p>
+          {/* <a className="text-accent text-body-animate-in active" href="">
+            Say Hello
+          </a> */}
         </div>
-        <div className="image_cntr image_4_cntr">
-          <div id="w-node-6" className="grid-img wrapper">
-            <img
-              src="../../../assets/images/RangeMedia/Purple rain 3.jpg"
-              loading="lazy"
-              alt=""
-              className="grid-cell-img gsap"
-            />
-          </div>
-        </div>
-        <div className="image_cntr image_5_cntr">
-          <div id="w-node-7" className="grid-img wrapper">
-            <img
-              src="../../../assets/images/RangeMedia/Purple rain 4.jpg"
-              loading="lazy"
-              alt=""
-              className="grid-cell-img gsap"
-            />
-          </div>
-        </div>
-        <div className="image_cntr image_6_cntr">
-          <div id="w-node-8" className="grid-img wrapper">
-            <img
-              src="../../../assets/images/RangeMedia/Purple rain 5.jpg"
-              loading="lazy"
-              alt=""
-              className="grid-cell-img gsap"
-            />
-          </div>
-        </div>
-        <div id="w-node-9" className="grid-img wrapper is--hidden-in-mobile">
-          <img
-            src="../../../assets/images/RangeMedia/Purple rain 6.jpg"
-            loading="lazy"
-            alt=""
-            className="grid-cell-img gsap"
-          />
-        </div>
-        <div id="w-node-10" className="p-container">
-          <div id="w-node-11" className="text-inner-container bottom_margin">
-            {/* <div className="">
-              <p className="paragraph cbp line-wrap__nowrap">
-                Photography and fine arts, in their essence, are not merely
-              </p>
-            </div> */}
-            <p className="paragraph cbp Cpb_para">
-              Photography and fine arts, in their essence, are not merely
-              confined to documenting events or portraying aesthetics; they hold
-              within them a profound narrative that transcends time and space.
-              From the captivating black and white landscapes captured by the
-              renowned Hiroji Kubota to the enigmatic urban scenes portrayed by
-              Yuichi Hibi, or Chiharu Shiota's mesmerizing installations,
-              intertwined with profound emotions, that take viewers on a journey
-              of self-reflection and introspection, “Artworks” presents a
-              kaleidoscope of artistic expressions that transcend borders and
-              cultures.
-            </p>
-          </div>
-          <div className="text-inner-container">
-            {/* <div className="">
-              <p className="paragraph cbp line-wrap__nowrap">
-                As we move forward, the history of photography and fine arts
-              </p>
-            </div> */}
-            <p className="paragraph cbp Cpb_para">
-              As we move forward, the history of photography and fine arts will
-              undoubtedly be enriched by groundbreaking innovations and
-              ever-evolving expressions. Through the lens of artistic vision,
-              the beauty and complexities of the human experience will continue
-              to be celebrated and shared, shaping our understanding of the
-              world and&nbsp;the&nbsp;people&nbsp;in&nbsp;it.
-            </p>
-          </div>
-        </div>
-        {/* </div> */}
-        <div className="w-embed">
-          {/* <style>
-              dangerouslySetInnerHTML={{
-                __html:
-                                  "@media (min-width: 820px) and (max-width: 880px) {
-                                      .content.grid.sticky {
-                                        position: sticky;
-                                        top: -126em;
-                                    }
-                                    }
-                                        @media (min-width: 820px) and (max-width: 960px) {
-                                            .content.grid.sticky {
-                                            position: sticky;
-                                            top: -135em;
-
-                                        }
-                                    }
-                                        @media (min-width: 960px) and (max-width: 991px) {
-                                            .content.grid.sticky {
-                                            position: sticky;
-                                            top: -140em;
-
-                                        }
-                                    }
-                                        @media (min-width: 991px) and (max-width: 1100px) {
-                                            .content.grid.sticky {
-                                            position: sticky;
-                                            top: -80em;
-
-                                        }
-                                        .section.black.sticky {
-                                            height: 140em;
-
-                                        }
-                                    }
-                                        @media (min-width: 1100px) and (max-width: 1180px) {
-                                            .content.grid.sticky {
-                                            position: sticky;
-                                            top: -64em;
-
-                                        }
-                                        .section.black.sticky {
-                                            height: 140em;
-
-                                        }
-                                    }
-                                        ",
-              }}
-            </style> */}
-        </div>
-        {/* </div> */}
-        {/* </div> */}
-      </section>
+      </div>
     </>
   );
 };

@@ -89,39 +89,23 @@ const About = () => {
     <section className="intro" data-scroll-section="">
       <div className="intro__container magneticWrapper">
         <div className="itext">
-          <h1>ABOUT US</h1>
+          {/* <h1>ABOUT US</h1> */}
           <h3 className="fhl o_italic">
-            <span className="itext__line">
+            Welcome to Mr. and Mrs. Films... and Sometimes Events! A powerhouse
+            where the art of storytelling meets the magic of live experiences.
+            Born from our love of creativity, we are a film production house
+            committed to finding a fresh angle every time we tell a story. But
+            our penchant for crafting long-lingering moments didn't stop right
+            there. Today, we take pride in ourselves as an event-creating,
+            unforgettable-experience-building company too.
+            {/* <span className="itext__line">
               Welcome to Mr. and Mrs. Films... and Sometimes Events!
             </span>
+            A powerhouse where the art of the magic of live
             <span className="itext__line">
-              A powerhouse where the art of
-              <span className="itext__thumb">
-                <img
-                  src="https://halomedia.com/wp-content/uploads/2022/07/text-thumb.png"
-                  alt=""
-                />
-              </span>
-              <a href="https://halomedia.com/studio/"> storytelling meets</a>
+              experiences. Born from our work our love of creativity,
             </span>
-            <span className="itext__line">
-              <a href="https://halomedia.com/collective/">the magic of live</a>
-              <span className="itext__thumb">
-                <img
-                  src="https://halomedia.com/wp-content/uploads/2022/07/text-thumb2.png"
-                  alt=""
-                />
-              </span>
-              &amp;
-              <a href="https://halomedia.com/savoir-flair/">
-                {" "}
-                experiences. Born from
-              </a>
-              our work
-            </span>
-            <span className="itext__line">
-              our love of creativity, &amp; we are a film production house
-            </span>
+            <span className="itext__line">we are a film production house</span>
             <span className="itext__line">
               committed to finding a fresh angle every time we tell a story.
             </span>
@@ -133,7 +117,7 @@ const About = () => {
             </span>
             <span>
               creating, unforgettable-experience-building company too.
-            </span>
+            </span> */}
           </h3>
         </div>
         <div

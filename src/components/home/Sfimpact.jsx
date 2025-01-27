@@ -127,7 +127,15 @@ const Sfimpact = () => {
           className="sfimpact__banner--img mobilePrallax"
           data-scroll-direction="vertical"
         >
-          <img
+          <video
+            src="../../../assets/videos/Mrandmrs/Copy of FILM 1 Swasth Nari Photoshoot.mp4"
+            muted
+            loop
+            autoPlay
+            playsInline
+          ></video>
+          <div className="grad_up"></div>
+          {/* <img
             src="https://halomedia.com/wp-content/uploads/2022/07/Rectangle-135.jpg"
             alt=""
             className="sfimpact__banner--img--desktop"
@@ -136,7 +144,7 @@ const Sfimpact = () => {
             src="https://halomedia.com/wp-content/uploads/2022/07/2110050000001600082-2.jpg"
             alt=""
             className="sfimpact__banner--img--mobile"
-          />
+          /> */}
         </div>
       </div>
       <div className="sfimpact__text sfimpact--full__text">
@@ -151,14 +159,9 @@ const Sfimpact = () => {
           We create awareness drives, community-based events, and partnerships
           not only to reach out with messages but to amplify them.
         </p>
-        <a
-          href="https://www.instagram.com/wearehalocollective/"
-          className="brandsInfo__textBlock--btn fht btn-pr"
-        >
-          <span className="btn-text link_white" data-title="View on Instagram">
-            View on Instagram
-          </span>
-        </a>
+        <div className="brandsInfo__textBlock--btn fht btn-pr">
+          <span className="btn-text link_white">{/* View on Instagram */}</span>
+        </div>
         <div className="ticker">
           <div className="ticker__row" data-reverse="false">
             <div className="ticker__row__block">

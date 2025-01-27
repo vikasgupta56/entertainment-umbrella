@@ -248,20 +248,19 @@ const Dhamaka_Hero = () => {
       <section className="Dhamaka_hero-section">
         <div className="c-wrapper">
           <h1 className="js-t ff-t tt-u fs-xl">
-            Communication agency
+            marketing agency
             <br />
-            for creators <br />
-            pour les createurs
+            driving brand engagement <br />
+            across entertainment
             <br />
-            of the art of living.
+            and influence.
           </h1>
           <p className="js-c tt-u fs-rg br-unset mb-4 mb-0@sm px-1 px-3@sm">
-            GPC is a development <br />
-            and communication consulting agency in the travel, <br />
-            lifestyle and hotel sectors. Founded in 2008, <br />
-            our agency has over 15 years of experience <br />
-            in supporting lifestyle creators, <br />
-            destinations and place designers.
+            India’s largest influencer marketing agency and a <br />
+            leader in the industry. At Dhamaka Talent, we help <br />
+            brands make a lasting impact by leveraging influencers <br />
+            to amplify their message and seamlessly connect with <br />
+            audiences across brand and entertainment spaces.
           </p>
         </div>
         <div className="vsl-wrapper z-up">
@@ -1371,48 +1370,6 @@ const Dhamaka_Hero = () => {
                   </svg>
                 </div> */}
               </div>
-              <div className="outro-wrapper mb-1">
-                <h2 className="js-v-item-inner-para">
-                  At GPC, we are dedicated to helping <br />
-                  our clients achieve their <br /> brand awareness and image
-                  goals. <br />
-                  <br />
-                  Contact us to discuss <br />
-                  how we can <br />
-                  work together to strengthen your brand.
-                </h2>
-                <div className="v-infos">
-                  <a
-                    href="mailto:info@gaelleperrin.com"
-                    target="_blank"
-                    className="a-underline is-ngtv prevent"
-                    title="info@gaelleperrin.com"
-                  >
-                    <span>info@EntertainmentUmbrella.com</span>
-                  </a>
-                  <a
-                    href="tel:+0123456789"
-                    target="_blank"
-                    className="a-underline is-ngtv prevent"
-                    title="+91 123 456 7890"
-                  >
-                    <span>+91 123 456 7890</span>
-                  </a>
-                </div>
-                <div className="v-credits pt-8 pt-4@sm">
-                  <span style={{ opacity: "0.32" }} className="ff-c fs-rg tt-u">
-                    © website made with ♥︎ by
-                    <a
-                      href=""
-                      target="_blank"
-                      className="a-underline is-ngtv is-rvrsd prevent"
-                    >
-                      {/* LOCAL™ */}
-                    </a>
-                    .
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -1423,7 +1380,7 @@ const Dhamaka_Hero = () => {
             <div className="c-wrapper bg-primary">
               <div className="v-wrapper-inner-content">
                 <h2 className="v-wrapper-heading">Come on Hop</h2>
-                <h3 className="ff-t tt-u fs-md mt-0b">by GPC</h3>
+                {/* <h3 className="ff-t tt-u fs-md mt-0b">by GPC</h3> */}
                 <p className="">
                   Passionate about great trips but also about short getaways, we
                   created with our friend Stéphane Bréhier, Editorial Director
@@ -1431,7 +1388,7 @@ const Dhamaka_Hero = () => {
                   places that inspire us, guest houses, charming hotels or
                   houses to rent that are respectful, independent and embodied.
                 </p>
-                <div className="mb-1">
+                {/* <div className="mb-1">
                   <a
                     href=""
                     target="_blank"
@@ -1440,28 +1397,10 @@ const Dhamaka_Hero = () => {
                   >
                     <span>Have a good trip !</span>
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
-            <div
-              className="media-background js-prllx lazy-container"
-              //   data-scroll
-              //   data-scroll-speed="-0.2"
-            >
-              {/* <picture>
-                <source
-                  data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/olivia-chaber-J0bc-3dgmcI-unsplash.webp"
-                  type="image/webp"
-                />
-                <img
-                  className="lazy"
-                  src="https://gaelleperrin.com/wp-content/uploads/2024/09/olivia-chaber-J0bc-3dgmcI-unsplash.webp"
-                  alt=""
-                  width={1480}
-                  height={987}
-                  aspect=""
-                />
-              </picture> */}
+            <div className="media-background js-prllx lazy-container">
               <video
                 src="../../../assets/videos/Dhamaka-video 5.mp4"
                 loop

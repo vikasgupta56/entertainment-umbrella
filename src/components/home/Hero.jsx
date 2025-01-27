@@ -11,7 +11,7 @@ const Hero = () => {
     <>
       <HomeHero />
       <About />
-      <HomeService />
+      {/* <HomeService /> */}
       {/* <Services /> */}
       <Gallery />
       <Sfimpact />

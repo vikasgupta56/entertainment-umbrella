@@ -3,6 +3,7 @@ import CustomEase from "gsap/dist/CustomEase";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
+import { IoHome } from "react-icons/io5";
 gsap.registerPlugin(CustomEase);
 const Navbar = () => {
   const initIntroAnim = () => {
@@ -327,9 +328,16 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar">
+        <span>
+          <Link href="/">
+            {/* <IoHome /> */}
+            <h1>Entertainment</h1>
+            <h1>Umbrella</h1>
+          </Link>
+        </span>
         <ul className="navbar--menu fhl">
           <li className="navbar--menu--item">
-            <a href="/" className="nav_link">
+            <a href="/mrandmrs" className="nav_link">
               <span className="btn-text link" data-title="halo media">
                 Mr. & Mrs
               </span>
@@ -349,6 +357,17 @@ const Navbar = () => {
             </a>
           </li>
           <li className="navbar--menu--item">
+            <a href="/rage-entertainment" className="nav_link">
+              <span className="btn-text link" data-title="halo studio">
+                Rage Entertainment
+              </span>
+              {/* <span className="nav_text">
+                {" "}
+                Next-Gen White-Label Production{" "}
+              </span> */}
+            </a>
+          </li>
+          <li className="navbar--menu--item">
             <a href="/dhamaka" className="nav_link">
               <span className="btn-text link" data-title="halo studio">
                 Dhamaka
@@ -359,6 +378,7 @@ const Navbar = () => {
               </span> */}
             </a>
           </li>
+
           {/* <li className="navbar--menu--item">
             <a href="" className="nav_link">
               <span className="btn-text link" data-title="halo collective">
