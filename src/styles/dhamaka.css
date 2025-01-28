@@ -199,6 +199,9 @@
   font-size: clamp(2rem, 2.704vw, 3.704vw);
   line-height: 1.04;
 }
+.v-wrapper-inner-content h4 {
+  font-family: var(--secondary-fontS);
+}
 .v-wrapper-inner-content p {
   margin-top: calc(8 * clamp(1rem, 1.058vw, 1.058vw));
   font-family: var(--primary-fontL);
@@ -295,8 +298,9 @@
   flex-direction: column;
 }
 .vo-section .o-wrapper .o-item {
-  border-top: 1px solid #fff;
-  background: var(--primary-color);
+  /* border-top: 1px solid #fff; */
+  /* background: var(--primary-color); */
+  background-color: transparent;
   width: 100%;
   padding-bottom: calc(8 * clamp(1rem, 1.058vw, 1.058vw));
   padding-top: calc(2.5 * clamp(1rem, 1.058vw, 1.058vw));
@@ -319,7 +323,7 @@
 }
 .i-wrapper-heading {
   font-size: 3.704vw;
-  font-size: clamp(2rem, 3.704vw, 3.704vw);
+  font-size: clamp(2rem, 3.704vw, 3vw);
   line-height: 1.04;
   text-transform: uppercase;
   font-family: var(--secondary-fontS);

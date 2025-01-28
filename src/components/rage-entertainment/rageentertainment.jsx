@@ -202,7 +202,7 @@ const RageEntertainment = () => {
                   <h3 className="h3 centred mob-off aos_text">
                     <div className="section_rageEn_line-mask">
                       <div
-                        className="line"
+                        className=""
                         // style={{
                         //   textAlign: "center",
                         //   translate: "none",
@@ -212,23 +212,12 @@ const RageEntertainment = () => {
                         //     "translate(0px, 0%) scale(1.00001, 1.00001)",
                         // }}
                       >
-                        WE PRODUCE SPECTACULAR{" "}
+                        PARTIES FOR PEOPLE &amp; BRANDS WE PRODUCE SPECTACULAR{" "}
+                        <br />
                       </div>
                     </div>
                     <div className="section_rageEn_line-mask">
-                      <div
-                        className="line"
-                        // style={{
-                        //   textAlign: "center",
-                        //   translate: "none",
-                        //   rotate: "none",
-                        //   scale: "none",
-                        //   transform:
-                        //     "translate(0px, 0%) scale(1.00001, 1.00001)",
-                        // }}
-                      >
-                        PARTIES FOR PEOPLE &amp; BRANDS
-                      </div>
+                      <div className=""></div>
                     </div>
                   </h3>
                   <h2 className="h2_mob centred aos_text">
@@ -236,15 +225,7 @@ const RageEntertainment = () => {
                       className="section_rageEn_line-mask"
                       // style={{ height: "57.88px" }}
                     >
-                      <div
-                        className="line"
-                        // style={{
-                        //   textAlign: "center",
-                        //   translate: "none",
-                        //   rotate: "none",
-                        //   scale: "none",
-                        // }}
-                      >
+                      <div className="line">
                         We produce spectacular parties for people &amp; brands{" "}
                       </div>
                     </div>

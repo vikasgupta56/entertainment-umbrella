@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
+import Link from "next/link";
 import React, { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 const Dhamaka_Hero = () => {
@@ -54,7 +55,7 @@ const Dhamaka_Hero = () => {
 
     ScrollTrigger.create({
       trigger: document.querySelector(".hero-section"),
-      start: "top 10",
+      start: "top 10%",
       end: "bottom 80%",
       scrub: !0,
       invalidateOnRefresh: !0,
@@ -126,7 +127,7 @@ const Dhamaka_Hero = () => {
 
       ScrollTrigger.create({
         trigger: t,
-        start: "top-=".concat(i, "px top"),
+        start: "top =".concat(i, "30px top"),
         endTrigger: vosection,
         end: "bottom ".concat(a, "px"),
         scrub: true,
@@ -138,8 +139,8 @@ const Dhamaka_Hero = () => {
           // Hide the corresponding heading when the o-item enters
           if (iHeadings[e]) {
             gsap.to(iHeadings[e], {
-              display: "none",
-              opacity: 0,
+              // display: "none",
+              // opacity: 0,
               ease: "linear",
               duration: 0.5,
             });
@@ -149,8 +150,8 @@ const Dhamaka_Hero = () => {
           // Show the corresponding heading again when the o-item leaves
           if (iHeadings[e]) {
             gsap.to(iHeadings[e], {
-              display: "",
-              opacity: 1,
+              // display: "",
+              // opacity: 1,
               // ease: "linear",
             });
           }
@@ -266,23 +267,6 @@ const Dhamaka_Hero = () => {
         <div className="vsl-wrapper z-up">
           <div className="vsl-item vsl-lt" data-scroll data-scroll-speed=".05">
             <div className="media-background lazy-container">
-              {/* <picture>
-                <source
-                  data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/Marquises4-AnneeEECKEMAN-copie.webp"
-                  type="image/webp"
-                />
-                <img
-                  className="lazy"
-                  src="https://gaelleperrin.com/wp-content/uploads/2024/09/Marquises4-AnneeEECKEMAN-copie.jpg"
-                  alt="Agence de <br />
-                    communication <br />
-                    pour les createurs<br />
-                    d’art de vivre."
-                  width={1060}
-                  height={1590}
-                  aspect=""
-                />
-              </picture> */}
               <video
                 src="../../../assets/videos/Dhamaka-video 2.mp4"
                 loop
@@ -295,23 +279,6 @@ const Dhamaka_Hero = () => {
           </div>
           <div className="vsl-item vsl-rc" data-scroll data-scroll-speed="0.3">
             <div className="media-background lazy-container">
-              {/* <picture>
-                <source
-                  data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/R2-VILLA-DA-23-copie.webp"
-                  type="image/webp"
-                />
-                <img
-                  className="lazy"
-                  src="https://gaelleperrin.com/wp-content/uploads/2024/09/R2-VILLA-DA-23-copie.jpg"
-                  alt="Agence de <br />
-                        communication <br />
-                        pour les createurs<br />
-                        d’art de vivre."
-                  width={787}
-                  height={1181}
-                  aspect=""
-                />
-              </picture> */}
               <video
                 src="../../../assets/videos/Dhamaka-video 3.mp4"
                 loop
@@ -324,23 +291,6 @@ const Dhamaka_Hero = () => {
           </div>
           <div className="vsl-item vsl-lb" data-scroll data-scroll-speed="0.3">
             <div className="media-background lazy-container">
-              {/* <picture>
-                <source
-                  data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/B5FB6963-89D7-4B83-8FF9-4409628D6D15.webp"
-                  type="image/webp"
-                />
-                <img
-                  className="lazy"
-                  src="https://gaelleperrin.com/wp-content/uploads/2024/09/B5FB6963-89D7-4B83-8FF9-4409628D6D15.jpg"
-                  alt="Agence de <br />
-                    communication <br />
-                    pour les createurs<br />
-                    d’art de vivre."
-                  width={480}
-                  height={640}
-                  aspect=""
-                />
-              </picture> */}
               <video
                 src="../../../assets/videos/Dhamaka-video 4.mp4"
                 loop
@@ -411,9 +361,7 @@ const Dhamaka_Hero = () => {
                 <div className="o-item_inner">
                   <span className="o-item_inner_num">01</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">
-                      Brand Identity Creation
-                    </h3>
+                    <h3 className="i-wrapper-heading">Campaign Planning</h3>
                     <p className="i-wrapper-para">
                       We design brand identities that match our clients' values.
                     </p>
@@ -425,10 +373,10 @@ const Dhamaka_Hero = () => {
                   <span className="o-item_inner_num">02</span>
                   <div className="i-wrapper">
                     <h3 className="i-wrapper-heading">
-                      Communication
-                      <br />
+                      Content Strategizing
+                      {/* <br />
                       and development <br />
-                      strategy consulting
+                      strategy consulting */}
                     </h3>
                     <p className="i-wrapper-para">
                       We work closely with our clients to develop customized
@@ -441,7 +389,7 @@ const Dhamaka_Hero = () => {
                 <div className="o-item_inner">
                   <span className="o-item_inner_num">03</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">Editorial creation</h3>
+                    <h3 className="i-wrapper-heading">End-to-End Execution</h3>
                     <p className="i-wrapper-para">
                       We produce content to strengthen our clients' online and
                       offline presence .
@@ -453,10 +401,7 @@ const Dhamaka_Hero = () => {
                 <div className="o-item_inner">
                   <span className="o-item_inner_num">04</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">
-                      Experiences <br />
-                      and products
-                    </h3>
+                    <h3 className="i-wrapper-heading">Production</h3>
                     <p className="i-wrapper-para">
                       We seek strategic partnerships to strengthen our clients'
                       position in the market.
@@ -468,10 +413,7 @@ const Dhamaka_Hero = () => {
                 <div className="o-item_inner">
                   <span className="o-item_inner_num">05</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">
-                      Public relations, <br />
-                      press and influence
-                    </h3>
+                    <h3 className="i-wrapper-heading">Marketing</h3>
                     <p className="i-wrapper-para">
                       We set up campaigns to attract the attention of media and
                       influencers.
@@ -479,7 +421,7 @@ const Dhamaka_Hero = () => {
                   </div>
                 </div>
               </div>
-              <div className="o-item">
+              {/* <div className="o-item">
                 <div className="o-item_inner">
                   <span className="o-item_inner_num">06</span>
                   <div className="i-wrapper">
@@ -493,7 +435,7 @@ const Dhamaka_Hero = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -511,19 +453,19 @@ const Dhamaka_Hero = () => {
               <div className="c-wrapper">
                 <div className="c-wrapper-inner">
                   <div className="js-v-item v-item">
-                    <a
+                    <Link
                       className="js-v-link js-v-item-inner"
                       href="https://www.comptoirdesvoyages.fr/"
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Travel Counter</h3>
+                      <h3 className="js-v-item-inner-head">Myntra</h3>
                       <span className="js-v-item-inner-para">
                         Consulting in press relations strategy
                         <br />
                         and awareness development
                       </span>
-                    </a>
+                    </Link>
                     <div className="c-vsl-wrapper">
                       <div className="js-v-vsl vsl-item">
                         <div className="media-background lazy-container">
@@ -585,18 +527,18 @@ const Dhamaka_Hero = () => {
                     </div>
                   </div>
                   <div className="js-v-item v-item">
-                    <a
+                    <Link
                       className="js-v-link js-v-item-inner"
                       href="https://www.tahititourisme.fr/"
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Tahiti Tourism</h3>
+                      <h3 className="js-v-item-inner-head">Pepsi</h3>
                       <span className="js-v-item-inner-para">
                         Communication consultancy, <br />
                         press relations and influence
                       </span>
-                    </a>
+                    </Link>
                     <div className="c-vsl-wrapper">
                       <div className="js-v-vsl vsl-item">
                         <div className="media-background lazy-container">
@@ -664,9 +606,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">
-                        Paradise Cove Boutique Hotel
-                      </h3>
+                      <h3 className="js-v-item-inner-head">Coca-Cola</h3>
                       <span className="js-v-item-inner-para">
                         Development of awareness
                         <br />
@@ -740,7 +680,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Attitude Hotels</h3>
+                      <h3 className="js-v-item-inner-head">Coke Studio</h3>
                       <span className="js-v-item-inner-para">
                         Communication <br />
                         and press relations consultancy, influence
@@ -813,9 +753,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">
-                        The Douars Garden
-                      </h3>
+                      <h3 className="js-v-item-inner-head">Flipkar</h3>
                       <span className="js-v-item-inner-para">
                         Press relations, influence, <br />
                         awareness strategy
@@ -888,7 +826,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Square Area</h3>
+                      <h3 className="js-v-item-inner-head">Uniqlo</h3>
                       <span className="js-v-item-inner-para">
                         Consulting in press relations strategy
                         <br />
@@ -962,7 +900,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Omani House</h3>
+                      <h3 className="js-v-item-inner-head">Bisleri</h3>
                       <span className="js-v-item-inner-para">
                         Consulting in press relations strategy
                         <br />
@@ -1017,7 +955,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Paths</h3>
+                      <h3 className="js-v-item-inner-head"> T-Series</h3>
                       <span className="js-v-item-inner-para">
                         Communication
                         <br />
@@ -1091,9 +1029,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">
-                        The Morzine Sheepfold
-                      </h3>
+                      <h3 className="js-v-item-inner-head">Saregama</h3>
                       <span className="js-v-item-inner-para">
                         Communication strategy consulting
                         <br />
@@ -1167,7 +1103,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Lalla</h3>
+                      <h3 className="js-v-item-inner-head">Panorama Studios</h3>
                       <span className="js-v-item-inner-para">
                         Communication consulting, <br />
                         Brand awareness development
@@ -1240,7 +1176,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Curiosity Lab</h3>
+                      <h3 className="js-v-item-inner-head">Namoh Studios</h3>
                       <span className="js-v-item-inner-para">
                         Communication <br />
                         and development strategy consulting
@@ -1313,7 +1249,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Land of Stars</h3>
+                      <h3 className="js-v-item-inner-head">Tips Music</h3>
                       <span className="js-v-item-inner-para">
                         Definition and implementation of the France
                         communication strategy
@@ -1330,7 +1266,7 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Kuoni France</h3>
+                      <h3 className="js-v-item-inner-head">Vivo</h3>
                       <span className="js-v-item-inner-para">
                         Development of awareness
                         <br />
@@ -1340,20 +1276,243 @@ const Dhamaka_Hero = () => {
                     <div className="c-vsl-wrapper" />
                   </div>
                   <div className="js-v-item v-item">
-                    <a
+                    <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">
-                        Beachcomber Hotels
-                      </h3>
+                      <h3 className="js-v-item-inner-head">Samsung</h3>
                       <span className="js-v-item-inner-para">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
-                    </a>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Crocs</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Fireboltt, Lakme</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Maybelline</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Azorte</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Rare Rabbit</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Boat</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Philips</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Sparx</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Realme</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Max</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Amazon</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Wrangler</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Soezi</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Saffola</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
+                    <div className="c-vsl-wrapper" />
+                  </div>{" "}
+                  <div className="js-v-item v-item">
+                    <Link
+                      className="js-v-link js-v-item-inner"
+                      href=""
+                      target="_blank"
+                      title=""
+                    >
+                      <h3 className="js-v-item-inner-head">Fanztar</h3>
+                      <span className="js-v-item-inner-para">
+                        Definition and implementation <br />
+                        of the France communication strategy
+                      </span>
+                    </Link>
                     <div className="c-vsl-wrapper" />
                   </div>
                 </div>
@@ -1379,14 +1538,13 @@ const Dhamaka_Hero = () => {
           <div className="v-wrapper-inner">
             <div className="c-wrapper bg-primary">
               <div className="v-wrapper-inner-content">
-                <h2 className="v-wrapper-heading">Come on Hop</h2>
-                {/* <h3 className="ff-t tt-u fs-md mt-0b">by GPC</h3> */}
+                <h2 className="v-wrapper-heading">Dhamaka Records</h2>
+                <h4 className="ff-t tt-u fs-md mt-0b">
+                  Big ideas. Bold moves. That’s Dhamaka.
+                </h4>
                 <p className="">
-                  Passionate about great trips but also about short getaways, we
-                  created with our friend Stéphane Bréhier, Editorial Director
-                  of Gault & Millau, the Allez Hop media on which we share
-                  places that inspire us, guest houses, charming hotels or
-                  houses to rent that are respectful, independent and embodied.
+                  Our music label has delivered hits like Hum Hindustani, Yeh
+                  Galiyan Yeh Chaubara, and Blockbuster
                 </p>
                 {/* <div className="mb-1">
                   <a

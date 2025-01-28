@@ -61,6 +61,24 @@ const Artist = () => {
       button.addEventListener("click", toggleVisibility);
     });
 
+    // Open the first paragraph container on page load
+    if (paraHeaders.length > 0) {
+      const firstButton = paraHeaders[0];
+      const firstPlusMinus = firstButton.querySelector(".plus-minus");
+      firstButton.classList.add("open");
+      firstPlusMinus.classList.add("open");
+      firstPlusMinus.classList.remove("active");
+
+      const firstContent = firstButton
+        .closest(".item")
+        .querySelector(".g-item-list-para-cntr");
+      gsap.to(firstContent, {
+        height: "auto",
+        duration: 0.5,
+        ease: "expo.inout",
+      });
+    }
+
     // Cleanup event listeners on component unmount
     return () => {
       paraHeaders.forEach((button) => {
@@ -313,190 +331,190 @@ const Artist = () => {
         },
       });
 
-      gsap.to(kenSpan, {
-        scrollTrigger: {
-          trigger: ".section.artists",
-          start: "top -360%",
-          end: "top -450%",
-          onEnter: () =>
-            gsap.to(kenSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onEnterBack: () =>
-            gsap.to(kenSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeave: () =>
-            gsap.to(kenSpan, {
-              opacity: 0,
-              yPercent: -100,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeaveBack: () =>
-            gsap.to(kenSpan, {
-              opacity: 0,
-              yPercent: 100,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          scrub: true,
-        },
-      });
+      // gsap.to(kenSpan, {
+      //   scrollTrigger: {
+      //     trigger: ".section.artists",
+      //     start: "top -360%",
+      //     end: "top -450%",
+      //     onEnter: () =>
+      //       gsap.to(kenSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onEnterBack: () =>
+      //       gsap.to(kenSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeave: () =>
+      //       gsap.to(kenSpan, {
+      //         opacity: 0,
+      //         yPercent: -100,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeaveBack: () =>
+      //       gsap.to(kenSpan, {
+      //         opacity: 0,
+      //         yPercent: 100,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     scrub: true,
+      //   },
+      // });
 
-      gsap.to(eikohSpan, {
-        scrollTrigger: {
-          trigger: ".section.artists",
-          start: "top -450%",
-          end: "top -540%",
-          onEnter: () =>
-            gsap.to(eikohSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onEnterBack: () =>
-            gsap.to(eikohSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeave: () =>
-            gsap.to(eikohSpan, {
-              opacity: 0,
-              yPercent: -100,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeaveBack: () =>
-            gsap.to(eikohSpan, {
-              opacity: 0,
-              yPercent: 100,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          scrub: true,
-        },
-      });
+      // gsap.to(eikohSpan, {
+      //   scrollTrigger: {
+      //     trigger: ".section.artists",
+      //     start: "top -450%",
+      //     end: "top -540%",
+      //     onEnter: () =>
+      //       gsap.to(eikohSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onEnterBack: () =>
+      //       gsap.to(eikohSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeave: () =>
+      //       gsap.to(eikohSpan, {
+      //         opacity: 0,
+      //         yPercent: -100,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeaveBack: () =>
+      //       gsap.to(eikohSpan, {
+      //         opacity: 0,
+      //         yPercent: 100,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     scrub: true,
+      //   },
+      // });
 
-      gsap.to(chiharuSpan, {
-        scrollTrigger: {
-          trigger: ".section.artists",
-          start: "top -540%",
-          end: "top -630%",
-          onEnter: () =>
-            gsap.to(chiharuSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onEnterBack: () =>
-            gsap.to(chiharuSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeave: () =>
-            gsap.to(chiharuSpan, {
-              opacity: 0,
-              yPercent: -100,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeaveBack: () =>
-            gsap.to(chiharuSpan, {
-              opacity: 0,
-              yPercent: 100,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          scrub: true,
-        },
-      });
+      // gsap.to(chiharuSpan, {
+      //   scrollTrigger: {
+      //     trigger: ".section.artists",
+      //     start: "top -540%",
+      //     end: "top -630%",
+      //     onEnter: () =>
+      //       gsap.to(chiharuSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onEnterBack: () =>
+      //       gsap.to(chiharuSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeave: () =>
+      //       gsap.to(chiharuSpan, {
+      //         opacity: 0,
+      //         yPercent: -100,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeaveBack: () =>
+      //       gsap.to(chiharuSpan, {
+      //         opacity: 0,
+      //         yPercent: 100,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     scrub: true,
+      //   },
+      // });
 
-      gsap.to(chimpomSpan, {
-        scrollTrigger: {
-          trigger: ".section.artists",
-          start: "top -630%",
-          end: "top -720%",
-          onEnter: () =>
-            gsap.to(chimpomSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onEnterBack: () =>
-            gsap.to(chimpomSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeave: () =>
-            gsap.to(chimpomSpan, {
-              opacity: 0,
-              yPercent: -100,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeaveBack: () =>
-            gsap.to(chimpomSpan, {
-              opacity: 0,
-              yPercent: 100,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          scrub: true,
-        },
-      });
+      // gsap.to(chimpomSpan, {
+      //   scrollTrigger: {
+      //     trigger: ".section.artists",
+      //     start: "top -630%",
+      //     end: "top -720%",
+      //     onEnter: () =>
+      //       gsap.to(chimpomSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onEnterBack: () =>
+      //       gsap.to(chimpomSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeave: () =>
+      //       gsap.to(chimpomSpan, {
+      //         opacity: 0,
+      //         yPercent: -100,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeaveBack: () =>
+      //       gsap.to(chimpomSpan, {
+      //         opacity: 0,
+      //         yPercent: 100,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     scrub: true,
+      //   },
+      // });
 
-      gsap.to(ishiuchiSpan, {
-        scrollTrigger: {
-          trigger: ".section.artists",
-          start: "top -720%",
-          end: "top -810%",
-          onEnter: () =>
-            gsap.to(ishiuchiSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onEnterBack: () =>
-            gsap.to(ishiuchiSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeave: () =>
-            gsap.to(ishiuchiSpan, {
-              opacity: 1,
-              yPercent: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeaveBack: () =>
-            gsap.to(ishiuchiSpan, {
-              opacity: 0,
-              yPercent: 100,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          scrub: true,
-        },
-      });
+      // gsap.to(ishiuchiSpan, {
+      //   scrollTrigger: {
+      //     trigger: ".section.artists",
+      //     start: "top -720%",
+      //     end: "top -810%",
+      //     onEnter: () =>
+      //       gsap.to(ishiuchiSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onEnterBack: () =>
+      //       gsap.to(ishiuchiSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeave: () =>
+      //       gsap.to(ishiuchiSpan, {
+      //         opacity: 1,
+      //         yPercent: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeaveBack: () =>
+      //       gsap.to(ishiuchiSpan, {
+      //         opacity: 0,
+      //         yPercent: 100,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     scrub: true,
+      //   },
+      // });
     } else {
       gsap.set(textNum, { opacity: 0 });
 
@@ -637,170 +655,170 @@ const Artist = () => {
         },
       });
 
-      gsap.to(kenSpan, {
-        scrollTrigger: {
-          trigger: ".section.artists",
-          start: "top -360%",
-          end: "top -450%",
-          onEnter: () =>
-            gsap.to(kenSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onEnterBack: () =>
-            gsap.to(kenSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeave: () =>
-            gsap.to(kenSpan, {
-              opacity: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeaveBack: () =>
-            gsap.to(kenSpan, {
-              opacity: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          scrub: true,
-        },
-      });
+      // gsap.to(kenSpan, {
+      //   scrollTrigger: {
+      //     trigger: ".section.artists",
+      //     start: "top -360%",
+      //     end: "top -450%",
+      //     onEnter: () =>
+      //       gsap.to(kenSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onEnterBack: () =>
+      //       gsap.to(kenSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeave: () =>
+      //       gsap.to(kenSpan, {
+      //         opacity: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeaveBack: () =>
+      //       gsap.to(kenSpan, {
+      //         opacity: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     scrub: true,
+      //   },
+      // });
 
-      gsap.to(eikohSpan, {
-        scrollTrigger: {
-          trigger: ".section.artists",
-          start: "top -450%",
-          end: "top -540%",
-          onEnter: () =>
-            gsap.to(eikohSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onEnterBack: () =>
-            gsap.to(eikohSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeave: () =>
-            gsap.to(eikohSpan, {
-              opacity: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeaveBack: () =>
-            gsap.to(eikohSpan, {
-              opacity: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          scrub: true,
-        },
-      });
+      // gsap.to(eikohSpan, {
+      //   scrollTrigger: {
+      //     trigger: ".section.artists",
+      //     start: "top -450%",
+      //     end: "top -540%",
+      //     onEnter: () =>
+      //       gsap.to(eikohSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onEnterBack: () =>
+      //       gsap.to(eikohSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeave: () =>
+      //       gsap.to(eikohSpan, {
+      //         opacity: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeaveBack: () =>
+      //       gsap.to(eikohSpan, {
+      //         opacity: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     scrub: true,
+      //   },
+      // });
 
-      gsap.to(chiharuSpan, {
-        scrollTrigger: {
-          trigger: ".section.artists",
-          start: "top -540%",
-          end: "top -630%",
-          onEnter: () =>
-            gsap.to(chiharuSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onEnterBack: () =>
-            gsap.to(chiharuSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeave: () =>
-            gsap.to(chiharuSpan, {
-              opacity: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeaveBack: () =>
-            gsap.to(chiharuSpan, {
-              opacity: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          scrub: true,
-        },
-      });
+      // gsap.to(chiharuSpan, {
+      //   scrollTrigger: {
+      //     trigger: ".section.artists",
+      //     start: "top -540%",
+      //     end: "top -630%",
+      //     onEnter: () =>
+      //       gsap.to(chiharuSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onEnterBack: () =>
+      //       gsap.to(chiharuSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeave: () =>
+      //       gsap.to(chiharuSpan, {
+      //         opacity: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeaveBack: () =>
+      //       gsap.to(chiharuSpan, {
+      //         opacity: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     scrub: true,
+      //   },
+      // });
 
-      gsap.to(chimpomSpan, {
-        scrollTrigger: {
-          trigger: ".section.artists",
-          start: "top -630%",
-          end: "top -720%",
-          onEnter: () =>
-            gsap.to(chimpomSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onEnterBack: () =>
-            gsap.to(chimpomSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeave: () =>
-            gsap.to(chimpomSpan, {
-              opacity: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeaveBack: () =>
-            gsap.to(chimpomSpan, {
-              opacity: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          scrub: true,
-        },
-      });
+      // gsap.to(chimpomSpan, {
+      //   scrollTrigger: {
+      //     trigger: ".section.artists",
+      //     start: "top -630%",
+      //     end: "top -720%",
+      //     onEnter: () =>
+      //       gsap.to(chimpomSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onEnterBack: () =>
+      //       gsap.to(chimpomSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeave: () =>
+      //       gsap.to(chimpomSpan, {
+      //         opacity: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeaveBack: () =>
+      //       gsap.to(chimpomSpan, {
+      //         opacity: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     scrub: true,
+      //   },
+      // });
 
-      gsap.to(ishiuchiSpan, {
-        scrollTrigger: {
-          trigger: ".section.artists",
-          start: "top -720%",
-          end: "top -810%",
-          onEnter: () =>
-            gsap.to(ishiuchiSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onEnterBack: () =>
-            gsap.to(ishiuchiSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeave: () =>
-            gsap.to(ishiuchiSpan, {
-              opacity: 1,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          onLeaveBack: () =>
-            gsap.to(ishiuchiSpan, {
-              opacity: 0,
-              stagger: gsapStag,
-              duration: gsapDur,
-            }),
-          scrub: true,
-        },
-      });
+      // gsap.to(ishiuchiSpan, {
+      //   scrollTrigger: {
+      //     trigger: ".section.artists",
+      //     start: "top -720%",
+      //     end: "top -810%",
+      //     onEnter: () =>
+      //       gsap.to(ishiuchiSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onEnterBack: () =>
+      //       gsap.to(ishiuchiSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeave: () =>
+      //       gsap.to(ishiuchiSpan, {
+      //         opacity: 1,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     onLeaveBack: () =>
+      //       gsap.to(ishiuchiSpan, {
+      //         opacity: 0,
+      //         stagger: gsapStag,
+      //         duration: gsapDur,
+      //       }),
+      //     scrub: true,
+      //   },
+      // });
     }
     //   Image scaling animation on scroll
     let gsapImgAnimKubota = document.querySelectorAll(
@@ -973,174 +991,174 @@ const Artist = () => {
     });
 
     //Ken
-    gsap.to(gsapImgAnimKen, {
-      scrollTrigger: {
-        trigger: ".section.artists",
-        start: "top -360%",
-        end: "top -450%",
-        onEnter: () =>
-          gsap.to(gsapImgAnimKen, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onEnterBack: () =>
-          gsap.to(gsapImgAnimKen, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onLeave: () =>
-          gsap.to(gsapImgAnimKen, {
-            scale: scaleInit,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onLeaveBack: () =>
-          gsap.to(gsapImgAnimKen, {
-            scale: scaleInit,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        scrub: true,
-      },
-    });
+    // gsap.to(gsapImgAnimKen, {
+    //   scrollTrigger: {
+    //     trigger: ".section.artists",
+    //     start: "top -360%",
+    //     end: "top -450%",
+    //     onEnter: () =>
+    //       gsap.to(gsapImgAnimKen, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onEnterBack: () =>
+    //       gsap.to(gsapImgAnimKen, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onLeave: () =>
+    //       gsap.to(gsapImgAnimKen, {
+    //         scale: scaleInit,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onLeaveBack: () =>
+    //       gsap.to(gsapImgAnimKen, {
+    //         scale: scaleInit,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     scrub: true,
+    //   },
+    // });
 
     //Eikoh
-    gsap.to(gsapImgAnimEikoh, {
-      scrollTrigger: {
-        trigger: ".section.artists",
-        start: "top -450%",
-        end: "top -540%",
-        onEnter: () =>
-          gsap.to(gsapImgAnimEikoh, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onEnterBack: () =>
-          gsap.to(gsapImgAnimEikoh, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onLeave: () =>
-          gsap.to(gsapImgAnimEikoh, {
-            scale: scaleInit,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onLeaveBack: () =>
-          gsap.to(gsapImgAnimEikoh, {
-            scale: scaleInit,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        scrub: true,
-      },
-    });
+    // gsap.to(gsapImgAnimEikoh, {
+    //   scrollTrigger: {
+    //     trigger: ".section.artists",
+    //     start: "top -450%",
+    //     end: "top -540%",
+    //     onEnter: () =>
+    //       gsap.to(gsapImgAnimEikoh, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onEnterBack: () =>
+    //       gsap.to(gsapImgAnimEikoh, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onLeave: () =>
+    //       gsap.to(gsapImgAnimEikoh, {
+    //         scale: scaleInit,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onLeaveBack: () =>
+    //       gsap.to(gsapImgAnimEikoh, {
+    //         scale: scaleInit,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     scrub: true,
+    //   },
+    // });
 
     //Chiharu
-    gsap.to(gsapImgAnimChiharu, {
-      scrollTrigger: {
-        trigger: ".section.artists",
-        start: "top -540%",
-        end: "top -630%",
-        onEnter: () =>
-          gsap.to(gsapImgAnimChiharu, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onEnterBack: () =>
-          gsap.to(gsapImgAnimChiharu, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onLeave: () =>
-          gsap.to(gsapImgAnimChiharu, {
-            scale: scaleInit,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onLeaveBack: () =>
-          gsap.to(gsapImgAnimChiharu, {
-            scale: scaleInit,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        scrub: true,
-      },
-    });
+    // gsap.to(gsapImgAnimChiharu, {
+    //   scrollTrigger: {
+    //     trigger: ".section.artists",
+    //     start: "top -540%",
+    //     end: "top -630%",
+    //     onEnter: () =>
+    //       gsap.to(gsapImgAnimChiharu, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onEnterBack: () =>
+    //       gsap.to(gsapImgAnimChiharu, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onLeave: () =>
+    //       gsap.to(gsapImgAnimChiharu, {
+    //         scale: scaleInit,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onLeaveBack: () =>
+    //       gsap.to(gsapImgAnimChiharu, {
+    //         scale: scaleInit,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     scrub: true,
+    //   },
+    // });
 
     //Chimpom
-    gsap.to(gsapImgAnimChimpom, {
-      scrollTrigger: {
-        trigger: ".section.artists",
-        start: "top -630%",
-        end: "top -720%",
-        onEnter: () =>
-          gsap.to(gsapImgAnimChimpom, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onEnterBack: () =>
-          gsap.to(gsapImgAnimChimpom, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onLeave: () =>
-          gsap.to(gsapImgAnimChimpom, {
-            scale: scaleInit,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onLeaveBack: () =>
-          gsap.to(gsapImgAnimChimpom, {
-            scale: scaleInit,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        scrub: true,
-      },
-    });
+    // gsap.to(gsapImgAnimChimpom, {
+    //   scrollTrigger: {
+    //     trigger: ".section.artists",
+    //     start: "top -630%",
+    //     end: "top -720%",
+    //     onEnter: () =>
+    //       gsap.to(gsapImgAnimChimpom, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onEnterBack: () =>
+    //       gsap.to(gsapImgAnimChimpom, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onLeave: () =>
+    //       gsap.to(gsapImgAnimChimpom, {
+    //         scale: scaleInit,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onLeaveBack: () =>
+    //       gsap.to(gsapImgAnimChimpom, {
+    //         scale: scaleInit,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     scrub: true,
+    //   },
+    // });
 
     //Ishiuchi
-    gsap.to(gsapImgAnimIshiuchi, {
-      scrollTrigger: {
-        trigger: ".section.artists",
-        start: "top -720%",
-        end: "top -810%",
-        onEnter: () =>
-          gsap.to(gsapImgAnimIshiuchi, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onEnterBack: () =>
-          gsap.to(gsapImgAnimIshiuchi, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onLeave: () =>
-          gsap.to(gsapImgAnimIshiuchi, {
-            scale: scaleAnim,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        onLeaveBack: () =>
-          gsap.to(gsapImgAnimIshiuchi, {
-            scale: scaleInit,
-            stagger: imgArtStag,
-            duration: imgArtDur,
-          }),
-        scrub: true,
-      },
-    });
+    // gsap.to(gsapImgAnimIshiuchi, {
+    //   scrollTrigger: {
+    //     trigger: ".section.artists",
+    //     start: "top -720%",
+    //     end: "top -810%",
+    //     onEnter: () =>
+    //       gsap.to(gsapImgAnimIshiuchi, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onEnterBack: () =>
+    //       gsap.to(gsapImgAnimIshiuchi, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onLeave: () =>
+    //       gsap.to(gsapImgAnimIshiuchi, {
+    //         scale: scaleAnim,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     onLeaveBack: () =>
+    //       gsap.to(gsapImgAnimIshiuchi, {
+    //         scale: scaleInit,
+    //         stagger: imgArtStag,
+    //         duration: imgArtDur,
+    //       }),
+    //     scrub: true,
+    //   },
+    // });
 
     //   Grid image revealed anim
 
@@ -1301,215 +1319,186 @@ const Artist = () => {
     });
 
     //Ken
-    gsap.set(gsapImgKen, { opacity: 0 });
-    gsap.to(gsapImgKen, {
-      scrollTrigger: {
-        trigger: ".section.artists",
-        start: "top -360%",
-        end: "top -450%",
-        onEnter: () =>
-          gsap.to(gsapImgKen, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onEnterBack: () =>
-          gsap.to(gsapImgKen, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onLeave: () =>
-          gsap.to(gsapImgKen, {
-            opacity: 0,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onLeaveBack: () =>
-          gsap.to(gsapImgKen, {
-            opacity: 0,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        scrub: true,
-      },
-    });
+    // gsap.set(gsapImgKen, { opacity: 0 });
+    // gsap.to(gsapImgKen, {
+    //   scrollTrigger: {
+    //     trigger: ".section.artists",
+    //     start: "top -360%",
+    //     end: "top -450%",
+    //     onEnter: () =>
+    //       gsap.to(gsapImgKen, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onEnterBack: () =>
+    //       gsap.to(gsapImgKen, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onLeave: () =>
+    //       gsap.to(gsapImgKen, {
+    //         opacity: 0,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onLeaveBack: () =>
+    //       gsap.to(gsapImgKen, {
+    //         opacity: 0,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     scrub: true,
+    //   },
+    // });
 
     //Eikoh
-    gsap.set(gsapImgEikoh, { opacity: 0 });
-    gsap.to(gsapImgEikoh, {
-      scrollTrigger: {
-        trigger: ".section.artists",
-        start: "top -450%",
-        end: "top -540%",
-        onEnter: () =>
-          gsap.to(gsapImgEikoh, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onEnterBack: () =>
-          gsap.to(gsapImgEikoh, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onLeave: () =>
-          gsap.to(gsapImgEikoh, {
-            opacity: 0,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onLeaveBack: () =>
-          gsap.to(gsapImgEikoh, {
-            opacity: 0,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        scrub: true,
-      },
-    });
+    // gsap.set(gsapImgEikoh, { opacity: 0 });
+    // gsap.to(gsapImgEikoh, {
+    //   scrollTrigger: {
+    //     trigger: ".section.artists",
+    //     start: "top -450%",
+    //     end: "top -540%",
+    //     onEnter: () =>
+    //       gsap.to(gsapImgEikoh, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onEnterBack: () =>
+    //       gsap.to(gsapImgEikoh, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onLeave: () =>
+    //       gsap.to(gsapImgEikoh, {
+    //         opacity: 0,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onLeaveBack: () =>
+    //       gsap.to(gsapImgEikoh, {
+    //         opacity: 0,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     scrub: true,
+    //   },
+    // });
 
     //Chiharu
-    gsap.set(gsapImgChiharu, { opacity: 0 });
-    gsap.to(gsapImgChiharu, {
-      scrollTrigger: {
-        trigger: ".section.artists",
-        start: "top -540%",
-        end: "top -630%",
-        onEnter: () =>
-          gsap.to(gsapImgChiharu, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onEnterBack: () =>
-          gsap.to(gsapImgChiharu, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onLeave: () =>
-          gsap.to(gsapImgChiharu, {
-            opacity: 0,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onLeaveBack: () =>
-          gsap.to(gsapImgChiharu, {
-            opacity: 0,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        scrub: true,
-      },
-    });
+    // gsap.set(gsapImgChiharu, { opacity: 0 });
+    // gsap.to(gsapImgChiharu, {
+    //   scrollTrigger: {
+    //     trigger: ".section.artists",
+    //     start: "top -540%",
+    //     end: "top -630%",
+    //     onEnter: () =>
+    //       gsap.to(gsapImgChiharu, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onEnterBack: () =>
+    //       gsap.to(gsapImgChiharu, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onLeave: () =>
+    //       gsap.to(gsapImgChiharu, {
+    //         opacity: 0,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onLeaveBack: () =>
+    //       gsap.to(gsapImgChiharu, {
+    //         opacity: 0,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     scrub: true,
+    //   },
+    // });
 
     //Chimpom
-    gsap.set(gsapImgChimpom, { opacity: 0 });
-    gsap.to(gsapImgChimpom, {
-      scrollTrigger: {
-        trigger: ".section.artists",
-        start: "top -630%",
-        end: "top -720%",
-        onEnter: () =>
-          gsap.to(gsapImgChimpom, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onEnterBack: () =>
-          gsap.to(gsapImgChimpom, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onLeave: () =>
-          gsap.to(gsapImgChimpom, {
-            opacity: 0,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onLeaveBack: () =>
-          gsap.to(gsapImgChimpom, {
-            opacity: 0,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        scrub: true,
-      },
-    });
+    // gsap.set(gsapImgChimpom, { opacity: 0 });
+    // gsap.to(gsapImgChimpom, {
+    //   scrollTrigger: {
+    //     trigger: ".section.artists",
+    //     start: "top -630%",
+    //     end: "top -720%",
+    //     onEnter: () =>
+    //       gsap.to(gsapImgChimpom, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onEnterBack: () =>
+    //       gsap.to(gsapImgChimpom, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onLeave: () =>
+    //       gsap.to(gsapImgChimpom, {
+    //         opacity: 0,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onLeaveBack: () =>
+    //       gsap.to(gsapImgChimpom, {
+    //         opacity: 0,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     scrub: true,
+    //   },
+    // });
 
     //Ishiuchi
-    gsap.set(gsapImgIshiuchi, { opacity: 0 });
-    gsap.to(gsapImgIshiuchi, {
-      scrollTrigger: {
-        trigger: ".section.artists",
-        start: "top -720%",
-        end: "top -810%",
-        onEnter: () =>
-          gsap.to(gsapImgIshiuchi, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onEnterBack: () =>
-          gsap.to(gsapImgIshiuchi, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onLeave: () =>
-          gsap.to(gsapImgIshiuchi, {
-            opacity: 1,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        onLeaveBack: () =>
-          gsap.to(gsapImgIshiuchi, {
-            opacity: 0,
-            stagger: stagDuration,
-            duration: animTime,
-          }),
-        scrub: true,
-      },
-    });
+    // gsap.set(gsapImgIshiuchi, { opacity: 0 });
+    // gsap.to(gsapImgIshiuchi, {
+    //   scrollTrigger: {
+    //     trigger: ".section.artists",
+    //     start: "top -720%",
+    //     end: "top -810%",
+    //     onEnter: () =>
+    //       gsap.to(gsapImgIshiuchi, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onEnterBack: () =>
+    //       gsap.to(gsapImgIshiuchi, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onLeave: () =>
+    //       gsap.to(gsapImgIshiuchi, {
+    //         opacity: 1,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     onLeaveBack: () =>
+    //       gsap.to(gsapImgIshiuchi, {
+    //         opacity: 0,
+    //         stagger: stagDuration,
+    //         duration: animTime,
+    //       }),
+    //     scrub: true,
+    //   },
+    // });
   }, []);
   return (
     <>
       <section className="section three">
         <div className="">
-          <div className="h2-wrapper">
-            <div className="h-wrapper align-top">
-              <h1 className="artistsheading">Our Services</h1>
-              {/* <h1 className="h2 star">*</h1> */}
-              <div className="text-inner-container bottom_margin">
-                <h4 className="gallerypera">
-                  At Rage Media, we offer all services in-house, covering every
-                  aspect of your brand needs. Our multi-brand structure allows
-                  us to seamlessly integrate strategies, ensuring a cohesive and
-                  tailored approach for each client.
-                </h4>
-              </div>
-              <div className="border-bottom"></div>
-            </div>
-            {/* <div className="description-wrapper">
-              <div className="description-item is--hidden-in-mobile">
-                <p className="description italic">contemporary</p>
-              </div>
-              <div className="description-item">
-                <p className="description italic">conceptual</p>
-              </div>
-              <div className="description-item">
-                <p className="description italic">performance</p>
-              </div>
-              <div className="description-item last">
-                <p className="description italic cbp">(2023)</p>
-              </div>
-            </div> */}
-          </div>
           <div id="aboutsection">
-            <div id="aboutimages">
+            {/* <div id="aboutimages">
               <div
                 id="w-node-dcef4b0a-0b81-f79b-7540-6e77ee6ccc9f-c7f4dd6b"
                 className="aboutimages_grid-img wrapper"
@@ -1542,6 +1531,38 @@ const Artist = () => {
                   alt=""
                   className="aboutimages_grid-cell-img gsap"
                 />
+              </div>
+            </div> */}
+            <div className="">
+              <div className="h2-wrapper">
+                <div className="h-wrapper align-top">
+                  <h1 className="artistsheading">Our Services</h1>
+                  {/* <h1 className="h2 star">*</h1> */}
+
+                  <div className="border-bottom"></div>
+                </div>
+                {/* <div className="description-wrapper">
+              <div className="description-item is--hidden-in-mobile">
+                <p className="description italic">contemporary</p>
+              </div>
+              <div className="description-item">
+                <p className="description italic">conceptual</p>
+              </div>
+              <div className="description-item">
+                <p className="description italic">performance</p>
+              </div>
+              <div className="description-item last">
+                <p className="description italic cbp">(2023)</p>
+              </div>
+            </div> */}
+              </div>
+              <div className="text-inner-container bottom_margin">
+                <h4 className="gallerypera">
+                  At Rage Media, we offer all services in-house, covering every
+                  aspect of your brand needs. Our multi-brand structure allows
+                  us to seamlessly integrate strategies, ensuring a cohesive and
+                  tailored approach for each client.
+                </h4>
               </div>
             </div>
 
@@ -1782,7 +1803,7 @@ const Artist = () => {
               </p>
             </a>
             {/* <link rel="prefetch" href="/yuichi-hibi" /> */}
-            <a
+            {/* <a
               href="/newPage/product"
               className="h-wrapper centered ken w-inline-block"
             >
@@ -1791,9 +1812,9 @@ const Artist = () => {
               <p className="paragraph view-artist_button red is--visible-in-mobile">
                 view artist
               </p>
-            </a>
-            {/* <link rel="prefetch" href="/ken-domon" /> */}
-            <a
+            </a> */}
+
+            {/* <a
               href="/newPage/product"
               className="h-wrapper centered eikoh w-inline-block"
             >
@@ -1802,56 +1823,48 @@ const Artist = () => {
               <p className="paragraph view-artist_button red is--visible-in-mobile">
                 view artist
               </p>
-            </a>
-            {/* <link rel="prefetch" href="/eikoh-hosoe" /> */}
-            <a
+            </a> */}
+
+            {/* <a
               href="/newPage/product"
               className="h-wrapper centered chiharu w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name pad-left chiharu">chiharu</h1>
               <h1 className="h-wrapper_h2 a-name chiharu">
                 shiota
-                {/* <span className="art-letter t-letter">t</span> */}
+               
               </h1>
               <p className="paragraph view-artist_button red is--visible-in-mobile">
                 view artist
               </p>
-            </a>
-            {/* <link rel="prefetch" href="/chiharu-shiota" /> */}
-            <a
+            </a> */}
+
+            {/* <a
               href="/newPage/product"
               className="h-wrapper centered chimpom w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name chimpom">
                 chim↑pom
-                {/* <span className="art-letter">C</span>
-                <span className="art-letter">h</span>
-                <span className="art-letter">i</span>
-                <span className="art-letter">m</span>
-                <span className="art-letter">P</span>
-                <span className="art-letter">o</span>
-                <span className="art-letter">m</span> */}
-                {/* <span className="art-letter symbol">↑</span> */}
+               
               </h1>
               <p className="paragraph view-artist_button red is--visible-in-mobile chimpom">
                 view artist
               </p>
-            </a>
-            {/* <link rel="prefetch" href="/chim-pom" /> */}
-            <a
+            </a> */}
+
+            {/* <a
               href="/newPage/product"
               className="h-wrapper centered ishiuchi w-inline-block"
             >
               <h1 className="h-wrapper_h2 a-name ishiuchi">ishiuchi</h1>
               <h1 className="h-wrapper_h2 a-name ishiuchi">
-                {/* <span className="art-letter y-letter">y</span> */}
+                
                 miyko
               </h1>
               <p className="paragraph view-artist_button red is--visible-in-mobile">
                 view artist
               </p>
-            </a>
-            {/* <link rel="prefetch" href="/ishiuchi-miyako" /> */}
+            </a> */}
           </div>
           <div className="w-embed">
             <style
@@ -1868,7 +1881,7 @@ const Artist = () => {
               className="artist-grid-img hiroji is--active"
             >
               <img
-                src="https://artworks.joe8lee.com/images/hk-01.jpg"
+                src="/assets/images/RangeMedia/DSC05253.jpg"
                 loading="lazy"
                 alt=""
                 className="artist_grid-cell-img art-info"
@@ -1879,7 +1892,7 @@ const Artist = () => {
               className="artist-grid-img hiroji is--active"
             >
               <img
-                src="https://artworks.joe8lee.com/images/hk-02.jpg"
+                src="/assets/images/RangeMedia/DSC04847.jpg"
                 loading="lazy"
                 alt=""
                 className="artist_grid-cell-img art-info"
@@ -1890,7 +1903,7 @@ const Artist = () => {
               className="artist-grid-img hiroji is--active"
             >
               <img
-                src="https://artworks.joe8lee.com/images/hk-03.jpg"
+                src="/assets/images/RangeMedia/Darkroom (Bangalore).jpg"
                 loading="lazy"
                 alt=""
                 className="artist_grid-cell-img art-info"
@@ -1902,7 +1915,7 @@ const Artist = () => {
               style={{ opacity: 0 }}
             >
               <img
-                src="https://artworks.joe8lee.com/images/YUTAKA_01.jpg"
+                src="/assets/images/RangeMedia/Bryan_Portray-52.jpg"
                 loading="lazy"
                 alt=""
                 className="artist_grid-cell-img art-info"
@@ -1914,7 +1927,7 @@ const Artist = () => {
               style={{ opacity: 0 }}
             >
               <img
-                src="https://artworks.joe8lee.com/images/YUTAKA_02.jpg"
+                src="/assets/images/RangeMedia/BOGOTA-18.jpg"
                 loading="lazy"
                 alt=""
                 className="artist_grid-cell-img art-info"
@@ -1926,7 +1939,7 @@ const Artist = () => {
               style={{ opacity: 0 }}
             >
               <img
-                src="https://artworks.joe8lee.com/images/Izumi_01.jpg"
+                src="/assets/images/RangeMedia/ragemedia_home_image.jpeg"
                 loading="lazy"
                 alt=""
                 className="artist_grid-cell-img art-info"
@@ -1938,7 +1951,7 @@ const Artist = () => {
               style={{ opacity: 0 }}
             >
               <img
-                src="https://artworks.joe8lee.com/images/Izumi_02.jpg"
+                src="/assets/images/RangeMedia/Rage by the bay2.jpg"
                 loading="lazy"
                 alt=""
                 className="artist_grid-cell-img art-info"
@@ -1950,7 +1963,7 @@ const Artist = () => {
               style={{ opacity: 0 }}
             >
               <img
-                src="https://artworks.joe8lee.com/images/Izumi_03.jpg"
+                src="/assets/images/RangeMedia/gold dusk .jpg"
                 loading="lazy"
                 alt=""
                 className="artist_grid-cell-img art-info"
@@ -1962,7 +1975,7 @@ const Artist = () => {
               style={{ opacity: 0 }}
             >
               <img
-                src="https://artworks.joe8lee.com/images/Yuichi_01.jpg"
+                src="/assets/images/RangeMedia/Dyavol after dark2.jpg"
                 loading="lazy"
                 alt=""
                 className="artist_grid-cell-img art-info"
@@ -1974,13 +1987,13 @@ const Artist = () => {
               style={{ opacity: 0 }}
             >
               <img
-                src="https://artworks.joe8lee.com/images/Yuichi_02.jpg"
+                src="/assets/images/RangeMedia/413465283_316743758005094_8521863154678045555_n.webp"
                 loading="lazy"
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
             </div>
-            <div
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b836-c7f4dd6b"
               className="artist-grid-img ken"
               style={{ opacity: 0 }}
@@ -1991,8 +2004,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b838-c7f4dd6b"
               className="artist-grid-img ken"
               style={{ opacity: 0 }}
@@ -2003,8 +2016,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b83a-c7f4dd6b"
               className="artist-grid-img ken"
               style={{ opacity: 0 }}
@@ -2015,8 +2028,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b83c-c7f4dd6b"
               className="artist-grid-img eikoh"
               style={{ opacity: 0 }}
@@ -2027,8 +2040,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b83e-c7f4dd6b"
               className="artist-grid-img eikoh"
               style={{ opacity: 0 }}
@@ -2039,8 +2052,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b840-c7f4dd6b"
               className="artist-grid-img eikoh"
               style={{ opacity: 0 }}
@@ -2051,8 +2064,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b842-c7f4dd6b"
               className="artist-grid-img chiharu"
               style={{ opacity: 0 }}
@@ -2063,8 +2076,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b844-c7f4dd6b"
               className="artist-grid-img chiharu"
               style={{ opacity: 0 }}
@@ -2075,8 +2088,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b846-c7f4dd6b"
               className="artist-grid-img chiharu"
               style={{ opacity: 0 }}
@@ -2087,8 +2100,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b848-c7f4dd6b"
               className="artist-grid-img chimpom"
               style={{ opacity: 0 }}
@@ -2099,8 +2112,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b84a-c7f4dd6b"
               className="artist-grid-img chimpom"
               style={{ opacity: 0 }}
@@ -2111,8 +2124,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b84c-c7f4dd6b"
               className="artist-grid-img chimpom"
               style={{ opacity: 0 }}
@@ -2123,8 +2136,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b84e-c7f4dd6b"
               className="artist-grid-img ishiuchi"
               style={{ opacity: 0 }}
@@ -2135,8 +2148,8 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b850-c7f4dd6b"
               className="artist-grid-img ishiuchi"
               style={{ opacity: 0 }}
@@ -2147,7 +2160,7 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -2158,7 +2171,7 @@ const Artist = () => {
             className="sectionlinks_grid-img wrapper"
           >
             <img
-              src="https://artworks.joe8lee.com/images/photo_02.jpg"
+              src="/assets/images/RangeMedia/3-3 (1)-2.jpg"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -2169,7 +2182,7 @@ const Artist = () => {
             className="sectionlinks_grid-img wrapper"
           >
             <img
-              src="https://artworks.joe8lee.com/images/photo_05.jpg"
+              src="/assets/images/RangeMedia/Dyavol after dark2.jpg"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -2180,7 +2193,7 @@ const Artist = () => {
             className="sectionlinks_grid-img wrapper"
           >
             <img
-              src="https://artworks.joe8lee.com/images/photo_03.jpg"
+              src="/assets/images/RangeMedia/Bryan_Portray-52.jpg"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"
@@ -2191,7 +2204,7 @@ const Artist = () => {
             className="sectionlinks_grid-img wrapper"
           >
             <img
-              src="https://artworks.joe8lee.com/images/photo_01.jpg"
+              src="/assets/images/RangeMedia/ragemedia_home_image.jpeg"
               loading="lazy"
               alt=""
               className="grid-cell-img gsap"

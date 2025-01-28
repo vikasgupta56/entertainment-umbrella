@@ -4,7 +4,7 @@
 }
 .section.hero {
   z-index: 0;
-  height: 350vh;
+  height: 500vh;
   padding-left: 0;
   padding-right: 0;
   display: -webkit-box;
@@ -17,6 +17,7 @@
 .hero-wrapper {
   width: 100%;
   height: 100vh;
+  position: relative;
   /* padding-top: 1.88em; */
   /* padding-bottom: 1.88em; */
   display: -webkit-box;
@@ -41,6 +42,7 @@
   display: flex;
   position: relative;
   overflow: hidden;
+  background-color: #fff;
 }
 /* .w-inline-block {
   max-width: 100%;
@@ -63,6 +65,8 @@
   /* overflow: hidden; */
   font-family: var(--primary-fontL);
   text-transform: uppercase;
+  mix-blend-mode: difference;
+  color: #fff;
 }
 .h1.hero {
   width: 100%;
@@ -118,7 +122,7 @@
   display: none;
 }
 .explore_button-container {
-  max-width: 220px;
+  max-width: 300px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -132,8 +136,10 @@
   position: absolute;
   top: auto;
   bottom: 0%;
-  left: auto;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
   right: auto;
+  z-index: 99;
 }
 .hero-info-text {
   text-align: center;
@@ -152,7 +158,7 @@
 }
 .explore_button-container.is--visible-in-mobile {
   text-decoration: none;
-  display: none;
+  /* display: none; */
 }
 .paragraph.is--centered {
   text-align: center;
@@ -207,6 +213,7 @@
     padding-top: 24px;
     padding-bottom: 24px;
   }
+
   .section.hero {
     height: 100vh;
   }
@@ -257,11 +264,11 @@
     max-width: 100%;
     top: auto;
     bottom: 8em;
-    left: 0;
+    left: 50%;
     right: 0;
   }
   .paragraph {
-    font-size: 4.38em;
+    font-size: 1.38em;
   }
   .paragraph._hero {
     font-size: 1em;
@@ -292,8 +299,8 @@
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  padding-top: 1.88em;
-  padding-bottom: 1.88em;
+  /* padding-top: 1.88em; */
+  /* padding-bottom: 1.88em; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -584,7 +591,7 @@
 /* Artist */
 .section.three {
   min-height: 100vh;
-  padding: 0 1rem;
+  padding: 0 1.5vw;
   /* margin-bottom: 10rem; */
   position: relative;
   background-color: rgb(255, 255, 255);
@@ -595,8 +602,8 @@
 .h2-wrapper {
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 1.88em;
-  padding-bottom: 4em;
+  /* padding-top: 1.88em; */
+  /* padding-bottom: 4em; */
   display: flex;
   width: 100%;
   color: #000000;
@@ -637,9 +644,12 @@
 }
 
 #aboutsection {
+  height: -moz-fit-content;
   height: fit-content;
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  /* justify-content: flex-end; */
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
 }
 
 #aboutimages {
@@ -697,16 +707,17 @@
 }
 
 .about-a-section {
-  width: 50%;
+  /* width: 50%; */
 }
 .gallerypera {
   margin-top: 0;
   margin-bottom: 1rem;
   font-family: var(--primary-fontL);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.25;
-  text-indent: 6.4em;
+  margin-top: 1rem;
+  /* text-indent: 6.4em; */
 }
 .g-item-list {
   position: relative;
@@ -851,7 +862,8 @@ button {
 
 @media screen and (max-width: 991px) {
   #aboutsection {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
   #aboutimages {
     width: 100%;
@@ -859,9 +871,9 @@ button {
   .about-a-section {
     width: 100%;
   }
-  .gallerypera {
+  /* .gallerypera {
     margin: 3rem 0;
-  }
+  } */
   .artistsheading {
     text-align: center;
   }
@@ -886,7 +898,7 @@ button {
 }
 /* ArtistsSection */
 .section.artists {
-  height: 900vh;
+  height: 450vh;
   display: block;
   position: relative;
   overflow: visible;
@@ -1349,7 +1361,12 @@ button {
 }
 .content2.grid.artist-links {
   grid-template-rows: auto;
+  transition: all 0.3s ease-in-out;
 }
+.content2.grid.artist-links .description.italic:hover {
+  color: #d42223;
+}
+
 .sectionlinks_grid-img {
   max-height: 12.03em;
   max-width: 12.03em;
@@ -1648,6 +1665,7 @@ html.w-mod-touch * {
   flex-direction: column;
   display: flex;
   color: #000000;
+  /* justify-content: center; */
 }
 .indent-154 {
   margin-left: 12.03em;
@@ -2647,6 +2665,15 @@ html.w-mod-touch * {
   background-color: #fff;
   position: relative;
   display: none;
+}
+.Artist_tour_center_title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--primary-fontL);
+  text-transform: uppercase;
+  font-size: 3rem;
 }
 .Artist_tour_inner {
   width: 66.6%;

@@ -23,53 +23,85 @@ const Logos = () => {
               <Image
                 width={1000}
                 height={1000}
-                src="/svgs/amnesty-ic-1.svg"
+                src="/assets/images/RangeMedia/Logos/Afleabythetree.png"
               ></Image>
             </figure>
             <figure className="full-brands__section__item">
               <Image
                 width={1000}
                 height={1000}
-                src="/svgs/arculus-ic-1.svg"
+                src="/assets/images/RangeMedia/Logos/Anjali .png"
               ></Image>
             </figure>
             <figure className="full-brands__section__item">
               <Image
                 width={1000}
                 height={1000}
-                src="/svgs/beamsuntory2-ic-1.svg"
+                src="/assets/images/RangeMedia/Logos/Chezy.png"
               ></Image>
             </figure>
             <figure className="full-brands__section__item">
               <Image
                 width={1000}
                 height={1000}
-                src="/svgs/boplay-ic-1.svg"
+                src="/assets/images/RangeMedia/Logos/Cineyug.png"
               ></Image>
             </figure>
             <figure className="full-brands__section__item">
               <Image
                 width={1000}
                 height={1000}
-                src="/svgs/hanway-ic-1.svg"
+                src="/assets/images/RangeMedia/Logos/Coconut.png"
               ></Image>
             </figure>
             <figure className="full-brands__section__item">
               <Image
                 width={1000}
                 height={1000}
-                src="/svgs/unter-nehmer-ic-1.svg"
+                src="/assets/images/RangeMedia/Logos/Colexion.png"
               ></Image>
             </figure>
             <figure className="full-brands__section__item">
               <Image
                 width={1000}
                 height={1000}
-                src="/svgs/vay-ic-1.svg"
+                src="/assets/images/RangeMedia/Logos/Dfitzy.png"
               ></Image>
             </figure>
             <figure className="full-brands__section__item">
-              <Image width={1000} height={1000} src="/svgs/vw-ic-1.svg"></Image>
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Dhamaka Records.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Dome.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Fay nyx.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Furcrew.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Furfiesta.png"
+              ></Image>
             </figure>
           </div>
         </div>

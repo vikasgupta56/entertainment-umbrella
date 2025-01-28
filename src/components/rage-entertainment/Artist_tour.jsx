@@ -17,6 +17,10 @@ const Artist_tour = () => {
           pin: !0,
         },
       });
+      tl.to(".Artist_tour_center_title", {
+        opacity: 0,
+        duration: 1,
+      });
       tl.to(".Artist_tour_left_imageCntr", {
         y: "0%",
         stagger: 0.2,
@@ -277,6 +281,8 @@ const Artist_tour = () => {
   return (
     <>
       <div className="Artist_tour">
+        <h1 className="Artist_tour_center_title">International Artist</h1>
+
         <div className="Artist_tour_inner">
           <div className="Artist_tour_left_textCntr">
             <div>
@@ -339,43 +345,65 @@ const Artist_tour = () => {
         </div>
         <div className="Artist_tour_imageCntr">
           <div className="Artist_tour_left_imageCntr Artist_tour_image">
-            <img
+            <Image
+              width={1000}
+              height={1000}
               className="defl"
-              src="https://assets-global.website-files.com/6543bb275c1f9a259661c7c8/655f0d0dbbc3bde0877784da_home-slider-1-p-800.webp"
+              src="/assets/images/RangeMedia/3-3 (1)-2.jpg"
             />
-            <img
+            <Image
+              width={1000}
+              height={1000}
               className="tour_image im-1"
-              src="https://assets-global.website-files.com/6543bb275c1f9a259661c7c8/655f0d0ee783579004b21b74_home-slider-2-p-800.webp"
+              src="/assets/images/RangeMedia/DSC04847.jpg"
             />{" "}
-            <img
+            <Image
+              width={1000}
+              height={1000}
               className="tour_image im-2"
-              src="https://assets-global.website-files.com/6543bb275c1f9a259661c7c8/655f0d635f68c6d63d3a5f74_home-slider-3-p-800.webp"
+              src="/assets/images/RangeMedia/Bryan_Portray-52.jpg"
             />
-            <img
+            <Image
+              width={1000}
+              height={1000}
               className="tour_image im-3"
-              src="https://assets-global.website-files.com/6543bb275c1f9a259661c7c8/655f0d0d3961e504250c5556_home-slider-4.webp"
+              src="/assets/images/RangeMedia/DSC05253.jpg"
             />
-            <img
+            <Image
+              width={1000}
+              height={1000}
               className="tour_image im-4"
-              src="https://assets-global.website-files.com/6543bb275c1f9a259661c7c8/655f0d0e5f68c6d63d3a2864_home-slider-5-p-800.webp"
+              src="/assets/images/RangeMedia/DSC08021.jpg"
             />{" "}
-            <img
+            <Image
+              width={1000}
+              height={1000}
               className="tour_image im-5"
-              src="https://assets-global.website-files.com/6543bb275c1f9a259661c7c8/655f0d0e99dafb75c1177ba4_home-slider-5-1-p-800.webp"
+              src="/assets/images/RangeMedia/Dyavol after dark2.jpg"
             />
           </div>
           <div className="Artist_tour_left_imageCntr Artist_tour_image">
-            <img src="https://assets-global.website-files.com/6543bb275c1f9a259661c7c8/655f625673fbbf85113d5882_Kosarev-art-1-6.webp" />
+            <Image
+              width={1000}
+              height={1000}
+              src="/assets/images/RangeMedia/Rage by the bay2.jpg"
+            />
           </div>
           <div className="Artist_tour_left_imageCntr Artist_tour_image">
-            <img src="https://assets-global.website-files.com/6543bb275c1f9a259661c7c8/655f62564099bffe03063b85_Kosarev-art-1-10.webp" />
+            <Image
+              width={1000}
+              height={1000}
+              src="/assets/images/RangeMedia/front2.png"
+            />
           </div>
         </div>
       </div>
       <div className="Artist_tour_mobile">
         <div className="Artist_tour_mobileImgCntr">
-          <img
-            src="https://assets-global.website-files.com/6543bb275c1f9a259661c7c8/655f0d0dbbc3bde0877784da_home-slider-1-p-800.webp"
+          <Image
+            width={1000}
+            height={1000}
+            src="/assets/images/RangeMedia/3-3 (1)-2.jpg"
             alt=""
           />
           <img

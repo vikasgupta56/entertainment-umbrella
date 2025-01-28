@@ -155,7 +155,7 @@ const Histoy = () => {
           </h2>
         </div> */}
         <div className="TwoColumnText_right TwoColumnText_col">
-          <p className="AnimatedTextLines_root text-heading-sm AnimatedTextLines_line-height AnimatedTextLines_animate">
+          <p className="AnimatedTextLines_root text-heading-para AnimatedTextLines_line-height AnimatedTextLines_animate">
             At Rage Media, we’ve had the privilege of working with over 30
             brands—ranging from individual entrepreneurs to large corporations.
             But no matter your size, one thing remains constant: for us, it’s
