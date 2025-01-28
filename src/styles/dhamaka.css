@@ -178,7 +178,7 @@
 }
 .vf-section .v-wrapper .c-wrapper {
   width: clamp(21rem, 29.101vw, 29.101vw);
-  padding: calc(1 * clamp(1rem, 1.058vw, 1.058vw));
+  padding: calc(1.5 * clamp(1rem, 1.058vw, 1.058vw));
   z-index: 2;
 }
 .v-wrapper-inner-content {
@@ -201,6 +201,8 @@
 }
 .v-wrapper-inner-content h4 {
   font-family: var(--secondary-fontS);
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 .v-wrapper-inner-content p {
   margin-top: calc(8 * clamp(1rem, 1.058vw, 1.058vw));
@@ -302,8 +304,8 @@
   /* background: var(--primary-color); */
   background-color: transparent;
   width: 100%;
-  padding-bottom: calc(8 * clamp(1rem, 1.058vw, 1.058vw));
-  padding-top: calc(2.5 * clamp(1rem, 1.058vw, 1.058vw));
+  padding-bottom: calc(5 * clamp(1rem, 1.058vw, 1.058vw));
+  padding-top: calc(5 * clamp(1rem, 1.058vw, 1.058vw));
 }
 .o-item_inner {
   width: 100%;

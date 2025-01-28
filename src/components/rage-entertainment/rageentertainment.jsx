@@ -257,13 +257,6 @@ const RageEntertainment = () => {
                       data-w-id="55fc1117-7048-0f5f-03b2-b8e302f1e482"
                       alt=""
                       sizes="(max-width: 479px) 90vw, (max-width: 991px) 56vw, 42vw"
-
-                      // style={{
-                      //   willChange: "transform",
-                      //   transform:
-                      //     "translate3d(0px, -0.57958%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                      //   transformStyle: "preserve-3d",
-                      // }}
                     />
                   </div>
                   <div className="holder _40vw">
@@ -296,15 +289,6 @@ const RageEntertainment = () => {
                         an atmosphere that buzzes from start to finish. Every
                         event is like a one-way ticket to something totally
                         unforgettable.
-                        {/* Founded by Event Producer,{" "}
-                        <a
-                          href="https://www.linkedin.com/in/joelennard/"
-                          target="_blank"
-                        >
-                          Joe Lennard
-                        </a>
-                        , every Goodnight® event is backed by a team of stellar
-                        creatives and our black book of trusted suppliers. */}
                       </p>
                       <p>‍</p>
                     </div>
@@ -377,11 +361,11 @@ const RageEntertainment = () => {
         </div>
         <div className="bg_image">
           <img
-            src="https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1).jpg"
+            src="/assets/images/RangeMedia/BOGOTA-18.jpg"
             loading="lazy"
             alt=""
             sizes="100vw"
-            srcSet="https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1)-p-500.jpg 500w, https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1)-p-800.jpg 800w, https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1)-p-1080.jpg 1080w, https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1).jpg 1620w"
+            // srcSet="https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1)-p-500.jpg 500w, https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1)-p-800.jpg 800w, https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1)-p-1080.jpg 1080w, https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1).jpg 1620w"
             className="image p grad_up"
             style={{
               willChange: "transform",

@@ -684,6 +684,8 @@
   object-fit: cover;
   height: 110%;
   margin-bottom: 0;
+  filter: brightness(0.6);
+  object-position: 60%;
 }
 .section_label.white {
   color: #fff;

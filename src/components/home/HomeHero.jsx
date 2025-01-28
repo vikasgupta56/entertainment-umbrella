@@ -331,119 +331,22 @@ const HomeHero = () => {
         <div className="letters-wrapper">
           <div id="letter-r" className="letter-container">
             <h1>M</h1>
-            {/* <svg
-              width="14.9375em"
-              height="16.6875em"
-              viewBox="0 0 239 267"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 266.058V0H134.976C193.73 0 230.65 28.1942 230.65 78.229C230.65 121.513 203.258 147.325 155.223 149.707V152.884C176.66 159.635 187.379 172.739 197.303 192.197L238.59 266.058H189.761L149.268 194.58C136.564 171.548 126.242 160.826 95.2773 160.826H42.8748V266.058H0ZM42.8748 128.264H137.755C175.072 128.264 187.776 115.557 187.776 83.3913C187.776 52.0203 175.072 38.5188 137.755 38.5188H42.8748V128.264Z"
-                fill="currentColor"
-              />
-            </svg> */}
           </div>
           <div id="letter-a" className="letter-container">
             <h1>R.&nbsp;</h1>
-            {/* <svg
-              width="18.4375em"
-              height="16.6875em"
-              viewBox="0 0 295 267"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M244.545 266.058L215.168 196.962H78.2068L48.8296 266.058H0L116.318 0H177.851L294.169 266.058H244.545ZM94.8803 158.443H198.891L162.765 73.8609L148.474 39.7101H145.298L131.006 73.8609L94.8803 158.443Z"
-                fill="currentColor"
-              />
-            </svg> */}
           </div>
           <div id="letter-d" className="letter-container">
-            {/* <svg
-              width="15.875em"
-              height="16.6875em"
-              viewBox="0 0 254 267"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M118.7 0C201.273 0 253.279 50.829 253.279 133.029C253.279 215.229 201.273 266.058 118.7 266.058H0V0H118.7ZM118.7 227.539C182.615 227.539 207.625 201.33 207.625 133.029C207.625 64.7275 182.615 38.5188 118.7 38.5188H42.8748V227.539H118.7Z"
-                fill="currentColor"
-              />
-            </svg> */}
             <h1>&</h1>
           </div>
           <div id="letter-i" className="letter-container">
-            {/* <svg
-              width="2.6875em"
-              height="16.6875em"
-              viewBox="0 0 43 267"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 266.058V0H42.8748V266.058H0Z" fill="currentColor" />
-            </svg> */}
             <h1>&nbsp;M</h1>
           </div>
           <div id="letter-a-s" className="letter-container">
-            {/* <svg
-              width="18.4375em"
-              height="16.6875em"
-              viewBox="0 0 295 267"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M244.545 266.058L215.168 196.962H78.2068L48.8296 266.058H0L116.318 0H177.851L294.169 266.058H244.545ZM94.8803 158.443H198.891L162.765 73.8609L148.474 39.7101H145.298L131.006 73.8609L94.8803 158.443Z"
-                fill="currentColor"
-              />
-            </svg> */}
             <h1>R</h1>
           </div>
           <div id="letter-n" className="letter-container">
-            {/* <svg
-              width="15.0625em"
-              height="16.6875em"
-              viewBox="0 0 241 267"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 266.058V0H46.0508L194.922 199.742H197.7V0H240.575V266.058H194.525L45.6537 69.4928H42.8749V266.058H0Z"
-                fill="currentColor"
-              />
-            </svg> */}
             <h1>S.</h1>
           </div>
-          {/* <div id="letter-c" className="letter-container">
-            <svg
-              width="16.5em"
-              height="16.6875em"
-              viewBox=" 0 0 264 274"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M134.976 274C53.9905 274 0 219.994 0 137C0 54.0058 53.9905 0 134.976 0C215.168 0 263.997 39.7101 263.997 103.643V108.806H218.741V103.643C218.741 59.9623 194.128 41.6956 134.976 41.6956C72.649 41.6956 45.6537 67.9044 45.6537 137C45.6537 206.096 72.649 232.304 134.976 232.304C194.128 232.304 218.741 214.038 218.741 170.357V165.194H263.997V170.357C263.997 234.29 215.565 274 134.976 274Z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          <div id="letter-e" className="letter-container">
-            <svg
-              width="13.125em"
-              height="16.6875em"
-              viewBox="0 0 210 267"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M209.61 38.5188H42.8749V112.777H203.655V151.693H42.8749V227.539H209.61V266.058H0V0H209.61V38.5188Z"
-                fill="currentColor"
-              />
-            </svg>
-          </div> */}
         </div>
         <div className="sprite-wrapper">
           <div className="sprite-container">
@@ -482,64 +385,7 @@ const HomeHero = () => {
           </div>
         </div>
       </div>
-      {/* <div className="background-video-wrapper">
-        <video
-          id="background-video-1"
-          preload="none"
-          loop
-          muted
-          playsInline
-          disablePictureInPicture=""
-          controlsList="nodownload"
-          // src="https://radiance.family/video/branding-portfolio.webm"
-          // typeof="video/mp4"
-        >
-          <source
-            src="../../../assets/images/Mr&Mrs/videos/Belvedere.mp4"
-            type="video/webm"
-          />
-          <source
-            src="../../../assets/images/Mr&Mrs/videos/Belvedere.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <video
-          id="background-video-2"
-          preload="none"
-          loop
-          muted
-          playsInline
-          disablePictureInPicture=""
-          controlsList="nodownload"
-        >
-          <source
-            src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark10.mp4"
-            type="video/webm"
-          />
-          <source
-            src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark10.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <video
-          id="background-video-3"
-          preload="none"
-          loop
-          muted
-          playsInline
-          disablePictureInPicture=""
-          controlsList="nodownload"
-        >
-          <source
-            src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark11.mp4"
-            type="video/webm"
-          />
-          <source
-            src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark11.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div> */}
+
       <div className="mobile-letters-lottie-container" />
     </section>
   );

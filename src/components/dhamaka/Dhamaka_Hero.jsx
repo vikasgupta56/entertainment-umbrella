@@ -118,7 +118,7 @@ const Dhamaka_Hero = () => {
     var vosection = document.querySelector(".vo-section");
     var iHeadings = document.querySelectorAll(".i-wrapper-heading"),
       i = vosection.querySelectorAll(".o-item"),
-      n = Math.max(80, (window.innerWidth / 100) * 8.5),
+      n = Math.max(100, (window.innerWidth / 100) * 10),
       s = i[i.length - 1].offsetHeight,
       a = (i.length - 1) * n + s;
 
@@ -127,9 +127,9 @@ const Dhamaka_Hero = () => {
 
       ScrollTrigger.create({
         trigger: t,
-        start: "top =".concat(i, "30px top"),
+        start: "top =".concat(i, "px top"),
         endTrigger: vosection,
-        end: "bottom ".concat(a, "px"),
+        end: "bottom =".concat(a, "px"),
         scrub: true,
         // markers: true,
         pin: true,
