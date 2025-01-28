@@ -296,7 +296,7 @@ const HomeHero = () => {
         ></video>
         <div className="grad_up"></div>
       </div>
-      <div className="heading-wrapper">
+      {/* <div className="heading-wrapper">
         <h2 className="hero-heading">
           <span className="not-hoverable">
             {" "}
@@ -317,9 +317,6 @@ const HomeHero = () => {
             We don’t say no to anything &nbsp;entertainment.
           </span>
           <br />
-          {/* <span className="heading-link">Event Creation, &nbsp;</span>
-          <span className="heading-link"> Creative Storytelling.</span>
-          <span className="not-hoverable"> and everything we touch</span> */}
           <div className="hero-mask">
             <div className="hero-mask-part" />
             <div className="hero-mask-part" />
@@ -329,7 +326,7 @@ const HomeHero = () => {
           We live our best lives excelling at design and branding, advertising,
           web development and everything we touch
         </h2>
-      </div>
+      </div> */}
       <div className="bottom-wrapper">
         {/* <div className="bottom-links-wrapper">
           <div>
@@ -414,7 +411,37 @@ const HomeHero = () => {
           </div>
         </div>
       </div>
-
+      <div className="heading-wrapper">
+        <h2 className="hero-heading">
+          <span className="not-hoverable">
+            {" "}
+            Mr. and Mrs.
+            <span className="descriptor">
+              {" "}
+              <span className="welcome">Films</span>
+            </span>
+            ... and Sometimes{" "}
+            <span className="descriptor">
+              {" "}
+              <span className="welcome">Events</span>
+            </span>{" "}
+          </span>{" "}
+          <br />
+          <span className="not-hoverable not-hoverable2">
+            {" "}
+            We don’t say no to anything &nbsp;entertainment.
+          </span>
+          <br />
+          <div className="hero-mask">
+            <div className="hero-mask-part" />
+            <div className="hero-mask-part" />
+          </div>
+        </h2>
+        <h2 className="hero-heading-mobile">
+          We live our best lives excelling at design and branding, advertising,
+          web development and everything we touch
+        </h2>
+      </div>
       <div className="mobile-letters-lottie-container" />
     </section>
   );
