@@ -65,8 +65,8 @@
   /* overflow: hidden; */
   font-family: var(--primary-fontL);
   text-transform: uppercase;
-  mix-blend-mode: difference;
-  color: #fff;
+  /* mix-blend-mode: difference; */
+  /* color: #fff; */
 }
 .h1.hero {
   width: 100%;
@@ -648,8 +648,8 @@
   height: fit-content;
   display: grid;
   /* justify-content: flex-end; */
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  grid-template-columns: 1fr 2fr;
+  gap: 12rem;
 }
 
 #aboutimages {
@@ -713,7 +713,7 @@
   margin-top: 0;
   margin-bottom: 1rem;
   font-family: var(--primary-fontL);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.25;
   margin-top: 1rem;

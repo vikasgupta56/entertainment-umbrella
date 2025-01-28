@@ -397,7 +397,7 @@ const ClipCntr = () => {
               Turning Ideas Into Impactful Digital Experiences.
             </p>
             <Link href="#history" className="explore-button w-inline-block">
-              <p className="paragraph red">explore</p>
+              {/* <p className="paragraph red">explore</p> */}
               {/* <div className="explore-arrow">
                 <img
                   src="images/arrow_1.svg"

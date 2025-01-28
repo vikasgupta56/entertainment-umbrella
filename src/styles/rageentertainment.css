@@ -844,7 +844,7 @@ a[class*="text-accent"]:after {
 .full-brands__section {
   align-items: center;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   flex-direction: column;
   gap: 5rem;
   padding-top: 2rem;
@@ -883,7 +883,7 @@ a[class*="text-accent"]:after {
 }
 .full-brands__para {
   font-family: var(--primary-fontL);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-style: normal;
   font-weight: 600;
   letter-spacing: -0.02rem;
@@ -909,12 +909,12 @@ a[class*="text-accent"]:after {
 .full-brands__section__item img {
   fill: currentcolor;
   height: 100%;
-  filter: grayscale();
+  /* filter: grayscale(); */
   cursor: pointer;
   transition: scale 0.2s ease-in-out;
 }
 .full-brands__section__item img:hover {
-  filter: grayscale(0);
+  /* filter: grayscale(0); */
   scale: 1.1;
 }
 /* Logos brand */
@@ -977,7 +977,7 @@ a[class*="text-accent"]:after {
   }
   /* partners */
   .TwoColumnText_root {
-    padding-top: 17.2rem;
+    padding-top: 10rem;
     padding-bottom: 10rem;
   }
   .text-heading-para {
@@ -1067,7 +1067,7 @@ a[class*="text-accent"]:after {
   }
   /* partners */
   .TwoColumnText_root {
-    padding-top: 17.2rem;
+    padding-top: 10rem;
     padding-bottom: 10rem;
   }
   .TwoColumnText_left {

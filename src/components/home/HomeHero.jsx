@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import React, { useEffect } from "react";
 import TextPlugin from "gsap/dist/TextPlugin";
+import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(TextPlugin);
 const HomeHero = () => {
   useEffect(() => {
@@ -265,8 +266,36 @@ const HomeHero = () => {
       });
     }
   }, []);
+  // useGSAP(() => {
+  //   const image = document.querySelector(".hero-section-video");
+  //   const tl = gsap.timeline();
+  //   gsap.to(".image", {
+  //     scrollTrigger: {
+  //       trigger: image,
+  //       start: "top bottom",
+  //       end: "bottom top",
+  //       scrub: true,
+  //       invalidateOnRefresh: true,
+  //       markers: false, // Set to `true` for debugging purposes
+  //     },
+  //     yPercent: 32,
+  //     ease: "none",
+  //   });
+  // }, []);
+
   return (
     <section id="hero-section" className="hero-section">
+      <div className="hero-section-video">
+        <video
+          loop
+          playsInline
+          muted
+          autoPlay
+          src="/assets/images/Mr&Mrs/videos/mrandmrsbg.mp4"
+          className="image"
+        ></video>
+        <div className="grad_up"></div>
+      </div>
       <div className="heading-wrapper">
         <h2 className="hero-heading">
           <span className="not-hoverable">

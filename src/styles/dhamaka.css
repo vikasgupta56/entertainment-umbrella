@@ -177,7 +177,8 @@
   padding-bottom: calc(11 * clamp(1rem, 1.058vw, 1.058vw));
 }
 .vf-section .v-wrapper .c-wrapper {
-  width: clamp(21rem, 29.101vw, 29.101vw);
+  /* width: clamp(21rem, 29.101vw, 29.101vw); */
+  width: clamp(21rem, 35.101vw, 35.101vw);
   padding: calc(1.5 * clamp(1rem, 1.058vw, 1.058vw));
   z-index: 2;
 }
