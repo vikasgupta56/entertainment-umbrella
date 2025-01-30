@@ -21,13 +21,15 @@ const Logos = () => {
           <div className="full-brands__section__list full-brands__clients__list">
             <figure className="full-brands__section__item">
               <Image
+                alt="dfdsggsd"
                 width={1000}
                 height={1000}
                 src="/assets/images/RangeMedia/Logos/Afleabythetree.png"
-              ></Image>
+              />
             </figure>
             <figure className="full-brands__section__item">
               <Image
+                alt=""
                 width={1000}
                 height={1000}
                 src="/assets/images/RangeMedia/Logos/Anjali .png"

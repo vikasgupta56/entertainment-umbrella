@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import Link from "next/link";
 // import ScrollSmoother from "gsap/dist/ScrollSmoother";
 import React, { useEffect } from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
@@ -293,18 +294,19 @@ const Footer = () => {
         <p className="copytext">
           <span>
             <span className="copy fht"> © 2024 entertainment umbrella </span>
-            <span className="by fht">
-              Developed by <a href="https://zerrorstudio.com"> ZerroStudio</a>
+            <span className="fht">
+              <Link
+                className="privacy-policy"
+                data-title="privacy-policy"
+                href="/privacy-policy"
+              >
+                PRIVACY
+              </Link>
             </span>
-          </span>
-          <span className="fht">
-            <a
-              className="privacy-policy"
-              data-title="privacy-policy"
-              href="/privacy-policy"
-            >
-              PRIVACY
-            </a>
+          </span>{" "}
+          <span className="by fht">
+            Developed by{" "}
+            <Link href="https://zerrorstudio.com">ZerroStudio</Link>
           </span>
         </p>
       </div>

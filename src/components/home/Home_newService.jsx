@@ -3,7 +3,7 @@ import React from "react";
 const Home_newService = () => {
   return (
     <>
-      <div className="_services p-small">
+      <div className="_services p-small" data-scroll data-scroll-speed=".3">
         <div className="s-indented-title_wrapper">
           <div className="s-indented-title_cntr">
             <h2>What we do</h2>
@@ -18,17 +18,40 @@ const Home_newService = () => {
             <li>
               <h3>Film & Media:</h3>{" "}
               <ul className="opacity-40">
-                <li>Film Production</li>
-                <li>Photography and Stills</li>
-                <li>Scripting and Storyboarding</li>
-                <li>Celebrity Endorsements</li>
-                <li>Casting</li>
-                <li>Post-Production</li>
-                <li>Behind-The-Scenes Content</li>
-                <li>Animation and Graphic Design</li>
-                <li>Video Marketing Content</li>
-                <li>Documentary Filming</li>
-                <li>Music Video Production</li>
+                <li className="service_hover_link">
+                  <span className="links2">Film Production</span>
+                </li>
+                <li className="service_hover_link">
+                  {" "}
+                  <span className="links2">Photography and Stills</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Scripting and Storyboarding</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Celebrity Endorsements</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Casting</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Post-Production</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Behind-The-Scenes Content</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Animation and Graphic Design</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Video Marketing Content</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Documentary Filming</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Music Video Production</span>
+                </li>
                 {/* <li>Print</li>
                 <li>Editorial design</li>
                 <li>Type design</li> */}
@@ -37,26 +60,58 @@ const Home_newService = () => {
             <li>
               <h3>Event Services:</h3>{" "}
               <ul className="opacity-40">
-                <li>Event Design & Conceptualization</li>
-                <li>Venue & Logistics Management</li>
-                <li>Talent & Artist Coordination</li>
-                <li>Guest & VIP Services</li>
-                <li>Branding & Event Assets</li>
-                <li>Live Production & Coverage</li>
-                <li>Corporate & Private Events</li>
-                <li>Security & Risk Management</li>
+                <li className="service_hover_link">
+                  <span className="links2">
+                    Event Design & Conceptualization
+                  </span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Venue & Logistics Management</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Talent & Artist Coordination</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Guest & VIP Services</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Branding & Event Assets</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Live Production & Coverage</span>
+                </li>
+                <li>
+                  <span className="links2">Corporate & Private Events</span>
+                </li>
+                <li>
+                  <span className="links2">Security & Risk Management</span>
+                </li>
                 {/* <li>Digital Publishing</li> */}
               </ul>
             </li>
             <li>
               <h3>Types of Events:</h3>{" "}
               <ul className="opacity-40">
-                <li>Music concerts, Bar nights</li>
-                <li>Branded Events</li>
-                <li>Wedding Planning and Coordination</li>
-                <li>Private Parties and Gala Event</li>
-                <li>Fashion Shows</li>
-                <li>Product Launches</li>
+                <li className="service_hover_link">
+                  <span className="links2">Music concerts, Bar nights</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Branded Events</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">
+                    Wedding Planning and Coordination
+                  </span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Private Parties and Gala Event</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Fashion Shows</span>
+                </li>
+                <li className="service_hover_link">
+                  <span className="links2">Product Launches</span>
+                </li>
                 {/* <li>Video direction</li> */}
                 {/* <li>Campaign concept</li> */}
               </ul>

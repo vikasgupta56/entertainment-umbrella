@@ -138,63 +138,63 @@ const MainpageHero = () => {
     });
   }, []);
 
-  useEffect(() => {
-    const a = document.querySelectorAll(".landing-page-a");
-    // Declare variables
-    let lFollowX = 0,
-      lFollowY = 0,
-      x = 0,
-      y = 0,
-      friction = 1 / 50;
-    function moveBackground() {
-      // Update the position with a smooth transition (GSAP's tweening)
-      x += (lFollowX - x) * friction;
-      y += (lFollowY - y) * friction;
+  // useEffect(() => {
+  //   const a = document.querySelectorAll(".landing-page-a");
+  //   // Declare variables
+  //   let lFollowX = 0,
+  //     lFollowY = 0,
+  //     x = 0,
+  //     y = 0,
+  //     friction = 1 / 50;
+  //   function moveBackground() {
+  //     // Update the position with a smooth transition (GSAP's tweening)
+  //     x += (lFollowX - x) * friction;
+  //     y += (lFollowY - y) * friction;
 
-      // GSAP animation for background transform
-      gsap.to(".background-video-wrapper", {
-        duration: 0.02, // Small duration for smooth movement
-        x: x,
-        y: y,
-        scale: 1.2,
-        ease: "none",
-      });
+  //     // GSAP animation for background transform
+  //     gsap.to(".background-video-wrapper", {
+  //       duration: 0.02, // Small duration for smooth movement
+  //       x: x,
+  //       y: y,
+  //       scale: 1.2,
+  //       ease: "none",
+  //     });
 
-      // Request the next frame for continuous animation
-      requestAnimationFrame(moveBackground);
-    }
+  //     // Request the next frame for continuous animation
+  //     requestAnimationFrame(moveBackground);
+  //   }
 
-    // Event listener for mouse move and click
-    a.forEach((el) => {
-      el.addEventListener("mousemove", function (e) {
-        const lMouseX = Math.max(
-          -100,
-          Math.min(100, window.innerWidth / 2 - e.clientX)
-        );
-        const lMouseY = Math.max(
-          -100,
-          Math.min(100, window.innerHeight / 2 - e.clientY)
-        );
-        lFollowX = (20 * lMouseX) / 100;
-        lFollowY = (20 * lMouseY) / 100;
-      });
-    });
+  //   // Event listener for mouse move and click
+  //   a.forEach((el) => {
+  //     el.addEventListener("mousemove", function (e) {
+  //       const lMouseX = Math.max(
+  //         -100,
+  //         Math.min(100, window.innerWidth / 2 - e.clientX)
+  //       );
+  //       const lMouseY = Math.max(
+  //         -100,
+  //         Math.min(100, window.innerHeight / 2 - e.clientY)
+  //       );
+  //       lFollowX = (20 * lMouseX) / 100;
+  //       lFollowY = (20 * lMouseY) / 100;
+  //     });
+  //   });
 
-    window.addEventListener("click", function (e) {
-      const lMouseX = Math.max(
-        -100,
-        Math.min(100, window.innerWidth / 2 - e.clientX)
-      );
-      const lMouseY = Math.max(
-        -100,
-        Math.min(100, window.innerHeight / 2 - e.clientY)
-      );
-      lFollowX = (20 * lMouseX) / 100;
-      lFollowY = (20 * lMouseY) / 100;
-    });
+  //   window.addEventListener("click", function (e) {
+  //     const lMouseX = Math.max(
+  //       -100,
+  //       Math.min(100, window.innerWidth / 2 - e.clientX)
+  //     );
+  //     const lMouseY = Math.max(
+  //       -100,
+  //       Math.min(100, window.innerHeight / 2 - e.clientY)
+  //     );
+  //     lFollowX = (20 * lMouseX) / 100;
+  //     lFollowY = (20 * lMouseY) / 100;
+  //   });
 
-    moveBackground();
-  }, []);
+  //   moveBackground();
+  // }, []);
   return (
     <div className="mainPage">
       {" "}
@@ -290,7 +290,7 @@ const MainpageHero = () => {
       >
         <div className="landing-page-left_img_cntr_ul">
           <div className="landing-page-li">
-            <Link
+            <a
               href="../../mrandmrs"
               className="landing-page-a"
               data-group="studio"
@@ -321,7 +321,7 @@ const MainpageHero = () => {
                 <span>MR & MRS</span>
               </div>
               <img src="/assets/images/Mr&Mrs/Srk Aryan.jpg" alt="" />
-            </Link>
+            </a>
           </div>
           <div className="landing-page-li">
             <Link

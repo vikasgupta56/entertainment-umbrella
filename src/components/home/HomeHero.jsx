@@ -266,22 +266,6 @@ const HomeHero = () => {
       });
     }
   }, []);
-  // useGSAP(() => {
-  //   const image = document.querySelector(".hero-section-video");
-  //   const tl = gsap.timeline();
-  //   gsap.to(".image", {
-  //     scrollTrigger: {
-  //       trigger: image,
-  //       start: "top bottom",
-  //       end: "bottom top",
-  //       scrub: true,
-  //       invalidateOnRefresh: true,
-  //       markers: false, // Set to `true` for debugging purposes
-  //     },
-  //     yPercent: 32,
-  //     ease: "none",
-  //   });
-  // }, []);
 
   return (
     <section id="hero-section" className="hero-section">

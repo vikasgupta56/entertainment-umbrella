@@ -33,7 +33,7 @@ const RageEntertainment = () => {
               <section className="section_rageEn_home_hero">
                 <div className="hero_h1_group day">
                   <h1 className="h1_small once_text">
-                    <div className="">
+                    <div className="" data-scroll data-scroll-speed="0.1">
                       The Pulse of Your Event: <br /> Exceptional Artists,
                       Unforgettable Nights
                       {/* <div
@@ -47,8 +47,12 @@ const RageEntertainment = () => {
                   </h1>
                 </div>
                 <div className="logo_holder">
-                  <h3>RAGE</h3>
-                  <h1>ENTERTAINMENT</h1>
+                  <h3 data-scroll data-scroll-speed="0.1">
+                    RAGE
+                  </h3>
+                  <h1 data-scroll data-scroll-speed="0.1">
+                    ENTERTAINMENT
+                  </h1>
                   {/* <img
                     src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/6691b48ef5849526fd6edcd8_GOODNIGHT_RED_WORDMARK.svg"
                     loading="lazy"
@@ -201,17 +205,7 @@ const RageEntertainment = () => {
                 <div className="intro_group">
                   <h3 className="h3 centred mob-off aos_text">
                     <div className="section_rageEn_line-mask">
-                      <div
-                        className=""
-                        // style={{
-                        //   textAlign: "center",
-                        //   translate: "none",
-                        //   rotate: "none",
-                        //   scale: "none",
-                        //   transform:
-                        //     "translate(0px, 0%) scale(1.00001, 1.00001)",
-                        // }}
-                      >
+                      <div className="" data-scroll data-scroll-speed="0.020">
                         PARTIES FOR PEOPLE &amp; BRANDS WE PRODUCE SPECTACULAR{" "}
                         <br />
                       </div>
@@ -225,26 +219,18 @@ const RageEntertainment = () => {
                       className="section_rageEn_line-mask"
                       // style={{ height: "57.88px" }}
                     >
-                      <div className="line">
+                      <div
+                        className="line"
+                        data-scroll
+                        data-scroll-speed="0.020"
+                      >
                         We produce spectacular parties for people &amp; brands{" "}
                       </div>
                     </div>
                   </h2>
                   <h3 className="h3 centred mob-on aos_text w-dyn-bind-empty">
                     <div className="section_rageEn_line-mask">
-                      <div
-                        className="line"
-                        // style={{
-                        //   textAlign: "center",
-                        //   translate: "none",
-                        //   rotate: "none",
-                        //   scale: "none",
-                        //   transform:
-                        //     "translate(0px, 0%) scale(1.00001, 1.00001)",
-                        // }}
-                      >
-                        {" "}
-                      </div>
+                      <div className="line"> </div>
                     </div>
                   </h3>
                   <div
@@ -261,9 +247,11 @@ const RageEntertainment = () => {
                   </div>
                   <div className="holder _40vw">
                     <div className="rich ac w-richtext">
-                      <h6>WELCOME TO THE PARTY</h6>
+                      <h6 data-scroll data-scroll-speed="0.020">
+                        WELCOME TO THE PARTY
+                      </h6>
                       <p>‍</p>
-                      <p>
+                      <p data-scroll data-scroll-speed="0.020">
                         <strong>
                           Rage Entertainment is a creative events agency that
                           specialises in the design and production of
@@ -271,7 +259,7 @@ const RageEntertainment = () => {
                           ambitious brands.
                         </strong>{" "}
                       </p>
-                      <p>
+                      <p data-scroll data-scroll-speed="0.010">
                         At Rage Entertainment, we’re all about throwing nights
                         that hit different—where the music’s unreal, the vibe’s
                         electric, and the crowd never wants to leave. From
@@ -280,7 +268,7 @@ const RageEntertainment = () => {
                         floor. Ready for a night that’ll make you forget
                         everything else? Let’s Rage.
                       </p>
-                      <p>
+                      <p data-scroll data-scroll-speed="0.010">
                         It’s not just a party—it’s an experience that sticks
                         with you long after the last track drops. At Rage
                         Entertainment, we don’t just throw events, we create
