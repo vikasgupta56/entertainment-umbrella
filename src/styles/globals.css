@@ -1,21 +1,25 @@
 @font-face {
   font-family: HelveticaBold;
-  src: url(/fonts/vertopal.com_HelveticaNeueLTStd-Bd.0d3e2395.ttf);
+  /* src: url(/fonts/vertopal.com_HelveticaNeueLTStd-Bd.0d3e2395.ttf); */
+  src: url(/fonts/DegularDisplay-Regular.3f5c83d0.ttf);
   font-display: swap;
 }
 @font-face {
   font-family: HelveticaLight;
-  src: url(/fonts/Helvetica_Light.ttf);
+  /* src: url(/fonts/Helvetica_Light.ttf); */
+  src: url(/fonts/DegularDisplay-Regular.3f5c83d0.ttf);
   font-display: swap;
 }
 @font-face {
   font-family: Helvetica_Neue_Thin;
-  src: url(/fonts/Helvetica_Neue_Thin.ttf);
+  /* src: url(/fonts/Helvetica_Neue_Thin.ttf); */
+  src: url(/fonts/Cormorant-Garamond-Regular.1186de46.ttf);
   font-display: swap;
 }
 @font-face {
   font-family: SilkSerif_ExtraLight;
-  src: url(/fonts/SilkSerif_ExtraLight.ttf);
+  /* src: url(/fonts/SilkSerif_ExtraLight.ttf); */
+  src: url(/fonts/Cormorant-Garamond-Regular-Italic.e24a9074.ttf);
   font-display: swap;
 }
 :root {
@@ -802,7 +806,7 @@ main .heroBanner__container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px 45px 60px;
+  padding: 100px 45px 60px;
   color: #fff;
 }
 @media screen and (max-width: 840px) {
@@ -831,7 +835,7 @@ main .heroBanner__container {
 }
 @media screen and (max-width: 840px) {
   .footer__top {
-    margin-bottom: 60vh;
+    margin-bottom: 50vh;
   }
 }
 .footer__top--left {
@@ -861,7 +865,7 @@ main .heroBanner__container {
   word-wrap: normal !important;
 }
 .footer__top p {
-  font-size: 12px;
+  font-size: 1rem;
   line-height: 15px;
   letter-spacing: 0.15em;
   font-weight: 300;
@@ -869,7 +873,7 @@ main .heroBanner__container {
 
 .footer .form__inputblock--heading {
   margin-top: 30px;
-  color: rgb(212, 34, 35);
+  color: rgb(255, 255, 255);
 }
 .footer .form__inputblock--heading h2 {
   font-weight: 300;
@@ -977,7 +981,8 @@ main .heroBanner__container {
 }
 .footer .form__step.step_1 .form__inputblock--input.has_word {
   display: grid;
-  grid-template-columns: auto auto;
+  /* grid-template-columns: auto auto; */
+  grid-template-columns: auto;
 }
 @media screen and (max-width: 840px) {
   .footer .form__step.step_1 .form__inputblock--input.has_word {
@@ -1061,7 +1066,7 @@ main .heroBanner__container {
   position: absolute;
   left: 40px;
   top: 0;
-  font-size: 12px;
+  font-size: 1rem;
   line-height: 15px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1217,14 +1222,17 @@ main .heroBanner__container {
   }
 }
 .footer__bottom--text--right {
-  width: 50%;
-  display: flex;
+  /* width: 50%; */
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 @media screen and (max-width: 600px) {
   .footer__bottom--text--right {
     line-height: 4;
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media screen and (max-width: 840px) {
@@ -1234,7 +1242,7 @@ main .heroBanner__container {
   }
 }
 .footer__bottom--text--right h6 {
-  font-size: 10px;
+  font-size: 1rem;
   line-height: 14px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1244,7 +1252,7 @@ main .heroBanner__container {
 .footer__bottom--text--right p,
 .footer__bottom--text--right a {
   font-weight: 300;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 18px;
 }
 .footer__bottom--text--right p:not(:last-child) {
@@ -1281,7 +1289,7 @@ main .heroBanner__container {
   transform: scaleX(1);
 }
 .footer__bottom--text--block:last-child {
-  margin-left: 10vw;
+  /* margin-left: 10vw; */
 }
 .footer .haloLogo {
   position: relative;
@@ -1545,7 +1553,15 @@ main .heroBanner__container {
 
 .wpcf7-form-control-wrap {
   position: relative;
+  /* opacity: 0; */
+}
+.wpcf7-form-control-wrap.honeypot-391-wrap {
   opacity: 0;
+  z-index: -1;
+}
+#wpcf7-679897f43348b-wrapper {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 .wpcf7-not-valid-tip {
@@ -1554,7 +1570,9 @@ main .heroBanner__container {
   font-weight: normal;
   display: block;
 }
-
+button.hidden {
+  display: none;
+}
 .use-floating-validation-tip .wpcf7-not-valid-tip {
   position: relative;
   top: -2ex;
@@ -1660,3 +1678,7 @@ form.submitting .wpcf7-spinner {
   direction: ltr;
 }
 /* footer contact form */
+
+/* footer2 */
+
+/* footer2 */

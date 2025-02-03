@@ -217,11 +217,11 @@ const MainpageHero = () => {
             // typeof="video/mp4"
           >
             <source
-              src="../../../assets/images/Mr&Mrs/videos/Belvedere.mp4"
+              src="../../../assets/images/mrandmrs/videos/mrandmrsbg.mp4"
               type="video/webm"
             />
             <source
-              src="../../../assets/images/Mr&Mrs/videos/Belvedere.mp4"
+              src="../../../assets/images/mrandmrs/videos/mrandmrsbg.mp4"
               type="video/mp4"
             />
           </video>
@@ -235,11 +235,11 @@ const MainpageHero = () => {
             controlsList="nodownload"
           >
             <source
-              src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark10.mp4"
+              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
               type="video/webm"
             />
             <source
-              src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark10.mp4"
+              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
               type="video/mp4"
             />
           </video>
@@ -253,11 +253,11 @@ const MainpageHero = () => {
             controlsList="nodownload"
           >
             <source
-              src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark11.mp4"
+              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark11.mp4"
               type="video/webm"
             />
             <source
-              src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark11.mp4"
+              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark11.mp4"
               type="video/mp4"
             />
           </video>
@@ -271,11 +271,11 @@ const MainpageHero = () => {
             controlsList="nodownload"
           >
             <source
-              src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark10.mp4"
+              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
               type="video/webm"
             />
             <source
-              src="../../../assets/images/Mr&Mrs/videos/Dyavol after dark10.mp4"
+              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
               type="video/mp4"
             />
           </video>
@@ -320,7 +320,7 @@ const MainpageHero = () => {
                 <h2>MR & MRS</h2>
                 <span>MR & MRS</span>
               </div>
-              <img src="/assets/images/Mr&Mrs/Srk Aryan.jpg" alt="" />
+              <img src="/assets/images/mrandmrs/Srk Aryan.jpg" alt="" />
             </a>
           </div>
           <div className="landing-page-li">

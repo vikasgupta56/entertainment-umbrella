@@ -12,7 +12,7 @@ const Gallery = () => {
     const Main = document.querySelector(".Main");
 
     const colors = [
-      "rgb(238, 238, 234)",
+      "rgb(174, 174, 169)",
       "rgb(42, 70, 85)",
       "rgb(231, 20, 66)",
       "rgb(38, 44, 41)",
@@ -20,7 +20,21 @@ const Gallery = () => {
       "rgb(32, 32, 69)",
       "rgb(30, 33, 38)",
     ];
-
+    galleryImageBottomInnerElements.forEach((el, index) => {
+      // el.addEventListener("scroll", () => {
+      gsap.to(Main, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 100%",
+          end: "top 100%",
+          scrub: 1,
+          markers: false,
+          duration: 0.5,
+        },
+        backgroundColor: colors[index] || "#000",
+      });
+      // });
+    });
     galleryImageBottomInnerElements.forEach((container, index) => {
       container.addEventListener("mouseenter", () => {
         gsap.to(Main, {

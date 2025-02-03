@@ -42,7 +42,7 @@
   display: flex;
   position: relative;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #cfbdbd;
 }
 /* .w-inline-block {
   max-width: 100%;
@@ -71,9 +71,9 @@
 .h1.hero {
   width: 100%;
   text-align: center;
-  /* letter-spacing: 0.02em; */
+  letter-spacing: 0.04em;
   overflow-wrap: break-word;
-  font-size: 16vw;
+  font-size: 19vw;
   line-height: 0.8;
   overflow: visible;
 }
@@ -190,6 +190,8 @@
   font-size: 1.2em;
   font-weight: 500;
   line-height: 1.35;
+  letter-spacing: 0.04em;
+  font-weight: 600;
 }
 .paragraph.red {
   color: red;
@@ -210,7 +212,7 @@
 @media screen and (max-width: 991px) {
   .hero-wrapper {
     /* height: 25%; */
-    padding-top: 24px;
+    /* padding-top: 24px; */
     padding-bottom: 24px;
   }
 
@@ -324,9 +326,10 @@
   margin-top: 0;
   margin-bottom: 0;
   font-family: var(--primary-fontB);
-  font-size: 12vw;
-  font-weight: 500;
+  font-size: 15vw;
+  font-weight: 900;
   line-height: 1;
+  letter-spacing: 0.04em;
 }
 .h-wrapper_h2.cbh2 {
   color: #d42223;
@@ -591,7 +594,7 @@
 /* Artist */
 .section.three {
   min-height: 100vh;
-  padding: 0 1.5vw;
+  padding: 0 45px;
   /* margin-bottom: 10rem; */
   position: relative;
   background-color: rgb(255, 255, 255);
@@ -623,12 +626,12 @@
   bottom: 0%;
 }
 .artistsheading {
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
   font-family: var(--primary-fontL);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 900;
   line-height: 1;
 }
@@ -649,7 +652,7 @@
   display: grid;
   /* justify-content: flex-end; */
   grid-template-columns: 1fr 2fr;
-  gap: 12rem;
+  gap: 5rem;
 }
 
 #aboutimages {
@@ -717,6 +720,7 @@
   font-weight: 600;
   line-height: 1.25;
   margin-top: 1rem;
+  letter-spacing: 0.04em;
   /* text-indent: 6.4em; */
 }
 .g-item-list {
@@ -739,9 +743,11 @@
   margin-top: 0;
   margin-bottom: 0;
   text-align: left;
-  font-size: 1.875rem;
+  font-size: 2rem;
   line-height: 0.87;
   color: #000000;
+  font-family: var(--primary-fontB);
+  letter-spacing: 0.04em;
 }
 .g-item-list-para-cntr {
   position: relative;
@@ -761,9 +767,10 @@
   font-family: var(--primary-fontB);
   font-size: 0.875rem;
   line-height: 1.2;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   max-width: 56.25rem;
   color: #000000;
+  letter-spacing: 0.02em;
 }
 .g-item-content a {
   text-decoration: underline;
@@ -825,7 +832,8 @@ button {
     padding-right: 6rem;
   }
   .h-wrapper {
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: 1fr;
   }
 }
 /* .list-item {
@@ -903,8 +911,8 @@ button {
   position: relative;
   overflow: visible;
   background-color: #fff;
-  padding-left: 1.88em;
-  padding-right: 1.88em;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 .artist-wrapper {
   position: absolute;
@@ -1169,8 +1177,8 @@ button {
 
 @media screen and (max-width: 991px) {
   .section.three {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 45px;
+    padding-right: 45px;
   }
   .h-wrapper.centered {
     height: 50vh;
@@ -1361,7 +1369,11 @@ button {
 }
 .content2.grid.artist-links {
   grid-template-rows: auto;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
+  font-family: var(--primary-fontB);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  cursor: pointer;
 }
 .content2.grid.artist-links .description.italic:hover {
   color: #d42223;
@@ -1430,8 +1442,8 @@ button {
 } */
 @media screen and (max-width: 991px) {
   .sectionlinks {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 45px;
+    padding-right: 45px;
   }
   .content2.grid.artist-links {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -2665,6 +2677,7 @@ html.w-mod-touch * {
   background-color: #fff;
   position: relative;
   display: none;
+  padding-left: 45px;
 }
 .Artist_tour_center_title {
   position: absolute;
@@ -2681,8 +2694,8 @@ html.w-mod-touch * {
   position: absolute;
   display: flex;
   padding-top: 3vw;
-  padding-bottom: 0.5vw;
-  padding: 1rem 0.5vw;
+  /* padding-bottom: 0.5vw; */
+  /* padding: 1rem 0.5vw; */
 }
 .Artist_tour_left_textCntr {
   width: 75%;
@@ -2717,6 +2730,7 @@ html.w-mod-touch * {
 }
 .learn_more_text {
   text-transform: capitalize;
+  font-size: 1.25rem;
 }
 .learn_more_arrow {
   width: 1.3vw;
@@ -2754,16 +2768,16 @@ html.w-mod-touch * {
   opacity: 0;
 }
 .Number_paginationCntr {
-  height: 1vw;
+  height: 1.25rem;
   display: flex;
   overflow: hidden;
-  font-size: 1vw;
+  font-size: 1.25rem;
   line-height: 1;
 }
 .featured_cntr_artist_tour {
   display: flex;
   gap: 2.5vw;
-  font-size: 1vw;
+  font-size: 1.25rem;
   line-height: 1;
 }
 .year_artist_tour {

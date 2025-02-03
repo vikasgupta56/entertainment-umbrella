@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { IoHome } from "react-icons/io5";
 gsap.registerPlugin(CustomEase);
-const Navbar = () => {
+const Navbar = ({ onContactClick }) => {
   const initIntroAnim = () => {
     if (document.querySelectorAll(".heroBanner").length > 0) {
       const body = document.querySelector("body");
@@ -234,6 +234,7 @@ const Navbar = () => {
     //** Mobile Navugation handler **/
     function mobileNavHandler() {
       const app = document.querySelector("body");
+      const mobileNav = document.querySelector(".mobilenavbar");
       const navopenbtn = document.querySelector(".mobilenavbar__togglebtn");
       const navclsebtn = document.querySelector(
         ".mobilenavbar__content--close"
@@ -249,6 +250,7 @@ const Navbar = () => {
         event.preventDefault();
         nav.classList.add("show");
         app.classList.add("fixed");
+        mobileNav.style.mixBlendMode = "normal";
       });
 
       // Event listener for closing the navbar
@@ -263,6 +265,7 @@ const Navbar = () => {
         item.addEventListener("click", () => {
           nav.classList.remove("show");
           app.classList.remove("fixed");
+          mobileNav.style.mixBlendMode = "difference";
         });
       });
 
@@ -379,27 +382,28 @@ const Navbar = () => {
             </a>
           </li>
 
-          {/* <li className="navbar--menu--item">
+          <li className="navbar--menu--item">
             <a href="" className="nav_link">
-              <span className="btn-text link" data-title="halo collective">
-                halo collective
+              <span className="btn-text link" data-title="halo studio">
+                Contact
               </span>
-              <span className="nav_text">
+              {/* <span className="nav_text">
                 {" "}
-                Pioneering Influencer Marketing{" "}
-              </span>
+                Next-Gen White-Label Production{" "}
+              </span> */}
             </a>
-          </li> */}
+          </li>
         </ul>
       </div>
       <div className="mobilenavbar">
         <div className="mobilenavbar__logo">
-          <h5>
-            <a href="">
-              Entertainment <br />
-              Umbrella
-            </a>
-          </h5>
+          <span>
+            <Link href="/">
+              {/* <IoHome /> */}
+              <h1>Entertainment</h1>
+              <h1>Umbrella</h1>
+            </Link>
+          </span>
         </div>
         <button className="mobilenavbar__togglebtn">
           <span>menu</span>
@@ -427,11 +431,30 @@ const Navbar = () => {
             </li>
             <li className="mobilenavbar__content--menu--item">
               <a
+                href={"/rage-entertainment"}
+                className="nav_link o_italic"
+                data-title="savoir flair"
+              >
+                Rage entertainment
+              </a>
+            </li>
+            <li className="mobilenavbar__content--menu--item">
+              <a
                 href="/dhamaka"
                 className="nav_link o_italic"
                 data-title="halo studio"
               >
                 Dhamaka
+              </a>
+            </li>
+            <li className="mobilenavbar__content--menu--item">
+              <a
+                onClick={onContactClick}
+                href="#footerr"
+                className="nav_link o_italic"
+                data-title="halo studio"
+              >
+                Contact
               </a>
             </li>
             {/* <li className="mobilenavbar__content--menu--item">

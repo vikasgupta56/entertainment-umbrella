@@ -268,6 +268,18 @@ const Footer = () => {
                 </p>
               </div>
               <div className="footer__bottom--text--block fht">
+                <h6>Follow US</h6>
+                <p>
+                  <a href="#">Instagram</a>
+                </p>
+                <p>
+                  <a href="#">Facebook</a>
+                </p>
+                <p>
+                  <a href="#">Twitter</a>
+                </p>
+              </div>
+              <div className="footer__bottom--text--block fht">
                 <h6>VISIT US</h6>
                 <p>
                   Abhinay Bungalow, Juhu
@@ -280,7 +292,6 @@ const Footer = () => {
                 <h3>
                   {" "}
                   <FaArrowUpLong />
-                  Back to Top
                 </h3>
               </div>
             </div>

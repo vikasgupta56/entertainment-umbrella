@@ -1,7 +1,9 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitText from "gsap/dist/SplitText";
 import React, { useEffect } from "react";
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const About = () => {
   useEffect(() => {
     function initoTalic() {
@@ -85,6 +87,24 @@ const About = () => {
     }
   }, []);
 
+  useGSAP(() => {
+    const split = new SplitText(".fhl", { type: "lines" });
+
+    split.lines.forEach((target) => {
+      gsap.to(target, {
+        backgroundPositionX: 0,
+        ease: "none",
+        color: "#fff",
+        scrollTrigger: {
+          trigger: target,
+          markers: false,
+          scrub: 1,
+          start: "top center",
+          end: "bottom center",
+        },
+      });
+    });
+  });
   return (
     <section className="intro" data-scroll-section="">
       <div className="intro__container magneticWrapper">

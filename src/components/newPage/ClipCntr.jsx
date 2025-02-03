@@ -384,7 +384,8 @@ const ClipCntr = () => {
             </Link>
             <div className="hero-img">
               <img
-                src="../../../assets/images/img1-1.png"
+                src="/assets/images/RangeMedia/pexels-leeloothefirst-7598017.jpg"
+                // src="../../../assets/images/RangeMedia/pexels-ivan-samkov-7676406.jpg"
                 loading="lazy"
                 sizes="100vw"
                 alt=""
