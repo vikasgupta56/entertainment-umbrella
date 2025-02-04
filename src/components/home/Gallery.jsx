@@ -21,19 +21,17 @@ const Gallery = () => {
       "rgb(30, 33, 38)",
     ];
     galleryImageBottomInnerElements.forEach((el, index) => {
-      // el.addEventListener("scroll", () => {
       gsap.to(Main, {
         scrollTrigger: {
           trigger: el,
           start: "top 100%",
-          end: "top 100%",
-          scrub: 1,
+          end: "bottom 100%",
+          scrub: 2,
           markers: false,
-          duration: 0.5,
+          duration: 1,
         },
         backgroundColor: colors[index] || "#000",
       });
-      // });
     });
     galleryImageBottomInnerElements.forEach((container, index) => {
       container.addEventListener("mouseenter", () => {

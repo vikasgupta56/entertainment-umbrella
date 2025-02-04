@@ -14,19 +14,12 @@ import Footer2 from "@/common/Footer2";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import gsap from "gsap";
 import React, { useRef } from "react";
+import BacktoTop from "@/common/BacktoTop";
 gsap.registerPlugin(ScrollToPlugin); // Register GSAP ScrollToPlugin
 export default function App({ Component, pageProps }) {
   const pathname = usePathname();
-  const footerRef = useRef(null); // Create a ref for the footer
+  const contactRef = useRef(null); // Create a ref for the footer
 
-  const handleScrollToFooter = (event) => {
-    event.preventDefault();
-    // Scroll to the footer element using GSAP
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: { y: footerRef.current, offsetY: 50 },
-    });
-  };
   return (
     // <SmoothScrolling>
     <>
@@ -37,10 +30,11 @@ export default function App({ Component, pageProps }) {
       ) : (
         <>
           {" "}
-          <Navbar onContactClick={handleScrollToFooter} />
+          <Navbar contactRef={contactRef} />
           <Component {...pageProps} />
           {/* <Footer /> */}
-          <Footer2 ref={footerRef} />
+          <Footer2 ref={contactRef} />
+          <BacktoTop />
         </>
       )}
     </>

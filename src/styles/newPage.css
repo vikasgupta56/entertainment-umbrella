@@ -1177,8 +1177,7 @@ button {
 
 @media screen and (max-width: 991px) {
   .section.three {
-    padding-left: 45px;
-    padding-right: 45px;
+    padding: 0 10px;
   }
   .h-wrapper.centered {
     height: 50vh;
@@ -1345,7 +1344,7 @@ button {
   z-index: 20;
   background-color: #fff;
   position: relative;
-  padding: 3em 1.88em;
+  padding: 3em 45px;
 }
 /* .content.grid.artist-links {
   grid-template-rows: minmax(12.03em, 1fr) minmax(12.03em, 1fr) minmax(
@@ -1442,8 +1441,7 @@ button {
 } */
 @media screen and (max-width: 991px) {
   .sectionlinks {
-    padding-left: 45px;
-    padding-right: 45px;
+    padding: 3em 10px;
   }
   .content2.grid.artist-links {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -1494,10 +1492,10 @@ button {
   }
 }
 @media screen and (max-width: 479px) {
-  .sectionlinks {
+  /* .sectionlinks {
     padding-left: 12px;
     padding-right: 12px;
-  }
+  } */
   .content2.grid.artist-links {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;

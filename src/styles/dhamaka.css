@@ -284,14 +284,28 @@
 @media (max-width: 48rem) {
   .vf-section {
     min-height: unset;
+    padding: 0;
   }
   .vf-section .v-wrapper {
     min-height: unset;
   }
+  .v-wrapper-inner {
+    padding-top: calc(5 * clamp(1rem, 1.058vw, 1.058vw));
+    padding-bottom: calc(5 * clamp(1rem, 1.058vw, 1.058vw));
+  }
   .vf-section .v-wrapper .c-wrapper {
-    width: clamp(18rem, 29.101vw, 29.101vw);
+    width: clamp(20rem, 29.101vw, 29.101vw);
+    padding: calc(1 * clamp(1rem, 1.058vw, 1.058vw));
+  }
+  .v-wrapper-inner-content .v-wrapper-heading {
+    font-size: clamp(1.25rem, 2.704vw, 3.704vw);
+  }
+  .v-wrapper-inner-content p {
+    margin-top: 20px;
+    padding: 0;
   }
 }
+
 .vo-section {
   position: relative;
   min-height: calc(100vh - 1.5em);
@@ -364,6 +378,24 @@
   }
   .i-wrapper-para {
     padding-right: calc(2 * clamp(1rem, 1.058vw, 1.058vw));
+  }
+}
+@media only screen and (max-width: 991px) {
+  .vo-section {
+    padding: 0.75rem 10px;
+  }
+  .o-item_inner {
+    gap: 3rem;
+  }
+  .vo-section .o-wrapper .o-item .i-wrapper {
+    padding-right: 0;
+  }
+  .i-wrapper-para {
+    padding-right: 0;
+  }
+  .v-wrapper-inner-content h4 {
+    font-size: 1rem;
+    margin-top: 0.3rem;
   }
 }
 .vh-section {
@@ -564,4 +596,12 @@
 }
 .a-underline.is-ngtv:after {
   background-color: var(--primary-color);
+}
+@media only screen and (max-width: 991px) {
+  .vf-section {
+    padding: 1rem 10px;
+  }
+  .vh-section {
+    padding: 0.75rem 10px;
+  }
 }

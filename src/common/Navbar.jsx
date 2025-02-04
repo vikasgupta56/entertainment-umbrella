@@ -4,8 +4,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { IoHome } from "react-icons/io5";
-gsap.registerPlugin(CustomEase);
-const Navbar = ({ onContactClick }) => {
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin, CustomEase);
+const Navbar = ({ contactRef }) => {
   const initIntroAnim = () => {
     if (document.querySelectorAll(".heroBanner").length > 0) {
       const body = document.querySelector("body");
@@ -328,6 +330,18 @@ const Navbar = ({ onContactClick }) => {
   }, []);
   // const router = useRouter();
   // const isHome2 = router.pathname === "/newPage";
+
+  // useEffect(() => {
+  const handleScrollToContact = (e) => {
+    e.preventDefault();
+    // Using GSAP for smooth scroll animation to the Contact section
+    gsap.to(window, {
+      scrollTo: contactRef.current,
+      duration: 1,
+      ease: "slow",
+    });
+  };
+  // }, []);
   return (
     <>
       <div className="navbar">
@@ -381,19 +395,18 @@ const Navbar = ({ onContactClick }) => {
               </span> */}
             </a>
           </li>
-
-          <li className="navbar--menu--item">
-            <a href="" className="nav_link">
-              <span className="btn-text link" data-title="halo studio">
-                Contact
-              </span>
-              {/* <span className="nav_text">
+        </ul>
+        <div className="navbar--menu--item" onClick={handleScrollToContact}>
+          <a href="" className="nav_link">
+            <span className="btn-text link" data-title="halo studio">
+              Contact
+            </span>
+            {/* <span className="nav_text">
                 {" "}
                 Next-Gen White-Label Production{" "}
               </span> */}
-            </a>
-          </li>
-        </ul>
+          </a>
+        </div>
       </div>
       <div className="mobilenavbar">
         <div className="mobilenavbar__logo">
@@ -447,16 +460,7 @@ const Navbar = ({ onContactClick }) => {
                 Dhamaka
               </a>
             </li>
-            <li className="mobilenavbar__content--menu--item">
-              <a
-                onClick={onContactClick}
-                href="#footerr"
-                className="nav_link o_italic"
-                data-title="halo studio"
-              >
-                Contact
-              </a>
-            </li>
+
             {/* <li className="mobilenavbar__content--menu--item">
               <a
                 href=""
@@ -467,7 +471,7 @@ const Navbar = ({ onContactClick }) => {
               </a>
             </li> */}
           </ul>
-          <div className="mobilenavbar__content--footer">
+          {/* <div className="mobilenavbar__content--footer">
             <div className="mobilenavbar__content--footer--col">
               <h6>CONTACT US</h6>
               <p>
@@ -489,7 +493,7 @@ const Navbar = ({ onContactClick }) => {
                 United Arab Emirates
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

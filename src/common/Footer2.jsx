@@ -406,9 +406,9 @@ const Footer2 = forwardRef((props, ref) => {
                 </form>
               </div>
             </div>
-            <div className="footer__top--right">
+            {/* <div className="footer__top--right">
               <p>contact us</p>
-            </div>
+            </div> */}
           </div>
           <div className="footer__bottom">
             <div className="footer__error">

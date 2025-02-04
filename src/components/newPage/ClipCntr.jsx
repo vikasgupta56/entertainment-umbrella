@@ -425,14 +425,15 @@ const ClipCntr = () => {
                   transactions. For us to be successful together, we need to be
                   in sync with your brand, your vision, and your goals. This
                   isn’t about simply closing a deal—it’s about forging a
-                  relationship that lasts and helps your brand grow. We’re
+                  relationship that lasts and helps your brand grow.
+                  {/* We’re
                   selective in who we work with because we understand that the
                   most impactful collaborations are those where our synergies
                   align. When we work with you, we’re with you every step of the
                   way. We’re thinking about your brand first thing in the
                   morning and long after you’ve signed off for the day. We’re
                   planning for the next week, next month, and next year—because
-                  we believe in the long-term success of your brand.
+                  we believe in the long-term success of your brand. */}
                 </p>
                 {/* <div className="mb-1">
                   <a

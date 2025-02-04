@@ -601,6 +601,19 @@ img {
   height: 100%;
   overflow: hidden;
 }
+.sfimpact__banner {
+  mask: linear-gradient(black, black, transparent);
+  backdrop-filter: blur(100px);
+  height: 100vh;
+  width: 100vw;
+  overflow: visible;
+  float: left;
+}
+@media only screen and (max-width: 991px) {
+  .sfimpact__banner {
+    height: 70vh;
+  }
+}
 .sfimpact__banner--img {
   width: 100%;
   height: 100%;
@@ -1711,10 +1724,17 @@ svg:not(:root) {
     padding-top: 12px;
   }
   ._services > .groups.g-table > ul > li h3 {
+    /* grid-column: 1 / span 3; */
     grid-column: 1 / span 3;
   }
   ._services > .groups.g-table > ul > li ul {
-    grid-column: 4 / span 3;
+    /* grid-column: 4 / span 3; */
+    grid-column: 4 / span 24;
+  }
+}
+@media only screen and (max-width: 991px) {
+  ._services {
+    padding: 0 10px;
   }
 }
 @media only screen and (max-width: 743px) {
@@ -1979,7 +1999,7 @@ svg:not(:root) {
     height: 50px;
     width: 50px;
     line-height: 50px;
-    bottom: 10%;
+    bottom: 15%;
   }
   .swiper-button-prev svg,
   .swiper-button-next svg {

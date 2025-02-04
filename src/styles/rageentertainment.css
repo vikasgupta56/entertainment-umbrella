@@ -311,6 +311,37 @@
 .w-richtext:after {
   clear: both;
 }
+@media screen and (max-width: 991px) {
+  .section_rageEn_home_hero {
+    padding-left: 1.5vw;
+  }
+  .hero_h1_group {
+    width: 50vw;
+  }
+  .h1_small.once_text {
+    font-size: 3.5vw;
+  }
+}
+@media screen and (max-width: 479px) {
+  .section_rageEn_home_hero {
+    height: 90vh;
+    padding-left: 10px;
+  }
+  .hero_h1_group {
+    width: 80vw;
+  }
+  .h1_small.once_text {
+    width: 92%;
+    font-size: 7.5vw;
+  }
+  .logo_holder {
+    width: 100vw;
+    bottom: 3vw;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+  }
+}
 /* Reservices */
 .Services_root {
   padding-bottom: 4rem;
@@ -448,7 +479,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 35vw;
+  height: 450px;
+  /* width: 350px; */
   display: flex;
   position: relative;
   overflow: hidden;
@@ -586,7 +618,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  padding-bottom: 0;
+  /* padding-bottom: 0; */
 }
 .stars_holder {
   z-index: 1;
@@ -735,7 +767,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding-left: 0;
-  padding-right: 10%;
+  /* padding-right: 10%; */
   display: flex;
 }
 .b_32 {
@@ -1103,11 +1135,12 @@ a[class*="text-accent"]:after {
 
 @media screen and (max-width: 991px) {
   .event_grid {
-    grid-row-gap: 6vw;
+    gap: 1rem;
     grid-template-columns: 1fr;
   }
   .card__content_holder {
-    height: 80vw;
+    height: 480px;
+    width: 350px;
   }
   .event_card_title {
     font-size: 1.25rem;
@@ -1156,7 +1189,7 @@ a[class*="text-accent"]:after {
     display: none;
   }
   .b_32.c {
-    width: 80%;
+    width: 100%;
   }
   .whygn_list {
     grid-template-columns: 1fr;
@@ -1209,10 +1242,14 @@ a[class*="text-accent"]:after {
   .p._40 {
     width: 80%;
   }
+  .Services_root {
+    padding: 5vw 10px;
+  }
 }
 @media screen and (max-width: 479px) {
   .card__content_holder {
-    height: 125vw;
+    height: 450px;
+    width: 350px;
   }
   .event_card_title {
     /* font-size: 4.5vw; */
@@ -1235,8 +1272,8 @@ a[class*="text-accent"]:after {
   }
   .standard_section,
   .standard_section.equal {
-    padding-top: 40vw;
-    padding-bottom: 40vw;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
   }
   .intro_group {
     grid-column-gap: 15px;

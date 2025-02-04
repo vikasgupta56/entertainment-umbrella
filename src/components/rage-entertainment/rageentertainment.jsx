@@ -365,7 +365,7 @@ const RageEntertainment = () => {
           <div className="grad_up" />
         </div>
         <div className="section_label white">
-          <h5 className="h5">Why Rage Entertainment?</h5>
+          {/* <h5 className="h5">Why Rage Entertainment?</h5> */}
         </div>
         <div className="whygn_listwrapper w-dyn-list">
           <div role="list" className="whygn_list w-dyn-items">
