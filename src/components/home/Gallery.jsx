@@ -32,7 +32,7 @@ const Gallery = () => {
           start: "top 100%",
           // end: "bottom 0%",
           scrub: 1,
-          markers: true,
+          markers: false,
           duration: 1,
         },
         backgroundColor: colors[index] || "#000", // Change to specific color
