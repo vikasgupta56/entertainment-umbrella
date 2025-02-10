@@ -1,6 +1,22 @@
 .Gallery_Mainwrapper {
   position: relative;
 }
+.Gallery_main_textCntr {
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  position: relative;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Gallery_main_textCntr h1 {
+  font-size: 5rem;
+  font-family: var(--primary-fontB);
+  letter-spacing: 0.02em;
+  color: #fff;
+}
 .Main {
   width: 100%;
   height: 100%;
@@ -670,14 +686,14 @@ img {
 }
 .sfimpact__text p {
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 2.8vh;
   color: #ffffff;
   font-family: var(--primary-fontL);
 }
 @media screen and (max-width: 840px) {
   .sfimpact__text p {
-    font-size: 15px;
+    font-size: 1.25rem;
     line-height: 20px;
   }
 }
@@ -2048,4 +2064,10 @@ svg:not(:root) {
   .creative-fullpage--slider .swiper-content p.disc {
     font-size: 16px;
   }
+}
+/* about animation */
+.extra-split-word {
+  overflow: hidden;
+  line-height: 1;
+  transform: translateY(100px);
 }

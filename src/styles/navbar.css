@@ -41,6 +41,19 @@
   /* width: 100%; */
   padding: 1rem 0;
   /* color: #ffff; */
+  position: relative;
+}
+/* .navbar--menu .line {
+  height: 2px;
+  position: absolute;
+  bottom: 20%;
+  margin: 10px 0 0 0;
+  background: #ffffff;
+} */
+.underline {
+  background-color: black;
+  height: 2px;
+  transition: all 0.3s ease-out;
 }
 .navbar--menu--item {
   overflow: hidden;

@@ -806,7 +806,7 @@ main .heroBanner__container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 100px 45px 60px;
+  padding: 120px 45px 60px;
   color: #fff;
 }
 @media screen and (max-width: 840px) {
@@ -872,7 +872,7 @@ main .heroBanner__container {
 }
 
 .footer .form__inputblock--heading {
-  margin-top: 30px;
+  margin-top: 10px;
   color: rgb(255, 255, 255);
 }
 .footer .form__inputblock--heading h2 {
@@ -952,13 +952,13 @@ main .heroBanner__container {
   font-weight: 300;
   font-size: 5vw;
   line-height: 10vh;
-  margin-right: 30px;
+  /* margin-right: 30px; */
 }
 @media screen and (max-width: 840px) {
   .footer .form__inputblock--input.has_word span {
     font-weight: 300;
     font-size: 50px;
-    line-height: 42px;
+    line-height: 2;
   }
 }
 .footer .form__step {
@@ -981,8 +981,8 @@ main .heroBanner__container {
 }
 .footer .form__step.step_1 .form__inputblock--input.has_word {
   display: grid;
-  /* grid-template-columns: auto auto; */
-  grid-template-columns: auto;
+  grid-template-columns: auto auto;
+  /* grid-template-columns: auto; */
 }
 @media screen and (max-width: 840px) {
   .footer .form__step.step_1 .form__inputblock--input.has_word {
@@ -1263,6 +1263,21 @@ main .heroBanner__container {
 .footer__bottom--text--right a {
   position: relative;
 }
+.footer__bottom--text--right a:after {
+  position: absolute;
+  left: 0;
+
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.5s;
+}
+.footer__bottom--text--right a:hover::after {
+  width: 100%;
+  /* transition: width .3s; */
+}
 /* .footer__bottom--text--right a::before {
   position: absolute;
   content: "";
@@ -1456,6 +1471,21 @@ main .heroBanner__container {
   position: relative;
   height: fit-content;
   transition: all 0.3s ease;
+}
+.footer p.copytext span a:after {
+  position: absolute;
+  left: 0;
+
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.5s;
+}
+.footer p.copytext span a:hover::after {
+  width: 100%;
+  /* transition: width .3s; */
 }
 /* .footer p.copytext span a::before {
   position: absolute;
@@ -1698,13 +1728,13 @@ form.submitting .wpcf7-spinner {
 .buttonTop {
   display: inline-block;
   background-color: #ffffff;
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   text-align: center;
   border-radius: 50%;
   position: fixed;
-  top: 50%;
-  right: 45px;
+  top: 90%;
+  right: 30px;
   transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
   opacity: 0;
   visibility: hidden;
@@ -1739,7 +1769,7 @@ form.submitting .wpcf7-spinner {
 }
 @media only screen and (max-width: 991px) {
   .buttonTop {
-    top: 80%;
+    top: 90%;
     right: 10px;
     width: 50px;
     height: 50px;

@@ -206,7 +206,7 @@ const RageEntertainment = () => {
                   <h3 className="h3 centred mob-off aos_text">
                     <div className="section_rageEn_line-mask">
                       <div className="" data-scroll data-scroll-speed="0.020">
-                        PARTIES FOR PEOPLE &amp; BRANDS WE PRODUCE SPECTACULAR{" "}
+                        WE PRODUCE SPECTACULAR PARTIES FOR PEOPLE &amp; BRANDS
                         <br />
                       </div>
                     </div>

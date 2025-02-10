@@ -86,7 +86,7 @@ const About = () => {
       });
     }
   }, []);
-
+  //fot fade text animation
   useGSAP(() => {
     const split = new SplitText(".fhl", { type: "lines" });
 
@@ -105,6 +105,12 @@ const About = () => {
       });
     });
   });
+  // useEffect(() => {
+  //   const split = new SplitText(".fhl", {
+  //     type: "words",
+  //     wordsClass: "extra-split-word",
+  //   });
+  // }, []);
   return (
     <section className="intro" data-scroll-section="">
       <div className="intro__container magneticWrapper">

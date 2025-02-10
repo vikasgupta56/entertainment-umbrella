@@ -298,6 +298,7 @@
   font-family: var(--primary-fontB);
   margin-bottom: 10px;
   letter-spacing: 0.04em;
+  color: #fff;
 }
 .rich.ac p,
 .rich p {
@@ -307,6 +308,7 @@
   font-weight: 900;
   letter-spacing: 0.04em;
   font-size: 1.2rem;
+  color: #fff;
 }
 .w-richtext:after {
   clear: both;
@@ -611,6 +613,7 @@
   /* padding-bottom: 10vw; */
   display: flex;
   background-color: #fff;
+  background-color: #000000;
   position: relative;
 }
 
@@ -823,7 +826,8 @@
   row-gap: 2.4rem;
   position: relative;
   z-index: 9;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: #000000;
 }
 .text-heading-para {
   font-size: 1.5rem;
@@ -846,7 +850,8 @@
 .TwoColumnText_col {
   display: flex;
   flex-direction: column;
-  color: #212121;
+  /* color: #212121; */
+  color: #ebe9e9;
   row-gap: 2.4rem;
 }
 .TwoColumnText_right {
@@ -901,8 +906,10 @@ a[class*="text-accent"]:after {
   padding-top: 2rem;
   position: relative;
   background-color: #ffffff;
+  background-color: #000000;
   padding: 10vw 1.5vw;
   color: #000000;
+  color: #ffffff;
 }
 .full-brands__section:before {
   background-color: #fbc1d4;

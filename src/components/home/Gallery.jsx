@@ -20,43 +20,68 @@ const Gallery = () => {
       "rgb(32, 32, 69)",
       "rgb(30, 33, 38)",
     ];
+    // Set the initial background color of Main to black
+    gsap.set(Main, { backgroundColor: "#000" });
+
+    // Apply GSAP animation to each element
     galleryImageBottomInnerElements.forEach((el, index) => {
       gsap.to(Main, {
         scrollTrigger: {
           trigger: el,
-          start: "top 100%",
+          start: "top 0%",
           end: "bottom 100%",
           scrub: 2,
           markers: false,
           duration: 1,
         },
-        backgroundColor: colors[index] || "#000",
+        backgroundColor: colors[index] || "#000", // Change to specific color
       });
     });
     galleryImageBottomInnerElements.forEach((container, index) => {
-      container.addEventListener("mouseenter", () => {
-        gsap.to(Main, {
-          backgroundColor: colors[index] || "#000",
-          duration: 0.5,
-        });
-      });
-
-      container.addEventListener("mouseleave", () => {
-        gsap.to(Main, {
-          backgroundColor: "#000",
-          duration: 0.5,
-        });
-      });
+      // container.addEventListener("mouseenter", () => {
+      //   gsap.to(Main, {
+      //     backgroundColor: colors[index] || "#000",
+      //     duration: 1,
+      //   });
+      // });
+      // container.addEventListener("mouseleave", () => {
+      //   gsap.to(Main, {
+      //     backgroundColor: "#000",
+      //     duration: 1,
+      //   });
+      // });
     });
   }, []);
   useGSAP(() => {
     const blanDiv = document.querySelector(".blan_div");
+    const GalleryTextCntr = document.querySelector(".Gallery_main_textCntr");
     const blanDiv2 = document.querySelector(".blan_div2");
     const triggerCntr = gsap.utils.toArray(".gallery_cntr");
     const galleryItemsClip = gsap.utils.toArray(".fixed_image_clip_cntr");
     const galleryItemsClipImg = gsap.utils.toArray(
       ".fixed_image_clip_cntr img"
     );
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: GalleryTextCntr,
+        start: "top top",
+        end: "top -100%",
+        markers: false,
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    tl.to(".Gallery_main_textCntr h1", {
+      opacity: 0,
+      duration: 1,
+    });
+    // tl.to(GalleryTextCntr, {
+    //   height: "0vh",
+    //   duration: 1,
+    // });
+
     // Create ScrollTrigger for blanDiv scrollDown
     // scrollTrigger.create({
     //   trigger: blanDiv,
@@ -157,6 +182,9 @@ const Gallery = () => {
   });
   return (
     <section className="Gallery_Mainwrapper">
+      <div className="Gallery_main_textCntr">
+        <h1>International artists section</h1>
+      </div>
       <div className="Main"></div>
       {/* <figure data-track="nav" className="blan_div">
         <p className="ScrollDown_btm">SCROLL DOWN</p>
