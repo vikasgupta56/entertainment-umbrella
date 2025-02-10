@@ -9,6 +9,7 @@ const Gallery = () => {
     const galleryImageBottomInnerElements = document.querySelectorAll(
       ".gallery_image_bottom_inner"
     );
+    const GalleryTextCntr = document.querySelectorAll(".gallery_text-cntr");
     const Main = document.querySelector(".Main");
 
     const colors = [
@@ -21,17 +22,17 @@ const Gallery = () => {
       "rgb(30, 33, 38)",
     ];
     // Set the initial background color of Main to black
-    gsap.set(Main, { backgroundColor: "#000" });
+    // gsap.set(Main);
 
     // Apply GSAP animation to each element
-    galleryImageBottomInnerElements.forEach((el, index) => {
+    GalleryTextCntr.forEach((el, index) => {
       gsap.to(Main, {
         scrollTrigger: {
           trigger: el,
-          start: "top 0%",
-          end: "bottom 100%",
-          scrub: 2,
-          markers: false,
+          start: "top 100%",
+          // end: "bottom 0%",
+          scrub: 1,
+          markers: true,
           duration: 1,
         },
         backgroundColor: colors[index] || "#000", // Change to specific color
