@@ -17,6 +17,8 @@ import { BsArrowLeft } from "react-icons/bs";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitText from "gsap/dist/SplitText";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const data = [
   {
     videoSrc: "/assets/images/mrandmrs/videos/mrandmrsbg.mp4",
@@ -33,72 +35,57 @@ const data = [
 ];
 const Home_heroNew = () => {
   useEffect(() => {
-    // gsap.to(
-    //   [
-    //     ".creative-fullpage--slider .swiper-content .title-area .title",
-    //     ".creative-fullpage--slider .swiper-content p.disc",
-    //   ],
-    //   {
-    //     opacity: 1,
-    //     duration: 2,
-    //     ease: "slow",
-    //     delay: 0.5,
-    //     stagger: 0.5,
-    //   }
-    // );
-
-    // textreavel
     // gsap.set(".creative-fullpage--slider .swiper-content .title-area .title", {
     //   autoAlpha: 0,
     //   yPercent: 200,
+    //   opacity: 0,
     // });
-
-    // ScrollTrigger.batch(
-    //   ".creative-fullpage--slider .swiper-content .title-area ",
+    // gsap.to(
+    //   document.querySelector(
+    //     ".creative-fullpage--slider .swiper-content .title-area .title"
+    //   ),
     //   {
-    //     onEnter: (batch) => {
-    //       batch.forEach((section, i) => {
-    //         gsap.to(
-    //           section.querySelector(
-    //             ".creative-fullpage--slider .swiper-content .title-area .title"
-    //           ),
-    //           {
-    //             // autoAlpha: 1,
-    //             // yPercent: 0,
-    //             transform: "translateY(0)",
-    //             duration: 0.8,
-    //             ease: "power1.inOut",
-    //             stagger: 0.1,
-    //             delay: i * 0.3,
-    //           }
-    //         );
-    //       });
-    //     },
-    //     start: "top 95%",
+    //     autoAlpha: 1,
+    //     yPercent: 0,
+    //     // transform: "translateY(0)",
+    //     duration: 1,
+    //     ease: "power1.inOut",
+    //     // stagger: 0.1,
+    //     opacity: 1,
+    //     delay: 0.3,
     //   }
     // );
-    gsap.set(".creative-fullpage--slider .swiper-content .title-area .title", {
-      autoAlpha: 0,
-      yPercent: 200,
-      opacity: 0,
-    });
-    gsap.to(
-      document.querySelector(
-        ".creative-fullpage--slider .swiper-content .title-area .title"
-      ),
-      {
-        autoAlpha: 1,
-        yPercent: 0,
-        // transform: "translateY(0)",
-        duration: 1,
-        ease: "power1.inOut",
-        // stagger: 0.1,
-        opacity: 1,
-
-        delay: 0.3,
-      }
-    );
   });
+  useEffect(() => {
+    const quotess = document.querySelectorAll(".quotetrigger");
+    function setupSplits() {
+      quotess.forEach((quotes) => {
+        const splitTexts = new SplitText(quotes, {
+          type: "lines",
+          linesClass: "split-line",
+        });
+        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+        // console.log(quote);
+      });
+      ScrollTrigger.batch(".quotetriggerCntr", {
+        onEnter: (batch) => {
+          batch.forEach((section, i) => {
+            gsap.to(section.querySelectorAll(".split-line"), {
+              // autoAlpha: 1,
+              yPercent: 0,
+              duration: 0.8,
+              ease: "power1.inOut",
+              stagger: 0.05,
+              delay: i * 0.3,
+              marker: true,
+            });
+          });
+        },
+        start: "top 95%",
+      });
+    }
+    setupSplits();
+  }, []);
   return (
     <section className="creative-fullpage--slider">
       <div className="banner-horizental">
@@ -172,12 +159,15 @@ const Home_heroNew = () => {
             ))}
           </Swiper>
 
-          <div className="swiper-content" data-swiper-parallax={2000}>
+          <div
+            className="swiper-content quotetriggerCntr"
+            data-swiper-parallax={2000}
+          >
             <div className="title-area">
               {/* <p className="tag">OUR VISION</p> */}
               <div
                 href="#"
-                className="title"
+                className="title quotetrigger"
                 // data-scroll
                 // data-scroll-speed=".1"
                 // data-swiper-parallax={2000}
@@ -185,7 +175,7 @@ const Home_heroNew = () => {
                 MR & MRS
               </div>
             </div>
-            <p className="disc" data-scroll data-scroll-speed=".1">
+            <p className="disc quotetrigger" data-scroll data-scroll-speed=".1">
               We don’t say no to anything &nbsp;entertainment.
             </p>
           </div>

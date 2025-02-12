@@ -1,15 +1,52 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import scrollTrigger from "gsap/dist/ScrollTrigger";
+import scrollTrigger, { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
+import SplitText from "gsap/dist/SplitText";
 gsap.registerPlugin(useGSAP, scrollTrigger);
 const Gallery = () => {
+  useEffect(() => {
+    const quotes = document.querySelectorAll(".quote");
+
+    function setupSplits() {
+      quotes.forEach((quote) => {
+        // Reset if needed
+        if (quote.anim) {
+          quote.anim.progress(1).kill();
+          quote.split.revert();
+        }
+
+        quote.split = new SplitText(quote, {
+          type: "lines,words",
+          linesClass: "split-line",
+        });
+
+        // Set up the anim
+        quote.anim = gsap.from(quote.split.words, {
+          scrollTrigger: {
+            trigger: quote,
+            // toggleActions: "restart pause resume reverse",
+            start: "top 50%",
+            markers: false,
+            once: true,
+          },
+          ease: "slow",
+          duration: 0.5,
+          yPercent: 100,
+          stagger: 0.01,
+        });
+      });
+    }
+
+    ScrollTrigger.addEventListener("refresh", setupSplits);
+    setupSplits();
+  }, []);
   useEffect(() => {
     const galleryImageBottomInnerElements = document.querySelectorAll(
       ".gallery_image_bottom_inner"
     );
-    const GalleryTextCntr = document.querySelectorAll(".gallery_text-cntr");
+
     const Main = document.querySelector(".Main");
 
     const colors = [
@@ -25,7 +62,7 @@ const Gallery = () => {
     // gsap.set(Main);
 
     // Apply GSAP animation to each element
-    GalleryTextCntr.forEach((el, index) => {
+    galleryImageBottomInnerElements.forEach((el, index) => {
       gsap.to(Main, {
         scrollTrigger: {
           trigger: el,
@@ -181,10 +218,11 @@ const Gallery = () => {
       );
     });
   });
+
   return (
     <section className="Gallery_Mainwrapper">
-      <div className="Gallery_main_textCntr">
-        <h1>International artists section</h1>
+      <div className="Gallery_main_textCntr quote">
+        <h1 className="quote">Selected Work</h1>
       </div>
       <div className="Main"></div>
       {/* <figure data-track="nav" className="blan_div">
@@ -194,7 +232,7 @@ const Gallery = () => {
         <figure data-trackcolor className="gallery_cntr">
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text">
+            <h2 className="gallery_title_text quote">
               <Link href={"/product"} className="gallery_title_maintext">
                 Rungta Steel
               </Link>
@@ -218,8 +256,9 @@ const Gallery = () => {
                 className="fixed_image_clip_cntr fixed_image_clip_cntr1"
               >
                 <img
-                  src="https://cdn.sanity.io/images/mbttrbyl/production/4deceba7fbbfb685d55a0cd4eaaa6077e68135c9-2000x2500.jpg?h=1080&q=60&auto=format"
+                  src="/assets/images/mrandmrs/Srk Aryan.jpg"
                   alt=""
+                  loading="lazy"
                 />
               </div>
             </figure>
@@ -230,7 +269,7 @@ const Gallery = () => {
         <figure data-trackcolor className="gallery_cntr">
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text">
+            <h2 className="gallery_title_text quote">
               <Link href={""} className="gallery_title_maintext">
                 Lux Cozi
               </Link>
@@ -254,8 +293,9 @@ const Gallery = () => {
                 className="fixed_image_clip_cntr fixed_image_clip_cntr1"
               >
                 <img
-                  src="https://cdn.sanity.io/images/mbttrbyl/production/ef3e1575c2c83d455d48d0cece290e2af704f5b7-2000x2500.jpg?h=1080&q=60&auto=format"
+                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
                   alt=""
+                  loading="lazy"
                 />
               </div>
             </figure>
@@ -266,7 +306,7 @@ const Gallery = () => {
         <figure data-trackcolor className="gallery_cntr">
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text">
+            <h2 className="gallery_title_text quote">
               <Link href={""} className="gallery_title_maintext">
                 D'YAVOL
               </Link>
@@ -290,8 +330,9 @@ const Gallery = () => {
                 className="fixed_image_clip_cntr fixed_image_clip_cntr1"
               >
                 <img
-                  src="https://cdn.sanity.io/images/mbttrbyl/production/947b09129d093a71b27c670a366038159da4c03d-1000x1250.jpg?h=1080&q=60&auto=format"
+                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
                   alt=""
+                  loading="lazy"
                 />
               </div>
             </figure>
@@ -302,7 +343,7 @@ const Gallery = () => {
         <figure data-trackcolor className="gallery_cntr">
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text">
+            <h2 className="gallery_title_text quote">
               <Link href={""} className="gallery_title_maintext">
                 Ruskit
               </Link>
@@ -326,8 +367,9 @@ const Gallery = () => {
                 className="fixed_image_clip_cntr fixed_image_clip_cntr1"
               >
                 <img
-                  src="https://cdn.sanity.io/images/mbttrbyl/production/ca3bae94469a74660456f1e8ab395104446eb394-2000x2500.jpg?h=1080&q=60&auto=format"
+                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
                   alt=""
+                  loading="lazy"
                 />
               </div>
             </figure>
@@ -338,7 +380,7 @@ const Gallery = () => {
         <figure data-trackcolor className="gallery_cntr">
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text">
+            <h2 className="gallery_title_text quote">
               <Link href={""} className="gallery_title_maintext">
                 Just Herbs
               </Link>
@@ -362,8 +404,9 @@ const Gallery = () => {
                 className="fixed_image_clip_cntr fixed_image_clip_cntr1"
               >
                 <img
-                  src="https://cdn.sanity.io/images/mbttrbyl/production/48404a0139bd362614834f55025a6aef8caa4b58-2000x2500.jpg?h=1080&q=60&auto=format"
+                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
                   alt=""
+                  loading="lazy"
                 />
               </div>
             </figure>
@@ -374,7 +417,7 @@ const Gallery = () => {
         <figure data-trackcolor className="gallery_cntr">
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text">
+            <h2 className="gallery_title_text quote">
               <Link href={""} className="gallery_title_maintext">
                 Setu
               </Link>
@@ -398,8 +441,9 @@ const Gallery = () => {
                 className="fixed_image_clip_cntr fixed_image_clip_cntr1"
               >
                 <img
-                  src="https://cdn.sanity.io/images/mbttrbyl/production/704e277065144efc4dc942cf409a1c1bce105f61-2000x2500.jpg?h=1080&q=60&auto=format"
+                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
                   alt=""
+                  loading="lazy"
                 />
               </div>
             </figure>
@@ -410,7 +454,7 @@ const Gallery = () => {
         <figure data-trackcolor className="gallery_cntr">
           {/* <!-- Title Section 14.4 --> */}
           <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text">
+            <h2 className="gallery_title_text quote">
               <Link href={""} className="gallery_title_maintext">
                 Nimaya Project
               </Link>
@@ -434,7 +478,8 @@ const Gallery = () => {
                 className="fixed_image_clip_cntr fixed_image_clip_cntr1"
               >
                 <img
-                  src="https://cdn.sanity.io/images/mbttrbyl/production/c3f31ae29a626f9b779f8b29ad642166be277755-2000x2500.jpg?h=1080&q=60&auto=format"
+                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
+                  loading="lazy"
                   alt=""
                 />
               </div>

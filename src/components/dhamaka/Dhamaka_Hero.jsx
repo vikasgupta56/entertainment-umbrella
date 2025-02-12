@@ -244,6 +244,37 @@ const Dhamaka_Hero = () => {
         t.addEventListener("mouseleave", p);
     });
   });
+  useEffect(() => {
+    const quotess = document.querySelectorAll(".quotetrigger");
+    function setupSplits() {
+      quotess.forEach((quotes) => {
+        const splitTexts = new SplitText(quotes, {
+          type: "lines",
+          linesClass: "split-line",
+        });
+        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+        // console.log(quote);
+      });
+      ScrollTrigger.batch(".quotetriggerCntr", {
+        onEnter: (batch) => {
+          batch.forEach((section, i) => {
+            gsap.to(section.querySelectorAll(".split-line"), {
+              // autoAlpha: 1,
+              yPercent: 0,
+              duration: 0.8,
+              ease: "power1.inOut",
+              stagger: 0.05,
+              delay: i * 0.3,
+              marker: true,
+              // delay: 1,
+            });
+          });
+        },
+        start: "top 80%",
+      });
+    }
+    setupSplits();
+  }, []);
   return (
     <>
       <section className="Dhamaka_hero-section">
@@ -306,10 +337,10 @@ const Dhamaka_Hero = () => {
       <section className="vf-section bg-primary">
         <div className="v-wrapper">
           <div className="v-wrapper-inner">
-            <div className="c-wrapper bg-primary">
+            <div className="c-wrapper bg-primary quotetriggerCntr">
               <div className="v-wrapper-inner-content">
-                <h2 className="v-wrapper-heading">Our vision</h2>
-                <p className="">
+                <h2 className="v-wrapper-heading quotetrigger">Our vision</h2>
+                <p className="quotetrigger">
                   As a project scout, we help our clients highlight their
                   expertise in the art of living and in creating homes to live
                   in. <br />
@@ -353,16 +384,18 @@ const Dhamaka_Hero = () => {
           </div>
         </div>
       </section>
-      <section className="vo-section">
-        <div className="v-wrapper bg-primary">
+      <section className="vo-section quotetriggerCntr">
+        <div className="v-wrapper">
           <div className="o-wrapper">
             <div className="o-wrapper-inner">
               <div className="o-item">
                 <div className="o-item_inner">
-                  <span className="o-item_inner_num">01</span>
+                  <span className="o-item_inner_num quotetrigger">01</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">Campaign Planning</h3>
-                    <p className="i-wrapper-para">
+                    <h3 className="i-wrapper-heading quotetrigger">
+                      Campaign Planning
+                    </h3>
+                    <p className="i-wrapper-para quotetrigger">
                       We design brand identities that match our clients' values.
                     </p>
                   </div>
@@ -370,15 +403,15 @@ const Dhamaka_Hero = () => {
               </div>
               <div className="o-item">
                 <div className="o-item_inner">
-                  <span className="o-item_inner_num">02</span>
+                  <span className="o-item_inner_num quotetrigger">02</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">
+                    <h3 className="i-wrapper-heading quotetrigger">
                       Content Strategizing
                       {/* <br />
                       and development <br />
                       strategy consulting */}
                     </h3>
-                    <p className="i-wrapper-para">
+                    <p className="i-wrapper-para quotetrigger">
                       We work closely with our clients to develop customized
                       strategies.
                     </p>
@@ -387,10 +420,12 @@ const Dhamaka_Hero = () => {
               </div>
               <div className="o-item">
                 <div className="o-item_inner">
-                  <span className="o-item_inner_num">03</span>
+                  <span className="o-item_inner_num quotetrigger">03</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">End-to-End Execution</h3>
-                    <p className="i-wrapper-para">
+                    <h3 className="i-wrapper-heading quotetrigger">
+                      End-to-End Execution
+                    </h3>
+                    <p className="i-wrapper-para quotetrigger">
                       We produce content to strengthen our clients' online and
                       offline presence .
                     </p>
@@ -399,10 +434,12 @@ const Dhamaka_Hero = () => {
               </div>
               <div className="o-item">
                 <div className="o-item_inner">
-                  <span className="o-item_inner_num">04</span>
+                  <span className="o-item_inner_num quotetrigger">04</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">Production</h3>
-                    <p className="i-wrapper-para">
+                    <h3 className="i-wrapper-heading quotetrigger">
+                      Production
+                    </h3>
+                    <p className="i-wrapper-para quotetrigger">
                       We seek strategic partnerships to strengthen our clients'
                       position in the market.
                     </p>
@@ -411,10 +448,12 @@ const Dhamaka_Hero = () => {
               </div>
               <div className="o-item">
                 <div className="o-item_inner">
-                  <span className="o-item_inner_num">05</span>
+                  <span className="o-item_inner_num quotetrigger">05</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">Marketing</h3>
-                    <p className="i-wrapper-para">
+                    <h3 className="i-wrapper-heading quotetrigger">
+                      Marketing
+                    </h3>
+                    <p className="i-wrapper-para quotetrigger">
                       We set up campaigns to attract the attention of media and
                       influencers.
                     </p>
@@ -444,23 +483,25 @@ const Dhamaka_Hero = () => {
         <div className="v-wrapper">
           <div className="js-v-inner bg-secondary c-primary">
             <div className="js-v-inner-wrapper">
-              <div className="intro-wrapper">
-                <h2 className="intro-wrapper-inner">
+              <div className="intro-wrapper quotetriggerCntr">
+                <h2 className="intro-wrapper-inner quotetrigger">
                   We place a <br /> strong emphasis on branded content, <br />
                   creating authentic messages <br /> for our customers.
                 </h2>
               </div>
               <div className="c-wrapper">
                 <div className="c-wrapper-inner">
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
-                      href="https://www.comptoirdesvoyages.fr/"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Myntra</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Myntra
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Consulting in press relations strategy
                         <br />
                         and awareness development
@@ -526,15 +567,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
-                      href="https://www.tahititourisme.fr/"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Pepsi</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Pepsi
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Communication consultancy, <br />
                         press relations and influence
                       </span>
@@ -554,6 +597,7 @@ const Dhamaka_Hero = () => {
                               width={1518}
                               height={1000}
                               aspect=""
+                              loading="lazy"
                             />
                           </picture>
                           <div className="placeholder" />
@@ -573,6 +617,7 @@ const Dhamaka_Hero = () => {
                               width={1110}
                               height={740}
                               aspect=""
+                              loading="lazy"
                             />
                           </picture>
                           <div className="placeholder" />
@@ -592,6 +637,7 @@ const Dhamaka_Hero = () => {
                               width={709}
                               height={945}
                               aspect=""
+                              loading="lazy"
                             />
                           </picture>
                           <div className="placeholder" />
@@ -599,15 +645,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
-                      href="https://www.paradisecovehotel.com/fr?sjrncid=GA_20260659040&sjrnaid=GA_661298141992&gad_source=1&gclid=Cj0KCQjwo8S3BhDeARIsAFRmkOOtqrI3dp0NbONIo99f_b-Y2RHPuOFeNp4jUI5PruFCcatcMPG9aNwaAgamEALw_wcB&gclsrc=aw.ds"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Coca-Cola</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Coca-Cola
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Development of awareness
                         <br />
                         Press relations and influence
@@ -673,15 +721,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
-                      href="https://hotels-attitude.com/fr"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Coke Studio</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Coke Studio
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Communication <br />
                         and press relations consultancy, influence
                       </span>
@@ -746,15 +796,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
-                      href="https://jardindesdouars.com/fr/"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Flipkar</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Flipkar
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Press relations, influence, <br />
                         awareness strategy
                       </span>
@@ -819,15 +871,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
-                      href="https://www.aireaucarre.com/"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Uniqlo</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Uniqlo
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Consulting in press relations strategy
                         <br />
                         and awareness development
@@ -893,15 +947,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
-                      href="https://maisonomani.com/"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Bisleri</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Bisleri
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Consulting in press relations strategy
                         <br />
                         and awareness development
@@ -948,15 +1004,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
-                      href="https://www.chemins.voyage/"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head"> T-Series</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        T-Series
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Communication
                         <br />
                         and development strategy consulting
@@ -1022,15 +1080,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
-                      href="https://www.hotel-bergerie.com/"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Saregama</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Saregama
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Communication strategy consulting
                         <br />
                         Press relations and influence
@@ -1096,15 +1156,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
-                      href="https://shoplalla.com/"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Panorama Studios</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Panorama Studios
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Communication consulting, <br />
                         Brand awareness development
                       </span>
@@ -1169,15 +1231,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
-                      href="https://curiosity-lab.com/?srsltid=AfmBOopC662y4hq5KKD7B1xOn-o3d-VeoW8FWpeL16fNivtHabmcNWjl"
+                      href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Namoh Studios</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Namoh Studios
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Communication <br />
                         and development strategy consulting
                       </span>
@@ -1242,15 +1306,17 @@ const Dhamaka_Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Tips Music</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Tips Music
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation of the France
                         communication strategy
                         <br />
@@ -1259,15 +1325,17 @@ const Dhamaka_Hero = () => {
                     </a>
                     <div className="c-vsl-wrapper" />
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <a
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Vivo</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Vivo
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Development of awareness
                         <br />
                         Press relations
@@ -1275,194 +1343,218 @@ const Dhamaka_Hero = () => {
                     </a>
                     <div className="c-vsl-wrapper" />
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Samsung</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Samsung
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Crocs</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Crocs
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Fireboltt, Lakme</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Fireboltt, Lakme
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Maybelline</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Maybelline
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Azorte</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Azorte
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Rare Rabbit</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Rare Rabbit
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Boat</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Boat
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Philips</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Philips
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Sparx</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Sparx
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Realme</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Realme
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Max</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">Max</h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Amazon</h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Amazon
+                      </h3>
+                      <span className="js-v-item-inner-para quotetrigger">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Wrangler</h3>
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Wrangler
+                      </h3>
                       <span className="js-v-item-inner-para">
                         Definition and implementation <br />
                         of the France communication strategy
@@ -1470,14 +1562,16 @@ const Dhamaka_Hero = () => {
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Soezi</h3>
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Soezi
+                      </h3>
                       <span className="js-v-item-inner-para">
                         Definition and implementation <br />
                         of the France communication strategy
@@ -1485,14 +1579,16 @@ const Dhamaka_Hero = () => {
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Saffola</h3>
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Saffola
+                      </h3>
                       <span className="js-v-item-inner-para">
                         Definition and implementation <br />
                         of the France communication strategy
@@ -1500,14 +1596,16 @@ const Dhamaka_Hero = () => {
                     </Link>
                     <div className="c-vsl-wrapper" />
                   </div>{" "}
-                  <div className="js-v-item v-item">
+                  <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head">Fanztar</h3>
+                      <h3 className="js-v-item-inner-head quotetrigger">
+                        Fanztar
+                      </h3>
                       <span className="js-v-item-inner-para">
                         Definition and implementation <br />
                         of the France communication strategy
@@ -1536,13 +1634,15 @@ const Dhamaka_Hero = () => {
       <section className="vf-section bg-primary">
         <div className="v-wrapper">
           <div className="v-wrapper-inner">
-            <div className="c-wrapper bg-primary">
+            <div className="c-wrapper bg-primary quotetriggerCntr">
               <div className="v-wrapper-inner-content">
-                <h2 className="v-wrapper-heading">Dhamaka Records</h2>
-                <h4 className="ff-t tt-u fs-md mt-0b">
+                <h2 className="v-wrapper-heading quotetrigger">
+                  Dhamaka Records
+                </h2>
+                <h4 className="ff-t tt-u fs-md mt-0b quotetrigger">
                   Big ideas. Bold moves. That’s Dhamaka.
                 </h4>
-                <p className="">
+                <p className="quotetrigger">
                   Our music label has delivered hits like Hum Hindustani, Yeh
                   Galiyan Yeh Chaubara, and Blockbuster
                 </p>

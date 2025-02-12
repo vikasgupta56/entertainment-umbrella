@@ -350,36 +350,42 @@ const Artist_tour = () => {
               height={1000}
               className="defl"
               src="/assets/images/RangeMedia/3-3 (1)-2.jpg"
+              loading="lazy"
             />
             <Image
               width={1000}
               height={1000}
               className="tour_image im-1"
               src="/assets/images/RangeMedia/DSC04847.jpg"
+              loading="lazy"
             />{" "}
             <Image
               width={1000}
               height={1000}
               className="tour_image im-2"
               src="/assets/images/RangeMedia/Bryan_Portray-52.jpg"
+              loading="lazy"
             />
             <Image
               width={1000}
               height={1000}
               className="tour_image im-3"
               src="/assets/images/RangeMedia/DSC05253.jpg"
+              loading="lazy"
             />
             <Image
               width={1000}
               height={1000}
               className="tour_image im-4"
               src="/assets/images/RangeMedia/DSC08021.jpg"
+              loading="lazy"
             />{" "}
             <Image
               width={1000}
               height={1000}
               className="tour_image im-5"
               src="/assets/images/RangeMedia/Dyavol after dark2.jpg"
+              loading="lazy"
             />
           </div>
           <div className="Artist_tour_left_imageCntr Artist_tour_image">
@@ -387,6 +393,7 @@ const Artist_tour = () => {
               width={1000}
               height={1000}
               src="/assets/images/RangeMedia/Rage by the bay2.jpg"
+              loading="lazy"
             />
           </div>
           <div className="Artist_tour_left_imageCntr Artist_tour_image">
@@ -394,6 +401,7 @@ const Artist_tour = () => {
               width={1000}
               height={1000}
               src="/assets/images/RangeMedia/front2.png"
+              loading="lazy"
             />
           </div>
         </div>

@@ -188,6 +188,7 @@
 
 .paragraph {
   color: #000;
+  color: #ffffff;
   margin-bottom: 0;
   font-size: 1.2em;
   font-weight: 500;
@@ -603,6 +604,8 @@
   background-color: rgb(0, 0, 0);
   /* background-color: #fff; */
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .h2-wrapper {
@@ -733,8 +736,19 @@
   z-index: 9;
 }
 .item {
-  border-bottom: 1px solid #ffffff;
+  position: relative;
 }
+.item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: var(--border-width, 0); /* Use custom property for the width */
+  height: 2px; /* Adjust height as needed */
+  background-color: rgb(255, 255, 255); /* Set the border color */
+  transition: width 0.8s ease; /* Animate width of the border */
+}
+
 .para-btn-cntr {
   display: flex;
   width: 100%;
@@ -749,8 +763,8 @@
   margin-bottom: 0;
   text-align: left;
   font-size: 2rem;
-  line-height: 0.87;
-  color: #ffffff;
+  line-height: 1;
+  /* color: #ffffff; */
   color: #ffffff;
   font-family: var(--primary-fontB);
   letter-spacing: 0.04em;
@@ -2684,7 +2698,7 @@ html.w-mod-touch * {
   width: 100%;
   height: 100vh;
   position: relative;
-  background-color: #fff;
+  background-color: #000000;
   position: relative;
   display: none;
   padding-left: 45px;
@@ -2697,6 +2711,7 @@ html.w-mod-touch * {
   font-family: var(--primary-fontL);
   text-transform: uppercase;
   font-size: 3rem;
+  color: #fff;
 }
 .Artist_tour_inner {
   width: 66.6%;
@@ -2715,6 +2730,7 @@ html.w-mod-touch * {
   justify-content: space-between;
   font-family: var(--primary-fontB);
   padding-top: 5rem;
+  color: #fff;
 }
 .Artist_tour_text-wrap {
   height: 7vw;
@@ -2776,6 +2792,7 @@ html.w-mod-touch * {
   padding-top: 1vw;
   font-family: var(--primary-fontB);
   opacity: 0;
+  color: #fff;
 }
 .Number_paginationCntr {
   height: 1.25rem;

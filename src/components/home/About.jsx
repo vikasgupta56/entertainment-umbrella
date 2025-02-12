@@ -86,37 +86,44 @@ const About = () => {
       });
     }
   }, []);
-  //fot fade text animation
-  useGSAP(() => {
-    const split = new SplitText(".fhl", { type: "lines" });
 
-    split.lines.forEach((target) => {
-      gsap.to(target, {
-        backgroundPositionX: 0,
-        ease: "none",
-        color: "#fff",
-        scrollTrigger: {
-          trigger: target,
-          markers: false,
-          scrub: 1,
-          start: "top center",
-          end: "bottom center",
-        },
+  useEffect(() => {
+    const quotess = document.querySelectorAll(".quotetrigger");
+    function setupSplits() {
+      quotess.forEach((quotes) => {
+        const splitTexts = new SplitText(quotes, {
+          type: "lines",
+          linesClass: "split-line",
+        });
+        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+        // console.log(quote);
       });
-    });
-  });
-  // useEffect(() => {
-  //   const split = new SplitText(".fhl", {
-  //     type: "words",
-  //     wordsClass: "extra-split-word",
-  //   });
-  // }, []);
+      ScrollTrigger.batch(".quotetriggerCntr", {
+        onEnter: (batch) => {
+          batch.forEach((section, i) => {
+            gsap.to(section.querySelectorAll(".split-line"), {
+              // autoAlpha: 1,
+              yPercent: 0,
+              duration: 0.8,
+              ease: "power1.inOut",
+              stagger: 0.01,
+              delay: i * 0.1,
+              marker: true,
+              // delay: 1,
+            });
+          });
+        },
+        start: "top 95%",
+      });
+    }
+    setupSplits();
+  }, []);
   return (
-    <section className="intro" data-scroll-section="">
+    <section className="intro quotetriggerCntr" data-scroll-section="">
       <div className="intro__container magneticWrapper">
         <div className="itext">
           {/* <h1>ABOUT US</h1> */}
-          <h3 className="fhl o_italic">
+          <h3 className="fhl o_italic quotetrigger">
             Welcome to Mr. and Mrs. Films... and Sometimes Events! A powerhouse
             where the art of storytelling meets the magic of live experiences.
             Born from our love of creativity, we are a film production house
@@ -153,7 +160,7 @@ const About = () => {
         >
           <div className="intro__video--wrapper btn-text">
             <video muted autoPlay playsInline loop className="v_autoplay">
-              <source src="https://halomedia.com/wp-content/uploads/2022/08/2022-SHOWREEL-compressed-no-sound.mp4" />
+              <source src="/assets/videos/Dhamaka-video 2.mp4" />
             </video>
           </div>
         </div>

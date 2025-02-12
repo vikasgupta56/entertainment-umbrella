@@ -1,23 +1,101 @@
-import React from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitText from "gsap/dist/SplitText";
+import React, { useEffect } from "react";
 
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const Home_newService = () => {
+  // useEffect(() => {
+  //   const quotes = document.querySelectorAll(".quote");
+
+  //   function setupSplits() {
+  //     quotes.forEach((quote) => {
+  //       // Reset if needed
+  //       if (quote.anim) {
+  //         quote.anim.progress(1).kill();
+  //         quote.split.revert();
+  //       }
+
+  //       quote.split = new SplitText(quote, {
+  //         type: "lines,words",
+  //         linesClass: "split-line",
+  //       });
+
+  //       // Set up the anim
+  //       quote.anim = gsap.from(quote.split.words, {
+  //         scrollTrigger: {
+  //           trigger: quote,
+  //           toggleActions: "restart pause resume reverse",
+  //           start: "top 50%",
+  //           markers: { startColor: "#fff", endColor: "transparent" },
+  //           // once: true,
+  //         },
+  //         ease: "slow",
+  //         duration: 0.5,
+  //         yPercent: 100,
+  //         stagger: 0.01,
+  //       });
+  //     });
+  //   }
+
+  //   ScrollTrigger.addEventListener("refresh", setupSplits);
+  //   setupSplits();
+  // }, []);
+
+  useEffect(() => {
+    const quotess = document.querySelectorAll(".quotetrigger");
+    function setupSplits() {
+      quotess.forEach((quotes) => {
+        const splitTexts = new SplitText(quotes, {
+          type: "lines",
+          linesClass: "split-line",
+        });
+        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+        // console.log(quote);
+      });
+      ScrollTrigger.batch(".quotetriggerCntr", {
+        onEnter: (batch) => {
+          batch.forEach((section, i) => {
+            gsap.to(section.querySelectorAll(".split-line"), {
+              // autoAlpha: 1,
+              yPercent: 0,
+              duration: 0.8,
+              ease: "power1.inOut",
+              stagger: 0.05,
+              delay: i * 0.3,
+              marker: true,
+              // delay: 1,
+            });
+          });
+        },
+        start: "top 95%",
+      });
+    }
+    setupSplits();
+  }, []);
+
   return (
     <>
       <div className="_services p-small" data-scroll data-scroll-speed=".3">
-        <div className="s-indented-title_wrapper">
-          <div className="s-indented-title_cntr">
+        <div className="s-indented-title_wrapper quotetriggerCntr">
+          <div className="s-indented-title_cntr quotetrigger">
             <h2>What we do</h2>
             <p className="s-indented-title_cntr_para">
               No event is big or small for us, be it a music concert, bar night,
               brand activation, corporate events, a wedding, or private parties.
             </p>
+            {/* <p className="quote">
+              {" "}
+              No event is big or small for us, be it a music concert, bar night,
+              brand activation, corporate events, a wedding, or private parties.
+            </p> */}
           </div>
         </div>
         <div className="groups g-table">
           <ul>
-            <li>
-              <h3>Film & Media:</h3>{" "}
-              <ul className="opacity-40">
+            <li className="quotetriggerCntr">
+              <h3 className="quotetrigger">Film & Media:</h3>{" "}
+              <ul className="opacity-40 quotetrigger">
                 <li className="service_hover_link">
                   <span className="links2">Film Production</span>
                 </li>
@@ -57,9 +135,9 @@ const Home_newService = () => {
                 <li>Type design</li> */}
               </ul>
             </li>
-            <li>
-              <h3>Event Services:</h3>{" "}
-              <ul className="opacity-40">
+            <li className="quotetriggerCntr">
+              <h3 className="quotetrigger">Event Services:</h3>{" "}
+              <ul className="opacity-40 quotetrigger">
                 <li className="service_hover_link">
                   <span className="links2">
                     Event Design & Conceptualization
@@ -89,9 +167,9 @@ const Home_newService = () => {
                 {/* <li>Digital Publishing</li> */}
               </ul>
             </li>
-            <li>
-              <h3>Types of Events:</h3>{" "}
-              <ul className="opacity-40">
+            <li className="quotetriggerCntr">
+              <h3 className="quotetrigger">Types of Events:</h3>{" "}
+              <ul className="opacity-40 quotetrigger">
                 <li className="service_hover_link">
                   <span className="links2">Music concerts, Bar nights</span>
                 </li>

@@ -10,7 +10,8 @@
   padding-top: clamp(14rem, 13.228vw, 13.228vw);
   padding-bottom: clamp(14rem, 13.228vw, 13.228vw);
   overflow: hidden;
-  background-color: #fff;
+  background-color: #000000;
+  color: #fff;
 }
 .Dhamaka_hero-section .c-wrapper {
   height: 100%;
@@ -134,6 +135,12 @@
     padding-right: calc(3 * clamp(1rem, 1.058vw, 1.058vw));
     margin-bottom: calc(0 * clamp(1rem, 1.058vw, 1.058vw));
   }
+  .Dhamaka_hero-section .vsl-wrapper .vsl-item:nth-child(1) {
+    height: 30.815vw;
+    width: 20.905vw;
+    top: 30.937vw;
+    left: 0.75rem;
+  }
 }
 .vf-section {
   position: relative;
@@ -223,6 +230,7 @@
   padding-top: calc(1 * clamp(1rem, 1.058vw, 1.058vw));
   letter-spacing: 0.04em;
   font-weight: 900;
+  line-height: 1.1;
 }
 .lazy-container {
   position: relative;
@@ -314,9 +322,11 @@
   height: 100%;
   padding: 0.75em 45px;
   overflow: hidden;
+  background-color: #000;
 }
 .o-wrapper {
   padding-top: calc(11 * clamp(1rem, 1.058vw, 1.058vw));
+  color: #fff;
 }
 .o-wrapper-inner {
   display: flex;
@@ -417,7 +427,7 @@
   clip-path: polygon(5% 10%, 95% 10%, 95% 90%, 5% 90%);
   z-index: 2;
   color: #fff;
-  background-color: #fff;
+  background-color: #000000;
 }
 .vh-section .v-wrapper {
   position: relative;

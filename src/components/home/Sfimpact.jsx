@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitText from "gsap/dist/SplitText";
 import React, { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const Sfimpact = () => {
@@ -120,6 +121,74 @@ const Sfimpact = () => {
     }, 90);
     // }
   }, []);
+  // useEffect(() => {
+  //   const quotes = document.querySelectorAll(".quote");
+
+  //   function setupSplits() {
+  //     quotes.forEach((quote) => {
+  //       // Reset if needed
+  //       if (quote.anim) {
+  //         quote.anim.progress(1).kill();
+  //         quote.split.revert();
+  //       }
+
+  //       quote.split = new SplitText(quote, {
+  //         type: "lines,words",
+  //         linesClass: "split-line",
+  //       });
+
+  //       // Set up the anim
+  //       quote.anim = gsap.from(quote.split.words, {
+  //         scrollTrigger: {
+  //           trigger: quote,
+  //           // toggleActions: "restart pause resume reverse",
+  //           start: "top 50%",
+  //           markers: false,
+  //           once: true,
+  //         },
+  //         ease: "slow",
+  //         duration: 0.5,
+  //         yPercent: 100,
+  //         stagger: 0.01,
+  //       });
+  //     });
+  //   }
+
+  //   ScrollTrigger.addEventListener("refresh", setupSplits);
+  //   setupSplits();
+  // }, []);
+  useEffect(() => {
+    const quotess = document.querySelectorAll(".quotetrigger");
+    function setupSplits() {
+      quotess.forEach((quotes) => {
+        const splitTexts = new SplitText(quotes, {
+          type: "lines",
+          linesClass: "split-line",
+        });
+        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+        // console.log(quote);
+      });
+      ScrollTrigger.batch(".quotetriggerCntr", {
+        onEnter: (batch) => {
+          batch.forEach((section, i) => {
+            gsap.to(section.querySelectorAll(".split-line"), {
+              // autoAlpha: 1,
+              yPercent: 0,
+              duration: 0.8,
+              ease: "power1.inOut",
+              stagger: 0.05,
+              delay: i * 0.3,
+              marker: true,
+              // delay: 1,
+            });
+          });
+        },
+        start: "top 95%",
+      });
+    }
+    setupSplits();
+  }, []);
+
   return (
     <section className="sfimpact sfimpact--full" data-scroll-section="">
       <div className="sfimpact__banner">
@@ -148,16 +217,23 @@ const Sfimpact = () => {
         </div>
       </div>
       <div className="sfimpact__text sfimpact--full__text">
-        <h1>Entertainment with a Cause</h1>
-        <h5 className="o_italic">
-          Under the belt of Mr. and Mrs. Films, Samaj Scope is our
-          heart-of-the-matter initiative pioneering in social good. We partner
-          with NGOs and support social causes to create effective change through
-          the power of the media.
+        {/* <div className="quotetrigger"></div> */}
+        <h1 className="quotetriggerCntr">
+          <span className="quotetrigger">Entertainment with a Cause</span>
+        </h1>
+        <h5 className="o_italic quotetriggerCntr">
+          <span className="quotetrigger">
+            Under the belt of Mr. and Mrs. Films, Samaj Scope is our
+            heart-of-the-matter initiative pioneering in social good. We partner
+            with NGOs and support social causes to create effective change
+            through the power of the media.
+          </span>
         </h5>
-        <p className="fht">
-          We create awareness drives, community-based events, and partnerships
-          not only to reach out with messages but to amplify them.
+        <p className="fht quotetriggerCntr">
+          <span className="quotetrigger">
+            We create awareness drives, community-based events, and partnerships
+            not only to reach out with messages but to amplify them.
+          </span>
         </p>
         <div className="brandsInfo__textBlock--btn fht btn-pr">
           <span className="btn-text link_white">{/* View on Instagram */}</span>
@@ -171,6 +247,7 @@ const Sfimpact = () => {
                   <img
                     src="https://halomedia.com/wp-content/uploads/2022/07/Group-38.svg"
                     alt=""
+                    loading="lazy"
                   />
                 </span>
               </h4>
@@ -181,6 +258,7 @@ const Sfimpact = () => {
                     className="ticker__rot"
                     src="https://halomedia.com/wp-content/uploads/2022/07/star-black.fe4462b0-6.svg"
                     alt=""
+                    loading="lazy"
                   />
                 </span>
               </h4>
@@ -191,6 +269,7 @@ const Sfimpact = () => {
                     className="ticker__rot--semi"
                     src="https://halomedia.com/wp-content/uploads/2022/07/smile-1.svg"
                     alt=""
+                    loading="lazy"
                   />
                 </span>
               </h4>
@@ -201,6 +280,7 @@ const Sfimpact = () => {
                     className="ticker__rot"
                     src="https://halomedia.com/wp-content/uploads/2022/07/star-black.fe4462b0-6.svg"
                     alt=""
+                    loading="lazy"
                   />
                 </span>
               </h4>

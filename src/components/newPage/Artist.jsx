@@ -1,7 +1,10 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitText from "gsap/dist/SplitText";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const Artist = () => {
   useEffect(() => {
     const paraHeaders = document.querySelectorAll(".para-btn-cntr");
@@ -1493,9 +1496,68 @@ const Artist = () => {
     //   },
     // });
   }, []);
+
+  useEffect(() => {
+    const quotess = document.querySelectorAll(".quotetrigger");
+    const items = document.querySelectorAll(".item"); // Correct selector for .item class
+
+    items.forEach((item) => {
+      const styles = window.getComputedStyle(item, "::after");
+      const borderBottom = styles.getPropertyValue("border-bottom"); // Access the 'border-bottom' property of the ::after pseudo-element
+
+      console.log(borderBottom); // Log the border-bottom style
+    });
+
+    function setupSplits() {
+      quotess.forEach((quotes) => {
+        const splitTexts = new SplitText(quotes, {
+          type: "lines",
+          linesClass: "split-line",
+        });
+        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+
+        // Apply transition to the border-bottom in the pseudo-element
+        items.forEach((item) => {
+          gsap.set(item, {
+            // Set initial state of border (width to 0%)
+            "--border-width": "0%",
+          });
+        });
+
+        // Add ScrollTrigger to handle the animations
+        ScrollTrigger.batch(".quotetriggerCntr", {
+          onEnter: (batch) => {
+            batch.forEach((section, i) => {
+              gsap.to(section.querySelectorAll(".split-line"), {
+                // Animate the text
+                yPercent: 0,
+                duration: 0.8,
+                ease: "power1.inOut",
+                stagger: 0.05,
+                delay: i * 0.1,
+              });
+
+              // Animate the border of the item (pseudo-element's border-bottom)
+              gsap.to(section, {
+                duration: 0.8,
+                ease: "power1.inOut",
+                stagger: 0.05,
+                delay: i * 0.1,
+                "--border-width": "100%", // Change custom property for the border width
+              });
+            });
+          },
+          start: "top 95%",
+        });
+      });
+    }
+
+    setupSplits();
+  }, []);
+
   return (
     <>
-      <section className="section three">
+      <section className="section three quotetriggerCntr">
         <div className="">
           <div id="aboutsection">
             {/* <div id="aboutimages">
@@ -1536,10 +1598,10 @@ const Artist = () => {
             <div className="">
               <div className="h2-wrapper">
                 <div className="h-wrapper align-top">
-                  <h1 className="artistsheading">Our Services</h1>
+                  <h1 className="artistsheading quotetrigger">Our Services</h1>
                   {/* <h1 className="h2 star">*</h1> */}
 
-                  <div className="border-bottom"></div>
+                  {/* <div className="border-bottom"></div> */}
                 </div>
                 {/* <div className="description-wrapper">
               <div className="description-item is--hidden-in-mobile">
@@ -1557,7 +1619,7 @@ const Artist = () => {
             </div> */}
               </div>
               <div className="text-inner-container bottom_margin">
-                <h4 className="gallerypera">
+                <h4 className="gallerypera quotetrigger">
                   At Rage Media, we offer all services in-house, covering every
                   aspect of your brand needs. Our multi-brand structure allows
                   us to seamlessly integrate strategies, ensuring a cohesive and
@@ -1575,11 +1637,39 @@ const Artist = () => {
                   tailored approach for each client.
                 </h4>
               </div> */}
-              <div className="g-item-list">
-                <div className="item">
+              <div className="g-item-list quote">
+                <div className="item quotetriggerCntr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Celebrity Management</h3>
+                      <h3 className="para_title_head quotetrigger">
+                        Celebrity Management
+                      </h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        // tag="span"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside quotetrigger">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item quotetriggerCntr">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head quotetrigger">
+                        Digital Marketing
+                      </h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1600,10 +1690,12 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>
-                <div className="item">
+                <div className="item quotetriggerCntr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Digital Marketing</h3>
+                      <h3 className="para_title_head quotetrigger">
+                        Website Development
+                      </h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1624,10 +1716,12 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>
-                <div className="item">
+                <div className="item quotetriggerCntr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Website Development</h3>
+                      <h3 className="para_title_head quotetrigger">
+                        Brand Shoots
+                      </h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1648,10 +1742,12 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>
-                <div className="item">
+                <div className="item quotetriggerCntr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Brand Shoots</h3>
+                      <h3 className="para_title_head quotetrigger">
+                        Launch Events
+                      </h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1672,34 +1768,12 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>
-                <div className="item">
+                <div className="item quotetriggerCntr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Launch Events</h3>
-                      <span
-                        className="flex-shrink-0 plus-minus flex-shrink-0"
-                        // tag="span"
-                        role="presentation"
-                      ></span>
-                    </button>
-                  </header>
-                  <div className="g-item-list-para-cntr">
-                    <div className="g-item-content">
-                      <div className="g-item-content-inside">
-                        It’s the result of the unprecedented{" "}
-                        <a href="" target="_blank" rel="noopener">
-                          collaboration
-                        </a>{" "}
-                        between the iconic Absolut Vodka and one of the most
-                        visionary and creative Italian design brands: Seletti.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="item">
-                  <header className="">
-                    <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Influencer Marketing</h3>
+                      <h3 className="para_title_head quotetrigger">
+                        Influencer Marketing
+                      </h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -1720,10 +1794,12 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>{" "}
-                <div className="item">
+                <div className="item quotetriggerCntr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head">Public Relations (PR)</h3>
+                      <h3 className="para_title_head quotetrigger">
+                        Public Relations (PR)
+                      </h3>
                       <span
                         className="flex-shrink-0 plus-minus flex-shrink-0"
                         // tag="span"
@@ -2170,7 +2246,9 @@ const Artist = () => {
             id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896bab3-c7f4dd6b"
             className="sectionlinks_grid-img wrapper"
           >
-            <img
+            <Image
+              width={1000}
+              height={1000}
               src="/assets/images/RangeMedia/3-3 (1)-2.jpg"
               loading="lazy"
               alt=""
@@ -2181,7 +2259,9 @@ const Artist = () => {
             id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896bab5-c7f4dd6b"
             className="sectionlinks_grid-img wrapper"
           >
-            <img
+            <Image
+              width={1000}
+              height={1000}
               src="/assets/images/RangeMedia/Dyavol after dark2.jpg"
               loading="lazy"
               alt=""
@@ -2192,7 +2272,9 @@ const Artist = () => {
             id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896bab7-c7f4dd6b"
             className="sectionlinks_grid-img wrapper"
           >
-            <img
+            <Image
+              width={1000}
+              height={1000}
               src="/assets/images/RangeMedia/Bryan_Portray-52.jpg"
               loading="lazy"
               alt=""
@@ -2203,7 +2285,9 @@ const Artist = () => {
             id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896bab9-c7f4dd6b"
             className="sectionlinks_grid-img wrapper"
           >
-            <img
+            <Image
+              width={1000}
+              height={1000}
               src="/assets/images/RangeMedia/ragemedia_home_image.jpeg"
               loading="lazy"
               alt=""
@@ -2221,7 +2305,7 @@ const Artist = () => {
                   }
                 </style> */}
             </div>
-            <div className="artist-links">
+            <div className="artist-links quote">
               <p className="description italic">Hiroji Kubota</p>
               <p className="description italic">Yutaka Sone</p>
               <p className="description italic">Izumi Kato</p>
@@ -2237,64 +2321,64 @@ const Artist = () => {
             id="w-node-_1cae41b8-9168-5f5b-112a-d8b08896bad0-c7f4dd6b"
             className="grid-cell"
           >
-            <div className="artist-links align-right">
-              <a href="hiroji-kubota" className="link w-inline-block">
+            <div className="artist-links align-right quote">
+              <a href="#" className="link w-inline-block">
                 <div className="link_text-container">
                   <p className="description italic">link</p>
                   <div className="border-bottom link-border"></div>
                 </div>
                 <img src="" loading="lazy" alt="" />
               </a>
-              <a href="yutaka-sone" className="link w-inline-block">
+              <a href="#" className="link w-inline-block">
                 <div className="link_text-container">
                   <p className="description italic">link</p>
                   <div className="border-bottom link-border"></div>
                 </div>
                 <img src="" loading="lazy" alt="" />
               </a>
-              <a href="izumi-kato" className="link w-inline-block">
+              <a href="#" className="link w-inline-block">
                 <div className="link_text-container">
                   <p className="description italic">link</p>
                   <div className="border-bottom link-border"></div>
                 </div>
                 <img src="" loading="lazy" alt="" />
               </a>
-              <a href="yuichi-hibi" className="link w-inline-block">
+              <a href="#" className="link w-inline-block">
                 <div className="link_text-container">
                   <p className="description italic">link</p>
                   <div className="border-bottom link-border"></div>
                 </div>
                 <img src="" loading="lazy" alt="" />
               </a>
-              <a href="ken-domon" className="link w-inline-block">
+              <a href="#" className="link w-inline-block">
                 <div className="link_text-container">
                   <p className="description italic">link</p>
                   <div className="border-bottom link-border"></div>
                 </div>
                 <img src="" loading="lazy" alt="" />
               </a>
-              <a href="eikoh-hosoe" className="link w-inline-block">
+              <a href="#" className="link w-inline-block">
                 <div className="link_text-container">
                   <p className="description italic">link</p>
                   <div className="border-bottom link-border"></div>
                 </div>
                 <img src="" loading="lazy" alt="" />
               </a>
-              <a href="chiharu-shiota" className="link w-inline-block">
+              <a href="#" className="link w-inline-block">
                 <div className="link_text-container">
                   <p className="description italic">link</p>
                   <div className="border-bottom link-border"></div>
                 </div>
                 <img src="" loading="lazy" alt="" />
               </a>
-              <a href="chim-pom" className="link w-inline-block">
+              <a href="#" className="link w-inline-block">
                 <div className="link_text-container">
                   <p className="description italic">link</p>
                   <div className="border-bottom link-border"></div>
                 </div>
                 <img src="" loading="lazy" alt="" />
               </a>
-              <a href="ishiuchi-miyako" className="link w-inline-block">
+              <a href="#" className="link w-inline-block">
                 <div className="link_text-container">
                   <p className="description italic">link</p>
                   <div className="border-bottom link-border"></div>

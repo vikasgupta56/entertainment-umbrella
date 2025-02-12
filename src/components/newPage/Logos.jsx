@@ -1,16 +1,50 @@
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitText from "gsap/dist/SplitText";
 import Image from "next/image";
-import React from "react";
-
+import React, { useEffect } from "react";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const Logos = () => {
+  useEffect(() => {
+    const quotess = document.querySelectorAll(".quotetrigger");
+    function setupSplits() {
+      quotess.forEach((quotes) => {
+        const splitTexts = new SplitText(quotes, {
+          type: "lines",
+          linesClass: "split-line",
+        });
+        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+        // console.log(quote);
+      });
+      ScrollTrigger.batch(".quotetriggerCntr", {
+        onEnter: (batch) => {
+          batch.forEach((section, i) => {
+            gsap.to(section.querySelectorAll(".split-line"), {
+              // autoAlpha: 1,
+              yPercent: 0,
+              duration: 0.8,
+              ease: "power1.inOut",
+              stagger: 0.05,
+              delay: i * 0.3,
+              marker: true,
+              // delay: 1,
+            });
+          });
+        },
+        start: "top 95%",
+      });
+    }
+    setupSplits();
+  }, []);
   return (
     <div>
-      <section className="brands">
+      <section className="brands quotetriggerCntr">
         <div className="full-brands__section full-brands__clients once-inview">
           <div className="">
-            <h2 className="full-brands__title full-brands__clients__title once-inview">
+            <h2 className="full-brands__title full-brands__clients__title once-inview quotetrigger">
               SELECTED BRANDS
             </h2>
-            <h4 className="full-brands__para">
+            <h4 className="full-brands__para quotetrigger">
               We’ve partnered with businesses across a wide range of industries,
               including Beauty, Events, Jewelry, Wellness, Entertainment,
               Fitness, Hospitality, Food and beverage, Startups, Tech, Fashion,

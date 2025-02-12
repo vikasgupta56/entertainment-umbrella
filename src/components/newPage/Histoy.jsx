@@ -1,57 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitText from "gsap/dist/SplitText";
 // import SplitText from "gsap/dist/SplitText";
 import React, { useEffect, useState } from "react";
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const Histoy = () => {
-  // const [isLoaded, setIsLoaded] = useState(false);
-
-  // useEffect(() => {
-  //   // Simulate content loading (replace this with your actual data fetching logic)
-  //   const loadContent = () => {
-  //     setTimeout(() => {
-  //       setIsLoaded(true);
-  //     }, 1000); // Simulate a 1 second loading time
-  //   };
-
-  //   loadContent();
-  // }, []);
-  // useEffect(() => {
-  //   // function gsapImgAnimation() {
-  //   let imgStag = 0.3;
-  //   let imgDur = 1.2;
-
-  //   //grid-img scale animation
-  //   //gsap.registerPlugin(ScrollTrigger);
-
-  //   //gsap.defaults({ ease: "power1.inOut" });
-  //   const targets = gsap.utils.toArray(".grid-cell-img.gsap");
-  //   if (targets.length === 0) return; // Exit if no targets found
-
-  //   ScrollTrigger.batch(".grid-cell-img.gsap", {
-  //     start: "top 90%",
-  //     end: "center 110%",
-  //     preventOverlaps: true,
-  //     fastScrollEnd: true,
-  //     // markers: true,
-  //     onEnter: (batch) =>
-  //       gsap.to(batch, {
-  //         scale: 1,
-  //         stagger: { each: imgStag },
-  //         duration: imgDur,
-  //       }),
-  //     onLeaveBack: (batch) =>
-  //       gsap.to(batch, {
-  //         scale: 1.3,
-  //         stagger: { each: imgStag },
-  //         duration: imgDur,
-  //       }),
-  //     scrub: true,
-  //     // markers: true
-  //   });
-  //   // }
-  // }, []);
   useGSAP(() => {
     function gsapImgAnimation() {
       let imgStag = 0.3;
@@ -117,37 +71,40 @@ const Histoy = () => {
     // };
   });
 
-  // useEffect(() => {
-  //   const paragraphs = document.querySelectorAll(".Cpb_para");
-
-  //   paragraphs.forEach((paragraph) => {
-  //     const text = new SplitText(paragraph, {
-  //       type: "lines,words,chars",
-  //     });
-  //     const chars = text.chars;
-
-  //     // Create a ScrollTrigger for each paragraph
-  //     gsap.to(chars, {
-  //       scrollTrigger: {
-  //         trigger: paragraph, // Trigger the animation for each individual paragraph
-  //         start: "top 80%", // Adjust as needed
-  //         end: "bottom 60%", // Adjust as needed
-  //         markers: true,
-  //         scrub: true,
-  //       },
-  //       duration: 1.5,
-  //       stagger: 0.1, // Adjust stagger as needed
-  //       ease: "linear",
-  //       color: "#fff",
-  //     });
-  //   });
-
-  //   // Optional: Refresh triggers if necessary
-  //   ScrollTrigger.refresh();
-  // }, []);
+  useEffect(() => {
+    const quotess = document.querySelectorAll(".quotetrigger");
+    function setupSplits() {
+      quotess.forEach((quotes) => {
+        const splitTexts = new SplitText(quotes, {
+          type: "lines",
+          linesClass: "split-line",
+        });
+        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+        // console.log(quote);
+      });
+      ScrollTrigger.batch(".quotetriggerCntr", {
+        onEnter: (batch) => {
+          batch.forEach((section, i) => {
+            gsap.to(section.querySelectorAll(".split-line"), {
+              // autoAlpha: 1,
+              yPercent: 0,
+              duration: 0.8,
+              ease: "power1.inOut",
+              stagger: 0.01,
+              delay: i * 0.1,
+              marker: true,
+              // delay: 1,
+            });
+          });
+        },
+        start: "top 95%",
+      });
+    }
+    setupSplits();
+  }, []);
   return (
     <>
-      <div className="TwoColumnText_root">
+      <div className="TwoColumnText_root quotetriggerCntr">
         {/* <div className="TwoColumnText_left TwoColumnText_col">
           <h2 className="AnimatedTextLines_root text-heading-md AnimatedTextLines_mask AnimatedTextLines_animate">
             Why partner with Rage Entertainment?
@@ -155,7 +112,7 @@ const Histoy = () => {
           </h2>
         </div> */}
         <div className="TwoColumnText_right TwoColumnText_col">
-          <p className="AnimatedTextLines_root text-heading-para AnimatedTextLines_line-height AnimatedTextLines_animate">
+          <p className="AnimatedTextLines_root text-heading-para AnimatedTextLines_line-height AnimatedTextLines_animate quotetrigger">
             At Rage Media, we’ve had the privilege of working with over 30
             brands—ranging from individual entrepreneurs to large corporations.
             But no matter your size, one thing remains constant: for us, it’s

@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
-import ReServices from "./ReServices";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import gsap from "gsap";
 import Artist_tour from "./Artist_tour";
+import SplitText from "gsap/dist/SplitText";
+import Link from "next/link";
+import Image from "next/image";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const RageEntertainment = () => {
   useGSAP(() => {
     const image = document.querySelector(".bg_image");
@@ -24,6 +26,55 @@ const RageEntertainment = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const quotess = document.querySelectorAll(".quotetrigger");
+    function setupSplits() {
+      quotess.forEach((quotes) => {
+        const splitTexts = new SplitText(quotes, {
+          type: "lines",
+          linesClass: "split-line",
+        });
+        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+        // console.log(quote);
+      });
+      ScrollTrigger.batch(".quotetriggerCntr", {
+        onEnter: (batch) => {
+          batch.forEach((section, i) => {
+            gsap.to(section.querySelectorAll(".split-line"), {
+              // autoAlpha: 1,
+              yPercent: 0,
+              duration: 0.8,
+              ease: "power1.inOut",
+              stagger: 0.05,
+              delay: i * 0.3,
+              marker: true,
+              // delay: 1,
+            });
+          });
+        },
+        start: "top 95%",
+      });
+    }
+    setupSplits();
+    // ScrollTrigger.batch(".quotetriggerCntr", {
+    //   onEnter: (batch) => {
+    //     batch.forEach((section, i) => {
+    //       gsap.to(section.querySelectorAll(".quotetrigger"), {
+    //         // autoAlpha: 1,
+    //         yPercent: 0,
+    //         duration: 0.8,
+    //         ease: "power1.inOut",
+    //         stagger: 0.1,
+    //         delay: i * 0.3,
+    //         marker: true,
+    //         // delay: 1,
+    //       });
+    //     });
+    //   },
+    //   start: "top 95%",
+    // });
+  }, []);
+
   return (
     <div>
       <div className="section_rageEn">
@@ -32,9 +83,13 @@ const RageEntertainment = () => {
             <div role="listitem" className="w-dyn-item">
               <section className="section_rageEn_home_hero">
                 <div className="hero_h1_group day">
-                  <h1 className="h1_small once_text">
-                    <div className="" data-scroll data-scroll-speed="0.1">
-                      The Pulse of Your Event: <br /> Exceptional Artists,
+                  <h1 className="h1_small once_text quotetriggerCntr">
+                    <div
+                      className="quotetrigger"
+                      data-scroll
+                      data-scroll-speed="0.1"
+                    >
+                      The Pulse of Your Event: Exceptional Artists,
                       Unforgettable Nights
                       {/* <div
                         className="line"
@@ -47,11 +102,21 @@ const RageEntertainment = () => {
                   </h1>
                 </div>
                 <div className="logo_holder">
-                  <h3 data-scroll data-scroll-speed="0.1">
-                    RAGE
+                  <h3
+                    data-scroll
+                    data-scroll-speed="0.1"
+                    style={{ overflow: "hidden" }}
+                    className="quotetriggerCntr"
+                  >
+                    <div className="quotetrigger">RAGE</div>
                   </h3>
-                  <h1 data-scroll data-scroll-speed="0.1">
-                    ENTERTAINMENT
+                  <h1
+                    data-scroll
+                    data-scroll-speed="0.1"
+                    style={{ overflow: "hidden" }}
+                    className="quotetriggerCntr"
+                  >
+                    <div className="quotetrigger">ENTERTAINMENT</div>
                   </h1>
                   {/* <img
                     src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/6691b48ef5849526fd6edcd8_GOODNIGHT_RED_WORDMARK.svg"
@@ -204,8 +269,12 @@ const RageEntertainment = () => {
                 </div>
                 <div className="intro_group">
                   <h3 className="h3 centred mob-off aos_text">
-                    <div className="section_rageEn_line-mask">
-                      <div className="" data-scroll data-scroll-speed="0.020">
+                    <div className="section_rageEn_line-mask quotetriggerCntr">
+                      <div
+                        className="quotetrigger"
+                        data-scroll
+                        data-scroll-speed="0.020"
+                      >
                         WE PRODUCE SPECTACULAR PARTIES FOR PEOPLE &amp; BRANDS
                         <br />
                       </div>
@@ -216,11 +285,11 @@ const RageEntertainment = () => {
                   </h3>
                   <h2 className="h2_mob centred aos_text">
                     <div
-                      className="section_rageEn_line-mask"
+                      className="section_rageEn_line-mask quotetriggerCntr"
                       // style={{ height: "57.88px" }}
                     >
                       <div
-                        className="line"
+                        className="line quotetrigger"
                         data-scroll
                         data-scroll-speed="0.020"
                       >
@@ -245,21 +314,33 @@ const RageEntertainment = () => {
                       sizes="(max-width: 479px) 90vw, (max-width: 991px) 56vw, 42vw"
                     />
                   </div>
-                  <div className="holder _40vw">
+                  <div className="holder _40vw quotetriggerCntr">
                     <div className="rich ac w-richtext">
-                      <h6 data-scroll data-scroll-speed="0.020">
-                        WELCOME TO THE PARTY
+                      <h6
+                        data-scroll
+                        data-scroll-speed="0.020"
+                        style={{ overflow: "hidden" }}
+                      >
+                        <div className="quotetrigger">WELCOME TO THE PARTY</div>
                       </h6>
                       <p>‍</p>
-                      <p data-scroll data-scroll-speed="0.020">
-                        <strong>
+                      <p
+                        data-scroll
+                        data-scroll-speed="0.020"
+                        style={{ overflow: "hidden" }}
+                      >
+                        <span className="quotetrigger">
                           Rage Entertainment is a creative events agency that
                           specialises in the design and production of
                           spectacular parties for discerning people and
                           ambitious brands.
-                        </strong>{" "}
+                        </span>{" "}
                       </p>
-                      <p data-scroll data-scroll-speed="0.010">
+                      <p
+                        data-scroll
+                        data-scroll-speed="0.010"
+                        className="quotetrigger"
+                      >
                         At Rage Entertainment, we’re all about throwing nights
                         that hit different—where the music’s unreal, the vibe’s
                         electric, and the crowd never wants to leave. From
@@ -268,7 +349,11 @@ const RageEntertainment = () => {
                         floor. Ready for a night that’ll make you forget
                         everything else? Let’s Rage.
                       </p>
-                      <p data-scroll data-scroll-speed="0.010">
+                      <p
+                        data-scroll
+                        data-scroll-speed="0.010"
+                        className="quotetrigger"
+                      >
                         It’s not just a party—it’s an experience that sticks
                         with you long after the last track drops. At Rage
                         Entertainment, we don’t just throw events, we create
@@ -303,43 +388,23 @@ const RageEntertainment = () => {
         />
         <div className="b_80 c white bottom">
           <h2 className="h2_display mob-on aos_text">
-            <div className="line-masks" style={{ height: "154px" }}>
-              <div className="line">Our Services</div>
+            <div
+              className="line-masks quotetriggerCntr"
+              // style={{ height: "154px" }}
+            >
+              <div className="line quotetrigger">Our Services</div>
             </div>
           </h2>
-          <h2 className="h2_display mob-off aos_text">
+          <h2 className="h2_display mob-off aos_text quotetriggerCntr">
             <div className="line-masks" style={{ height: "154px" }}>
-              <div
-                className="line"
-                // style={{
-                //   textAlign: "center",
-                //   translate: "none",
-                //   rotate: "none",
-                //   scale: "none",
-                //   transform: "translate(0px, 0%) scale(1.00001, 1.00001)",
-                // }}
-              >
-                Our Services
-              </div>
+              <div className="line quotetrigger">Our Services</div>
             </div>
-            {/* <div className="line-masks" style={{ height: "154px" }}>
-              <div
-                className="line"
-                // style={{
-                //   textAlign: "center",
-                //   translate: "none",
-                //   rotate: "none",
-                //   scale: "none",
-                //   transform: "translate(0px, 0%) scale(1.00001, 1.00001)",
-                // }}
-              >
-                PARTIES
-              </div>
-            </div> */}
           </h2>
-          <h4 className="h4">Expertly Delivered</h4>
-          <div className="b_32 c pt">
-            <p className="p">
+          <h4 className="h4 quotetriggerCntr">
+            <span className="quotetrigger">Expertly Delivered</span>
+          </h4>
+          <div className="b_32 c pt quotetriggerCntr">
+            <p className="p quotetrigger">
               We’ll spare you a laundry list of our services. We’d rather show
               you how we approach each event and why it matters. Our values
               shape every decision and infuse every detail. That’s what truly
@@ -367,13 +432,13 @@ const RageEntertainment = () => {
         <div className="section_label white">
           {/* <h5 className="h5">Why Rage Entertainment?</h5> */}
         </div>
-        <div className="whygn_listwrapper w-dyn-list">
+        <div className="whygn_listwrapper w-dyn-list quotetriggerCntr">
           <div role="list" className="whygn_list w-dyn-items">
             <div role="listitem" className="whygn_item white w-dyn-item">
               <div className="b_whygn">
-                <div className="p total_events ar">(01)</div>
+                <div className="p total_events ar quotetrigger">(01)</div>
                 <div className="b_32">
-                  <h3 className="h3 small light">
+                  <h3 className="h3 small light quotetrigger">
                     Event Production & Conceptualization
                   </h3>
                   <img
@@ -389,7 +454,7 @@ const RageEntertainment = () => {
                     // }}
                   />
                 </div>
-                <div className="p _40 mob">
+                <div className="p _40 mob quotetrigger">
                   We bring the vision to life—from the first beat to the last.
                   Whether it’s designing an immersive atmosphere or curating the
                   perfect lineup of international DJs, we make sure every detail
@@ -399,9 +464,9 @@ const RageEntertainment = () => {
             </div>
             <div role="listitem" className="whygn_item white w-dyn-item">
               <div className="b_whygn">
-                <div className="p total_events ar">(02)</div>
+                <div className="p total_events ar quotetrigger">(02)</div>
                 <div className="b_32">
-                  <h3 className="h3 small light">
+                  <h3 className="h3 small light quotetrigger">
                     DJ Bookings & Artist Booking across all Genres
                   </h3>
                   <img
@@ -417,7 +482,7 @@ const RageEntertainment = () => {
                     // }}
                   />
                 </div>
-                <div className="p _40 mob">
+                <div className="p _40 mob quotetrigger">
                   Looking for world-class talent? We’ve got the connections.
                   From cutting-edge techno to global festival headliners, we
                   book the DJs who know how to make a crowd lose themselves in
@@ -430,12 +495,6 @@ const RageEntertainment = () => {
         <div
           data-w-id="200240bd-27a0-6c7a-80f0-28e0a698c64a"
           className="stars_holder off"
-          // style={{
-          //   willChange: "transform",
-          //   transform:
-          //     "translate3d(0px, 19.9982%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-          //   transformStyle: "preserve-3d",
-          // }}
         >
           <div
             id="w-node-_415353e3-a8a8-3d76-b865-60f5f3ba738c-3df0960b"
@@ -446,11 +505,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -462,11 +516,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -478,11 +527,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -494,11 +538,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -510,11 +549,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -526,11 +560,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -542,11 +571,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -558,11 +582,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -574,11 +593,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -590,11 +604,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -606,11 +615,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -622,11 +626,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -638,11 +637,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -654,11 +648,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -670,11 +659,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -686,11 +670,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -702,11 +681,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -718,11 +692,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -734,11 +703,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -750,11 +714,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -766,11 +725,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -782,11 +736,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -798,11 +747,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -814,11 +758,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -830,11 +769,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -846,11 +780,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -862,11 +791,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -878,11 +802,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -894,11 +813,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -910,11 +824,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -926,11 +835,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -942,11 +846,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -958,11 +857,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -974,11 +868,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -990,11 +879,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1006,11 +890,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1022,11 +901,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1038,11 +912,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1054,11 +923,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1070,11 +934,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1086,11 +945,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1102,11 +956,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1118,11 +967,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1134,11 +978,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1150,11 +989,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1166,11 +1000,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1182,11 +1011,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1198,11 +1022,6 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
           <div
@@ -1214,16 +1033,686 @@ const RageEntertainment = () => {
               loading="lazy"
               alt=""
               className="b_32_star"
-              // style={{
-              //   transform:
-              //     "translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)",
-              //   transformStyle: "preserve-3d",
-              // }}
             />
           </div>
         </div>
       </section>
-      <ReServices />
+      <div className="Services_root">
+        <div className="Item_root">
+          <div className="Item_root_grid_container quotetriggerCntr">
+            <h3
+              className="AnimatedTextLines_root Item_headline text-heading-md AnimatedTextLines_mask AnimatedTextLines_animate quotetrigger"
+              //   style="--animation-delay:0s"
+            >
+              Our Work
+            </h3>
+            <div className="Item_card text-body-animate-in active">
+              <div className="NumberedCard_root">
+                <div className="NumberedCard_number text-label-md">
+                  <span className="quotetrigger">01</span>
+                </div>
+                <div>
+                  <h4 className="text-heading-sm quotetrigger">
+                    Brand events & launch -
+                  </h4>
+                  <p className="NumberedCard_description text-body-lg quotetrigger">
+                    Leading your brand into the next generation of commerce
+                    through design &amp; development, native &amp; web
+                    applications, and intuitive CMS platforms.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="event_collection w-dyn-list">
+            <div role="list" className="event_grid w-dyn-items">
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="#"
+                  className="card w-inline-block is-visible"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content" data-intersect-id={1}>
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RageEntertainment/6.22.24 Hozho - Highlights - Edited Files-21.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">
+                          Dyavol after dark + <br />
+                          (srk dubai, Aryan)
+                        </h4>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold quotetrigger">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="#"
+                  className="card w-inline-block is-visible"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content" data-intersect-id={4}>
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RageEntertainment/gnrlindoor.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">H&M (Ranbir)</h4>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="#"
+                  className="card w-inline-block is-visible"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content" data-intersect-id={7}>
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RageEntertainment/MUMBAI-15.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div>
+                          <h4 className="event_card_title">
+                            Belvedere <br />
+                          </h4>
+                          <br />
+                          <h5>(Siddharth Malhotra add his video)</h5>
+                        </div>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>{" "}
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="#"
+                  className="card w-inline-block"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content" data-intersect-id={10}>
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RageEntertainment/photolechu59.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">Praia (Shraddha)</h4>
+                        <div className="new uni w-condition-invisible">
+                          <div>new</div>
+                        </div>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+                <link rel="prerender" href="/events/dishoom-summer-party" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="Item_root">
+          <div className="Item_root_grid_container quotetriggerCntr">
+            <h3
+              className="AnimatedTextLines_root Item_headline text-heading-md AnimatedTextLines_mask AnimatedTextLines_animate quotetrigger"
+              //   style="--animation-delay:0s"
+            ></h3>
+            <div className="Item_card text-body-animate-in active">
+              <div className="NumberedCard_root">
+                <div className="NumberedCard_number text-label-md">
+                  <span className="quotetrigger">02</span>
+                </div>
+                <div>
+                  <h4 className="text-heading-sm quotetrigger">Curation -</h4>
+                  <p className="NumberedCard_description text-body-lg quotetrigger">
+                    Leading your brand into the next generation of commerce
+                    through design &amp; development, native &amp; web
+                    applications, and intuitive CMS platforms.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="event_collection w-dyn-list">
+            <div role="list" className="event_grid w-dyn-items">
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href=""
+                  className="card w-inline-block is-visible"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content">
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RageEntertainment/indoorcrwd.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">
+                          Flea by the tree (celeb photos)
+                        </h4>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="/events/les-arts-du-cirque"
+                  className="card w-inline-block is-visible"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content" data-intersect-id={4}>
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RageEntertainment/lab.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">Purple rain</h4>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="#"
+                  className="card w-inline-block is-visible"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content" data-intersect-id={7}>
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RageEntertainment/Hozho_Stage2.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">Culture table </h4>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="#"
+                  className="card w-inline-block"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content">
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RageEntertainment/Hozho_Stage.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">Illuminati </h4>
+                        <div className="new uni w-condition-invisible">
+                          <div>new</div>
+                        </div>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="Item_root">
+          <div className="Item_root_grid_container quotetriggerCntr">
+            <h3 className="AnimatedTextLines_root Item_headline text-heading-md AnimatedTextLines_mask AnimatedTextLines_animate quotetrigger"></h3>
+            <div className="Item_card text-body-animate-in active">
+              <div className="NumberedCard_root">
+                <div className="NumberedCard_number text-label-md">
+                  <span className="quotetrigger">03</span>
+                </div>
+                <div>
+                  <h4 className="text-heading-sm quotetrigger">
+                    Intellectual Properties -{" "}
+                  </h4>
+                  <p className="NumberedCard_description text-body-lg quotetrigger">
+                    Leading your brand into the next generation of commerce
+                    through design &amp; development, native &amp; web
+                    applications, and intuitive CMS platforms.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="event_collection w-dyn-list">
+            <div role="list" className="event_grid w-dyn-items">
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="#"
+                  className="card w-inline-block is-visible"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content" data-intersect-id={1}>
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RangeMedia/Bryan_Portray-52.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">
+                          Rumour ( white Dubai edition )
+                        </h4>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+                <link rel="prerender" href="/events/la-soiree-burlesque" />
+              </div>
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="#"
+                  className="card w-inline-block is-visible"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content">
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RangeMedia/gold dusk .jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">gold dusk</h4>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>{" "}
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="#"
+                  className="card w-inline-block is-visible"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content">
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RangeMedia/Rage by the bay2.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">
+                          Rage by the bay (after movie)
+                        </h4>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>{" "}
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div role="listitem" className="event_item w-dyn-item">
+                <Link
+                  data-w-id="610968df-2e98-6a6b-3062-ff8588a2e4b2"
+                  href="#"
+                  className="card w-inline-block"
+                >
+                  <div className="card__content_holder">
+                    <div className="card__content">
+                      <Image
+                        width={1000}
+                        height={1000}
+                        src="/assets/images/RangeMedia/DSC04847.jpg"
+                        loading="lazy"
+                        alt=""
+                        className="event_image"
+                      />
+                      <div className="card_canvas w-embed">
+                        <canvas
+                          className="card__canvas"
+                          width={443}
+                          height={573}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="event_details card__content day">
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <h4 className="event_card_title">Soundwave</h4>
+                        <div className="new uni w-condition-invisible">
+                          <div>new</div>
+                        </div>
+                      </div>
+                      <div className="event_client_group">
+                        <img
+                          src="https://cdn.prod.website-files.com/66762a11be6fa0cb3df095fd/668067f7fd1494713d2657ad_star.svg"
+                          loading="lazy"
+                          alt=""
+                          className="star day"
+                        />
+                      </div>
+                    </div>
+                    <div className="event_card_details_line">
+                      <div className="event_card_title_group">
+                        <div className="p bold">Home House</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <Artist_tour />
     </div>
   );
