@@ -196,113 +196,217 @@ const MainpageHero = () => {
   //   moveBackground();
   // }, []);
   return (
-    <div className="mainPage">
-      {" "}
-      <div className="page-canvas">
-        <video autoPlay playsInline muted>
-          <source src="../../fade-in.mp4" type="video/mp4" />
-          <source src="fade-in.webm" type="video/webm" />
-          <source src="fade-in.ogv" type="video/ogg" />
-        </video>
-        <div className="background-video-wrapper">
-          <video
-            id="background-video-1"
-            preload="none"
-            loop
-            muted
-            playsInline
-            disablePictureInPicture=""
-            controlsList="nodownload"
-            // src="https://radiance.family/video/branding-portfolio.webm"
-            // typeof="video/mp4"
-          >
-            <source
-              src="../../../assets/images/mrandmrs/videos/mrandmrsbg.mp4"
-              type="video/webm"
-            />
-            <source
-              src="../../../assets/images/mrandmrs/videos/mrandmrsbg.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <video
-            id="background-video-2"
-            preload="none"
-            loop
-            muted
-            playsInline
-            disablePictureInPicture=""
-            controlsList="nodownload"
-          >
-            <source
-              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
-              type="video/webm"
-            />
-            <source
-              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <video
-            id="background-video-3"
-            preload="none"
-            loop
-            muted
-            playsInline
-            disablePictureInPicture=""
-            controlsList="nodownload"
-          >
-            <source
-              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark11.mp4"
-              type="video/webm"
-            />
-            <source
-              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark11.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <video
-            id="background-video-4"
-            preload="none"
-            loop
-            muted
-            playsInline
-            disablePictureInPicture=""
-            controlsList="nodownload"
-          >
-            <source
-              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
-              type="video/webm"
-            />
-            <source
-              src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
-              type="video/mp4"
-            />
-          </video>
+    <>
+      <div className="PrimaryHeaderSection_wrapper">
+        <div className="PrimaryHeaderSection_backgroundWrapper">
+          <div className="PrimaryHeaderSection_cubeWrapper PrimaryHeaderSection_two">
+            <div className="PrimaryHeaderSection_cube">
+              <div className="PrimaryHeaderSection_face PrimaryHeaderSection_front" />
+              <div className="PrimaryHeaderSection_face PrimaryHeaderSection_right PrimaryHeaderSection_cutOverflow">
+                <div className="Media_alternativeVideoPlayerWrapper">
+                  <div>
+                    <video
+                      src="https://a.storyblok.com/f/283181/x/4993b4b4e7/twofiftyk_website_loop_header.mp4"
+                      preload
+                      autoPlay
+                      loop
+                      playsInline
+                      webkit-playsinline
+                      x5-playsinline
+                      style={{ width: "100%", height: "100%" }}
+                      muted
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="PrimaryHeaderSection_cubeWrapper PrimaryHeaderSection_five">
+            <div className="PrimaryHeaderSection_cube">
+              <div className="PrimaryHeaderSection_face PrimaryHeaderSection_front" />
+              <div className="PrimaryHeaderSection_face PrimaryHeaderSection_right PrimaryHeaderSection_cutOverflow">
+                <div className="Media_wrapper PrimaryHeaderSection_media">
+                  <div className="Image_wrapper">
+                    <img
+                      alt=""
+                      loading="lazy"
+                      width={800}
+                      height={800}
+                      decoding="async"
+                      data-nimg={1}
+                      style={{ color: "transparent" }}
+                      srcSet="
+                https://a.storyblok.com/f/283181/1920x1080/8b7104fd0e/website-test-photos-22.jpg/m/0x0/filters:quality(80) 1x,
+                https://a.storyblok.com/f/283181/1920x1080/8b7104fd0e/website-test-photos-22.jpg/m/0x0/filters:quality(80) 2x
+              "
+                      src="https://a.storyblok.com/f/283181/1920x1080/8b7104fd0e/website-test-photos-22.jpg/m/0x0/filters:quality(80)"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="PrimaryHeaderSection_cubeWrapper PrimaryHeaderSection_zero">
+            <div className="PrimaryHeaderSection_cube">
+              <div className="PrimaryHeaderSection_face PrimaryHeaderSection_front" />
+              <div className="PrimaryHeaderSection_face PrimaryHeaderSection_right PrimaryHeaderSection_cutOverflow">
+                <div className="Media_wrapper PrimaryHeaderSection_media">
+                  <div className="Image_wrapper">
+                    <img
+                      alt=""
+                      loading="lazy"
+                      width={800}
+                      height={800}
+                      decoding="async"
+                      data-nimg={1}
+                      style={{ color: "transparent" }}
+                      srcSet="
+                https://a.storyblok.com/f/283181/1920x1080/69fefa9010/website-test-photos-23.jpg/m/0x0/filters:quality(80) 1x,
+                https://a.storyblok.com/f/283181/1920x1080/69fefa9010/website-test-photos-23.jpg/m/0x0/filters:quality(80) 2x
+              "
+                      src="https://a.storyblok.com/f/283181/1920x1080/69fefa9010/website-test-photos-23.jpg/m/0x0/filters:quality(80)"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="PrimaryHeaderSection_cubeWrapper PrimaryHeaderSection_k">
+            <div className="PrimaryHeaderSection_cube">
+              <div className="PrimaryHeaderSection_face PrimaryHeaderSection_front" />
+              <div className="PrimaryHeaderSection_face PrimaryHeaderSection_right PrimaryHeaderSection_cutOverflow">
+                <div className="Media_wrapper PrimaryHeaderSection_media">
+                  <div className="Image_wrapper">
+                    <img
+                      alt=""
+                      loading="lazy"
+                      width={800}
+                      height={800}
+                      decoding="async"
+                      data-nimg={1}
+                      style={{ color: "transparent" }}
+                      srcSet="
+                https://a.storyblok.com/f/283181/1920x1080/c5b6552b81/website-test-photos-24.jpg/m/0x0/filters:quality(80) 1x,
+                https://a.storyblok.com/f/283181/1920x1080/c5b6552b81/website-test-photos-24.jpg/m/0x0/filters:quality(80) 2x
+              "
+                      src="https://a.storyblok.com/f/283181/1920x1080/c5b6552b81/website-test-photos-24.jpg/m/0x0/filters:quality(80)"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div className="PrimaryHeaderSection_overlay" />
       </div>
-      <div
-        className="landing-page"
-        data-scroll=""
-        data-theme=""
-        data-theme-md="dark"
-        data-entry=""
-      >
-        <div className="landing-page-left_img_cntr_ul">
-          <div className="landing-page-li">
-            <a
-              href="../../mrandmrs"
-              className="landing-page-a"
-              data-group="studio"
-            >
-              {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
-              <span className="home__sections__section__outline home__sections__section__outline--left"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--top"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--right"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
 
-              <div className="home__sections__section__link">
-                {/* <div className="home__sections__group">
+      <div className="mainPage">
+        {" "}
+        <div className="page-canvas">
+          <video autoPlay playsInline muted>
+            <source src="../../fade-in.mp4" type="video/mp4" />
+            <source src="fade-in.webm" type="video/webm" />
+            <source src="fade-in.ogv" type="video/ogg" />
+          </video>
+          <div className="background-video-wrapper">
+            <video
+              id="background-video-1"
+              preload="none"
+              loop
+              muted
+              playsInline
+              disablePictureInPicture=""
+              controlsList="nodownload"
+              // src="https://radiance.family/video/branding-portfolio.webm"
+              // typeof="video/mp4"
+            >
+              <source
+                src="../../../assets/images/mrandmrs/videos/mrandmrsbg.mp4"
+                type="video/webm"
+              />
+              <source
+                src="../../../assets/images/mrandmrs/videos/mrandmrsbg.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <video
+              id="background-video-2"
+              preload="none"
+              loop
+              muted
+              playsInline
+              disablePictureInPicture=""
+              controlsList="nodownload"
+            >
+              <source
+                src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
+                type="video/webm"
+              />
+              <source
+                src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <video
+              id="background-video-3"
+              preload="none"
+              loop
+              muted
+              playsInline
+              disablePictureInPicture=""
+              controlsList="nodownload"
+            >
+              <source
+                src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark11.mp4"
+                type="video/webm"
+              />
+              <source
+                src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark11.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <video
+              id="background-video-4"
+              preload="none"
+              loop
+              muted
+              playsInline
+              disablePictureInPicture=""
+              controlsList="nodownload"
+            >
+              <source
+                src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
+                type="video/webm"
+              />
+              <source
+                src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+        <div
+          className="landing-page"
+          data-scroll=""
+          data-theme=""
+          data-theme-md="dark"
+          data-entry=""
+        >
+          <div className="landing-page-left_img_cntr_ul">
+            <div className="landing-page-li">
+              <a
+                href="../../mrandmrs"
+                className="landing-page-a"
+                data-group="studio"
+              >
+                {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
+                <span className="home__sections__section__outline home__sections__section__outline--left"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--top"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--right"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
+
+                <div className="home__sections__section__link">
+                  {/* <div className="home__sections__group">
                   <p className="home__sections__group__label">Go to</p>
                   <p className="home__sections__group__title">
                     <span>
@@ -312,30 +416,30 @@ const MainpageHero = () => {
                     <span>Studio</span>
                   </p>
                 </div> */}
-                <span className="glass-point">
-                  <span className="glass-point__inset"></span>
-                </span>
-              </div>
-              <div className="home__sections__section__title">
-                <h2>MR & MRS</h2>
-                <span>MR & MRS</span>
-              </div>
-              <img src="/assets/images/mrandmrs/Srk Aryan.jpg" alt="" />
-            </a>
-          </div>
-          <div className="landing-page-li">
-            <Link
-              href="../../newPage"
-              className="landing-page-a"
-              data-group="store"
-            >
-              {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" />{" "} */}
-              <span className="home__sections__section__outline home__sections__section__outline--left"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--top"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--right"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
-              <div className="home__sections__section__link">
-                {/* <div className="home__sections__group">
+                  <span className="glass-point">
+                    <span className="glass-point__inset"></span>
+                  </span>
+                </div>
+                <div className="home__sections__section__title">
+                  <h2>MR & MRS</h2>
+                  <span>MR & MRS</span>
+                </div>
+                <img src="/assets/images/mrandmrs/Srk Aryan.jpg" alt="" />
+              </a>
+            </div>
+            <div className="landing-page-li">
+              <Link
+                href="../../newPage"
+                className="landing-page-a"
+                data-group="store"
+              >
+                {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" />{" "} */}
+                <span className="home__sections__section__outline home__sections__section__outline--left"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--top"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--right"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
+                <div className="home__sections__section__link">
+                  {/* <div className="home__sections__group">
                   <p className="home__sections__group__label">Go to</p>
                   <p className="home__sections__group__title">
                     <span>RAGE MEDIA &nbsp;</span>
@@ -343,30 +447,30 @@ const MainpageHero = () => {
                     <span> Studio</span>
                   </p>
                 </div> */}
-                <div className="home__sections__section__title">
-                  <h2>RAGE MEDIA</h2>
-                  <span>RAGE MEDIA</span>
+                  <div className="home__sections__section__title">
+                    <h2>RAGE MEDIA</h2>
+                    <span>RAGE MEDIA</span>
+                  </div>
+                  <span className="glass-point">
+                    <span className="glass-point__inset"></span>
+                  </span>
                 </div>
-                <span className="glass-point">
-                  <span className="glass-point__inset"></span>
-                </span>
-              </div>
-              <img src="/assets/images/RangeMedia/gold dusk .jpg" alt="" />
-            </Link>
-          </div>
-          <div className="landing-page-li">
-            <Link
-              href="../../rage-entertainment"
-              className="landing-page-a"
-              data-group="art_foundation"
-            >
-              {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
-              <span className="home__sections__section__outline home__sections__section__outline--left"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--top"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--right"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
-              <div className="home__sections__section__link">
-                {/* <div className="home__sections__group">
+                <img src="/assets/images/RangeMedia/gold dusk .jpg" alt="" />
+              </Link>
+            </div>
+            <div className="landing-page-li">
+              <Link
+                href="../../rage-entertainment"
+                className="landing-page-a"
+                data-group="art_foundation"
+              >
+                {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
+                <span className="home__sections__section__outline home__sections__section__outline--left"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--top"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--right"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
+                <div className="home__sections__section__link">
+                  {/* <div className="home__sections__group">
                   <p className="home__sections__group__label">Go to</p>
                   <p className="home__sections__group__title">
                     <span>
@@ -377,34 +481,34 @@ const MainpageHero = () => {
                   </p>
                 </div> */}
 
-                <div className="home__sections__section__title">
-                  <h2>RAGE ENTERTAINMENT</h2>
-                  <span>RAGE ENTERTAINMENT</span>
+                  <div className="home__sections__section__title">
+                    <h2>RAGE ENTERTAINMENT</h2>
+                    <span>RAGE ENTERTAINMENT</span>
+                  </div>
+                  <span className="glass-point">
+                    <span className="glass-point__inset"></span>
+                  </span>
                 </div>
-                <span className="glass-point">
-                  <span className="glass-point__inset"></span>
-                </span>
-              </div>
-              <img
-                src="/assets/images/RageEntertainment/6.22.24 Hozho - Highlights - Edited Files-21.jpg"
-                alt=""
-              />
-            </Link>
-          </div>
-          <div className="landing-page-li">
-            <Link
-              href="../../dhamaka"
-              className="landing-page-a"
-              data-group="art_foundation"
-            >
-              {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
+                <img
+                  src="/assets/images/RageEntertainment/6.22.24 Hozho - Highlights - Edited Files-21.jpg"
+                  alt=""
+                />
+              </Link>
+            </div>
+            <div className="landing-page-li">
+              <Link
+                href="../../dhamaka"
+                className="landing-page-a"
+                data-group="art_foundation"
+              >
+                {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
 
-              <span className="home__sections__section__outline home__sections__section__outline--left"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--top"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--right"></span>
-              <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
-              <div className="home__sections__section__link">
-                {/* <div className="home__sections__group">
+                <span className="home__sections__section__outline home__sections__section__outline--left"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--top"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--right"></span>
+                <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
+                <div className="home__sections__section__link">
+                  {/* <div className="home__sections__group">
                   <p className="home__sections__group__label">Go to</p>
                   <p className="home__sections__group__title">
                     <span>
@@ -415,23 +519,23 @@ const MainpageHero = () => {
                   </p>
                 </div> */}
 
-                <div className="home__sections__section__title">
-                  <h2>DHAMAKA</h2>
-                  <span>DHAMAKA</span>
+                  <div className="home__sections__section__title">
+                    <h2>DHAMAKA</h2>
+                    <span>DHAMAKA</span>
+                  </div>
+                  <span className="glass-point">
+                    <span className="glass-point__inset"></span>
+                  </span>
                 </div>
-                <span className="glass-point">
-                  <span className="glass-point__inset"></span>
-                </span>
-              </div>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI8yItj77S93-ONUYiUYCvsyfbnbZ_OGjjqSviJ8cLNYqx0xhuKhotugItLP-jYcshOEE&usqp=CAU"
-                alt=""
-              />
-            </Link>
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI8yItj77S93-ONUYiUYCvsyfbnbZ_OGjjqSviJ8cLNYqx0xhuKhotugItLP-jYcshOEE&usqp=CAU"
+                  alt=""
+                />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-      {/* <div className="desktop_hidden">
+        {/* <div className="desktop_hidden">
         <div className="landing-page-mobile">
           <div className="landing-page-mobile-inner">
             <div className="landing-page-mobile-links">
@@ -476,7 +580,8 @@ const MainpageHero = () => {
           </div>
         </div>
       </div> */}
-    </div>
+      </div>
+    </>
   );
 };
 

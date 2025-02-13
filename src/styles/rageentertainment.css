@@ -279,6 +279,11 @@
   position: relative;
   transform: rotate(-2deg);
 }
+.intro_image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 .holder._40vw {
   width: 50vw;
   padding-top: 1rem;
@@ -439,6 +444,7 @@
   font-weight: 900;
   line-height: 130%;
   letter-spacing: 0.04rem;
+  overflow: hidden;
   /* text-align: center;
   margin: 0 auto;
   width: 80vw; */
@@ -973,7 +979,8 @@ a[class*="text-accent"]:after {
 }
 .full-brands__section__item img {
   fill: currentcolor;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   /* filter: grayscale(); */
   cursor: pointer;
   transition: scale 0.2s ease-in-out;

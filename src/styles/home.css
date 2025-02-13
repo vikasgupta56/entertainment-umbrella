@@ -306,7 +306,7 @@ h2.h-large.enter:after {
   width: 450px;
 }
 
-img {
+.Artist_tour_left_imageCntr img {
   -webkit-user-drag: none;
   -moz-user-drag: none;
   display: block;
@@ -517,10 +517,10 @@ img {
   left: 0;
 }
 
-img {
+/* img {
   max-width: 100%;
   height: auto;
-}
+} */
 .fhl {
   font-family: var(--primary-fontL);
   font-weight: 400;
@@ -1877,6 +1877,9 @@ svg:not(:root) {
   text-decoration: none;
   /* opacity: 0; */
   /* transform: translateY(200); */
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
 }
 .creative-fullpage--slider .swiper-content p.disc {
   font-size: 1.5rem;

@@ -56,36 +56,36 @@ const Home_heroNew = () => {
     //   }
     // );
   });
-  useEffect(() => {
-    const quotess = document.querySelectorAll(".quotetrigger");
-    function setupSplits() {
-      quotess.forEach((quotes) => {
-        const splitTexts = new SplitText(quotes, {
-          type: "lines",
-          linesClass: "split-line",
-        });
-        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
-        // console.log(quote);
-      });
-      ScrollTrigger.batch(".quotetriggerCntr", {
-        onEnter: (batch) => {
-          batch.forEach((section, i) => {
-            gsap.to(section.querySelectorAll(".split-line"), {
-              // autoAlpha: 1,
-              yPercent: 0,
-              duration: 0.8,
-              ease: "power1.inOut",
-              stagger: 0.05,
-              delay: i * 0.3,
-              marker: true,
-            });
-          });
-        },
-        start: "top 95%",
-      });
-    }
-    setupSplits();
-  }, []);
+  // useEffect(() => {
+  //   const quotess = document.querySelectorAll(".quotetrigger");
+  //   function setupSplits() {
+  //     quotess.forEach((quotes) => {
+  //       const splitTexts = new SplitText(quotes, {
+  //         type: "lines",
+  //         linesClass: "split-line",
+  //       });
+  //       gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+  //       // console.log(quote);
+  //     });
+  //     ScrollTrigger.batch(".quotetriggerCntr", {
+  //       onEnter: (batch) => {
+  //         batch.forEach((section, i) => {
+  //           gsap.to(section.querySelectorAll(".split-line"), {
+  //             // autoAlpha: 1,
+  //             yPercent: 0,
+  //             duration: 0.8,
+  //             ease: "power1.inOut",
+  //             stagger: 0.05,
+  //             delay: i * 0.3,
+  //             marker: true,
+  //           });
+  //         });
+  //       },
+  //       start: "top 95%",
+  //     });
+  //   }
+  //   setupSplits();
+  // }, []);
   return (
     <section className="creative-fullpage--slider">
       <div className="banner-horizental">

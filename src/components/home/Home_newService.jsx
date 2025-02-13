@@ -44,34 +44,45 @@ const Home_newService = () => {
 
   useEffect(() => {
     const quotess = document.querySelectorAll(".quotetrigger");
+
     function setupSplits() {
-      quotess.forEach((quotes) => {
-        const splitTexts = new SplitText(quotes, {
+      quotess.forEach((quote) => {
+        const splitTextInstance = new SplitText(quote, {
           type: "lines",
           linesClass: "split-line",
         });
-        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
-        // console.log(quote);
+
+        // Set the initial state of the lines (hidden and translated)
+        gsap.set(quote.querySelectorAll(".split-line"), {
+          yPercent: 100,
+          overflow: "hidden",
+        });
       });
+
+      // Set up the ScrollTrigger batch
       ScrollTrigger.batch(".quotetriggerCntr", {
         onEnter: (batch) => {
           batch.forEach((section, i) => {
             gsap.to(section.querySelectorAll(".split-line"), {
-              // autoAlpha: 1,
               yPercent: 0,
               duration: 0.8,
               ease: "power1.inOut",
               stagger: 0.05,
               delay: i * 0.3,
-              marker: true,
-              // delay: 1,
+              markers: true, // Optionally keep this for debugging
             });
           });
         },
         start: "top 95%",
       });
     }
+
     setupSplits();
+
+    return () => {
+      // Clean up any SplitText instances or ScrollTrigger events to avoid memory leaks
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (

@@ -87,43 +87,99 @@ const About = () => {
     }
   }, []);
 
+  // useEffect(() => {
+  //   const quotess = document.querySelectorAll(".quotetrigger");
+
+  //   const setupSplits = () => {
+  //     quotess.forEach((quotes) => {
+  //       const splitTexts = new SplitText(quotes, {
+  //         type: "lines",
+  //         linesClass: "split-line",
+  //       });
+  //       gsap.set(splitTexts.lines, { yPercent: 200, overflow: "hidden" });
+  //     });
+
+  //     ScrollTrigger.batch(".quotetriggerCntr", {
+  //       onEnter: (batch) => {
+  //         batch.forEach((section, i) => {
+  //           gsap.to(section.querySelectorAll(".split-line"), {
+  //             yPercent: 0,
+  //             duration: 0.8,
+  //             ease: "power1.inOut",
+  //             // stagger: 0.01,
+  //             delay: i * 0.3,
+  //             markers: true, // Use markers to debug the start and end points of ScrollTrigger
+  //           });
+  //         });
+  //       },
+  //       start: "top 95%",
+  //     });
+  //   };
+
+  //   setupSplits();
+
+  //   return () => {
+  //     // Clean up the ScrollTrigger when the component unmounts
+  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //   };
+  // }, []);
+
+  // new code
   useEffect(() => {
-    const quotess = document.querySelectorAll(".quotetrigger");
+    const quotes = document.querySelectorAll(".quote");
+
     function setupSplits() {
-      quotess.forEach((quotes) => {
-        const splitTexts = new SplitText(quotes, {
+      quotes.forEach((quote) => {
+        // Reset animation and splits if needed
+        if (quote.anim) {
+          quote.anim.progress(1).kill(); // Stop the existing animation
+          quote.split.revert(); // Revert splitText
+        }
+
+        // Split text into lines
+        quote.split = new SplitText(quote, {
           type: "lines",
           linesClass: "split-line",
         });
-        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
-        // console.log(quote);
-      });
-      ScrollTrigger.batch(".quotetriggerCntr", {
-        onEnter: (batch) => {
-          batch.forEach((section, i) => {
-            gsap.to(section.querySelectorAll(".split-line"), {
-              // autoAlpha: 1,
-              yPercent: 0,
-              duration: 0.8,
-              ease: "power1.inOut",
-              stagger: 0.01,
-              delay: i * 0.1,
-              marker: true,
-              // delay: 1,
-            });
-          });
-        },
-        start: "top 95%",
+
+        // Set up new animation
+        quote.anim = gsap.from(quote.split.lines, {
+          scrollTrigger: {
+            trigger: quote,
+            toggleActions: "restart pause resume reverse",
+            start: "top top",
+            markers: { startColor: "#dfdcff", endColor: "transparent" },
+          },
+          duration: 0.6,
+          ease: "circ.out",
+          y: 80,
+          stagger: 0.02,
+        });
       });
     }
+
+    // Setup splits on initial load
     setupSplits();
+
+    // Re-run setupSplits on ScrollTrigger refresh
+    ScrollTrigger.addEventListener("refresh", setupSplits);
+
+    // Cleanup function to remove listeners when component is unmounted
+    return () => {
+      ScrollTrigger.removeEventListener("refresh", setupSplits);
+      quotes.forEach((quote) => {
+        if (quote.split) {
+          quote.split.revert(); // Revert any splits when component is unmounted
+        }
+      });
+    };
   }, []);
   return (
-    <section className="intro quotetriggerCntr" data-scroll-section="">
+    <section className="intro" data-scroll-section="">
       <div className="intro__container magneticWrapper">
         <div className="itext">
           {/* <h1>ABOUT US</h1> */}
-          <h3 className="fhl o_italic quotetrigger">
+          <h3 className="fhl o_italic quote">
             Welcome to Mr. and Mrs. Films... and Sometimes Events! A powerhouse
             where the art of storytelling meets the magic of live experiences.
             Born from our love of creativity, we are a film production house
