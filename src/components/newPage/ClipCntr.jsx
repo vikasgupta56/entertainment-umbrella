@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 // import Histoy from "./Histoy";
-// import Artist from "./Artist";
+import Artist from "./Artist";
 // import Artist_tour from "../rage-entertainment/Artist_tour";
 // import Logos from "./Logos";
 import Link from "next/link";
@@ -717,7 +717,7 @@ const ClipCntr = () => {
           </div>
         </div>
       </section>
-      {/* <Artist /> */}
+      <Artist />
       <section className="section three">
         <div className="">
           <div id="aboutsection">
