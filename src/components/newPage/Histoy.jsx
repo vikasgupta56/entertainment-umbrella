@@ -71,40 +71,91 @@ const Histoy = () => {
     // };
   });
 
-  useEffect(() => {
-    const quotess = document.querySelectorAll(".quotetrigger");
-    function setupSplits() {
-      quotess.forEach((quotes) => {
-        const splitTexts = new SplitText(quotes, {
-          type: "lines",
-          linesClass: "split-line",
-        });
-        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
-        // console.log(quote);
-      });
-      ScrollTrigger.batch(".quotetriggerCntr", {
-        onEnter: (batch) => {
-          batch.forEach((section, i) => {
-            gsap.to(section.querySelectorAll(".split-line"), {
-              // autoAlpha: 1,
-              yPercent: 0,
-              duration: 0.8,
-              ease: "power1.inOut",
-              stagger: 0.01,
-              delay: i * 0.1,
-              marker: true,
-              // delay: 1,
-            });
-          });
-        },
-        start: "top 95%",
-      });
-    }
-    setupSplits();
-  }, []);
+  // useEffect(() => {
+  //   const quotess = document.querySelectorAll(".quotetrigger");
+  //   function setupSplits() {
+  //     quotess.forEach((quotes) => {
+  //       const splitTexts = new SplitText(quotes, {
+  //         type: "lines",
+  //         linesClass: "split-line",
+  //       });
+  //       gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+  //       // console.log(quote);
+  //     });
+  //     ScrollTrigger.batch(".quotetriggerCntr", {
+  //       onEnter: (batch) => {
+  //         batch.forEach((section, i) => {
+  //           gsap.to(section.querySelectorAll(".split-line"), {
+  //             // autoAlpha: 1,
+  //             yPercent: 0,
+  //             duration: 0.8,
+  //             ease: "power1.inOut",
+  //             stagger: 0.01,
+  //             delay: i * 0.1,
+  //             marker: true,
+  //             // delay: 1,
+  //           });
+  //         });
+  //       },
+  //       start: "top 95%",
+  //     });
+  //   }
+  //   setupSplits();
+  // }, []);
+
+  // useEffect(() => {
+  //   const quotes = document.querySelectorAll(".quote");
+
+  //   function setupSplits() {
+  //     quotes.forEach((quote) => {
+  //       // Reset animation and splits if needed
+  //       if (quote.anim) {
+  //         quote.anim.progress(1).kill(); // Stop the existing animation
+  //         quote.split.revert(); // Revert splitText
+  //       }
+
+  //       // Split text into lines
+  //       quote.split = new SplitText(quote, {
+  //         type: "lines,words",
+  //         linesClass: "split-line",
+  //       });
+
+  //       // Set up new animation
+  //       quote.anim = gsap.from(quote.split.words, {
+  //         scrollTrigger: {
+  //           trigger: quote,
+  //           toggleActions: "restart pause resume reverse",
+  //           start: "top center",
+  //           markers: { startColor: "#dfdcff", endColor: "transparent" },
+  //         },
+  //         duration: 0.6,
+  //         ease: "circ.out",
+  //         y: 100,
+  //         stagger: 0.02,
+  //       });
+  //     });
+  //   }
+
+  //   // Setup splits on initial load
+  //   setupSplits();
+
+  //   // Re-run setupSplits on ScrollTrigger refresh
+  //   ScrollTrigger.addEventListener("refresh", setupSplits);
+
+  //   // Cleanup function to remove listeners when component is unmounted
+  //   return () => {
+  //     ScrollTrigger.removeEventListener("refresh", setupSplits);
+  //     quotes.forEach((quote) => {
+  //       if (quote.split) {
+  //         quote.split.revert(); // Revert any splits when component is unmounted
+  //       }
+  //     });
+  //   };
+  // }, []);
+
   return (
     <>
-      <div className="TwoColumnText_root quotetriggerCntr">
+      <div className="TwoColumnText_root">
         {/* <div className="TwoColumnText_left TwoColumnText_col">
           <h2 className="AnimatedTextLines_root text-heading-md AnimatedTextLines_mask AnimatedTextLines_animate">
             Why partner with Rage Entertainment?
@@ -112,7 +163,7 @@ const Histoy = () => {
           </h2>
         </div> */}
         <div className="TwoColumnText_right TwoColumnText_col">
-          <p className="AnimatedTextLines_root text-heading-para AnimatedTextLines_line-height AnimatedTextLines_animate quotetrigger">
+          <p className="AnimatedTextLines_root text-heading-para AnimatedTextLines_line-height AnimatedTextLines_animate quote">
             At Rage Media, we’ve had the privilege of working with over 30
             brands—ranging from individual entrepreneurs to large corporations.
             But no matter your size, one thing remains constant: for us, it’s

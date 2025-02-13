@@ -70,7 +70,7 @@
 }
 
 .Dhamaka_hero-section .c-wrapper p {
-  font-size: clamp(1rem, 0.926vw, 0.926vw);
+  font-size: clamp(1.25rem, 0.926vw, 0.926vw);
   line-height: 1.6;
   text-transform: uppercase;
   font-family: var(--primary-fontL);

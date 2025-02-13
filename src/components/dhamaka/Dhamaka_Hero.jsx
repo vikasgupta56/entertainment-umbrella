@@ -244,36 +244,86 @@ const Dhamaka_Hero = () => {
         t.addEventListener("mouseleave", p);
     });
   });
+  // useEffect(() => {
+  //   const quotess = document.querySelectorAll(".quotetrigger");
+  //   function setupSplits() {
+  //     quotess.forEach((quotes) => {
+  //       const splitTexts = new SplitText(quotes, {
+  //         type: "lines",
+  //         linesClass: "split-line",
+  //       });
+  //       gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+  //       // console.log(quote);
+  //     });
+  //     ScrollTrigger.batch(".quotetriggerCntr", {
+  //       onEnter: (batch) => {
+  //         batch.forEach((section, i) => {
+  //           gsap.to(section.querySelectorAll(".split-line"), {
+  //             // autoAlpha: 1,
+  //             yPercent: 0,
+  //             duration: 0.6,
+  //             ease: "circ.out",
+  //             stagger: 0.01,
+  //             delay: i * 0.1,
+  //             marker: true,
+  //             // delay: 1,
+  //           });
+  //         });
+  //       },
+  //       start: "top 80%",
+  //     });
+  //   }
+  //   setupSplits();
+  // }, []);
+
   useEffect(() => {
-    const quotess = document.querySelectorAll(".quotetrigger");
+    const quotes = document.querySelectorAll(".quote");
+
     function setupSplits() {
-      quotess.forEach((quotes) => {
-        const splitTexts = new SplitText(quotes, {
-          type: "lines",
+      quotes.forEach((quote) => {
+        // Reset animation and splits if needed
+        if (quote.anim) {
+          quote.anim.progress(1).kill(); // Stop the existing animation
+          quote.split.revert(); // Revert splitText
+        }
+
+        // Split text into lines
+        quote.split = new SplitText(quote, {
+          type: "lines,words",
           linesClass: "split-line",
         });
-        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
-        // console.log(quote);
-      });
-      ScrollTrigger.batch(".quotetriggerCntr", {
-        onEnter: (batch) => {
-          batch.forEach((section, i) => {
-            gsap.to(section.querySelectorAll(".split-line"), {
-              // autoAlpha: 1,
-              yPercent: 0,
-              duration: 0.8,
-              ease: "power1.inOut",
-              stagger: 0.05,
-              delay: i * 0.3,
-              marker: true,
-              // delay: 1,
-            });
-          });
-        },
-        start: "top 80%",
+
+        // Set up new animation
+        quote.anim = gsap.from(quote.split.words, {
+          scrollTrigger: {
+            trigger: quote,
+            toggleActions: "restart pause resume reverse",
+            start: "top 85%",
+            markers: false,
+          },
+          duration: 0.6,
+          ease: "circ.out",
+          y: 80,
+          stagger: 0.02,
+        });
       });
     }
+
+    // Setup splits on initial load
     setupSplits();
+
+    // Re-run setupSplits on ScrollTrigger refresh
+    ScrollTrigger.addEventListener("refresh", setupSplits);
+
+    // Cleanup function to remove listeners when component is unmounted
+    return () => {
+      ScrollTrigger.removeEventListener("refresh", setupSplits);
+      quotes.forEach((quote) => {
+        if (quote.split) {
+          quote.split.revert(); // Revert any splits when component is unmounted
+        }
+      });
+    };
   }, []);
   return (
     <>
@@ -337,10 +387,10 @@ const Dhamaka_Hero = () => {
       <section className="vf-section bg-primary">
         <div className="v-wrapper">
           <div className="v-wrapper-inner">
-            <div className="c-wrapper bg-primary quotetriggerCntr">
+            <div className="c-wrapper bg-primary">
               <div className="v-wrapper-inner-content">
-                <h2 className="v-wrapper-heading quotetrigger">Our vision</h2>
-                <p className="quotetrigger">
+                <h2 className="v-wrapper-heading quote">Our vision</h2>
+                <p className="quote">
                   As a project scout, we help our clients highlight their
                   expertise in the art of living and in creating homes to live
                   in. <br />
@@ -390,12 +440,12 @@ const Dhamaka_Hero = () => {
             <div className="o-wrapper-inner">
               <div className="o-item">
                 <div className="o-item_inner">
-                  <span className="o-item_inner_num quotetrigger">01</span>
+                  <span className="o-item_inner_num quote">01</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading quotetrigger">
+                    <h3 className="i-wrapper-heading quote">
                       Campaign Planning
                     </h3>
-                    <p className="i-wrapper-para quotetrigger">
+                    <p className="i-wrapper-para quote">
                       We design brand identities that match our clients' values.
                     </p>
                   </div>
@@ -403,15 +453,15 @@ const Dhamaka_Hero = () => {
               </div>
               <div className="o-item">
                 <div className="o-item_inner">
-                  <span className="o-item_inner_num quotetrigger">02</span>
+                  <span className="o-item_inner_num quote">02</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading quotetrigger">
+                    <h3 className="i-wrapper-heading quote">
                       Content Strategizing
                       {/* <br />
                       and development <br />
                       strategy consulting */}
                     </h3>
-                    <p className="i-wrapper-para quotetrigger">
+                    <p className="i-wrapper-para quote">
                       We work closely with our clients to develop customized
                       strategies.
                     </p>
@@ -420,12 +470,12 @@ const Dhamaka_Hero = () => {
               </div>
               <div className="o-item">
                 <div className="o-item_inner">
-                  <span className="o-item_inner_num quotetrigger">03</span>
+                  <span className="o-item_inner_num quote">03</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading quotetrigger">
+                    <h3 className="i-wrapper-heading quote">
                       End-to-End Execution
                     </h3>
-                    <p className="i-wrapper-para quotetrigger">
+                    <p className="i-wrapper-para quote">
                       We produce content to strengthen our clients' online and
                       offline presence .
                     </p>
@@ -434,12 +484,10 @@ const Dhamaka_Hero = () => {
               </div>
               <div className="o-item">
                 <div className="o-item_inner">
-                  <span className="o-item_inner_num quotetrigger">04</span>
+                  <span className="o-item_inner_num quote">04</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading quotetrigger">
-                      Production
-                    </h3>
-                    <p className="i-wrapper-para quotetrigger">
+                    <h3 className="i-wrapper-heading quote">Production</h3>
+                    <p className="i-wrapper-para quote">
                       We seek strategic partnerships to strengthen our clients'
                       position in the market.
                     </p>
@@ -448,12 +496,10 @@ const Dhamaka_Hero = () => {
               </div>
               <div className="o-item">
                 <div className="o-item_inner">
-                  <span className="o-item_inner_num quotetrigger">05</span>
+                  <span className="o-item_inner_num quote">05</span>
                   <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading quotetrigger">
-                      Marketing
-                    </h3>
-                    <p className="i-wrapper-para quotetrigger">
+                    <h3 className="i-wrapper-heading quote">Marketing</h3>
+                    <p className="i-wrapper-para quote">
                       We set up campaigns to attract the attention of media and
                       influencers.
                     </p>
@@ -484,7 +530,7 @@ const Dhamaka_Hero = () => {
           <div className="js-v-inner bg-secondary c-primary">
             <div className="js-v-inner-wrapper">
               <div className="intro-wrapper quotetriggerCntr">
-                <h2 className="intro-wrapper-inner quotetrigger">
+                <h2 className="intro-wrapper-inner quote">
                   We place a <br /> strong emphasis on branded content, <br />
                   creating authentic messages <br /> for our customers.
                 </h2>
@@ -498,10 +544,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Myntra
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Myntra</h3>
+                      <span className="js-v-item-inner-para quote">
                         Consulting in press relations strategy
                         <br />
                         and awareness development
@@ -574,10 +618,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Pepsi
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Pepsi</h3>
+                      <span className="js-v-item-inner-para quote">
                         Communication consultancy, <br />
                         press relations and influence
                       </span>
@@ -652,10 +694,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Coca-Cola
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Coca-Cola</h3>
+                      <span className="js-v-item-inner-para quote">
                         Development of awareness
                         <br />
                         Press relations and influence
@@ -728,10 +768,10 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">
                         Coke Studio
                       </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <span className="js-v-item-inner-para quote">
                         Communication <br />
                         and press relations consultancy, influence
                       </span>
@@ -803,10 +843,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Flipkar
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Flipkar</h3>
+                      <span className="js-v-item-inner-para quote">
                         Press relations, influence, <br />
                         awareness strategy
                       </span>
@@ -878,10 +916,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Uniqlo
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Uniqlo</h3>
+                      <span className="js-v-item-inner-para quote">
                         Consulting in press relations strategy
                         <br />
                         and awareness development
@@ -954,10 +990,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Bisleri
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Bisleri</h3>
+                      <span className="js-v-item-inner-para quote">
                         Consulting in press relations strategy
                         <br />
                         and awareness development
@@ -1011,10 +1045,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        T-Series
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">T-Series</h3>
+                      <span className="js-v-item-inner-para quote">
                         Communication
                         <br />
                         and development strategy consulting
@@ -1087,10 +1119,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Saregama
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Saregama</h3>
+                      <span className="js-v-item-inner-para quote">
                         Communication strategy consulting
                         <br />
                         Press relations and influence
@@ -1163,10 +1193,10 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">
                         Panorama Studios
                       </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <span className="js-v-item-inner-para quote">
                         Communication consulting, <br />
                         Brand awareness development
                       </span>
@@ -1238,10 +1268,10 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">
                         Namoh Studios
                       </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <span className="js-v-item-inner-para quote">
                         Communication <br />
                         and development strategy consulting
                       </span>
@@ -1313,10 +1343,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Tips Music
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Tips Music</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation of the France
                         communication strategy
                         <br />
@@ -1332,10 +1360,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Vivo
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Vivo</h3>
+                      <span className="js-v-item-inner-para quote">
                         Development of awareness
                         <br />
                         Press relations
@@ -1350,10 +1376,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Samsung
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Samsung</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1367,10 +1391,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Crocs
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Crocs</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1384,10 +1406,10 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">
                         Fireboltt, Lakme
                       </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1401,10 +1423,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Maybelline
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Maybelline</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1418,10 +1438,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Azorte
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Azorte</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1435,10 +1453,10 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">
                         Rare Rabbit
                       </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1452,10 +1470,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Boat
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Boat</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1469,10 +1485,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Philips
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Philips</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1486,10 +1500,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Sparx
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Sparx</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1503,10 +1515,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Realme
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Realme</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1520,8 +1530,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">Max</h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Max</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1535,10 +1545,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Amazon
-                      </h3>
-                      <span className="js-v-item-inner-para quotetrigger">
+                      <h3 className="js-v-item-inner-head quote">Amazon</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1552,10 +1560,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Wrangler
-                      </h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quote">Wrangler</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1569,10 +1575,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Soezi
-                      </h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quote">Soezi</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1586,10 +1590,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Saffola
-                      </h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quote">Saffola</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1603,10 +1605,8 @@ const Dhamaka_Hero = () => {
                       target="_blank"
                       title=""
                     >
-                      <h3 className="js-v-item-inner-head quotetrigger">
-                        Fanztar
-                      </h3>
-                      <span className="js-v-item-inner-para">
+                      <h3 className="js-v-item-inner-head quote">Fanztar</h3>
+                      <span className="js-v-item-inner-para quote">
                         Definition and implementation <br />
                         of the France communication strategy
                       </span>
@@ -1636,13 +1636,11 @@ const Dhamaka_Hero = () => {
           <div className="v-wrapper-inner">
             <div className="c-wrapper bg-primary quotetriggerCntr">
               <div className="v-wrapper-inner-content">
-                <h2 className="v-wrapper-heading quotetrigger">
-                  Dhamaka Records
-                </h2>
-                <h4 className="ff-t tt-u fs-md mt-0b quotetrigger">
+                <h2 className="v-wrapper-heading quote">Dhamaka Records</h2>
+                <h4 className="ff-t tt-u fs-md mt-0b quote">
                   Big ideas. Bold moves. That’s Dhamaka.
                 </h4>
-                <p className="quotetrigger">
+                <p className="quote">
                   Our music label has delivered hits like Hum Hindustani, Yeh
                   Galiyan Yeh Chaubara, and Blockbuster
                 </p>

@@ -1497,129 +1497,131 @@ const Artist = () => {
     // });
   }, []);
 
-  useEffect(() => {
-    const quotess = document.querySelectorAll(".quotetrigger");
-    const items = document.querySelectorAll(".item"); // Correct selector for .item class
+  // useEffect(() => {
+  //   const quotess = document.querySelectorAll(".quotetriggerr");
+  //   const items = document.querySelectorAll(".item"); // Correct selector for .item class
 
-    items.forEach((item) => {
-      const styles = window.getComputedStyle(item, "::after");
-      const borderBottom = styles.getPropertyValue("border-bottom"); // Access the 'border-bottom' property of the ::after pseudo-element
+  //   items.forEach((item) => {
+  //     const styles = window.getComputedStyle(item, "::after");
+  //     const borderBottom = styles.getPropertyValue("border-bottom"); // Access the 'border-bottom' property of the ::after pseudo-element
 
-      console.log(borderBottom); // Log the border-bottom style
-    });
+  //     console.log(borderBottom); // Log the border-bottom style
+  //   });
 
-    function setupSplits() {
-      quotess.forEach((quotes) => {
-        const splitTexts = new SplitText(quotes, {
-          type: "lines",
-          linesClass: "split-line",
-        });
-        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+  //   function setupSplits() {
+  //     quotess.forEach((quotes) => {
+  //       const splitTexts = new SplitText(quotes, {
+  //         type: "lines",
+  //         linesClass: "split-linee",
+  //       });
+  //       gsap.set(".split-linee", { yPercent: 100, overflow: "hidden" });
 
-        // Apply transition to the border-bottom in the pseudo-element
-        items.forEach((item) => {
-          gsap.set(item, {
-            // Set initial state of border (width to 0%)
-            "--border-width": "0%",
-          });
-        });
+  //       // Apply transition to the border-bottom in the pseudo-element
+  //       items.forEach((item) => {
+  //         gsap.set(item, {
+  //           // Set initial state of border (width to 0%)
+  //           "--border-width": "0%",
+  //         });
+  //       });
 
-        // Add ScrollTrigger to handle the animations
-        ScrollTrigger.batch(".quotetriggerCntr", {
-          onEnter: (batch) => {
-            batch.forEach((section, i) => {
-              gsap.to(section.querySelectorAll(".split-line"), {
-                // Animate the text
-                yPercent: 0,
-                duration: 0.8,
-                ease: "power1.inOut",
-                stagger: 0.05,
-                delay: i * 0.1,
-              });
+  //       // Add ScrollTrigger to handle the animations
+  //       ScrollTrigger.batch(".quotetriggerCntrr", {
+  //         onEnter: (batch) => {
+  //           batch.forEach((section, i) => {
+  //             gsap.to(section.querySelectorAll(".split-linee"), {
+  //               // Animate the text
+  //               yPercent: 0,
+  //               duration: 0.8,
+  //               ease: "power1.inOut",
+  //               stagger: 0.05,
+  //               delay: i * 0.1,
+  //             });
 
-              // Animate the border of the item (pseudo-element's border-bottom)
-              gsap.to(section, {
-                duration: 0.8,
-                ease: "power1.inOut",
-                stagger: 0.05,
-                delay: i * 0.1,
-                "--border-width": "100%", // Change custom property for the border width
-              });
-            });
-          },
-          start: "top 95%",
-        });
-      });
-    }
+  //             // Animate the border of the item (pseudo-element's border-bottom)
+  //             gsap.to(section, {
+  //               duration: 0.8,
+  //               ease: "power1.inOut",
+  //               stagger: 0.05,
+  //               delay: i * 0.1,
+  //               "--border-width": "100%", // Change custom property for the border width
+  //             });
+  //           });
+  //         },
+  //         start: "top 95%",
+  //       });
+  //     });
+  //   }
 
-    setupSplits();
-  }, []);
+  //   setupSplits();
+  // }, []);
 
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  //   var quotess = document.querySelectorAll(".quotetriggerr");
+  //   function setupSplits() {
+  //     quotess.forEach((quote) => {
+  //       console.log(quote);
+  //       // Reset animation and splits if needed
+  //       if (quote.anim) {
+  //         quote.anim.progress(1).kill(); // Stop the existing animation
+  //         quote.split.revert(); // Revert splitText
+  //       }
+
+  //       // Split text into lines
+  //       quote.split = new SplitText(quote, {
+  //         type: "lines,words",
+  //         linesClass: "split-line",
+  //       });
+
+  //       // Set up new animation
+  //       quote.anim = gsap.from(quote.split, {
+  //         scrollTrigger: {
+  //           trigger: quote,
+  //           toggleActions: "restart pause resume reverse",
+  //           start: "top 95%",
+  //           markers: false,
+  //         },
+  //         duration: 0.6,
+  //         ease: "circ.out",
+  //         y: 80,
+  //         stagger: 0.02,
+  //       });
+  //     });
+  //   }
+
+  //   // Setup splits on initial load
+  //   setupSplits();
+
+  //   // Re-run setupSplits on ScrollTrigger refresh
+  //   ScrollTrigger.addEventListener("refresh", setupSplits);
+
+  //   // Cleanup function to remove listeners when component is unmounted
+  //   return () => {
+  //     ScrollTrigger.removeEventListener("refresh", setupSplits);
+  //     quotess.forEach((quote) => {
+  //       if (quote.split) {
+  //         quote.split.revert(); // Revert any splits when component is unmounted
+  //       }
+  //     });
+  //   };
+  // }, []);
   return (
     <>
-      <section className="section three quotetriggerCntr">
+      <section className="section three quotetriggerCntrr">
         <div className="">
           <div id="aboutsection">
-            {/* <div id="aboutimages">
-              <div
-                id="w-node-dcef4b0a-0b81-f79b-7540-6e77ee6ccc9f-c7f4dd6b"
-                className="aboutimages_grid-img wrapper"
-              >
-                <img
-                  src="https://artworks.joe8lee.com/images/img_09.webp"
-                  loading="lazy"
-                  alt=""
-                  className="aboutimages_grid-cell-img gsap"
-                />
-              </div>
-              <div
-                id="w-node-dcef4b0a-0b81-f79b-7540-6e77ee6ccca1-c7f4dd6b"
-                className="aboutimages_grid-img wrapper"
-              >
-                <img
-                  src="https://artworks.joe8lee.com/images/img_156.webp"
-                  loading="lazy"
-                  alt=""
-                  className="aboutimages_grid-cell-img gsap"
-                />
-              </div>
-              <div
-                id="w-node-_2aa2d919-6be5-9a10-06b9-0433c83f6446-c7f4dd6b"
-                className="aboutimages_grid-img wrapper is--visible-in-mobile visible-in-tablet"
-              >
-                <img
-                  src="https://artworks.joe8lee.com/images/photo_03.jpg"
-                  loading="lazy"
-                  alt=""
-                  className="aboutimages_grid-cell-img gsap"
-                />
-              </div>
-            </div> */}
             <div className="">
               <div className="h2-wrapper">
                 <div className="h-wrapper align-top">
-                  <h1 className="artistsheading quotetrigger">Our Services</h1>
+                  <h1 className="artistsheading quotetriggerr">Our Services</h1>
                   {/* <h1 className="h2 star">*</h1> */}
 
                   {/* <div className="border-bottom"></div> */}
                 </div>
-                {/* <div className="description-wrapper">
-              <div className="description-item is--hidden-in-mobile">
-                <p className="description italic">contemporary</p>
-              </div>
-              <div className="description-item">
-                <p className="description italic">conceptual</p>
-              </div>
-              <div className="description-item">
-                <p className="description italic">performance</p>
-              </div>
-              <div className="description-item last">
-                <p className="description italic cbp">(2023)</p>
-              </div>
-            </div> */}
               </div>
               <div className="text-inner-container bottom_margin">
-                <h4 className="gallerypera quotetrigger">
+                <h4 className="gallerypera quotetriggerr">
                   At Rage Media, we offer all services in-house, covering every
                   aspect of your brand needs. Our multi-brand structure allows
                   us to seamlessly integrate strategies, ensuring a cohesive and
@@ -1638,10 +1640,10 @@ const Artist = () => {
                 </h4>
               </div> */}
               <div className="g-item-list quote">
-                <div className="item quotetriggerCntr">
+                <div className="item quotetriggerCntrr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head quotetrigger">
+                      <h3 className="para_title_head quotetriggerr">
                         Celebrity Management
                       </h3>
                       <span
@@ -1653,7 +1655,7 @@ const Artist = () => {
                   </header>
                   <div className="g-item-list-para-cntr">
                     <div className="g-item-content">
-                      <div className="g-item-content-inside quotetrigger">
+                      <div className="g-item-content-inside">
                         It’s the result of the unprecedented{" "}
                         <a href="" target="_blank" rel="noopener">
                           collaboration
@@ -1664,10 +1666,10 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>
-                <div className="item quotetriggerCntr">
+                <div className="item quotetriggerCntrr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head quotetrigger">
+                      <h3 className="para_title_head quotetriggerr">
                         Digital Marketing
                       </h3>
                       <span
@@ -1690,10 +1692,10 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>
-                <div className="item quotetriggerCntr">
+                <div className="item quotetriggerCntrr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head quotetrigger">
+                      <h3 className="para_title_head quotetriggerr">
                         Website Development
                       </h3>
                       <span
@@ -1716,10 +1718,10 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>
-                <div className="item quotetriggerCntr">
+                <div className="item quotetriggerCntrr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head quotetrigger">
+                      <h3 className="para_title_head quotetriggerr">
                         Brand Shoots
                       </h3>
                       <span
@@ -1742,10 +1744,10 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>
-                <div className="item quotetriggerCntr">
+                <div className="item quotetriggerCntrr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head quotetrigger">
+                      <h3 className="para_title_head quotetriggerr">
                         Launch Events
                       </h3>
                       <span
@@ -1768,10 +1770,10 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>
-                <div className="item quotetriggerCntr">
+                <div className="item quotetriggerCntrr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head quotetrigger">
+                      <h3 className="para_title_head quotetriggerr">
                         Influencer Marketing
                       </h3>
                       <span
@@ -1794,10 +1796,10 @@ const Artist = () => {
                     </div>
                   </div>
                 </div>{" "}
-                <div className="item quotetriggerCntr">
+                <div className="item quotetriggerCntrr">
                   <header className="">
                     <button className="para-btn-cntr">
-                      <h3 className="para_title_head quotetrigger">
+                      <h3 className="para_title_head quotetriggerr">
                         Public Relations (PR)
                       </h3>
                       <span

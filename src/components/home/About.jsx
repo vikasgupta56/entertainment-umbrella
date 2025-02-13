@@ -148,7 +148,7 @@ const About = () => {
             trigger: quote,
             toggleActions: "restart pause resume reverse",
             start: "top top",
-            markers: { startColor: "#dfdcff", endColor: "transparent" },
+            markers: false,
           },
           duration: 0.6,
           ease: "circ.out",

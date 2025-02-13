@@ -94,6 +94,54 @@ html.lenis {
   align-items: center;
   justify-content: center;
 }
+.scrolldown_box {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--primary-fontB);
+  color: #fff;
+  z-index: 99;
+}
+.scrolldown_box h1 {
+  letter-spacing: 0.05em;
+  font-size: 2rem;
+}
+.scrolldown_box span {
+  width: 30px;
+  height: 30px;
+  display: block;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+
+.scrolldown_box span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.scrolldown_box span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .PrimaryHeaderSection_wrapper {
   position: relative;
   width: 100vw;

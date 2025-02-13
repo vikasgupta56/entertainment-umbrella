@@ -1,14 +1,98 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import Histoy from "./Histoy";
-import Artist from "./Artist";
+// import Histoy from "./Histoy";
+// import Artist from "./Artist";
 // import Artist_tour from "../rage-entertainment/Artist_tour";
-import Logos from "./Logos";
+// import Logos from "./Logos";
 import Link from "next/link";
 import SplitText from "gsap/dist/SplitText";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 const ClipCntr = () => {
+  useEffect(() => {
+    const paraHeaders = document.querySelectorAll(".para-btn-cntr");
+
+    const toggleVisibility = (event) => {
+      const button = event.currentTarget; // Get the clicked button
+      const hiddenParaCntr = button
+        .closest(".item")
+        .querySelector(".g-item-list-para-cntr"); // Find the corresponding content
+      const plusMinus = button.querySelector(".plus-minus"); // Select the specific plus-minus for the clicked button
+
+      // Toggle the open class on the button
+      const isOpen = button.classList.toggle("open");
+
+      if (isOpen) {
+        // Add open class to the specific plus-minus
+        plusMinus.classList.add("open");
+        plusMinus.classList.remove("active"); // Ensure active is removed
+
+        // Optionally close other items
+        paraHeaders.forEach((otherButton) => {
+          if (otherButton !== button) {
+            otherButton.classList.remove("open");
+            otherButton.querySelector(".plus-minus").classList.remove("open");
+            otherButton.querySelector(".plus-minus").classList.add("active"); // Add active to remove content
+            const otherContent = otherButton
+              .closest(".item")
+              .querySelector(".g-item-list-para-cntr");
+            gsap.to(otherContent, {
+              height: 0,
+              duration: 0.5,
+              ease: "expo.inout",
+            });
+          }
+        });
+
+        // Animate the clicked content
+        gsap.to(hiddenParaCntr, {
+          height: "auto",
+          duration: 0.5,
+          ease: "expo.inout",
+        });
+      } else {
+        // Remove open class from the specific plus-minus
+        plusMinus.classList.remove("open");
+        plusMinus.classList.add("active"); // Add active to remove content
+        gsap.to(hiddenParaCntr, {
+          height: 0,
+          duration: 0.5,
+          ease: "expo.inout",
+        });
+      }
+    };
+
+    // Attach event listeners to each button
+    paraHeaders.forEach((button) => {
+      button.addEventListener("click", toggleVisibility);
+    });
+
+    // Open the first paragraph container on page load
+    if (paraHeaders.length > 0) {
+      const firstButton = paraHeaders[0];
+      const firstPlusMinus = firstButton.querySelector(".plus-minus");
+      firstButton.classList.add("open");
+      firstPlusMinus.classList.add("open");
+      firstPlusMinus.classList.remove("active");
+
+      const firstContent = firstButton
+        .closest(".item")
+        .querySelector(".g-item-list-para-cntr");
+      gsap.to(firstContent, {
+        height: "auto",
+        duration: 0.5,
+        ease: "expo.inout",
+      });
+    }
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      paraHeaders.forEach((button) => {
+        button.removeEventListener("click", toggleVisibility);
+      });
+    };
+  }, []);
   useEffect(() => {
     // Select all .vf-section elements
     const vfSec = document.querySelectorAll(".vf-section");
@@ -252,41 +336,151 @@ const ClipCntr = () => {
     heroScroll();
   }, []);
 
+  // useEffect(() => {
+  //   const quotess = document.querySelectorAll(".quotetrigger");
+  //   function setupSplits() {
+  //     quotess.forEach((quotes) => {
+  //       const splitTexts = new SplitText(quotes, {
+  //         type: "lines",
+  //         linesClass: "split-line",
+  //       });
+  //       gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
+  //       // console.log(quote);
+  //     });
+  //     ScrollTrigger.batch(".quotetriggerCntr", {
+  //       onEnter: (batch) => {
+  //         batch.forEach((section, i) => {
+  //           gsap.to(section.querySelectorAll(".split-line"), {
+  //             // autoAlpha: 1,
+  //             yPercent: 0,
+  //             duration: 0.8,
+  //             ease: "power1.inOut",
+  //             stagger: 0.05,
+  //             delay: i * 0.3,
+  //             marker: true,
+  //             // delay: 1,
+  //           });
+  //         });
+  //       },
+  //       start: "top 95%",
+  //     });
+  //   }
+  //   setupSplits();
+  // }, []);
+
   useEffect(() => {
-    const quotess = document.querySelectorAll(".quotetrigger");
+    const quotes = document.querySelectorAll(".quote");
+
     function setupSplits() {
+      quotes.forEach((quote) => {
+        // Reset animation and splits if needed
+        if (quote.anim) {
+          quote.anim.progress(1).kill(); // Stop the existing animation
+          quote.split.revert(); // Revert splitText
+        }
+
+        // Split text into lines
+        quote.split = new SplitText(quote, {
+          type: "lines,words",
+          linesClass: "split-line",
+        });
+
+        // Set up new animation
+        quote.anim = gsap.from(quote.split.words, {
+          scrollTrigger: {
+            trigger: quote,
+            toggleActions: "restart pause resume reverse",
+            start: "top 95%",
+            markers: false,
+          },
+          duration: 0.6,
+          ease: "circ.out",
+          y: 80,
+          stagger: 0.02,
+        });
+      });
+    }
+
+    // Setup splits on initial load
+    setupSplits();
+
+    // Re-run setupSplits on ScrollTrigger refresh
+    ScrollTrigger.addEventListener("refresh", setupSplits);
+
+    // Cleanup function to remove listeners when component is unmounted
+    return () => {
+      ScrollTrigger.removeEventListener("refresh", setupSplits);
+      quotes.forEach((quote) => {
+        if (quote.split) {
+          quote.split.revert(); // Revert any splits when component is unmounted
+        }
+      });
+    };
+  }, []);
+
+  useEffect(() => {
+    const quotess = document.querySelectorAll(".quoteee");
+    const items = document.querySelectorAll(".item"); // Correct selector for .item class
+
+    function setupSplitss() {
       quotess.forEach((quotes) => {
         const splitTexts = new SplitText(quotes, {
           type: "lines",
-          linesClass: "split-line",
+          linesClass: "split-linee",
         });
-        gsap.set(".split-line", { yPercent: 100, overflow: "hidden" });
-        // console.log(quote);
+        gsap.set(".split-linee", { yPercent: 100, overflow: "hidden" });
+
+        quotess.forEach((section, i) => {
+          // Set up the ScrollTrigger for each section (quoteee)
+          ScrollTrigger.create({
+            trigger: section,
+            start: "top 95%",
+            onEnter: () => {
+              // Animate the text in the quoteee
+              gsap.to(section.querySelectorAll(".split-linee"), {
+                yPercent: 0,
+                duration: 0.8,
+                ease: "power1.inOut",
+                stagger: 0.05,
+                delay: i * 0.1, // Delay for each section
+              });
+            },
+          });
+        });
       });
-      ScrollTrigger.batch(".quotetriggerCntr", {
-        onEnter: (batch) => {
-          batch.forEach((section, i) => {
-            gsap.to(section.querySelectorAll(".split-line"), {
-              // autoAlpha: 1,
-              yPercent: 0,
+
+      // Apply transition to the border-bottom in the pseudo-element of .item
+      items.forEach((item) => {
+        gsap.set(item, {
+          // borderBottom: "solid 1px transparent", // Set initial transparent border
+          "--border-width": 0,
+        });
+      });
+
+      // Add ScrollTrigger to handle the border animation on .item
+      items.forEach((item, i) => {
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top 95%",
+          onEnter: () => {
+            // Animate the border-bottom of the .item when it enters the viewport
+            gsap.to(item, {
               duration: 0.8,
               ease: "power1.inOut",
-              stagger: 0.05,
-              delay: i * 0.3,
-              marker: true,
-              // delay: 1,
+              // borderBottom: "solid 1px #fff", // Animate border-bottom to solid color
+              delay: i * 0.1, // Delay for each .item
+              "--border-width": "100%",
             });
-          });
-        },
-        start: "top 95%",
+          },
+        });
       });
     }
-    setupSplits();
-  }, []);
 
+    setupSplitss();
+  }, []);
   return (
     <div className="clip-container">
-      <section className="section hero quotetriggerCntr">
+      <section className="section hero">
         <div className="hero-wrapper">
           <div className="hero-content">
             <Link
@@ -294,8 +488,8 @@ const ClipCntr = () => {
               data-w-id="59271182-f875-d4dc-3a94-3de05c5eb035"
               className="h1-wrapper w-inline-block"
             >
-              <h1 className="h1 hero left quotetrigger">Rage</h1>
-              <h1 className="h1 hero right quotetrigger">Media</h1>
+              <h1 className="h1 hero left">Rage</h1>
+              <h1 className="h1 hero right">Media</h1>
             </Link>
             <div className="hero-img">
               <img
@@ -327,20 +521,39 @@ const ClipCntr = () => {
         </div>
       </section>
 
-      <Histoy id="sectionTwo" />
+      {/* <Histoy id="sectionTwo" /> */}
+      <div className="TwoColumnText_root">
+        {/* <div className="TwoColumnText_left TwoColumnText_col">
+          <h2 className="AnimatedTextLines_root text-heading-md AnimatedTextLines_mask AnimatedTextLines_animate">
+            Why partner with Rage Entertainment?
+            About
+          </h2>
+        </div> */}
+        <div className="TwoColumnText_right TwoColumnText_col">
+          <p className="AnimatedTextLines_root text-heading-para AnimatedTextLines_line-height AnimatedTextLines_animate quote">
+            At Rage Media, we’ve had the privilege of working with over 30
+            brands—ranging from individual entrepreneurs to large corporations.
+            But no matter your size, one thing remains constant: for us, it’s
+            all about finding the right fit.
+          </p>
+          {/* <a className="text-accent text-body-animate-in active" href="">
+            Say Hello
+          </a> */}
+        </div>
+      </div>
       <section className="vf-section bg-primary">
         <div className="v-wrapper">
           <div className="v-wrapper-inner">
             <div className="c-wrapper bg-primary">
-              <div className="v-wrapper-inner-content quotetriggerCntr">
+              <div className="v-wrapper-inner-content">
                 <h2
-                  className="v-wrapper-heading quotetrigger"
+                  className="v-wrapper-heading quote"
                   style={{ color: "#000" }}
                 >
                   Why choose us?
                 </h2>
                 {/* <h3 className="ff-t tt-u fs-md mt-0b">by GPC</h3> */}
-                <p className="quotetrigger" style={{ color: "#000" }}>
+                <p className="quote" style={{ color: "#000" }}>
                   We believe in building true partnerships, not just
                   transactions. For us to be successful together, we need to be
                   in sync with your brand, your vision, and your goals. This
@@ -399,8 +612,309 @@ const ClipCntr = () => {
         </div>
       </section>
 
-      <Logos />
-      <Artist />
+      {/* <Logos /> */}
+      <section className="brands">
+        <div className="full-brands__section full-brands__clients once-inview">
+          <div className="">
+            <h2 className="full-brands__title full-brands__clients__title once-inview quote">
+              SELECTED BRANDS
+            </h2>
+            <h4 className="full-brands__para quote">
+              We’ve partnered with businesses across a wide range of industries,
+              including Beauty, Events, Jewelry, Wellness, Entertainment,
+              Fitness, Hospitality, Food and beverage, Startups, Tech, Fashion,
+              Lifestyle, Finance, and NGOs. Our expertise spans diverse sectors,
+              enabling us to deliver customized digital solutions.
+            </h4>
+          </div>
+          <div className="full-brands__section__list full-brands__clients__list">
+            <figure className="full-brands__section__item">
+              <Image
+                alt="dfdsggsd"
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Afleabythetree.png"
+              />
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                alt=""
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Anjali .png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Chezy.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Cineyug.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Coconut.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Colexion.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Dfitzy.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Dhamaka Records.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Dome.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Fay nyx.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Furcrew.png"
+              ></Image>
+            </figure>
+            <figure className="full-brands__section__item">
+              <Image
+                width={1000}
+                height={1000}
+                src="/assets/images/RangeMedia/Logos/Furfiesta.png"
+              ></Image>
+            </figure>
+          </div>
+        </div>
+      </section>
+      {/* <Artist /> */}
+      <section className="section three">
+        <div className="">
+          <div id="aboutsection">
+            <div className="">
+              <div className="h2-wrapper">
+                <div className="h-wrapper align-top">
+                  <h1 className="artistsheading quoteee">Our Services</h1>
+                </div>
+              </div>
+              <div className="text-inner-container bottom_margin">
+                <h4 className="gallerypera quoteee">
+                  At Rage Media, we offer all services in-house, covering every
+                  aspect of your brand needs. Our multi-brand structure allows
+                  us to seamlessly integrate strategies, ensuring a cohesive and
+                  tailored approach for each client.
+                </h4>
+              </div>
+            </div>
+
+            <div className="about-a-section">
+              <div className="g-item-list">
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head quoteee">
+                        Celebrity Management
+                      </h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside quoteee">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head quoteee">
+                        Digital Marketing
+                      </h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head quoteee">
+                        Website Development
+                      </h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head quoteee">Brand Shoots</h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head quoteee">Launch Events</h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head quoteee">
+                        Influencer Marketing
+                      </h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>{" "}
+                <div className="item">
+                  <header className="">
+                    <button className="para-btn-cntr">
+                      <h3 className="para_title_head quoteee">
+                        Public Relations (PR)
+                      </h3>
+                      <span
+                        className="flex-shrink-0 plus-minus flex-shrink-0"
+                        role="presentation"
+                      ></span>
+                    </button>
+                  </header>
+                  <div className="g-item-list-para-cntr">
+                    <div className="g-item-content">
+                      <div className="g-item-content-inside">
+                        It’s the result of the unprecedented{" "}
+                        <a href="" target="_blank" rel="noopener">
+                          collaboration
+                        </a>{" "}
+                        between the iconic Absolut Vodka and one of the most
+                        visionary and creative Italian design brands: Seletti.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* <Artist_tour /> */}
     </div>
   );

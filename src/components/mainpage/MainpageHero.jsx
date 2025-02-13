@@ -198,6 +198,12 @@ const MainpageHero = () => {
   return (
     <>
       <div className="PrimaryHeaderSection_wrapper">
+        <div class="scrolldown_box">
+          <h1>Scroll Down</h1>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div className="PrimaryHeaderSection_backgroundWrapper">
           <div className="PrimaryHeaderSection_cubeWrapper PrimaryHeaderSection_two">
             <div className="PrimaryHeaderSection_cube">
@@ -302,12 +308,12 @@ const MainpageHero = () => {
 
       <div className="mainPage">
         {" "}
-        <div className="page-canvas">
-          <video autoPlay playsInline muted>
+        <div className="page-canvas" style={{ backgroundColor: "#000" }}>
+          {/* <video autoPlay playsInline muted>
             <source src="../../fade-in.mp4" type="video/mp4" />
             <source src="fade-in.webm" type="video/webm" />
             <source src="fade-in.ogv" type="video/ogg" />
-          </video>
+          </video> */}
           <div className="background-video-wrapper">
             <video
               id="background-video-1"
