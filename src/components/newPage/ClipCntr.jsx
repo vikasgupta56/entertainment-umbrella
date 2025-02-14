@@ -717,7 +717,7 @@ const ClipCntr = () => {
           </div>
         </div>
       </section>
-      <Artist />
+
       <section className="section three">
         <div className="">
           <div id="aboutsection">
@@ -915,6 +915,7 @@ const ClipCntr = () => {
           </div>
         </div>
       </section>
+      <Artist />
       {/* <Artist_tour /> */}
     </div>
   );
