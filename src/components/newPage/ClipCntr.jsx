@@ -9,90 +9,51 @@ import Link from "next/link";
 import SplitText from "gsap/dist/SplitText";
 import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger, SplitText);
+const servicesData = [
+  {
+    id: 1,
+    title: "Celebrity Management",
+    description:
+      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+  },
+  {
+    id: 2,
+    title: "Digital Marketing",
+    description:
+      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+  },
+  {
+    id: 3,
+    title: "Website Development",
+    description:
+      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+  },
+  {
+    id: 4,
+    title: "Brand Shoots",
+    description:
+      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+  },
+  {
+    id: 5,
+    title: "Launch Events",
+    description:
+      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+  },
+  {
+    id: 6,
+    title: "Influencer Marketing",
+    description:
+      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+  },
+  {
+    id: 7,
+    title: "Public Relations (PR)",
+    description:
+      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+  },
+];
 const ClipCntr = () => {
-  useEffect(() => {
-    const paraHeaders = document.querySelectorAll(".para-btn-cntr");
-
-    const toggleVisibility = (event) => {
-      const button = event.currentTarget; // Get the clicked button
-      const hiddenParaCntr = button
-        .closest(".item")
-        .querySelector(".g-item-list-para-cntr"); // Find the corresponding content
-      const plusMinus = button.querySelector(".plus-minus"); // Select the specific plus-minus for the clicked button
-
-      // Toggle the open class on the button
-      const isOpen = button.classList.toggle("open");
-
-      if (isOpen) {
-        // Add open class to the specific plus-minus
-        plusMinus.classList.add("open");
-        plusMinus.classList.remove("active"); // Ensure active is removed
-
-        // Optionally close other items
-        paraHeaders.forEach((otherButton) => {
-          if (otherButton !== button) {
-            otherButton.classList.remove("open");
-            otherButton.querySelector(".plus-minus").classList.remove("open");
-            otherButton.querySelector(".plus-minus").classList.add("active"); // Add active to remove content
-            const otherContent = otherButton
-              .closest(".item")
-              .querySelector(".g-item-list-para-cntr");
-            gsap.to(otherContent, {
-              height: 0,
-              duration: 0.5,
-              ease: "expo.inout",
-            });
-          }
-        });
-
-        // Animate the clicked content
-        gsap.to(hiddenParaCntr, {
-          height: "auto",
-          duration: 0.5,
-          ease: "expo.inout",
-        });
-      } else {
-        // Remove open class from the specific plus-minus
-        plusMinus.classList.remove("open");
-        plusMinus.classList.add("active"); // Add active to remove content
-        gsap.to(hiddenParaCntr, {
-          height: 0,
-          duration: 0.5,
-          ease: "expo.inout",
-        });
-      }
-    };
-
-    // Attach event listeners to each button
-    paraHeaders.forEach((button) => {
-      button.addEventListener("click", toggleVisibility);
-    });
-
-    // Open the first paragraph container on page load
-    if (paraHeaders.length > 0) {
-      const firstButton = paraHeaders[0];
-      const firstPlusMinus = firstButton.querySelector(".plus-minus");
-      firstButton.classList.add("open");
-      firstPlusMinus.classList.add("open");
-      firstPlusMinus.classList.remove("active");
-
-      const firstContent = firstButton
-        .closest(".item")
-        .querySelector(".g-item-list-para-cntr");
-      gsap.to(firstContent, {
-        height: "auto",
-        duration: 0.5,
-        ease: "expo.inout",
-      });
-    }
-
-    // Cleanup event listeners on component unmount
-    return () => {
-      paraHeaders.forEach((button) => {
-        button.removeEventListener("click", toggleVisibility);
-      });
-    };
-  }, []);
   useEffect(() => {
     // Select all .vf-section elements
     const vfSec = document.querySelectorAll(".vf-section");
@@ -478,6 +439,111 @@ const ClipCntr = () => {
 
     setupSplitss();
   }, []);
+
+  useEffect(() => {
+    const paraHeaders = document.querySelectorAll(".para-btn-cntr");
+
+    const toggleVisibility = (event) => {
+      const button = event.currentTarget; // Get the clicked button
+      const hiddenParaCntr = button
+        .closest(".item")
+        .querySelector(".g-item-list-para-cntr"); // Find the corresponding content
+      const plusMinus = button.querySelector(".plus-minus"); // Select the specific plus-minus for the clicked button
+
+      // Toggle the open class on the button
+      const isOpen = button.classList.toggle("open");
+
+      if (isOpen) {
+        // Add open class to the specific plus-minus
+        plusMinus.classList.add("open");
+        plusMinus.classList.remove("active"); // Ensure active is removed
+
+        // Optionally close other items
+        paraHeaders.forEach((otherButton) => {
+          if (otherButton !== button) {
+            otherButton.classList.remove("open");
+            otherButton.querySelector(".plus-minus").classList.remove("open");
+            otherButton.querySelector(".plus-minus").classList.add("active"); // Add active to remove content
+            const otherContent = otherButton
+              .closest(".item")
+              .querySelector(".g-item-list-para-cntr");
+            gsap.to(otherContent, {
+              height: 0,
+              duration: 0.5,
+              ease: "expo.inout",
+            });
+          }
+        });
+
+        // Animate the clicked content
+        gsap.to(hiddenParaCntr, {
+          height: "auto",
+          duration: 0.5,
+          ease: "expo.inout",
+        });
+      } else {
+        // Remove open class from the specific plus-minus
+        plusMinus.classList.remove("open");
+        plusMinus.classList.add("active"); // Add active to remove content
+        gsap.to(hiddenParaCntr, {
+          height: 0,
+          duration: 0.5,
+          ease: "expo.inout",
+        });
+      }
+    };
+
+    // Attach event listeners to each button
+    paraHeaders.forEach((button) => {
+      button.addEventListener("click", toggleVisibility);
+    });
+
+    // Open the first paragraph container on page load, and ensure others are closed
+    if (paraHeaders.length > 0) {
+      const firstButton = paraHeaders[0];
+      const firstPlusMinus = firstButton.querySelector(".plus-minus");
+      firstButton.classList.add("open");
+      firstPlusMinus.classList.add("open");
+      firstPlusMinus.classList.remove("active");
+
+      const firstContent = firstButton
+        .closest(".item")
+        .querySelector(".g-item-list-para-cntr");
+
+      // Ensure all other paragraphs are initially closed
+      paraHeaders.forEach((button, index) => {
+        if (index !== 0) {
+          button.classList.remove("open");
+          button.querySelector(".plus-minus").classList.remove("open");
+          button.querySelector(".plus-minus").classList.add("active");
+
+          const otherContent = button
+            .closest(".item")
+            .querySelector(".g-item-list-para-cntr");
+          gsap.to(otherContent, {
+            height: 0,
+            duration: 0.5,
+            ease: "expo.inout",
+          });
+        }
+      });
+
+      // Animate the first content
+      gsap.to(firstContent, {
+        height: "auto",
+        duration: 0.5,
+        ease: "expo.inout",
+      });
+    }
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      paraHeaders.forEach((button) => {
+        button.removeEventListener("click", toggleVisibility);
+      });
+    };
+  }, []);
+
   return (
     <div className="clip-container">
       <section className="section hero">
@@ -739,177 +805,31 @@ const ClipCntr = () => {
 
             <div className="about-a-section">
               <div className="g-item-list">
-                <div className="item">
-                  <header className="">
-                    <button className="para-btn-cntr">
-                      <h3 className="para_title_head quoteee">
-                        Celebrity Management
-                      </h3>
-                      <span
-                        className="flex-shrink-0 plus-minus flex-shrink-0"
-                        role="presentation"
-                      ></span>
-                    </button>
-                  </header>
-                  <div className="g-item-list-para-cntr">
-                    <div className="g-item-content">
-                      <div className="g-item-content-inside quoteee">
-                        It’s the result of the unprecedented{" "}
-                        <a href="" target="_blank" rel="noopener">
-                          collaboration
-                        </a>{" "}
-                        between the iconic Absolut Vodka and one of the most
-                        visionary and creative Italian design brands: Seletti.
+                {servicesData.map((service, i) => {
+                  return (
+                    <div key={i} className="item">
+                      <header className="">
+                        <button className="para-btn-cntr">
+                          <h3 className="para_title_head quoteee">
+                            {service.title}
+                          </h3>
+                          <span
+                            quoteee
+                            className="flex-shrink-0 plus-minus flex-shrink-0"
+                            role="presentation"
+                          ></span>
+                        </button>
+                      </header>
+                      <div className="g-item-list-para-cntr">
+                        <div className="g-item-content">
+                          <div className="g-item-content-inside quoteee">
+                            {service.description}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className="item">
-                  <header className="">
-                    <button className="para-btn-cntr">
-                      <h3 className="para_title_head quoteee">
-                        Digital Marketing
-                      </h3>
-                      <span
-                        className="flex-shrink-0 plus-minus flex-shrink-0"
-                        role="presentation"
-                      ></span>
-                    </button>
-                  </header>
-                  <div className="g-item-list-para-cntr">
-                    <div className="g-item-content">
-                      <div className="g-item-content-inside">
-                        It’s the result of the unprecedented{" "}
-                        <a href="" target="_blank" rel="noopener">
-                          collaboration
-                        </a>{" "}
-                        between the iconic Absolut Vodka and one of the most
-                        visionary and creative Italian design brands: Seletti.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="item">
-                  <header className="">
-                    <button className="para-btn-cntr">
-                      <h3 className="para_title_head quoteee">
-                        Website Development
-                      </h3>
-                      <span
-                        className="flex-shrink-0 plus-minus flex-shrink-0"
-                        role="presentation"
-                      ></span>
-                    </button>
-                  </header>
-                  <div className="g-item-list-para-cntr">
-                    <div className="g-item-content">
-                      <div className="g-item-content-inside">
-                        It’s the result of the unprecedented{" "}
-                        <a href="" target="_blank" rel="noopener">
-                          collaboration
-                        </a>{" "}
-                        between the iconic Absolut Vodka and one of the most
-                        visionary and creative Italian design brands: Seletti.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="item">
-                  <header className="">
-                    <button className="para-btn-cntr">
-                      <h3 className="para_title_head quoteee">Brand Shoots</h3>
-                      <span
-                        className="flex-shrink-0 plus-minus flex-shrink-0"
-                        role="presentation"
-                      ></span>
-                    </button>
-                  </header>
-                  <div className="g-item-list-para-cntr">
-                    <div className="g-item-content">
-                      <div className="g-item-content-inside">
-                        It’s the result of the unprecedented{" "}
-                        <a href="" target="_blank" rel="noopener">
-                          collaboration
-                        </a>{" "}
-                        between the iconic Absolut Vodka and one of the most
-                        visionary and creative Italian design brands: Seletti.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="item">
-                  <header className="">
-                    <button className="para-btn-cntr">
-                      <h3 className="para_title_head quoteee">Launch Events</h3>
-                      <span
-                        className="flex-shrink-0 plus-minus flex-shrink-0"
-                        role="presentation"
-                      ></span>
-                    </button>
-                  </header>
-                  <div className="g-item-list-para-cntr">
-                    <div className="g-item-content">
-                      <div className="g-item-content-inside">
-                        It’s the result of the unprecedented{" "}
-                        <a href="" target="_blank" rel="noopener">
-                          collaboration
-                        </a>{" "}
-                        between the iconic Absolut Vodka and one of the most
-                        visionary and creative Italian design brands: Seletti.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="item">
-                  <header className="">
-                    <button className="para-btn-cntr">
-                      <h3 className="para_title_head quoteee">
-                        Influencer Marketing
-                      </h3>
-                      <span
-                        className="flex-shrink-0 plus-minus flex-shrink-0"
-                        role="presentation"
-                      ></span>
-                    </button>
-                  </header>
-                  <div className="g-item-list-para-cntr">
-                    <div className="g-item-content">
-                      <div className="g-item-content-inside">
-                        It’s the result of the unprecedented{" "}
-                        <a href="" target="_blank" rel="noopener">
-                          collaboration
-                        </a>{" "}
-                        between the iconic Absolut Vodka and one of the most
-                        visionary and creative Italian design brands: Seletti.
-                      </div>
-                    </div>
-                  </div>
-                </div>{" "}
-                <div className="item">
-                  <header className="">
-                    <button className="para-btn-cntr">
-                      <h3 className="para_title_head quoteee">
-                        Public Relations (PR)
-                      </h3>
-                      <span
-                        className="flex-shrink-0 plus-minus flex-shrink-0"
-                        role="presentation"
-                      ></span>
-                    </button>
-                  </header>
-                  <div className="g-item-list-para-cntr">
-                    <div className="g-item-content">
-                      <div className="g-item-content-inside">
-                        It’s the result of the unprecedented{" "}
-                        <a href="" target="_blank" rel="noopener">
-                          collaboration
-                        </a>{" "}
-                        between the iconic Absolut Vodka and one of the most
-                        visionary and creative Italian design brands: Seletti.
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
           </div>

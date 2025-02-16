@@ -788,7 +788,7 @@
   position: relative;
   overflow: hidden;
   will-change: height;
-  height: 0px;
+  /* height: 0; */
 }
 .g-item-content {
   position: relative;
