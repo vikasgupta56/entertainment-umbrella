@@ -395,11 +395,11 @@ const MainpageHero = () => {
               controlsList="nodownload"
             >
               <source
-                src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark11.mp4"
+                src="/assets/images/mainpage/videos/rage_entertainment.webm"
                 type="video/webm"
               />
               <source
-                src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark11.mp4"
+                src="/assets/images/mainpage/videos/rage_entertainment.webm"
                 type="video/mp4"
               />
             </video>
