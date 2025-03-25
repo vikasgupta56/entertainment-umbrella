@@ -1174,7 +1174,7 @@ const RageEntertainment = () => {
                       <Image
                         width={1000}
                         height={1000}
-                        src="/assets/images/RageEntertainment/MUMBAI-15.jpg"
+                        src="/assets/images/RageEntertainment/belvedere_studio.png"
                         loading="lazy"
                         alt=""
                         className="event_image"

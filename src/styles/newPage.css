@@ -2779,11 +2779,11 @@ html.w-mod-touch * {
   color: #fff;
 }
 .Artist_tour_text-wrap {
-  height: 7vw;
+  height: 6vw;
   overflow: hidden;
 }
 .Artist_tour_text-wrap h1 {
-  font-size: 7vw;
+  font-size: 6vw;
   line-height: 1;
   transform: translateY(100%);
 }
