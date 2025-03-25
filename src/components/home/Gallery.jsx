@@ -4,7 +4,64 @@ import { useGSAP } from "@gsap/react";
 import scrollTrigger, { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
 import SplitText from "gsap/dist/SplitText";
+import Image from "next/image";
 gsap.registerPlugin(useGSAP, scrollTrigger);
+const galleryData = [
+  {
+    // src: "/assets/images/mrandmrs/Srk Aryan.jpg",
+    src: "/assets/images/mrandmrs/galleryImages/rungta_steel.webp",
+    alt: "Rungta Steel",
+    caption: "Rungta Steel",
+  },
+  {
+    // src: "/assets/images/mrandmrs/Srk Aryan.jpg",
+    src: "/assets/images/mrandmrs/galleryImages/lux_cozy_with_logo.webp",
+    alt: "Lux Cozi",
+    caption: "Lux Cozi",
+  },
+  {
+    // src: "/assets/images/mrandmrs/Srk Aryan.jpg",
+    src: "/assets/images/mrandmrs/galleryImages/dyavol.webp",
+    alt: "D'YAVOL",
+    caption: "D'YAVOL",
+  },
+  {
+    // src: "/assets/images/mrandmrs/Srk Aryan.jpg",
+    src: "/assets/images/mrandmrs/galleryImages/ruskit.webp",
+    alt: "Ruskit",
+    caption: "Ruskit",
+  },
+  {
+    // src: "/assets/images/mrandmrs/Srk Aryan.jpg",
+    src: "/assets/images/mrandmrs/galleryImages/justherbs.webp",
+    alt: "Just Herbs",
+    caption: "Just Herbs",
+  },
+  {
+    // src: "/assets/images/mrandmrs/galleryImages/RUNGTA STEEL.jpg",
+    src: "/assets/images/mrandmrs/galleryImages/nimaya_project.webp",
+    alt: "Nimaya Project",
+    caption: "Nimaya Project",
+  },
+  {
+    // src: "/assets/images/mrandmrs/galleryImages/RUNGTA STEEL.jpg",
+    src: "/assets/images/mrandmrs/galleryImages/setu.webp",
+    alt: "Setu",
+    caption: "Setu",
+  },
+  {
+    // src: "/assets/images/mrandmrs/galleryImages/RUNGTA STEEL.jpg",
+    src: "/assets/images/mrandmrs/galleryImages/Rajesh Masale.jpg",
+    alt: "Rajesh Masale",
+    caption: "Rajesh Masale",
+  },
+  {
+    // src: "/assets/images/mrandmrs/galleryImages/RUNGTA STEEL.jpg",
+    src: "/assets/images/mrandmrs/galleryImages/GGOGLY.webp",
+    alt: "GOOGLY",
+    caption: "GOOGLY",
+  },
+];
 const Gallery = () => {
   useEffect(() => {
     const quotes = document.querySelectorAll(".quote");
@@ -62,32 +119,32 @@ const Gallery = () => {
     // gsap.set(Main);
 
     // Apply GSAP animation to each element
-    galleryImageBottomInnerElements.forEach((el, index) => {
-      gsap.to(Main, {
-        scrollTrigger: {
-          trigger: el,
-          start: "top 100%",
-          // end: "bottom 0%",
-          scrub: 1,
-          markers: false,
-          duration: 1,
-        },
-        backgroundColor: colors[index] || "#000", // Change to specific color
-      });
-    });
+    // galleryImageBottomInnerElements.forEach((el, index) => {
+    //   gsap.to(Main, {
+    //     scrollTrigger: {
+    //       trigger: el,
+    //       start: "top 100%",
+    //       // end: "bottom 0%",
+    //       scrub: 1,
+    //       markers: false,
+    //       duration: 1,
+    //     },
+    //     backgroundColor: colors[index] || "#000", // Change to specific color
+    //   });
+    // });
     galleryImageBottomInnerElements.forEach((container, index) => {
-      // container.addEventListener("mouseenter", () => {
-      //   gsap.to(Main, {
-      //     backgroundColor: colors[index] || "#000",
-      //     duration: 1,
-      //   });
-      // });
-      // container.addEventListener("mouseleave", () => {
-      //   gsap.to(Main, {
-      //     backgroundColor: "#000",
-      //     duration: 1,
-      //   });
-      // });
+      container.addEventListener("mouseenter", () => {
+        gsap.to(Main, {
+          backgroundColor: colors[index] || "#000",
+          duration: 1,
+        });
+      });
+      container.addEventListener("mouseleave", () => {
+        gsap.to(Main, {
+          backgroundColor: "#000",
+          duration: 1,
+        });
+      });
     });
   }, []);
   useGSAP(() => {
@@ -102,12 +159,12 @@ const Gallery = () => {
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: GalleryTextCntr,
-        start: "top top",
+        trigger: ".Gallery_main_textCntr",
+        start: "top 0%",
         end: "top -100%",
         markers: false,
         scrub: true,
-        pin: true,
+        pin: ".Gallery_main_textCntr h1",
       },
     });
 
@@ -180,7 +237,7 @@ const Gallery = () => {
           start: "top top",
           end: "bottom 0%",
           scrub: true,
-          // markers: true,
+          markers: false,
           once: false,
         },
       });
@@ -191,10 +248,14 @@ const Gallery = () => {
         ease: "none",
       });
 
-      tl.to(
+      tl.fromTo(
         img,
         {
-          scale: 1.0724,
+          scale: 1.2,
+          ease: "none",
+        },
+        {
+          scale: 1,
           ease: "none",
         },
         "<"
@@ -211,7 +272,7 @@ const Gallery = () => {
       tl.to(
         img,
         {
-          scale: 1.2,
+          // scale: 1.2,
           ease: "none",
         },
         "<<"
@@ -221,272 +282,62 @@ const Gallery = () => {
 
   return (
     <section className="Gallery_Mainwrapper">
-      <div className="Gallery_main_textCntr quote">
-        <h1 className="quote">Selected Work</h1>
-      </div>
+      {/* <div className="Gallery_main_textCntr quote">
+        <h1 className="quote">Some of the brands we have worked with</h1>
+      </div> */}
       <div className="Main"></div>
       {/* <figure data-track="nav" className="blan_div">
         <p className="ScrollDown_btm">SCROLL DOWN</p>
       </figure> */}
-      <section className="Gallery_wrapper">
-        <figure data-trackcolor className="gallery_cntr">
-          {/* <!-- Title Section 14.4 --> */}
-          <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text quote">
-              <Link href={"/product"} className="gallery_title_maintext">
-                Rungta Steel
-              </Link>
-            </h2>
-          </div>
-          <div className="">
-            {/* Image section */}
-            <div data-track className="gallery_image_bottom_sec">
-              <figure className="gallery_image_bottom_inner">
-                <Link
-                  aria-label="Givenchy"
-                  href="/product"
-                  className="w-full h-full"
-                ></Link>
-              </figure>
-            </div>
-            {/* Fixed Image Section */}
-            <figure className="Fixed_image_cntr">
-              <div
-                data-start="hidden"
-                className="fixed_image_clip_cntr fixed_image_clip_cntr1"
-              >
-                <img
-                  src="/assets/images/mrandmrs/Srk Aryan.jpg"
-                  alt=""
-                  loading="lazy"
-                />
+      <div className="Gallery_main_textCntr">
+        <h1 className="">Some of the brands we have worked with</h1>
+      </div>
+      {galleryData.map((el, index) => {
+        return (
+          <section key={index} className="Gallery_wrapper">
+            <figure data-trackcolor className="gallery_cntr">
+              {/* <!-- Title Section 14.4 --> */}
+              <div className="gallery_text-cntr gallery_text-cntr1">
+                <h2 className="gallery_title_text">
+                  <Link href={"/product"} className="gallery_title_maintext">
+                    {el.caption}
+                  </Link>
+                </h2>
+              </div>
+              <div className="">
+                {/* Image section */}
+                <div data-track className="gallery_image_bottom_sec">
+                  <figure className="gallery_image_bottom_inner">
+                    <Link
+                      aria-label=""
+                      href="/product"
+                      className="w-full h-full"
+                    >
+                      {" "}
+                      {/* Fixed Image Section */}
+                      <figure className="Fixed_image_cntr">
+                        <div
+                          data-start="hidden"
+                          className="fixed_image_clip_cntr fixed_image_clip_cntr1"
+                        >
+                          <Image
+                            width={1000}
+                            height={1000}
+                            src={el.src}
+                            alt=""
+                            loading="lazy"
+                          />
+                        </div>
+                      </figure>
+                    </Link>
+                  </figure>
+                </div>
               </div>
             </figure>
-          </div>
-        </figure>
-      </section>
-      <section className="Gallery_wrapper">
-        <figure data-trackcolor className="gallery_cntr">
-          {/* <!-- Title Section 14.4 --> */}
-          <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text quote">
-              <Link href={""} className="gallery_title_maintext">
-                Lux Cozi
-              </Link>
-            </h2>
-          </div>
-          <div className="">
-            {/* Image section */}
-            <div data-track className="gallery_image_bottom_sec">
-              <figure className="gallery_image_bottom_inner">
-                <Link
-                  aria-label="Replay"
-                  href="replay "
-                  className="w-full h-full"
-                ></Link>
-              </figure>
-            </div>
-            {/* Fixed Image Section */}
-            <figure className="Fixed_image_cntr">
-              <div
-                data-start="hidden"
-                className="fixed_image_clip_cntr fixed_image_clip_cntr1"
-              >
-                <img
-                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </figure>
-          </div>
-        </figure>
-      </section>
-      <section className="Gallery_wrapper">
-        <figure data-trackcolor className="gallery_cntr">
-          {/* <!-- Title Section 14.4 --> */}
-          <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text quote">
-              <Link href={""} className="gallery_title_maintext">
-                D'YAVOL
-              </Link>
-            </h2>
-          </div>
-          <div className="">
-            {/* Image section */}
-            <div data-track className="gallery_image_bottom_sec">
-              <figure className="gallery_image_bottom_inner">
-                <Link
-                  aria-label=" Equinox "
-                  href=" equinox "
-                  className="w-full h-full"
-                ></Link>
-              </figure>
-            </div>
-            {/* Fixed Image Section */}
-            <figure className="Fixed_image_cntr">
-              <div
-                data-start="hidden"
-                className="fixed_image_clip_cntr fixed_image_clip_cntr1"
-              >
-                <img
-                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </figure>
-          </div>
-        </figure>
-      </section>
-      <section className="Gallery_wrapper">
-        <figure data-trackcolor className="gallery_cntr">
-          {/* <!-- Title Section 14.4 --> */}
-          <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text quote">
-              <Link href={""} className="gallery_title_maintext">
-                Ruskit
-              </Link>
-            </h2>
-          </div>
-          <div className="">
-            {/* Image section */}
-            <div data-track className="gallery_image_bottom_sec">
-              <figure className="gallery_image_bottom_inner">
-                <Link
-                  aria-label="Sophie"
-                  href="sophie"
-                  className="w-full h-full"
-                ></Link>
-              </figure>
-            </div>
-            {/* Fixed Image Section */}
-            <figure className="Fixed_image_cntr">
-              <div
-                data-start="hidden"
-                className="fixed_image_clip_cntr fixed_image_clip_cntr1"
-              >
-                <img
-                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </figure>
-          </div>
-        </figure>
-      </section>
-      <section className="Gallery_wrapper">
-        <figure data-trackcolor className="gallery_cntr">
-          {/* <!-- Title Section 14.4 --> */}
-          <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text quote">
-              <Link href={""} className="gallery_title_maintext">
-                Just Herbs
-              </Link>
-            </h2>
-          </div>
-          <div className="">
-            {/* Image section */}
-            <div data-track className="gallery_image_bottom_sec">
-              <figure className="gallery_image_bottom_inner">
-                <Link
-                  aria-label="Harley"
-                  href="harley"
-                  className="w-full h-full"
-                ></Link>
-              </figure>
-            </div>
-            {/* Fixed Image Section */}
-            <figure className="Fixed_image_cntr">
-              <div
-                data-start="hidden"
-                className="fixed_image_clip_cntr fixed_image_clip_cntr1"
-              >
-                <img
-                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </figure>
-          </div>
-        </figure>
-      </section>
-      <section className="Gallery_wrapper">
-        <figure data-trackcolor className="gallery_cntr">
-          {/* <!-- Title Section 14.4 --> */}
-          <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text quote">
-              <Link href={""} className="gallery_title_maintext">
-                Setu
-              </Link>
-            </h2>
-          </div>
-          <div className="">
-            {/* Image section */}
-            <div data-track className="gallery_image_bottom_sec">
-              <figure className="gallery_image_bottom_inner">
-                <Link
-                  aria-label="Renew"
-                  href="renew"
-                  className="w-full h-full"
-                ></Link>
-              </figure>
-            </div>
-            {/* Fixed Image Section */}
-            <figure className="Fixed_image_cntr">
-              <div
-                data-start="hidden"
-                className="fixed_image_clip_cntr fixed_image_clip_cntr1"
-              >
-                <img
-                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </figure>
-          </div>
-        </figure>
-      </section>
-      <section className="Gallery_wrapper">
-        <figure data-trackcolor className="gallery_cntr">
-          {/* <!-- Title Section 14.4 --> */}
-          <div className="gallery_text-cntr gallery_text-cntr1">
-            <h2 className="gallery_title_text quote">
-              <Link href={""} className="gallery_title_maintext">
-                Nimaya Project
-              </Link>
-            </h2>
-          </div>
-          <div className="">
-            {/* Image section */}
-            <div data-track className="gallery_image_bottom_sec">
-              <figure className="gallery_image_bottom_inner">
-                <Link
-                  aria-label="Nimaya Project"
-                  href="Nimaya Project"
-                  className="w-full h-full"
-                ></Link>
-              </figure>
-            </div>
-            {/* Fixed Image Section */}
-            <figure className="Fixed_image_cntr">
-              <div
-                data-start="hidden"
-                className="fixed_image_clip_cntr fixed_image_clip_cntr1"
-              >
-                <img
-                  src="/assets/images/mrandmrs/Mr_mrs.jpeg"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-            </figure>
-          </div>
-        </figure>
-      </section>
+          </section>
+        );
+      })}
+
       {/* <figure data-track="nav2" className="blan_div2">
         <p className="ScrollUp_btm">SCROLL UP</p>
       </figure> */}

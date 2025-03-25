@@ -420,12 +420,12 @@ const RageEntertainment = () => {
             sizes="100vw"
             // srcSet="https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1)-p-500.jpg 500w, https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1)-p-800.jpg 800w, https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1)-p-1080.jpg 1080w, https://cdn.prod.website-files.com/667f2710e5449c4792d415da/6716308e265253d733bb1900_66e83e9c30fc9972e0657ef6_Untitled%20design%20(46)%20(1).jpg 1620w"
             className="image p grad_up"
-            style={{
-              willChange: "transform",
-              transform:
-                "translate3d(0px, -10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-              transformStyle: "preserve-3d",
-            }}
+            // style={{
+            //   willChange: "transform",
+            //   transform:
+            //     "translate3d(0px, -10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            //   transformStyle: "preserve-3d",
+            // }}
           />
           <div className="grad_up" />
         </div>
@@ -1077,7 +1077,7 @@ const RageEntertainment = () => {
                       <Image
                         width={1000}
                         height={1000}
-                        src="/assets/images/RageEntertainment/6.22.24 Hozho - Highlights - Edited Files-21.jpg"
+                        src="/assets/images/RageEntertainment/Dyavol after dark_work.jpg"
                         loading="lazy"
                         alt=""
                         className="event_image"
@@ -1144,7 +1144,7 @@ const RageEntertainment = () => {
                   <div className="event_details card__content day">
                     <div className="event_card_details_line">
                       <div className="event_card_title_group">
-                        <h4 className="event_card_title">H&M (Ranbir)</h4>
+                        <h4 className="event_card_title">H&M</h4>
                       </div>
                       <div className="event_client_group">
                         <img
@@ -1227,7 +1227,7 @@ const RageEntertainment = () => {
                       <Image
                         width={1000}
                         height={1000}
-                        src="/assets/images/RageEntertainment/photolechu59.jpg"
+                        src="/assets/images/RageEntertainment/Praia1-work.jpg"
                         loading="lazy"
                         alt=""
                         className="event_image"
@@ -1244,7 +1244,7 @@ const RageEntertainment = () => {
                   <div className="event_details card__content day">
                     <div className="event_card_details_line">
                       <div className="event_card_title_group">
-                        <h4 className="event_card_title">Praia (Shraddha)</h4>
+                        <h4 className="event_card_title">Praia</h4>
                         <div className="new uni w-condition-invisible">
                           <div>new</div>
                         </div>
@@ -1305,7 +1305,7 @@ const RageEntertainment = () => {
                       <Image
                         width={1000}
                         height={1000}
-                        src="/assets/images/RageEntertainment/indoorcrwd.jpg"
+                        src="/assets/images/RageEntertainment/Flea Celeb-curtain.jpg"
                         loading="lazy"
                         alt=""
                         className="event_image"

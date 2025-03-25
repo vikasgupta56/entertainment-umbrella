@@ -349,7 +349,7 @@ const Artist_tour = () => {
               width={1000}
               height={1000}
               className="defl"
-              src="/assets/images/RangeMedia/3-3 (1)-2.jpg"
+              src="/assets/images/RageEntertainment/Artbat.JPG"
               loading="lazy"
             />
             <Image
@@ -363,7 +363,7 @@ const Artist_tour = () => {
               width={1000}
               height={1000}
               className="tour_image im-2"
-              src="/assets/images/RangeMedia/Bryan_Portray-52.jpg"
+              src="/assets/images/RageEntertainment/Hugel.JPG"
               loading="lazy"
             />
             <Image
@@ -377,8 +377,7 @@ const Artist_tour = () => {
               width={1000}
               height={1000}
               className="tour_image im-4"
-              src="/assets/images/RangeMedia/DSC08021.jpg"
-              loading="lazy"
+              src="/assets/images/RageEntertainment/Onfaya.jpg"
             />{" "}
             <Image
               width={1000}

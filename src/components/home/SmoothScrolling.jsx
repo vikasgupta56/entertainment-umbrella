@@ -9,6 +9,11 @@ const SmoothScrolling = ({ children }) => {
         smooth: 2,
         smoothMobile: false,
         resetNativeScroll: true,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
       });
     });
 

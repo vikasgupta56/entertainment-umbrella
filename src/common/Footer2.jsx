@@ -206,7 +206,7 @@ const Footer2 = forwardRef((props, ref) => {
         <div
           className="footer__wrapper"
           data-scroll=""
-          data-scroll-speed={-1}
+          // data-scroll-speed={-1}
           data-scroll-id="footer"
         >
           <div className="footer__top" data-scroll="">
@@ -317,7 +317,7 @@ const Footer2 = forwardRef((props, ref) => {
                     </div>
                   </div>
                   <div className="form__step step_3">
-                    <p className="your_name fht">3. How can we help you?</p>
+                    <p className="your_name fht">3. Enter Your Phone Number</p>
                     <div className="form__inputblock">
                       <div className="form__inputblock--heading">
                         <h2 className="fht">phone number</h2>

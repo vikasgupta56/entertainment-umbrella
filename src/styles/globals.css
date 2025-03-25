@@ -1,7 +1,8 @@
 @font-face {
   font-family: HelveticaBold;
   /* src: url(/fonts/vertopal.com_HelveticaNeueLTStd-Bd.0d3e2395.ttf); */
-  src: url(/fonts/DegularDisplay-Regular.3f5c83d0.ttf);
+  /* src: url(/fonts/DegularDisplay-Regular.3f5c83d0.ttf); */
+  src: url(https://fonts.google.com/specimen/DM+Sans);
   font-display: swap;
 }
 @font-face {
@@ -23,9 +24,10 @@
   font-display: swap;
 }
 :root {
-  --primary-fontB: "HelveticaBold";
+  --font-familyDMSans: "DM Sans", sans-serif;
+  /* --font-familyDMSans: "HelveticaBold";
   --primary-fontL: "HelveticaLight";
-  --primary-fontTh: "Helvetica_Neue_Thin";
+  --primary-fontTh: "Helvetica_Neue_Thin"; */
   --secondary-fontS: "SilkSerif_ExtraLight";
   --app-height: 100%;
   --trasX: 0;
@@ -103,12 +105,12 @@ html.lenis {
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  font-family: var(--primary-fontB);
+  font-family: var(--font-familyDMSans);
   color: #fff;
   z-index: 99;
 }
 .scrolldown_box h1 {
-  letter-spacing: 0.05em;
+  /* letter-spacing: 0.05em; */
   font-size: 2rem;
 }
 .scrolldown_box span {
@@ -690,6 +692,24 @@ html.lenis {
   z-index: 99;
   grid-template-columns: repeat(1, 1fr);
 }
+.mainPage_heading {
+  display: block;
+  place-items: center;
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  padding: 5rem 0;
+  font-family: var(--font-familyDMSans);
+  z-index: 9;
+}
+.mainPage_heading h1 {
+  font-size: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .mainPage_heading h1 {
+    font-size: 3rem;
+  }
+}
 .landing-page-inner,
 .landing-page-bounds {
   margin-left: auto;
@@ -772,7 +792,7 @@ html.lenis {
 } */
 .landing-page-a-text {
   position: relative;
-  font-family: var(--primary-fontB);
+  font-family: var(--font-familyDMSans);
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -890,7 +910,7 @@ html.lenis {
   border-color: red; */
   border-bottom: 1px solid #f0ebe580;
   padding-bottom: 0.125rem;
-  font-family: var(--primary-fontB);
+  font-family: var(--font-familyDMSans);
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 1.2;
@@ -959,7 +979,7 @@ html.lenis {
   top: 1rem;
 }
 .home__sections__group p {
-  font-family: var(--primary-fontB);
+  font-family: var(--font-familyDMSans);
   /* mix-blend-mode: difference;
   color: #fff; */
 }
@@ -1275,7 +1295,7 @@ html.lenis {
     font-size: 2.7vw;
     white-space: normal;
   }
-  .home__sections__section__title {
+  .home__sections__section__title_subtitle {
     font-size: 1rem;
     font-weight: 500;
     left: 0;
@@ -1288,20 +1308,37 @@ html.lenis {
     transition: opacity 0.45s cubic-bezier(0.15, 0.85, 0.45, 1);
     width: 100%;
     color: #fff;
-    font-family: var(--primary-fontL);
+    font-family: var(--font-familyDMSans);
     pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   [data-ratio="portrait"] .home__sections__section__title {
     display: none;
+  }
+  .home__sections__section__title {
+    position: relative;
+    overflow: hidden;
+    background-color: red;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.3rem 2rem;
   }
   .home__sections__section__title h2,
   .home__sections__section__title span {
     display: block;
     transition: transform 0.45s cubic-bezier(0.15, 0.85, 0.45, 1);
+    /* letter-spacing: 0.05em; */
+    font-weight: 600;
   }
   .home__sections__section__title h2 {
     font-size: inherit;
-    font-weight: inherit;
+    /* font-weight: inherit; */
   }
   .home__sections__section__title > :last-child {
     position: absolute;
@@ -1310,10 +1347,14 @@ html.lenis {
   }
   .is-hover .home__sections__section__title h2,
   .is-hover .home__sections__section__title span {
-    transform: translateY(-100%);
+    transform: translateY(-130%);
   }
   .is-hover--other .home__sections__section__title {
     opacity: 0.5;
+  }
+  .home__sections__section__title_subtitle h4 {
+    font-size: 1rem;
+    font-weight: 400;
   }
 }
 @media (min-width: 1024px) {
@@ -1365,7 +1406,8 @@ main .heroBanner__container {
 /* Footer */
 .footer {
   position: relative;
-  font-family: var(--primary-fontL);
+  font-family: var(--font-familyDMSans);
+
   background-color: #000;
   overflow: hidden;
 }
@@ -1405,6 +1447,11 @@ main .heroBanner__container {
 @media screen and (max-width: 840px) {
   .footer__top {
     margin-bottom: 50vh;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer__top {
+    margin-bottom: 30vh;
   }
 }
 .footer__top--left {
@@ -1448,13 +1495,18 @@ main .heroBanner__container {
   font-weight: 300;
   font-size: 5vw;
   line-height: 10vh;
-  letter-spacing: 0.02em;
+  /* letter-spacing: 0.02em; */
 }
 @media screen and (max-width: 840px) {
   .footer .form__inputblock--heading h2 {
     font-weight: 300;
     font-size: 50px;
     line-height: 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer .form__inputblock--heading h2 {
+    font-size: 35px;
   }
 }
 .footer .form__inputblock--input input,
@@ -1468,9 +1520,16 @@ main .heroBanner__container {
   font-weight: 300;
   font-size: 5vw;
   line-height: 10vh;
-  letter-spacing: 0.02em;
+  /* letter-spacing: 0.02em; */
   color: #ffffff;
   text-transform: uppercase;
+  margin-left: 1rem;
+}
+@media screen and (max-width: 767px) {
+  .footer .form__inputblock--input input,
+  .footer .form__inputblock--input textarea {
+    margin-left: 0;
+  }
 }
 .footer .form__inputblock--input input::placeholder,
 .footer .form__inputblock--input textarea::placeholder {
@@ -1483,6 +1542,12 @@ main .heroBanner__container {
     font-size: 50px;
     line-height: 50px;
     margin-top: -6px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer .form__inputblock--input input,
+  .footer .form__inputblock--input textarea {
+    font-size: 35px;
   }
 }
 .footer .form__inputblock--input input.message_input,
@@ -1528,6 +1593,11 @@ main .heroBanner__container {
     font-weight: 300;
     font-size: 50px;
     line-height: 2;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer .form__inputblock--input.has_word span {
+    font-size: 35px;
   }
 }
 .footer .form__step {
@@ -1591,7 +1661,7 @@ main .heroBanner__container {
 .footer__greeting {
   position: absolute;
   width: 100%;
-  height: calc(100% - 205px);
+  /* height: calc(100% - 205px); */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1615,7 +1685,7 @@ main .heroBanner__container {
   font-weight: 300;
   font-size: 4vw;
   line-height: 10vh;
-  letter-spacing: 0.02em;
+  /* letter-spacing: 0.02em; */
   text-transform: uppercase;
 }
 @media screen and (max-width: 840px) {
@@ -1750,7 +1820,7 @@ main .heroBanner__container {
   font-weight: 300;
   font-size: 16px;
   line-height: 25px;
-  letter-spacing: 0.02em;
+  /* letter-spacing: 0.02em; */
   text-transform: uppercase;
   max-width: 17vw;
   margin-bottom: 1rem;
@@ -1813,7 +1883,7 @@ main .heroBanner__container {
 .footer__bottom--text--right h6 {
   font-size: 1rem;
   line-height: 14px;
-  letter-spacing: 0.2em;
+  /* letter-spacing: 0.2em; */
   text-transform: uppercase;
   margin-bottom: 10px;
   font-weight: 300;
@@ -2025,7 +2095,7 @@ main .heroBanner__container {
   color: #757575;
   font-size: 13px;
   line-height: 18px;
-  letter-spacing: 0.02em;
+  /* letter-spacing: 0.02em; */
   text-transform: uppercase;
 }
 .footer p.copytext span i {

@@ -2,9 +2,164 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger, SplitText);
+const serviceData = [
+  {
+    Number: "01",
+    heading: "Campaign Planning",
+    desc: "We create campaigns that hit the mark.",
+  },
+  {
+    Number: "02",
+    heading: "Content Strategizing",
+    desc: "We craft strategies that engage and deliver.",
+  },
+
+  {
+    Number: "03",
+    heading: "End-to-End Execution",
+    desc: "From concept to completion, we’ve got it covered.",
+  },
+
+  {
+    Number: "04",
+    heading: "Production",
+    desc: "We create content that makes an impact.",
+  },
+  {
+    Number: "05",
+    heading: "Marketing",
+    desc: "We build campaigns that get noticed.",
+  },
+];
+const BrandLogoData = [
+  {
+    id: "1",
+    logo: "/assets/images/dhamaka/logos/myntra_white.png",
+    logoDesc:
+      "Consulting in press relations strategy and awareness development",
+    link: "#",
+  },
+  {
+    id: "2",
+    logo: "/assets/images/dhamaka/logos/pepsi_white.png",
+    logoDesc: "Communication consultancy, press relations and influence",
+    link: "#",
+  },
+  {
+    id: "3",
+    logo: "/assets/images/dhamaka/logos/coca_cola_white.png",
+    logoDesc: "Development of awareness Press relations and influence",
+    link: "#",
+  },
+  {
+    id: "4",
+    logo: "/assets/images/dhamaka/logos/coke_studios_white.png",
+    logoDesc: "Communication and press relations consultancy, influence",
+    link: "#",
+  },
+  {
+    id: "5",
+    logo: "/assets/images/dhamaka/logos/flipkart_white.png",
+    logoDesc: "Press relations, influence, awareness strategy",
+    link: "#",
+  },
+  {
+    id: "6",
+    logo: "/assets/images/dhamaka/logos/uniqlo_white.png",
+    logoDesc:
+      "Consulting in press relations strategy and awareness development",
+    link: "#",
+  },
+  {
+    id: "7",
+    logo: "/assets/images/dhamaka/logos/bisleri_white.png",
+    logoDesc:
+      "  Consulting in press relations strategy and awareness development",
+    link: "#",
+  },
+  {
+    id: "8",
+    logo: "/assets/images/dhamaka/logos/t_series_white.png",
+    logoDesc: " Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "9",
+    logo: "/assets/images/dhamaka/logos/saregama_white.png",
+    logoDesc: " Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "10",
+    logo: "/assets/images/dhamaka/logos/panorama_studios_white.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "11",
+    logo: "/assets/images/dhamaka/logos/namoh_studios_white.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "12",
+    logo: "/assets/images/dhamaka/logos/tips_music_white.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "13",
+    logo: "/assets/images/dhamaka/logos/vivo_white.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "14",
+    logo: "/assets/images/dhamaka/logos/samsung_white.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "15",
+    logo: "/assets/images/dhamaka/logos/crocs_white.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "16",
+    logo: "/assets/images/dhamaka/logos/firebolt_white.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "17",
+    logo: "/assets/images/dhamaka/logos/lakme_whites.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "18",
+    logo: "/assets/images/dhamaka/logos/maybelline_white.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "19",
+    logo: "/assets/images/dhamaka/logos/azorte_white.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+  {
+    id: "20",
+    logo: "/assets/images/dhamaka/logos/rare_rabbit_white.png",
+    logoDesc: "Communication and development strategy consulting",
+    link: "#",
+  },
+];
 const Dhamaka_Hero = () => {
   useEffect(() => {
     // Select all .vf-section elements
@@ -391,15 +546,13 @@ const Dhamaka_Hero = () => {
               <div className="v-wrapper-inner-content">
                 <h2 className="v-wrapper-heading quote">Our vision</h2>
                 <p className="quote">
-                  As a project scout, we help our clients highlight their
-                  expertise in the art of living and in creating homes to live
-                  in. <br />
-                  <br />
-                  Our traveling soul leads us to collaborate in the promotion of
-                  destinations, travel homes and know-how from here and there.
-                  We believe in the power of authentic stories and clear
-                  discourse to strengthen the reputation and image of our
-                  clients.
+                  To build the largest creator community where creators can not
+                  just seamlessly collaborate with brands but also upskill
+                  themselves through our diverse services. As a one-stop
+                  solution for everything, we want to empower creators to
+                  explore, experience, and elevate every aspect of their
+                  journey. As Helen Keller said, ‘Alone we can do so little;
+                  together we can do so much.
                 </p>
               </div>
             </div>
@@ -438,89 +591,23 @@ const Dhamaka_Hero = () => {
         <div className="v-wrapper">
           <div className="o-wrapper">
             <div className="o-wrapper-inner">
-              <div className="o-item">
-                <div className="o-item_inner">
-                  <span className="o-item_inner_num quote">01</span>
-                  <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading quote">
-                      Campaign Planning
-                    </h3>
-                    <p className="i-wrapper-para quote">
-                      We design brand identities that match our clients' values.
-                    </p>
+              {serviceData.map((item, index) => {
+                return (
+                  <div key={index} className="o-item">
+                    <div className="o-item_inner">
+                      <span className="o-item_inner_num quote">
+                        {item.Number}
+                      </span>
+                      <div className="i-wrapper">
+                        <h3 className="i-wrapper-heading quote">
+                          {item.heading}
+                        </h3>
+                        <p className="i-wrapper-para quote">{item.desc}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="o-item">
-                <div className="o-item_inner">
-                  <span className="o-item_inner_num quote">02</span>
-                  <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading quote">
-                      Content Strategizing
-                      {/* <br />
-                      and development <br />
-                      strategy consulting */}
-                    </h3>
-                    <p className="i-wrapper-para quote">
-                      We work closely with our clients to develop customized
-                      strategies.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="o-item">
-                <div className="o-item_inner">
-                  <span className="o-item_inner_num quote">03</span>
-                  <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading quote">
-                      End-to-End Execution
-                    </h3>
-                    <p className="i-wrapper-para quote">
-                      We produce content to strengthen our clients' online and
-                      offline presence .
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="o-item">
-                <div className="o-item_inner">
-                  <span className="o-item_inner_num quote">04</span>
-                  <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading quote">Production</h3>
-                    <p className="i-wrapper-para quote">
-                      We seek strategic partnerships to strengthen our clients'
-                      position in the market.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="o-item">
-                <div className="o-item_inner">
-                  <span className="o-item_inner_num quote">05</span>
-                  <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading quote">Marketing</h3>
-                    <p className="i-wrapper-para quote">
-                      We set up campaigns to attract the attention of media and
-                      influencers.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* <div className="o-item">
-                <div className="o-item_inner">
-                  <span className="o-item_inner_num">06</span>
-                  <div className="i-wrapper">
-                    <h3 className="i-wrapper-heading">
-                      Digital <br />
-                      communication
-                    </h3>
-                    <p className="i-wrapper-para">
-                      We manage online communication, from content creation to
-                      media buying.
-                    </p>
-                  </div>
-                </div>
-              </div> */}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -537,81 +624,91 @@ const Dhamaka_Hero = () => {
               </div>
               <div className="c-wrapper">
                 <div className="c-wrapper-inner">
-                  <div className="js-v-item v-item quotetriggerCntr">
-                    <Link
-                      className="js-v-link js-v-item-inner"
-                      href=""
-                      target="_blank"
-                      title=""
-                    >
-                      <h3 className="js-v-item-inner-head quote">Myntra</h3>
-                      <span className="js-v-item-inner-para quote">
-                        Consulting in press relations strategy
-                        <br />
-                        and awareness development
-                      </span>
-                    </Link>
-                    <div className="c-vsl-wrapper">
-                      <div className="js-v-vsl vsl-item">
-                        <div className="media-background lazy-container">
-                          <picture>
-                            <source
-                              data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/4-copie.webp"
-                              type="image/webp"
+                  {BrandLogoData.map((brandlogo, index) => {
+                    return (
+                      <div className="js-v-item v-item quotetriggerCntr">
+                        <Link
+                          className="js-v-link js-v-item-inner"
+                          href=""
+                          target="_blank"
+                          title=""
+                        >
+                          {/* <h3 className="js-v-item-inner-head quote">Myntra</h3> */}
+                          <div className="logoImagecntr">
+                            <Image
+                              width={1000}
+                              height={1000}
+                              src={brandlogo.logo}
+                              alt=""
                             />
-                            <img
-                              className="lazy"
-                              src="https://gaelleperrin.com/wp-content/uploads/2024/09/4-copie.jpg"
-                              alt="Voyage en train, liaison Ella Kandy"
-                              width={1314}
-                              height={867}
-                              aspect=""
-                            />
-                          </picture>
-                          <div className="placeholder" />
-                        </div>
+                          </div>
+                          <span className="js-v-item-inner-para">
+                            {/* {brandlogo.logoDesc} */}
+                          </span>
+                        </Link>
+                        {/* <div className="c-vsl-wrapper">
+                          <div className="js-v-vsl vsl-item">
+                            <div className="media-background lazy-container">
+                              <picture>
+                                <source
+                                  data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/4-copie.webp"
+                                  type="image/webp"
+                                />
+                                <img
+                                  className="lazy"
+                                  src="https://gaelleperrin.com/wp-content/uploads/2024/09/4-copie.jpg"
+                                  alt="Voyage en train, liaison Ella Kandy"
+                                  width={1314}
+                                  height={867}
+                                  aspect=""
+                                />
+                              </picture>
+                              <div className="placeholder" />
+                            </div>
+                          </div>
+                          <div className="js-v-vsl vsl-item">
+                            <div className="media-background lazy-container">
+                              <picture>
+                                <source
+                                  data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/9-copie.webp"
+                                  type="image/webp"
+                                />
+                                <img
+                                  className="lazy"
+                                  src="https://gaelleperrin.com/wp-content/uploads/2024/09/9-copie.jpg"
+                                  alt="Peche"
+                                  width={1680}
+                                  height={1120}
+                                  aspect=""
+                                />
+                              </picture>
+                              <div className="placeholder" />
+                            </div>
+                          </div>
+                          <div className="js-v-vsl vsl-item">
+                            <div className="media-background lazy-container">
+                              <picture>
+                                <source
+                                  data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/10-copie.webp"
+                                  type="image/webp"
+                                />
+                                <img
+                                  className="lazy"
+                                  src="https://gaelleperrin.com/wp-content/uploads/2024/09/10-copie.jpg"
+                                  alt="Atelier Rhum Arrangé le Tapacala"
+                                  width={1134}
+                                  height={756}
+                                  aspect=""
+                                />
+                              </picture>
+                              <div className="placeholder" />
+                            </div>
+                          </div>
+                        </div> */}
                       </div>
-                      <div className="js-v-vsl vsl-item">
-                        <div className="media-background lazy-container">
-                          <picture>
-                            <source
-                              data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/9-copie.webp"
-                              type="image/webp"
-                            />
-                            <img
-                              className="lazy"
-                              src="https://gaelleperrin.com/wp-content/uploads/2024/09/9-copie.jpg"
-                              alt="Peche"
-                              width={1680}
-                              height={1120}
-                              aspect=""
-                            />
-                          </picture>
-                          <div className="placeholder" />
-                        </div>
-                      </div>
-                      <div className="js-v-vsl vsl-item">
-                        <div className="media-background lazy-container">
-                          <picture>
-                            <source
-                              data-srcset="https://gaelleperrin.com/wp-content/uploads/2024/09/10-copie.webp"
-                              type="image/webp"
-                            />
-                            <img
-                              className="lazy"
-                              src="https://gaelleperrin.com/wp-content/uploads/2024/09/10-copie.jpg"
-                              alt="Atelier Rhum Arrangé le Tapacala"
-                              width={1134}
-                              height={756}
-                              aspect=""
-                            />
-                          </picture>
-                          <div className="placeholder" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="js-v-item v-item quotetriggerCntr">
+                    );
+                  })}
+                  {/* <div className="js-v-item v-item quotetriggerCntr">
                     <Link
                       className="js-v-link js-v-item-inner"
                       href=""
@@ -1612,7 +1709,7 @@ const Dhamaka_Hero = () => {
                       </span>
                     </Link>
                     <div className="c-vsl-wrapper" />
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="l-wrapper py-8 py-4@sm">

@@ -24,10 +24,10 @@ const data = [
     videoSrc: "/assets/images/mrandmrs/videos/mrandmrsbg.mp4",
   },
   {
-    videoSrc: "/assets/images/mrandmrs/videos/FILM_Sarkat_2.mp4",
+    videoSrc: "/assets/images/mrandmrs/videos/Googly WINDOW FILM.webm",
   },
   {
-    videoSrc: "/assets/images/mrandmrs/videos/FILM_Sarkat_1.mp4",
+    videoSrc: "/assets/images/mrandmrs/videos/Copy+of+Copy+of+Rungta+TMT.webm",
   },
   {
     videoSrc: "/assets/images/mrandmrs/videos/FILM_Sarkat3.mp4",
@@ -209,7 +209,7 @@ const Home_heroNew = () => {
                 }}
               />
             </div>
-            <h5 className="slide-range three">05</h5>
+            <h5 className="slide-range three">04</h5>
           </div>
         </div>
       </div>

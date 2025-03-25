@@ -3,6 +3,38 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
+const homePageCardData = [
+  {
+    id: 1,
+    heading: "MR & MRS",
+    subHeading: "Production ads and events",
+    imgSrc: "/assets/images/mrandmrs/Srk Aryan.jpg",
+    link: "../../mrandmrs",
+  },
+  {
+    id: 1,
+    heading: "RAGE MEDIA",
+    subHeading: "Social Media Management",
+    imgSrc: "/assets/images/RangeMedia/gold dusk .jpg",
+    link: "../../newPage",
+  },
+  {
+    id: 1,
+    heading: "RAGE ENTERTAINMENT",
+    subHeading: "Large Scale Events",
+    imgSrc:
+      "/assets/images/RageEntertainment/6.22.24 Hozho - Highlights - Edited Files-21.jpg",
+    link: "../../rage-entertainment",
+  },
+  {
+    id: 1,
+    heading: "DHAMAKA",
+    subHeading: "Marketing for Music and Movies",
+    imgSrc:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI8yItj77S93-ONUYiUYCvsyfbnbZ_OGjjqSviJ8cLNYqx0xhuKhotugItLP-jYcshOEE&usqp=CAU",
+    link: "../../dhamaka",
+  },
+];
 const MainpageHero = () => {
   useEffect(() => {
     const DESKTOP_BREAKPOINT = window.matchMedia("(min-width: 768px)");
@@ -212,7 +244,7 @@ const MainpageHero = () => {
                 <div className="Media_alternativeVideoPlayerWrapper">
                   <div>
                     <video
-                      src="https://a.storyblok.com/f/283181/x/4993b4b4e7/twofiftyk_website_loop_header.mp4"
+                      src="/assets/images/mainpage/videos/hero_section_landing_page_trimmed.webm"
                       preload
                       autoPlay
                       loop
@@ -381,11 +413,11 @@ const MainpageHero = () => {
               controlsList="nodownload"
             >
               <source
-                src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
+                src="/assets/images/mainpage/videos/dhamaka_hover.webm"
                 type="video/webm"
               />
               <source
-                src="../../../assets/images/mrandmrs/videos/Dyavol_after_dark10.mp4"
+                src="/assets/images/mainpage/videos/dhamaka_hover.webm"
                 type="video/mp4"
               />
             </video>
@@ -399,20 +431,25 @@ const MainpageHero = () => {
           data-entry=""
         >
           <div className="landing-page-left_img_cntr_ul">
-            <div className="landing-page-li">
-              <a
-                href="../../mrandmrs"
-                className="landing-page-a"
-                data-group="studio"
-              >
-                {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
-                <span className="home__sections__section__outline home__sections__section__outline--left"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--top"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--right"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
+            <div className="mainPage_heading">
+              <h1>All In on Entertainment</h1>
+            </div>
+            {homePageCardData.map((el, index) => {
+              return (
+                <div key={index} className="landing-page-li">
+                  <a
+                    href={el.link}
+                    className="landing-page-a"
+                    data-group="studio"
+                  >
+                    {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
+                    <span className="home__sections__section__outline home__sections__section__outline--left"></span>
+                    <span className="home__sections__section__outline home__sections__section__outline--top"></span>
+                    <span className="home__sections__section__outline home__sections__section__outline--right"></span>
+                    <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
 
-                <div className="home__sections__section__link">
-                  {/* <div className="home__sections__group">
+                    <div className="home__sections__section__link">
+                      {/* <div className="home__sections__group">
                   <p className="home__sections__group__label">Go to</p>
                   <p className="home__sections__group__title">
                     <span>
@@ -422,123 +459,23 @@ const MainpageHero = () => {
                     <span>Studio</span>
                   </p>
                 </div> */}
-                  <span className="glass-point">
-                    <span className="glass-point__inset"></span>
-                  </span>
-                </div>
-                <div className="home__sections__section__title">
-                  <h2>MR & MRS</h2>
-                  <span>MR & MRS</span>
-                </div>
-                <img src="/assets/images/mrandmrs/Srk Aryan.jpg" alt="" />
-              </a>
-            </div>
-            <div className="landing-page-li">
-              <Link
-                href="../../newPage"
-                className="landing-page-a"
-                data-group="store"
-              >
-                {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" />{" "} */}
-                <span className="home__sections__section__outline home__sections__section__outline--left"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--top"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--right"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
-                <div className="home__sections__section__link">
-                  {/* <div className="home__sections__group">
-                  <p className="home__sections__group__label">Go to</p>
-                  <p className="home__sections__group__title">
-                    <span>RAGE MEDIA &nbsp;</span>
-                    <br />
-                    <span> Studio</span>
-                  </p>
-                </div> */}
-                  <div className="home__sections__section__title">
-                    <h2>RAGE MEDIA</h2>
-                    <span>RAGE MEDIA</span>
-                  </div>
-                  <span className="glass-point">
-                    <span className="glass-point__inset"></span>
-                  </span>
-                </div>
-                <img src="/assets/images/RangeMedia/gold dusk .jpg" alt="" />
-              </Link>
-            </div>
-            <div className="landing-page-li">
-              <Link
-                href="../../rage-entertainment"
-                className="landing-page-a"
-                data-group="art_foundation"
-              >
-                {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
-                <span className="home__sections__section__outline home__sections__section__outline--left"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--top"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--right"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
-                <div className="home__sections__section__link">
-                  {/* <div className="home__sections__group">
-                  <p className="home__sections__group__label">Go to</p>
-                  <p className="home__sections__group__title">
-                    <span>
-                      <span>DHAMAKA &nbsp;</span>
-                    </span>
-                    <br />
-                    <span>Studio</span>
-                  </p>
-                </div> */}
+                      <span className="glass-point">
+                        <span className="glass-point__inset"></span>
+                      </span>
+                    </div>
 
-                  <div className="home__sections__section__title">
-                    <h2>RAGE ENTERTAINMENT</h2>
-                    <span>RAGE ENTERTAINMENT</span>
-                  </div>
-                  <span className="glass-point">
-                    <span className="glass-point__inset"></span>
-                  </span>
+                    <div className="home__sections__section__title_subtitle">
+                      <div className="home__sections__section__title">
+                        <h2>{el.heading}</h2>
+                        <span>{el.heading}</span>
+                      </div>
+                      <h4>{el.subHeading}</h4>
+                    </div>
+                    <img src={el.imgSrc} alt="" />
+                  </a>
                 </div>
-                <img
-                  src="/assets/images/RageEntertainment/6.22.24 Hozho - Highlights - Edited Files-21.jpg"
-                  alt=""
-                />
-              </Link>
-            </div>
-            <div className="landing-page-li">
-              <Link
-                href="../../dhamaka"
-                className="landing-page-a"
-                data-group="art_foundation"
-              >
-                {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
-
-                <span className="home__sections__section__outline home__sections__section__outline--left"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--top"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--right"></span>
-                <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
-                <div className="home__sections__section__link">
-                  {/* <div className="home__sections__group">
-                  <p className="home__sections__group__label">Go to</p>
-                  <p className="home__sections__group__title">
-                    <span>
-                      <span>DHAMAKA &nbsp;</span>
-                    </span>
-                    <br />
-                    <span>Studio</span>
-                  </p>
-                </div> */}
-
-                  <div className="home__sections__section__title">
-                    <h2>DHAMAKA</h2>
-                    <span>DHAMAKA</span>
-                  </div>
-                  <span className="glass-point">
-                    <span className="glass-point__inset"></span>
-                  </span>
-                </div>
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI8yItj77S93-ONUYiUYCvsyfbnbZ_OGjjqSviJ8cLNYqx0xhuKhotugItLP-jYcshOEE&usqp=CAU"
-                  alt=""
-                />
-              </Link>
-            </div>
+              );
+            })}
           </div>
         </div>
         {/* <div className="desktop_hidden">
@@ -592,30 +529,3 @@ const MainpageHero = () => {
 };
 
 export default MainpageHero;
-{
-  /* <div className="landing-page-inner">
-        <div className="landing-page-text">
-          <div className="landing-page-text-inner">
-            <h2 />
-            <p>Select a side and start exploring.</p>
-          </div>
-        </div>
-        <ul className="landing-page-ul">
-          <li className="landing-page-li">
-            <Link href="/mrandmrs" className="landing-page-a">
-              <span className="landing-page-a-text">MR.&MRS</span>
-            </Link>
-          </li>
-          <li className="landing-page-li">
-            <Link href="/newPage" className="landing-page-a">
-              <span className="landing-page-a-text">RAGE MEDIA</span>
-            </Link>
-          </li>
-          <li className="landing-page-li">
-            <Link href="/dhamaka" className="landing-page-a">
-              <span className="landing-page-a-text">DHAMAKA</span>
-            </Link>
-          </li>
-        </ul>
-      </div> */
-}

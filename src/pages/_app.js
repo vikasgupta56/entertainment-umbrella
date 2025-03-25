@@ -21,7 +21,6 @@ export default function App({ Component, pageProps }) {
   const contactRef = useRef(null); // Create a ref for the footer
 
   return (
-    // <SmoothScrolling>
     <>
       {pathname === "/" ? (
         <>
@@ -30,14 +29,15 @@ export default function App({ Component, pageProps }) {
       ) : (
         <>
           {" "}
+          {/* <SmoothScrolling> */}
           <Navbar contactRef={contactRef} />
           <Component {...pageProps} />
           {/* <Footer /> */}
+          {/* </SmoothScrolling> */}
           <Footer2 ref={contactRef} />
           <BacktoTop />
         </>
       )}
     </>
-    // </SmoothScrolling>
   );
 }

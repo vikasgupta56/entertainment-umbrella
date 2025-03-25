@@ -1683,7 +1683,7 @@ const Artist = () => {
                 className="artist_grid-cell-img art-info"
               />
             </div>
-            <div
+            {/* <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b82c-c7f4dd6b"
               className="artist-grid-img izumi"
               style={{ opacity: 0 }}
@@ -1694,7 +1694,7 @@ const Artist = () => {
                 alt=""
                 className="artist_grid-cell-img art-info"
               />
-            </div>
+            </div> */}
             <div
               id="w-node-_17284a8f-b135-01b9-aada-a7be7621b82e-c7f4dd6b"
               className="artist-grid-img izumi"

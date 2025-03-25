@@ -187,26 +187,6 @@ const About = () => {
             our penchant for crafting long-lingering moments didn't stop right
             there. Today, we take pride in ourselves as an event-creating,
             unforgettable-experience-building company too.
-            {/* <span className="itext__line">
-              Welcome to Mr. and Mrs. Films... and Sometimes Events!
-            </span>
-            A powerhouse where the art of the magic of live
-            <span className="itext__line">
-              experiences. Born from our work our love of creativity,
-            </span>
-            <span className="itext__line">we are a film production house</span>
-            <span className="itext__line">
-              committed to finding a fresh angle every time we tell a story.
-            </span>
-            <span className="itext__line">
-              But our penchant for crafting long-lingering moments didn't
-            </span>
-            <span className="itext__line">
-              stop right there. Today, we take pride in ourselves as an event-
-            </span>
-            <span>
-              creating, unforgettable-experience-building company too.
-            </span> */}
           </h3>
         </div>
         <div
@@ -216,7 +196,7 @@ const About = () => {
         >
           <div className="intro__video--wrapper btn-text">
             <video muted autoPlay playsInline loop className="v_autoplay">
-              <source src="/assets/videos/Dhamaka-video 2.mp4" />
+              <source src="/assets/images/mrandmrs/videos/video_to_go_in_the_circle (malti_ka_sapna).webm" />
             </video>
           </div>
         </div>

@@ -108,7 +108,7 @@ const Logos = () => {
               <Image
                 width={1000}
                 height={1000}
-                src="/assets/images/RangeMedia/Logos/Dhamaka Records.png"
+                src="/assets/images/RangeMedia/Logos/dhamaka_record_logo.png"
               ></Image>
             </figure>
             <figure className="full-brands__section__item">

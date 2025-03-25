@@ -10,7 +10,8 @@
   padding-top: clamp(14rem, 13.228vw, 13.228vw);
   padding-bottom: clamp(14rem, 13.228vw, 13.228vw);
   overflow: hidden;
-  background-color: #000000;
+  /* background-color: #000000; */
+  background-color: #c81111;
   color: #fff;
 }
 .Dhamaka_hero-section .c-wrapper {
@@ -38,10 +39,12 @@
   backface-visibility: hidden;
 }
 .ln-t:nth-child(2) {
-  color: rgb(212, 34, 35);
+  /* color: rgb(212, 34, 35); */
+  color: rgb(0, 0, 0);
 }
 .ln-t:nth-child(4) {
-  color: rgb(212, 34, 35);
+  /* color: rgb(212, 34, 35); */
+  color: rgb(0, 0, 0);
 }
 .ch-t {
   -webkit-transform: translateZ(0);
@@ -61,19 +64,22 @@
   font-size: clamp(2.48rem, 5vw, 5vw);
   line-height: 1.04;
   /* font-family: var(--secondary-fontS); */
-  font-family: var(--primary-fontB);
-  /* font-family: var(--primary-fontB); */
+  font-family: var(--font-familyDMSans);
+
+  /*  font-family: var(--font-familyDMSans);
+ */
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 600;
   font-style: normal;
-  letter-spacing: 0.02em;
+  /* letter-spacing: 0.02em; */
 }
 
 .Dhamaka_hero-section .c-wrapper p {
   font-size: clamp(1.25rem, 0.926vw, 0.926vw);
   line-height: 1.6;
   text-transform: uppercase;
-  font-family: var(--primary-fontL);
+  font-family: var(--font-familyDMSans);
+
   margin-bottom: calc(4 * clamp(1rem, 1.058vw, 1.058vw));
   padding-left: clamp(1rem, 1.058vw, 1.058vw);
   padding-right: clamp(1rem, 1.058vw, 1.058vw);
@@ -158,6 +164,7 @@
   -ms-flex-pack: center;
   justify-content: center;
   background-color: #000;
+  background-color: #c81111;
 }
 
 .vf-section .v-wrapper {
@@ -206,30 +213,33 @@
   flex-direction: column;
 }
 .v-wrapper-inner-content .v-wrapper-heading {
-  letter-spacing: 0.02em;
-  font-family: var(--primary-fontB);
+  /* letter-spacing: 0.02em; */
+  font-family: var(--font-familyDMSans);
+
   text-transform: uppercase;
   font-size: 3.704vw;
   font-size: clamp(3rem, 2.704vw, 3.704vw);
   line-height: 1.04;
-  font-weight: 800;
+  font-weight: 600;
 }
 .v-wrapper-inner-content h4 {
-  font-family: var(--primary-fontB);
+  font-family: var(--font-familyDMSans);
+
   font-size: 1.5rem;
   margin-top: 1rem;
 }
 .v-wrapper-inner-content p {
   margin-top: calc(8 * clamp(1rem, 1.058vw, 1.058vw));
-  font-family: var(--primary-fontL);
+  font-family: var(--font-familyDMSans);
+
   font-size: clamp(1rem, 0.926vw, 0.926vw);
   line-height: 1.6;
   text-transform: uppercase;
   padding: 0 calc(1 * clamp(1rem, 1.058vw, 1.058vw));
   margin-bottom: calc(2 * clamp(1rem, 1.058vw, 1.058vw));
   padding-top: calc(1 * clamp(1rem, 1.058vw, 1.058vw));
-  letter-spacing: 0.04em;
-  font-weight: 900;
+  /* letter-spacing: 0.04em; */
+  font-weight: 400;
   line-height: 1.1;
 }
 .lazy-container {
@@ -322,7 +332,8 @@
   height: 100%;
   padding: 0.75em 45px;
   overflow: hidden;
-  background-color: #000;
+  /* background-color: #000; */
+  background-color: #c81111;
 }
 .o-wrapper {
   padding-top: calc(11 * clamp(1rem, 1.058vw, 1.058vw));
@@ -351,7 +362,7 @@
   font-size: clamp(2rem, 3.704vw, 3.704vw);
   line-height: 1.04;
   text-transform: uppercase;
-  font-family: var(--primary-fontB);
+  font-family: var(--font-familyDMSans);
 }
 .vo-section .o-wrapper .o-item .i-wrapper {
   width: clamp(23.75em, 47.619vw, 47.619vw);
@@ -362,17 +373,19 @@
   font-size: clamp(2.5rem, 3.704vw, 3vw);
   line-height: 1.04;
   text-transform: uppercase;
-  font-family: var(--primary-fontB);
-  letter-spacing: 0.02em;
+  font-family: var(--font-familyDMSans);
+
+  /* letter-spacing: 0.02em; */
   /* transition: all 1s cubic-bezier(0.19, 1, 0.22, 1); */
 }
 .i-wrapper-para {
   font-size: 0.926vw;
   font-size: clamp(1rem, 0.926vw, 0.926vw);
-  letter-spacing: 0.03em;
+  /* letter-spacing: 0.03em; */
   line-height: 1.04;
   text-transform: uppercase;
-  font-family: var(--primary-fontL);
+  font-family: var(--font-familyDMSans);
+
   /* padding-right: calc(12 * clamp(1rem, 1.058vw, 1.058vw)); */
   margin-top: calc(1 * clamp(1rem, 1.058vw, 1.058vw));
 }
@@ -459,11 +472,13 @@
 }
 .intro-wrapper-inner {
   text-transform: uppercase;
-  font-family: var(--primary-fontB);
+  font-family: var(--font-familyDMSans);
+  color: #c81111;
+
   font-size: 0.926vw;
   font-size: clamp(1rem, 0.926vw, 0.926vw);
   line-height: 1.6;
-  letter-spacing: 0.04em;
+  /* letter-spacing: 0.04em; */
 }
 .vh-section .c-wrapper {
   padding-left: calc(3 * clamp(1rem, 1.058vw, 1.058vw));
@@ -478,29 +493,52 @@
 }
 .vh-section .v-wrapper .js-v-inner .v-item {
   position: relative;
-  padding-bottom: calc(2 * clamp(1rem, 1.058vw, 1.058vw));
+  padding-bottom: calc(2 * clamp(2rem, 1.058vw, 1.058vw));
 }
 .vh-section .v-wrapper .js-v-inner .v-item .js-v-item-inner {
   position: relative;
   z-index: 2;
   cursor: pointer;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.logoImagecntr {
+  /* aspect-ratio: 1; */
+  width: 15%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  /* margin-bottom: 1rem; */
+}
+.logoImagecntr img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 .js-v-item-inner-head {
   margin-bottom: calc(0.25 * clamp(1rem, 1.058vw, 1.058vw));
-  font-family: var(--primary-fontB);
+  font-family: var(--font-familyDMSans);
+
   font-size: 3.704vw;
   font-size: clamp(2.5em, 3.704vw, 3.704vw);
   line-height: 1.04;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  /* letter-spacing: 0.04em; */
 }
 .js-v-item-inner-para {
-  font-family: var(--primary-fontL);
+  font-family: var(--font-familyDMSans);
+
   font-size: 3.704vw;
   font-size: clamp(1rem, 0.926vw, 0.926vw);
   line-height: 1.6;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  /* letter-spacing: 0.03em; */
+  width: 20rem;
 }
 .vh-section .v-wrapper .js-v-inner .v-item .c-vsl-wrapper {
   position: absolute;
@@ -614,5 +652,12 @@
   }
   .vh-section {
     padding: 0.75rem 10px;
+  }
+  .logoImagecntr {
+    width: 25%;
+  }
+  .vh-section .v-wrapper .js-v-inner .v-item {
+    position: relative;
+    padding-bottom: calc(2 * clamp(2rem, 1.058vw, 1.058vw));
   }
 }

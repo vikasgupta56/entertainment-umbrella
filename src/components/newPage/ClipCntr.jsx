@@ -14,43 +14,43 @@ const servicesData = [
     id: 1,
     title: "Celebrity Management",
     description:
-      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+      "We connect your brand with the right names, creating standout collaborations that drive influence and leave a mark.",
   },
   {
     id: 2,
     title: "Digital Marketing",
     description:
-      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+      "Smart, sharp, and strategic—our campaigns cut through the clutter, turning clicks into genuine connections",
   },
   {
     id: 3,
     title: "Website Development",
     description:
-      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+      "Sleek, fast, and functional—we build websites that don’t just look good but keep visitors coming back for more.",
   },
   {
     id: 4,
     title: "Brand Shoots",
     description:
-      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+      "Bold, authentic, and on-point—we capture visuals that tell your story and stop the scroll",
   },
   {
     id: 5,
     title: "Launch Events",
     description:
-      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+      "We design experiences that make an entrance—flawless execution, unforgettable moments, and all the right vibes",
   },
   {
     id: 6,
     title: "Influencer Marketing",
     description:
-      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+      "We team you up with authentic voices that matter—driving real impact and meaningful engagement.",
   },
   {
     id: 7,
     title: "Public Relations (PR)",
     description:
-      "It’s the result of the unprecedented collaboration between the iconic Absolut Vodka and one of the most visionary and creative Italian design brands: Seletti.",
+      "We shape the narrative—securing coverage that keeps your brand relevant and resonating.",
   },
 ];
 const ClipCntr = () => {
@@ -559,7 +559,7 @@ const ClipCntr = () => {
             </Link>
             <div className="hero-img">
               <img
-                src="/assets/images/RangeMedia/pexels-leeloothefirst-7598017.jpg"
+                src="/assets/images/RangeMedia/hero_section_1.png"
                 // src="../../../assets/images/RangeMedia/pexels-ivan-samkov-7676406.jpg"
                 loading="lazy"
                 sizes="100vw"

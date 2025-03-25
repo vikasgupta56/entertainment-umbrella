@@ -87,7 +87,7 @@ const Home_newService = () => {
 
   return (
     <>
-      <div className="_services p-small" data-scroll data-scroll-speed=".3">
+      <div className="_services p-small">
         <div className="s-indented-title_wrapper quotetriggerCntr">
           <div className="s-indented-title_cntr quotetrigger">
             <h2>What we do</h2>
