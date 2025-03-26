@@ -51,7 +51,7 @@ const galleryData = [
   },
   {
     // src: "/assets/images/mrandmrs/galleryImages/RUNGTA STEEL.jpg",
-    src: "/assets/images/mrandmrs/galleryImages/Rajesh Masale.jpg",
+    src: "/assets/images/mrandmrs/galleryImages/rajesh masale.JPG",
     alt: "Rajesh Masale",
     caption: "Rajesh Masale",
   },
