@@ -528,7 +528,7 @@ const Dhamaka_Hero = () => {
           <div className="vsl-item vsl-lb" data-scroll data-scroll-speed="0.3">
             <div className="media-background lazy-container">
               <video
-                src="../../../assets/videos/Dhamaka-video 4.mp4"
+                src="/assets/images/dhamaka/videos/replacement_for_Jannat_X_Sonakshi_video.webm"
                 loop
                 autoPlay
                 playsInline
