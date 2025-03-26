@@ -7,11 +7,11 @@ const SmoothScrolling = ({ children }) => {
       scroll = new locomotiveModule.default({
         el: document.querySelector("[data-scroll-container]"),
         smooth: 2,
-        smoothMobile: false,
+        smoothMobile: true,
         resetNativeScroll: true,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         mouseMultiplier: 1,
-        smoothTouch: false,
+        smoothTouch: true,
         touchMultiplier: 2,
         infinite: false,
       });

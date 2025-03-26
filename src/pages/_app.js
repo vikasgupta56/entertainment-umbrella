@@ -1,6 +1,6 @@
 // import Footer from "@/common/Footer";
 import Navbar from "@/common/Navbar";
-// import SmoothScrolling from "@/components/home/SmoothScrolling";
+import SmoothScrolling from "@/components/home/SmoothScrolling";
 import "@/styles/globals.css";
 import "@/styles/home.css";
 import "@/styles/navbar.css";
@@ -29,13 +29,13 @@ export default function App({ Component, pageProps }) {
       ) : (
         <>
           {" "}
-          {/* <SmoothScrolling> */}
-          <Navbar contactRef={contactRef} />
-          <Component {...pageProps} />
-          {/* <Footer /> */}
-          {/* </SmoothScrolling> */}
-          <Footer2 ref={contactRef} />
-          <BacktoTop />
+          <SmoothScrolling>
+            <Navbar contactRef={contactRef} />
+            <Component {...pageProps} />
+            {/* <Footer /> */}
+            <Footer2 ref={contactRef} />
+            <BacktoTop />
+          </SmoothScrolling>
         </>
       )}
     </>

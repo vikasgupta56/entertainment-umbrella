@@ -1,5 +1,6 @@
 .Gallery_Mainwrapper {
   position: relative;
+  overflow: hidden;
 }
 .Gallery_main_textCntr {
   width: 100%;
@@ -29,6 +30,7 @@
   background-color: #000;
   pointer-events: none;
   top: 0;
+  overflow: hidden;
 }
 
 .blan_div {
@@ -92,7 +94,7 @@
   align-items: center;
   height: 70vh;
   position: relative;
-  z-index: 4;
+  z-index: 9;
   /* background-color: #a10f0f; */
 }
 .gallery_title_text {
@@ -134,8 +136,8 @@ a {
   height: 100%;
 }
 .Fixed_image_cntr {
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,9 +151,9 @@ a {
 }
 .fixed_image_clip_cntr {
   /* width: 100%; */
-  aspect-ratio: 9/16;
-  height: 80vh;
-  /* aspect-ratio: 4/5; */
+  /* aspect-ratio: 9/16; */
+  height: 40vh;
+  aspect-ratio: 4/5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,8 +178,14 @@ a {
   .Fixed_image_cntr {
     height: 100vh;
   }
+  .Fixed_image_cntr {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
   .fixed_image_clip_cntr {
     aspect-ratio: 4 / 5;
+    height: 80vh;
   }
   .Gallery_main_textCntr h1 {
     font-size: 5rem;
@@ -942,7 +950,7 @@ h2.h-large.enter:after {
 .sfimpact--full {
   height: auto;
   overflow: hidden;
-  z-index: 9;
+  z-index: 99;
 }
 .sfimpact--full .sfimpact__banner {
   background-color: #000000;

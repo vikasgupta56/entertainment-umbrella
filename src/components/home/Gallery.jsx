@@ -234,7 +234,7 @@ const Gallery = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: textCntr,
-          start: "top top",
+          start: "top center",
           end: "bottom 0%",
           scrub: true,
           markers: false,
@@ -304,6 +304,7 @@ const Gallery = () => {
                   </Link>
                 </h2>
               </div>
+              <div className="gallery_text-cntr gallery_text-cntr1"></div>
               <div className="">
                 {/* Image section */}
                 <div data-track className="gallery_image_bottom_sec">
@@ -334,6 +335,7 @@ const Gallery = () => {
                 </div>
               </div>
             </figure>
+            <div className="gallery_image_bottom_sec"></div>
           </section>
         );
       })}

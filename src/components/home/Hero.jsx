@@ -18,6 +18,7 @@ const Hero = () => {
       {/* <HomeService /> */}
       {/* <Services /> */}
       <Gallery />
+      <div className="textxCntr"></div>
       <Sfimpact />
     </>
   );

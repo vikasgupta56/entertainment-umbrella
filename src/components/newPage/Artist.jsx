@@ -1979,7 +1979,7 @@ const Artist = () => {
                   }
                 </style> */}
             </div>
-            <div className="artist-links quote">
+            <div className="artist-links">
               <p className="description italic">Hiroji Kubota</p>
               <p className="description italic">Yutaka Sone</p>
               <p className="description italic">Izumi Kato</p>

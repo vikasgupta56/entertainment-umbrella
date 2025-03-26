@@ -74,7 +74,7 @@
 .h1.hero {
   width: 100%;
   text-align: center;
-  /* letter-spacing: 0.04em; */
+  letter-spacing: 0.04em;
   overflow-wrap: break-word;
   font-size: 16vw;
   line-height: 0.8;
@@ -200,7 +200,7 @@
   font-size: 1.2em;
   font-weight: 500;
   line-height: 1.35;
-  letter-spacing: 0.04em;
+  /* letter-spacing: 0.04em; */
   font-weight: 600;
 }
 .paragraph.red {
@@ -739,7 +739,7 @@
   font-weight: 400;
   line-height: 1.25;
   margin-top: 1rem;
-  letter-spacing: 0.04em;
+  /* letter-spacing: 0.04em; */
   /* text-indent: 6.4em; */
 }
 .g-item-list {
@@ -789,7 +789,7 @@
   color: #ffffff;
   font-family: var(--font-familyDMSans);
 
-  letter-spacing: 0.04em;
+  /* letter-spacing: 0.04em; */
 }
 .g-item-list-para-cntr {
   position: relative;
@@ -932,6 +932,9 @@ button {
   }
   .h-wrapper {
     grid-template-columns: 1fr;
+  }
+  .para_title_head {
+    font-size: 1.3rem;
   }
 }
 
@@ -1436,7 +1439,7 @@ button {
   transition: all 0.3s ease;
   font-family: var(--font-familyDMSans);
 
-  letter-spacing: 0.04em;
+  /* letter-spacing: 0.04em; */
   font-weight: 600;
   cursor: pointer;
 }
