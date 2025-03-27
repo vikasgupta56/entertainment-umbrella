@@ -542,7 +542,7 @@ const Dhamaka_Hero = () => {
       <section className="vf-section bg-primary">
         <div className="v-wrapper">
           <div className="v-wrapper-inner">
-            <div className="c-wrapper bg-primary">
+            <div className="c-wrapper bg-secondary">
               <div className="v-wrapper-inner-content">
                 <h2 className="v-wrapper-heading quote">Our vision</h2>
                 <p className="quote">
@@ -614,7 +614,7 @@ const Dhamaka_Hero = () => {
       </section>
       <section className="vh-section js-v-outter bg-primary">
         <div className="v-wrapper">
-          <div className="js-v-inner bg-secondary c-primary">
+          <div className="js-v-inner bg-secondary-color c-primary">
             <div className="js-v-inner-wrapper">
               <div className="intro-wrapper quotetriggerCntr">
                 <h2 className="intro-wrapper-inner quote">
@@ -1731,7 +1731,7 @@ const Dhamaka_Hero = () => {
       <section className="vf-section bg-primary">
         <div className="v-wrapper">
           <div className="v-wrapper-inner">
-            <div className="c-wrapper bg-primary quotetriggerCntr">
+            <div className="c-wrapper bg-secondary quotetriggerCntr">
               <div className="v-wrapper-inner-content">
                 <h2 className="v-wrapper-heading quote">Dhamaka Records</h2>
                 <h4 className="ff-t tt-u fs-md mt-0b quote">

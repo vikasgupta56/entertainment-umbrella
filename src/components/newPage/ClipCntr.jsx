@@ -614,12 +614,12 @@ const ClipCntr = () => {
               <div className="v-wrapper-inner-content">
                 <h2
                   className="v-wrapper-heading quote"
-                  style={{ color: "#000" }}
+                  style={{ color: "#fff" }}
                 >
                   Why choose us?
                 </h2>
                 {/* <h3 className="ff-t tt-u fs-md mt-0b">by GPC</h3> */}
-                <p className="quote" style={{ color: "#000" }}>
+                <p className="quote" style={{ color: "#fff" }}>
                   We believe in building true partnerships, not just
                   transactions. For us to be successful together, we need to be
                   in sync with your brand, your vision, and your goals. This

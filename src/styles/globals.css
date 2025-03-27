@@ -34,8 +34,11 @@
   --trasY: 0;
   --animated-link-width: 100%;
   --animated-link-opacity: 1;
-  --primary-color: #fff;
+  /* --primary-color: #fff; */
+  --primary-color: #3b1d1c;
+  --bg-secondary-color: #fff;
   --secondary-color: #000;
+  --bg-rage-media-clr: #271313;
 }
 button {
   background: transparent;
