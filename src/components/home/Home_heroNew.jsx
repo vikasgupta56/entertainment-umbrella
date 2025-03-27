@@ -175,7 +175,11 @@ const Home_heroNew = () => {
                 MR & MRS
               </div>
             </div>
-            <p className="disc quotetrigger" data-scroll data-scroll-speed=".1">
+            <p
+              className="disc quotetrigger"
+              data-scroll
+              data-scroll-speed=".02"
+            >
               We don’t say no to anything &nbsp;entertainment.
             </p>
           </div>

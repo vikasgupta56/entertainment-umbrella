@@ -304,7 +304,7 @@ const Gallery = () => {
                   </Link>
                 </h2>
               </div>
-              <div className="gallery_text-cntr gallery_text-cntr1"></div>
+              {/* <div className="gallery_text-cntr gallery_text-cntr1"></div> */}
               <div className="">
                 {/* Image section */}
                 <div data-track className="gallery_image_bottom_sec">
