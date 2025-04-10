@@ -196,7 +196,7 @@ const About = () => {
         >
           <div className="intro__video--wrapper btn-text">
             <video muted autoPlay playsInline loop className="v_autoplay">
-              <source src="/assets/images/mrandmrs/videos/video_to_go_in_the_circle (malti_ka_sapna).webm" />
+              <source src="/assets/images/mrandmrs/videos/HRITHIK GOOGLY DANCE (online-video-cutter.com).webm" />
             </video>
           </div>
         </div>

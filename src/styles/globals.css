@@ -707,11 +707,14 @@ html.lenis {
   z-index: 9;
 }
 .mainPage_heading h1 {
-  font-size: 2rem;
+  font-size: 5vw;
+  line-height: 1;
+  text-align: center;
+  filter: brightness(0.5);
 }
 @media screen and (min-width: 768px) {
   .mainPage_heading h1 {
-    font-size: 3rem;
+    font-size: 8vw;
   }
 }
 .landing-page-inner,
@@ -758,12 +761,12 @@ html.lenis {
   top: 50%;
   left: 50%;
   /* transform: translate(-50%) translateY(-50%); */
-  height: 25vw;
-  width: 12rem;
+  height: 0vw;
+  /* width: 12rem; */
   transform: translate(-50%) translateY(-50%);
   z-index: 99;
-  padding: 0.4em;
-  margin-top: 200px;
+  /* padding: 0.4em;
+  margin-top: 200px; */
   opacity: 0;
 }
 /* .landing-page-a.main_big_img_1 {
@@ -1375,7 +1378,8 @@ html.lenis {
     width: 100%;
   }
   .home__sections__section__title {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
     /* margin-top: 3rem; */
   }
 }
@@ -2397,6 +2401,10 @@ form.submitting .wpcf7-spinner {
 } */
 .buttonTop svg {
   font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .buttonTop:hover {
   cursor: pointer;

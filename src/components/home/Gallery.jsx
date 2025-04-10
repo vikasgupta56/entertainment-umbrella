@@ -51,13 +51,13 @@ const galleryData = [
   },
   {
     // src: "/assets/images/mrandmrs/galleryImages/RUNGTA STEEL.jpg",
-    src: "/assets/images/mrandmrs/galleryImages/rajesh masale.JPG",
+    src: "/assets/images/mrandmrs/galleryImages/rajshree.png",
     alt: "Rajesh Masale",
     caption: "Rajesh Masale",
   },
   {
     // src: "/assets/images/mrandmrs/galleryImages/RUNGTA STEEL.jpg",
-    src: "/assets/images/mrandmrs/galleryImages/GGOGLY.webp",
+    src: "/assets/images/mrandmrs/galleryImages/googly.webp",
     alt: "GOOGLY",
     caption: "GOOGLY",
   },
@@ -106,7 +106,7 @@ const Gallery = () => {
 
     const Main = document.querySelector(".Main");
 
-    const colors = [
+    const bgColors = [
       "rgb(174, 174, 169)",
       "rgb(42, 70, 85)",
       "rgb(231, 20, 66)",
@@ -114,7 +114,29 @@ const Gallery = () => {
       "rgb(153, 75, 54)",
       "rgb(32, 32, 69)",
       "rgb(30, 33, 38)",
+      "#CF8F60",
+      "#A1B6D3",
     ];
+    const colors = [
+      "#DB2231",
+      "#B464FF",
+      "#FF9C72",
+      "#68F87E",
+      "#FFC6C7",
+      "#EF526D",
+      "#FB9F3B",
+      "#F1E500",
+      "#F6D838",
+    ];
+    const GalleryTitleText = document.querySelectorAll(
+      ".gallery_title_maintext"
+    );
+    GalleryTitleText.forEach((titleClr, index) => {
+      gsap.to(titleClr, {
+        color: colors[index] || "#fff",
+      });
+    });
+    console.log(GalleryTitleText);
     // Set the initial background color of Main to black
     // gsap.set(Main);
 
@@ -129,13 +151,13 @@ const Gallery = () => {
     //       markers: false,
     //       duration: 1,
     //     },
-    //     backgroundColor: colors[index] || "#000", // Change to specific color
+    //     backgroundColor: bgColors[index] || "#000", // Change to specific color
     //   });
     // });
     galleryImageBottomInnerElements.forEach((container, index) => {
       container.addEventListener("mouseenter", () => {
         gsap.to(Main, {
-          backgroundColor: colors[index] || "#000",
+          backgroundColor: bgColors[index] || "#000",
           duration: 1,
         });
       });
@@ -156,7 +178,26 @@ const Gallery = () => {
     const galleryItemsClipImg = gsap.utils.toArray(
       ".fixed_image_clip_cntr img"
     );
+    gsap.set(".Gallery_main_textCntr", {
+      backgroundColor: "#000",
+    });
 
+    const tl1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: GalleryTextCntr,
+        start: "top 80%",
+        end: "bottom 80%",
+        scrub: true,
+        // markers: true,
+      },
+    });
+
+    tl1.to(".Gallery_main_textCntr", {
+      backgroundColor: "#f6d838",
+    });
+    gsap.to(".Gallery_main_textCntr h1", {
+      color: "#000",
+    });
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".Gallery_main_textCntr",
@@ -167,6 +208,9 @@ const Gallery = () => {
         pin: ".Gallery_main_textCntr h1",
       },
     });
+    // gsap.set(".Gallery_main_textCntr", {
+    //   backgroundColor: "#000",
+    // });
 
     tl.to(".Gallery_main_textCntr h1", {
       opacity: 0,
@@ -290,7 +334,12 @@ const Gallery = () => {
         <p className="ScrollDown_btm">SCROLL DOWN</p>
       </figure> */}
       <div className="Gallery_main_textCntr">
-        <h1 className="">Some of the brands we have worked with</h1>
+        <h1 className="">
+          Some of the{" "}
+          <span style={{ color: "#D31212" }}>celebrity endorsements</span> and
+          <span style={{ color: "#3B71B0" }}> ad film production</span> done by
+          us
+        </h1>
       </div>
       {galleryData.map((el, index) => {
         return (

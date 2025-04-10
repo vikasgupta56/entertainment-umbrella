@@ -346,11 +346,11 @@ const Navbar = ({ contactRef }) => {
     <>
       <div className="navbar">
         <span>
-          <Link href="/">
+          <a href="/">
             {/* <IoHome /> */}
             <h1>Entertainment</h1>
             <h1>Umbrella</h1>
-          </Link>
+          </a>
         </span>
         <ul className="navbar--menu fhl">
           <li className="navbar--menu--item">

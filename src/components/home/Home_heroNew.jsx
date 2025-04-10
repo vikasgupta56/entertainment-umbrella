@@ -172,15 +172,12 @@ const Home_heroNew = () => {
                 // data-scroll-speed=".1"
                 // data-swiper-parallax={2000}
               >
-                MR & MRS
+                MR. & MRS. Films
               </div>
             </div>
-            <p
-              className="disc quotetrigger"
-              data-scroll
-              data-scroll-speed=".02"
-            >
-              We don’t say no to anything &nbsp;entertainment.
+            <p className="disc quotetrigger" data-scroll data-scroll-speed="">
+              {/* We don’t say no to anything &nbsp;entertainment. */}
+              …and sometimes events
             </p>
           </div>
           <div className="swiper-button-wrapper creative-button--wrapper">

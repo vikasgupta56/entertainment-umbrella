@@ -7,6 +7,7 @@ import HomeHero from "./HomeHero";
 // import HomeService from "./HomeService";
 import Home_newService from "./Home_newService";
 import Home_heroNew from "./Home_heroNew";
+import Collage from "./Collage";
 
 const Hero = () => {
   return (
@@ -14,10 +15,11 @@ const Hero = () => {
       <Home_heroNew />
       {/* <HomeHero /> */}
       <About />
+      <Collage />
+      <Gallery />
       <Home_newService />
       {/* <HomeService /> */}
       {/* <Services /> */}
-      <Gallery />
       <div className="textxCntr"></div>
       <Sfimpact />
     </>

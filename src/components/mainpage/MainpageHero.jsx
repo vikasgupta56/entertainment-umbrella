@@ -1,6 +1,8 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 const homePageCardData = [
@@ -36,6 +38,7 @@ const homePageCardData = [
   },
 ];
 const MainpageHero = () => {
+  const router = useRouter();
   useEffect(() => {
     const DESKTOP_BREAKPOINT = window.matchMedia("(min-width: 768px)");
     if (DESKTOP_BREAKPOINT.matches) {
@@ -227,10 +230,61 @@ const MainpageHero = () => {
 
   //   moveBackground();
   // }, []);
+  useGSAP(() => {
+    var ball = document.querySelectorAll(".landing-page-li .landing-page-a");
+    ball.forEach((elems, index) => {
+      gsap.set(elems, {
+        top: -100,
+        opacity: 1,
+      });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".mainPage",
+          start: "top 1%", // Adjust start position
+          end: "bottom top", // Adjust end position
+          markers: false,
+        },
+      });
+
+      tl.to(
+        elems,
+        0.5,
+        {
+          top: "80%",
+          ease: "Bounce.easeInOut",
+          duration: 5,
+        },
+        "bounce"
+      )
+        /* ball bounce down */
+        .to(
+          elems,
+          0.4,
+          {
+            top: "80%",
+            ease: "Power1.easeIn",
+            // duration: 5,
+          },
+          "bounce"
+        );
+
+      // .to(
+      //   elems,
+      //   0.3,
+      //   {
+      //     top: "50%",
+      //     ease: "Bounce.ease",
+      //   },
+      //   "bounce3"
+      // );
+    });
+    // console.log(ball);
+  });
+
   return (
     <>
       <div className="PrimaryHeaderSection_wrapper">
-        <div class="scrolldown_box">
+        <div className="scrolldown_box">
           <h1>Scroll Down</h1>
           <span></span>
           <span></span>
@@ -244,13 +298,13 @@ const MainpageHero = () => {
                 <div className="Media_alternativeVideoPlayerWrapper">
                   <div>
                     <video
-                      src="/assets/images/mainpage/videos/hero_section_landing_page_trimmed.webm"
+                      src="/assets/images/mainpage/final_hero_section_landing_page.webm"
                       preload
                       autoPlay
                       loop
                       playsInline
-                      webkit-playsinline
-                      x5-playsinline
+                      // webkit-playsInline
+                      // x5-playsInline
                       style={{ width: "100%", height: "100%" }}
                       muted
                     />
@@ -349,7 +403,7 @@ const MainpageHero = () => {
           <div className="background-video-wrapper">
             <video
               id="background-video-1"
-              preload="none"
+              preload
               loop
               muted
               playsInline
@@ -369,7 +423,7 @@ const MainpageHero = () => {
             </video>
             <video
               id="background-video-2"
-              preload="none"
+              preload
               loop
               muted
               playsInline
@@ -387,7 +441,7 @@ const MainpageHero = () => {
             </video>
             <video
               id="background-video-3"
-              preload="none"
+              preload
               loop
               muted
               playsInline
@@ -405,7 +459,7 @@ const MainpageHero = () => {
             </video>
             <video
               id="background-video-4"
-              preload="none"
+              preload
               loop
               muted
               playsInline
@@ -442,27 +496,17 @@ const MainpageHero = () => {
                     className="landing-page-a"
                     data-group="studio"
                   >
-                    {/* <HiArrowNarrowRight class="home__sections__section__arrow__mobile" /> */}
-                    <span className="home__sections__section__outline home__sections__section__outline--left"></span>
+                    {/* <span className="home__sections__section__outline home__sections__section__outline--left"></span>
                     <span className="home__sections__section__outline home__sections__section__outline--top"></span>
                     <span className="home__sections__section__outline home__sections__section__outline--right"></span>
                     <span className="home__sections__section__outline home__sections__section__outline--bottom"></span>
 
                     <div className="home__sections__section__link">
-                      {/* <div className="home__sections__group">
-                  <p className="home__sections__group__label">Go to</p>
-                  <p className="home__sections__group__title">
-                    <span>
-                      <span>MR & MRS &nbsp;</span>
-                    </span>
-                    <br />
-                    <span>Studio</span>
-                  </p>
-                </div> */}
+                     
                       <span className="glass-point">
                         <span className="glass-point__inset"></span>
                       </span>
-                    </div>
+                    </div> */}
 
                     <div className="home__sections__section__title_subtitle">
                       <div className="home__sections__section__title">
@@ -471,7 +515,7 @@ const MainpageHero = () => {
                       </div>
                       <h4>{el.subHeading}</h4>
                     </div>
-                    <img src={el.imgSrc} alt="" />
+                    {/* <img src={el.imgSrc} alt="" /> */}
                   </a>
                 </div>
               );

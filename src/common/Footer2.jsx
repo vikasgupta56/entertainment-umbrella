@@ -440,9 +440,10 @@ const Footer2 = forwardRef((props, ref) => {
             <div className="footer__bottom--text">
               <div className="footer__bottom--text--left">
                 <h3 className="fht">
-                  Are you ready to watch your idea come into being? Whether it
+                  {/* Are you ready to watch your idea come into being? Whether it
                   be through film, an event, or social movement, we will make it
-                  happen.
+                  happen. */}
+                  Are you ready to watch your idea come to life? …
                 </h3>
               </div>
               <div className="footer__bottom--text--right">

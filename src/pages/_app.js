@@ -22,22 +22,22 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      {pathname === "/" ? (
-        <>
-          <MainpageHero />
-        </>
-      ) : (
-        <>
-          {" "}
-          <SmoothScrolling>
+      <SmoothScrolling>
+        {pathname === "/" ? (
+          <>
+            <MainpageHero />
+          </>
+        ) : (
+          <>
+            {" "}
             <Navbar contactRef={contactRef} />
             <Component {...pageProps} />
             {/* <Footer /> */}
             <Footer2 ref={contactRef} />
             <BacktoTop />
-          </SmoothScrolling>
-        </>
-      )}
+          </>
+        )}
+      </SmoothScrolling>
     </>
   );
 }

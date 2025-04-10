@@ -9,7 +9,8 @@
   align-items: center;
   justify-content: space-between;
   /* mix-blend-mode: difference; */
-  color: #fff;
+  /* color: #fff; */
+  color: #ffe9a6;
   backdrop-filter: blur(30px);
   /* grid-template-columns: 1fr 4fr; */
 }

@@ -92,8 +92,10 @@ const Home_newService = () => {
           <div className="s-indented-title_cntr quotetrigger">
             <h2>What we do</h2>
             <p className="s-indented-title_cntr_para">
-              No event is big or small for us, be it a music concert, bar night,
-              brand activation, corporate events, a wedding, or private parties.
+              No event or film is too big or too small for us — whether it's a
+              short film, ad film, feature film, social cause film or music
+              concert, bar night, brand activation, corporate event, wedding, or
+              private party.
             </p>
             {/* <p className="quote">
               {" "}
