@@ -16,8 +16,8 @@ const Hero = () => {
       {/* <HomeHero /> */}
       <About />
       <Collage />
-      <Gallery />
       <Home_newService />
+      <Gallery />
       {/* <HomeService /> */}
       {/* <Services /> */}
       <div className="textxCntr"></div>

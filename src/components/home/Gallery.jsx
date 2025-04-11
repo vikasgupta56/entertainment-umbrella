@@ -179,13 +179,14 @@ const Gallery = () => {
       ".fixed_image_clip_cntr img"
     );
     gsap.set(".Gallery_main_textCntr", {
-      backgroundColor: "#000",
+      backgroundColor: "#f6d838",
+      // backgroundColor: "#000",
     });
 
     const tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: GalleryTextCntr,
-        start: "top 80%",
+        start: "top 0%",
         end: "bottom 80%",
         scrub: true,
         // markers: true,
@@ -193,7 +194,7 @@ const Gallery = () => {
     });
 
     tl1.to(".Gallery_main_textCntr", {
-      backgroundColor: "#f6d838",
+      backgroundColor: "#000",
     });
     gsap.to(".Gallery_main_textCntr h1", {
       color: "#000",

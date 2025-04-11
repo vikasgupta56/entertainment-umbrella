@@ -89,29 +89,29 @@ const Collage = () => {
       });
 
       // Optional hide animation
-      tl.to(
-        elems,
-        {
-          duration: reveal_duration,
-          clipPath: `inset(0% 0% 100% 0%)`,
-          ease: easing_type,
-          delay: 5,
-          stagger: stagger * 0.5,
-        },
-        "a"
-      );
+      //   tl.to(
+      //     elems,
+      //     {
+      //       duration: reveal_duration,
+      //       clipPath: `inset(0% 0% 100% 0%)`,
+      //       ease: easing_type,
+      //       delay: 5,
+      //       stagger: stagger * 0.5,
+      //     },
+      //     "a"
+      //   );
 
       // Collapse wrapper
-      tl.to(
-        ".Collage_wrapper",
-        {
-          duration: reveal_duration,
-          height: 0,
-          ease: easing_type,
-          //   delay: 6,
-        },
-        "a+=7"
-      );
+      //   tl.to(
+      //     ".Collage_wrapper",
+      //     {
+      //       duration: reveal_duration,
+      //       height: 0,
+      //       ease: easing_type,
+      //       //   delay: 6,
+      //     },
+      //     "a+=7"
+      //   );
     }
   });
 
