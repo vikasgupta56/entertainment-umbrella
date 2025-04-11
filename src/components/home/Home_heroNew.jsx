@@ -174,11 +174,11 @@ const Home_heroNew = () => {
               >
                 MR. & MRS. Films
               </div>
+              <p className="disc quotetrigger" data-scroll data-scroll-speed="">
+                {/* We don’t say no to anything &nbsp;entertainment. */}
+                …and sometimes events
+              </p>
             </div>
-            <p className="disc quotetrigger" data-scroll data-scroll-speed="">
-              {/* We don’t say no to anything &nbsp;entertainment. */}
-              …and sometimes events
-            </p>
           </div>
           <div className="swiper-button-wrapper creative-button--wrapper">
             <div

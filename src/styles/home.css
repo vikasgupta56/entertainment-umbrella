@@ -1935,7 +1935,7 @@ svg:not(:root) {
   letter-spacing: -0.02em;
 }
 .creative-fullpage--slider .swiper-content p.disc {
-  font-size: 1rem;
+  font-size: 1.3rem;
   width: 100%;
   /* margin-top: 15px; */
   /* margin: 20px 0px 40px 0px; */
@@ -1950,7 +1950,7 @@ svg:not(:root) {
   -webkit-user-select: none;
   display: flex;
   justify-content: flex-end;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
   font-style: italic;
   /* opacity: 0; */
 }

@@ -1,10 +1,12 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
+gsap.registerPlugin(ScrollTrigger);
 const homePageCardData = [
   {
     id: 1,
@@ -231,28 +233,44 @@ const MainpageHero = () => {
   //   moveBackground();
   // }, []);
   useGSAP(() => {
-    var ball = document.querySelectorAll(".landing-page-li .landing-page-a");
-    ball.forEach((elems, index) => {
-      gsap.set(elems, {
-        top: -100,
-        opacity: 1,
-      });
+    const stagger = 0.2;
+    // var ball = document.querySelectorAll(".landing-page-li .landing-page-a");
+    const ball = gsap.utils.toArray(".landing-page-li .landing-page-a");
+    gsap.set(ball, {
+      top: -100,
+      opacity: 1,
+    });
+
+    // ScrollTrigger setup
+    ScrollTrigger.create({
+      trigger: ".mainPage",
+      start: "top 1%",
+      markers: false,
+      onEnter: () => {
+        revealItems(ball);
+      },
+      onLeaveBack: (self) => self.disable(),
+      invalidateOnRefresh: true,
+      once: true,
+    });
+
+    // Animation logic
+    function revealItems(elems) {
       const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".mainPage",
-          start: "top 1%", // Adjust start position
-          end: "bottom top", // Adjust end position
-          markers: false,
+        onComplete: () => {
+          ScrollTrigger.refresh(); // Refresh after full sequence
         },
       });
 
+      // Reveal animation
       tl.to(
         elems,
-        0.5,
+        0.2,
         {
           top: "80%",
-          ease: "Bounce.easeInOut",
-          duration: 5,
+          ease: "Power1.easeIn",
+          stagger: stagger * 0.1,
+          // duration: 2,
         },
         "bounce"
       )
@@ -261,24 +279,25 @@ const MainpageHero = () => {
           elems,
           0.4,
           {
-            top: "80%",
-            ease: "Power1.easeIn",
+            top: "50%",
+            ease: "Bounce.ease",
             // duration: 5,
+            stagger: stagger * 0.2,
           },
-          "bounce"
-        );
+          "bounce1"
+        )
 
-      // .to(
-      //   elems,
-      //   0.3,
-      //   {
-      //     top: "50%",
-      //     ease: "Bounce.ease",
-      //   },
-      //   "bounce3"
-      // );
-    });
-    // console.log(ball);
+        .to(
+          elems,
+          0.2,
+          {
+            top: "80%",
+            ease: "Bounce.easeOut",
+            stagger: stagger * 0.3,
+          },
+          "bounce3"
+        );
+    }
   });
 
   return (
