@@ -44,7 +44,8 @@ const MainpageHero = () => {
   useEffect(() => {
     const DESKTOP_BREAKPOINT = window.matchMedia("(min-width: 768px)");
     if (DESKTOP_BREAKPOINT.matches) {
-      const e = document.querySelector(".landing-page-left_img_cntr_ul"),
+      const h1Text = document.querySelector(".mainPage_heading h1"),
+        e = document.querySelector(".landing-page-left_img_cntr_ul"),
         t = document.querySelector(".background-video-wrapper"),
         o = Array.from(t.querySelectorAll("video")),
         a = e.querySelectorAll(".landing-page-a"),
@@ -68,6 +69,7 @@ const MainpageHero = () => {
                   defaults: { ease: "circ.inOut", duration: 0.5 },
                   onStart: () => {
                     o[t].play(), (l = !0);
+                    h1Text.style.opacity = 0;
                   },
                   onComplete: () => {
                     l = !1;
@@ -97,6 +99,7 @@ const MainpageHero = () => {
                     defaults: { ease: "circ.inOut", duration: 0.5 },
                     onStart: () => {
                       o[t].pause();
+                      h1Text.style.opacity = 1;
                     },
                   });
                   i.to(o[t], { autoAlpha: 0, scale: 1.15 }, "<"),
