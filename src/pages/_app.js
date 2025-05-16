@@ -15,13 +15,16 @@ import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import gsap from "gsap";
 import React, { useRef } from "react";
 import BacktoTop from "@/common/BacktoTop";
+import useAuthentication from "@/hooks/useAuthentication";
 gsap.registerPlugin(ScrollToPlugin); // Register GSAP ScrollToPlugin
 export default function App({ Component, pageProps }) {
   const pathname = usePathname();
   const contactRef = useRef(null); // Create a ref for the footer
-
+  const isAuthenticate = useAuthentication();
   return (
     <>
+    {isAuthenticate ?  (
+      <>
       <SmoothScrolling>
         {pathname === "/" ? (
           <>
@@ -39,5 +42,19 @@ export default function App({ Component, pageProps }) {
         )}
       </SmoothScrolling>
     </>
+    ) :  <div
+    className="containerWrapperlogin"
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      height: "100vh",
+    }}
+  >
+    <h1>Please log in to view the content of this page</h1>
+  </div>
+}
+   </>
   );
 }
